@@ -55,6 +55,12 @@ topics:
       In closing, we will have a look at a few advanced techniques beyond the  standard toolkit: snapshot testing (<code>insta</code>) and property-based testing (<code>quickcheck</code>).
 
 
+quotes:
+  - text: "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!"
+    source: Remote attendee
+  - text: "Amazing support from Luca! Detailed explanation of different topics whenever requested."
+    source: Onsite attendee
+
 leads:
   - handle: algo_luca
 ---

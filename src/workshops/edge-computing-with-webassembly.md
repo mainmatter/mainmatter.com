@@ -46,6 +46,13 @@ leads:
   - handle: JonasKruckenberg
     bio: >
       Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure, including k23 - an experimental operating system. As a TC39 Invited Expert, he helps shape the future of web standards by bringing non-browser WebAssembly perspectives to language standardization.
+
+
+quotes:
+  - text: All of my questions around wasm where resolved
+    source: Onsite attendee
+  - text: Mentor had lots of knowledge and very helpful.
+    source: Onsite attendee
 ---
 
 <!--break-->

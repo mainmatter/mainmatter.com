@@ -72,7 +72,7 @@ leads:
 quotes:
   - text: "Extremely well set up!"
     source: Onsite attendee
-  - text: "Well constructed exercises that cover various testing topics. Well done."
+  - text: "This workshop was one of the best I've attended and full of great material."
     source: Onsite attendee
 ---
 

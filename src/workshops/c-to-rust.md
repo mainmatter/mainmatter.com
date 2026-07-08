@@ -42,8 +42,12 @@ topics:
       Testing, benchmarks, sanitizers, and more. We will put our FFI code on solid foundations. We will learn how to effectively use tools like Valgrind, sanitizers, and Miri. We will discover their limitations and when to reach for which tool.
 
 
+quotes:
+  - text: "Very good format."
+    source: Remote attendee
+  - text: "Very good, the balance of practical work mixed with bite size new concepts works nicely"
+    source: Onsite attendee
+
 leads:
   - handle: algo_luca
-
-quotes:
 ---

@@ -74,6 +74,12 @@ topics:
 
 leads:
   - handle: algo_luca
+
+quotes:
+  - text: "Throughly Enjoyed the excercises format. Looking forward to more workshops for middle to advanced rust developers […]"
+    source: Onsite attendee
+  - text: "Thank you very much for this informative workshop. The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. […]"
+    source: Onsite attendee
 ---
 
 <!--break-->

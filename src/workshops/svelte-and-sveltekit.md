@@ -47,6 +47,10 @@ topics:
       The final stage of the workshop teaches how to implement progressive enhancement with forms. We cover how to send data to an API, how to validate forms, what server folders are, and give a brief introduction into hooks. We close by looking into how to implement authentication.
 
 
+quotes:
+  - text: "I enjoyed the workshop, Paolo managed to balance well its content between theory and practice."
+    source: Onsite attendee
+
 leads:
   - handle: paoloricciuti
 ---
