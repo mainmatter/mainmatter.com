@@ -78,23 +78,25 @@ og:
 <section class="workshops-landing__quotes pt-7" id="our-attendees-say">
   <div class="container container--lg">
     <h2 class="mb-4">Our attendees say</h2>
-    {%
-      set quoteContent = {
-      "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
-      "source": "Remote attendee",
-      "styling": "redesigned"
-      }
-    %}
-    {{ quote(quoteContent) }}
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
 
-    {%
-      set quoteContent = {
-      "text": "It's not like the typical workshop where the presenter just goes through some topics which could be researched individually. I really get the feeling of learning something here.",
-      "source": "Onsite attendee",
-      "styling": "redesigned"
-      }
-    %}
-    {{ quote(quoteContent) }}
+      {%
+        set quoteContent = {
+        "text": "It's not like the typical workshop where the presenter just goes through some topics which could be researched individually. I really get the feeling of learning something here.",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
   </div>
 </section>
 

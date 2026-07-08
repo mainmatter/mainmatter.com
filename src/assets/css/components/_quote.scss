@@ -128,3 +128,22 @@
     margin: 2rem auto 0 auto;
   }
 }
+
+.training-quotes {
+  display: grid;
+  gap: 5rem;
+  justify-items: start;
+  margin-top: 5rem;
+
+  .quote__redesigned {
+    margin: 0;
+  }
+
+  .quote__content {
+    text-align: right;
+  }
+
+  .quote__source {
+    text-align: right;
+  }
+}
