@@ -55,14 +55,18 @@
 
 .workshops-page__certificate-container {
   order: 1;
-  width: 24rem;
+  width: min(24rem, 100%);
   max-width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   font-size: 1rem;
   text-align: left;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
+
+  span {
+    min-width: 0;
+  }
 }
 
 .workshops-page__certificate {
@@ -503,12 +507,14 @@
   }
 
   .workshops-page__certificate-container {
+    width: 24rem;
     flex-direction: row;
+    align-items: center;
     text-align: right;
   }
 
   .workshop-card {
-    grid-template-columns: minmax(0, 1fr) 18rem;
+    grid-template-columns: minmax(0, 1fr) 22rem;
   }
 
   .workshop-card__main,
