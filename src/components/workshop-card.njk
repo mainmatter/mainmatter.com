@@ -4,12 +4,15 @@
   {% set description = data.description %}
   {% set price = data.price %}
   {% set dates = data.upcomingDates %}
+  {% set hasUpcomingDates = dates and dates.length %}
   {% set ticketPrice = null %}
-  {% if dates and dates[0].price %}
+  {% if hasUpcomingDates and dates[0].price %}
     {% set ticketPrice = dates[0].price %}
   {% endif %}
 
-  <article class="workshop-card {% if not price and not dates %}workshop-card--full{% endif %}">
+  <article
+    class="workshop-card {% if not price and not hasUpcomingDates %}workshop-card--full{% endif %}"
+  >
     <a
       class="workshop-card__overlay-link"
       href="/training/{{ workshop.fileSlug }}/"
@@ -18,7 +21,7 @@
     ></a>
 
     <div class="workshop-card__main">
-      {% if duration or ticketPrice or dates %}
+      {% if duration or ticketPrice or hasUpcomingDates %}
         <p class="workshop-card__meta">
           {% if duration %}
             <span class="workshop-card__duration">
@@ -31,7 +34,7 @@
               {{ duration }}
             </span>
           {% endif %}
-          {% if ticketPrice or dates %}
+          {% if ticketPrice or hasUpcomingDates %}
             <span class="workshop-card__ticket-availability">
               <img
                 class="workshop-card__meta-icon"
@@ -53,11 +56,11 @@
         </div>
       {% endif %}
 
-      {% if description or dates %}
+      {% if description or hasUpcomingDates %}
         <details
           class="workshop-card__mobile-details"
           data-workshop-card-mobile-details
-          data-has-dates="{% if dates %}true{% else %}false{% endif %}"
+          data-has-dates="{% if hasUpcomingDates %}true{% else %}false{% endif %}"
         >
           <summary class="workshop-card__mobile-summary">
             {% if description %}
@@ -68,7 +71,7 @@
               <span class="workshop-card__mobile-summary-text-open">Hide details</span>
             </span>
           </summary>
-          {% if dates %}
+          {% if hasUpcomingDates %}
             <div class="workshop-card__mobile-ticket-details">
               <div class="workshop-card__mobile-ticket-header">
                 <h5 class="workshop-card__mobile-ticket-title">Individual tickets</h5>
@@ -117,9 +120,9 @@
       </a>
     </div>
 
-    {% if ticketPrice or dates %}
+    {% if ticketPrice or hasUpcomingDates %}
       <aside class="workshop-card__details" aria-label="Public workshop details">
-        {% if ticketPrice or dates %}
+        {% if ticketPrice or hasUpcomingDates %}
           <div class="workshop-card__ticket">
             <h4 class="workshop-card__detail-title">Individual tickets</h4>
             {% if ticketPrice %}
@@ -136,7 +139,7 @@
           </div>
         {% endif %}
 
-        {% if dates %}
+        {% if hasUpcomingDates %}
           <ul class="workshop-card__dates">
             {% for date in dates %}
               {% set workshopDate = date.date or date %}

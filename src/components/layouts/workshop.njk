@@ -14,8 +14,9 @@ layout: "base"
 {% from "quote.njk" import quote %}
 
 {% macro workshopIndividualTickets(className = "") %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
   {% set ticketPrice = null %}
-  {% if upcomingDates and upcomingDates[0].price %}
+  {% if hasUpcomingDates and upcomingDates[0].price %}
     {% set ticketPrice = upcomingDates[0].price %}
   {% endif %}
   <section class="workshop-detail__ticket-panel {{ className }}">
@@ -27,7 +28,7 @@ layout: "base"
       </p>
     {% endif %}
 
-    {% if upcomingDates %}
+    {% if hasUpcomingDates %}
       <ul class="workshop-detail__dates">
         {% for date in upcomingDates %}
           {% set workshopDate = date.date or date %}
@@ -52,7 +53,8 @@ layout: "base"
 {% endmacro %}
 
 {% macro workshopTicketPanels() %}
-  {% set hasIndividualTickets = price or upcomingDates %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
+  {% set hasIndividualTickets = price or hasUpcomingDates %}
   <div
     class="workshop-detail__ticket-panels {% if not hasIndividualTickets %}workshop-detail__ticket-panels--team-only{% endif %}"
   >
@@ -98,6 +100,7 @@ layout: "base"
     {% set workshopCategoryUrl = "/training/ember/" %}
     {% set workshopCategoryLabel = "Ember Workshops" %}
   {% endif %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
   {% set heroText %}
     <span class="workshop-detail-hero__meta">
       {% if format %}
@@ -112,7 +115,7 @@ layout: "base"
           {{ subtext }}
         </strong>
       {% endif %}
-      {% if price or upcomingDates %}
+      {% if price or hasUpcomingDates %}
         <a class="workshop-detail-hero__ticket-link" href="#workshop-tickets">
           <img src="/assets/images/icons/ticket.svg" alt="" loading="lazy" />
           <span>Individual tickets available</span>
@@ -154,11 +157,6 @@ layout: "base"
           {{ introduction | safe }}
           {% elseif description %}
           <p>{{ description | safe }}</p>
-        {% else %}
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in nisi sed eros eleifend
-            scelerisque a eu nisl. Ut eu sollicitudin magna.
-          </p>
         {% endif %}
 
         {% if prerequisites %}
@@ -386,7 +384,7 @@ layout: "base"
         'Intercom'
         ]
       %}
-      {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 compaies", "h4", "h5") }}
+      {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 companies", "h4", "h5") }}
     {% endif %}
 
     <section class="container container--xl my-10" aria-label="Workshop booking options">
