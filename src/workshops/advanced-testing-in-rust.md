@@ -1,7 +1,7 @@
 ---
 title: "Testing in Rust: going beyond the basics"
 tags: "rust"
-format: "Workshop: 1 day"
+format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
 description: A 1-day workshop designed for software developers who have a good understanding of Rust's basic concepts and want to move beyond the built-in testing toolkit.
 introduction: |
@@ -13,7 +13,7 @@ introduction: |
   <p>The workshop is designed for software developers who have a good understanding of Rust's basic
   concepts and want to move beyond the built-in testing toolkit.</p>
   <p>If you are new to Rust instead, you might be interested instead in our 
-  <a href="/services/workshops/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
+  <a href="/training/an-introduction-to-testing-in-rust/">introductory testing workshop</a>.</p>
 hero:
   color: purple
   image: "/assets/images/workshops/advanced-testing-in-rust/header-background.jpg"
@@ -72,7 +72,7 @@ leads:
 quotes:
   - text: "Extremely well set up!"
     source: Onsite attendee
-  - text: "Well constructed exercises that cover various testing topics. Well done."
+  - text: "This workshop was one of the best I've attended and full of great material."
     source: Onsite attendee
 ---
 

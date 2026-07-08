@@ -103,7 +103,7 @@ If you have a large team, you can bring in a trainer to run a dedicated workshop
 
 Interactivity is the key here: you want to make sure that your team has the opportunity to ask questions to an experienced Rust mentor to speed up the learning process and avoid common pitfalls.
 
-To get a sense of what kind of topics a Rust workshop could cover, you can check out the [Rust workshops](/services/workshops/rust/) that we offer here at Mainmatter.
+To get a sense of what kind of topics a Rust workshop could cover, you can check out the [Rust workshops](/training/rust/) that we offer here at Mainmatter.
 
 #### Team reinforcement
 

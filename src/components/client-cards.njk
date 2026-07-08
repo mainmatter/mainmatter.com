@@ -21,7 +21,10 @@ list: An array where each item is the slug for the case study.
           <p class="caption mt-015">
             {% for item in client.data.tags %}
               {% if loop.index != 1 %}/{% endif %}
-              <a href="/services/{{ item | slug }}/" class="client-card__link">
+              <a
+                href="{%- if item == "Training" -%}/training/{%- else -%}/services/{{ item | slug }}/{%- endif -%}"
+                class="client-card__link"
+              >
                 {{ item }}
                 {% include 'svg/arrow.njk' %}</a
               >

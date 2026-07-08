@@ -27,6 +27,7 @@
     "percy:disable-lazy-images": "replace-in-file --configFile=.percy-disable-lazy-loading.js",
     "percy": "percy snapshot",
     "crawl": "node scripts/crawl.js",
+    "update-workshop-dates": "node scripts/update-workshop-dates.js",
     "this-week": "twios/this-week-in-open-source --config-path=config/this-week-in-open-source.config.json"
   },
   "devDependencies": {
@@ -53,6 +54,9 @@
     "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-prettier": "^5.5.5",
     "express": "^5.2.1",
+    "glob": "^13.0.6",
+    "got": "^15.1.0",
+    "gray-matter": "^4.0.3",
     "html-minifier": "4.0.0",
     "markdown-it": "14.1.0",
     "markdown-it-footnote": "^4.0.0",

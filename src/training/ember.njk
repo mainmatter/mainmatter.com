@@ -1,0 +1,144 @@
+---
+layout: "base"
+title: Ember Training
+description: "We offer workshops to enable teams to succeed with Ember.js – covering a wide range from basics to advanced topics, onsite or remote."
+og:
+  image: "/assets/images/services/ember-training-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "workshop-card.njk" import workshopCard %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
+{% from "logo-list.njk" import logoList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
+{% from "workshop-instructors.njk" import workshopInstructors %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="workshops-page-hero__eyebrow-link" href="/training/">
+    <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="workshops-page-hero__eyebrow-text">Developer Training</span>
+  </a>
+{% endset %}
+
+{%
+  set heroContent = {
+  "eyebrow": heroEyebrow,
+  "title": "Ember Training",
+  "text": "We teach teams like yours how to succeed with Ember.js. We're long-term Ember core team members, community veterans, and the team behind the Ember Initiative.",
+  "image": "/assets/images/hero/ember.jpg",
+  "alt": "Abstract Ember workshop hero image",
+  "loading": "eager",
+  "class": "workshops-page-hero",
+  "toc": [
+    ["Workshops", "#workshops"],
+    ["Instructor", "#instructor"]
+  ],
+  "hideFirstTocItemOnDesktop": false,
+  "containerType": "lp"
+  }
+%}
+{{ colorHero('purple', heroContent) }}
+
+{%
+  set emberWorkshops = [
+  collections.workshops | findByCollectionSlug("modernising-ember-development"),
+  collections.workshops | findByCollectionSlug("hands-on-ember"),
+  collections.workshops | findByCollectionSlug("practical-typescript")
+  ]
+%}
+
+<div class="workshops-page">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <h2 class="mb-2">Ember workshops</h2>
+        <p>
+          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
+          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
+        </p>
+      </div>
+    </div>
+
+    <ul class="workshops-page__list">
+      {% for workshop in emberWorkshops %}
+        <li>{{ workshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Can't find the right workshop for your team?",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+    "linkUrl": "/contact/?service=Training",
+    "linkText": "Get in touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  {%
+    set logoCompanies = [
+    'Rail Europe',
+    'Keyrock',
+    'Strabag',
+    'Thales',
+    'Google',
+    'faculty',
+    'Canonical',
+    'Hyland',
+    'Lego',
+    'Rillet',
+    'CERN',
+    'Redis',
+    'HashiCorp',
+    'Qonto',
+    'Trainline',
+    'Intercom'
+    ]
+  %}
+  {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 companies", "h4", "h5") }}
+
+  {%
+    set instructors = [
+    {
+    "name": "Chris Manson",
+    "bio": "Chris Manson is a member of the Ember Core team and a long-time Ember user, building his first Ember app in 2011. He is also the lead engineer behind the Ember initiative.",
+    "image": "/assets/images/authors/real_ate.jpg"
+    }
+    ]
+  %}
+
+  {{ workshopInstructors(instructors) }}
+
+  {%
+    set 'content' = {
+    "title": "Join the Ember Initiative!",
+    "text": "Invest in Ember's future and future-proof your codebase.",
+    "linkUrl": "/ember-initiative/",
+    "linkText": "Learn more"
+    }
+  %}
+  {{ ctaBanner('aqua', 'default', content) }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/notebook-list.jpg",
+      "alt": "Ember workshop materials",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
+</div>

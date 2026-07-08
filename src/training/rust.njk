@@ -1,0 +1,222 @@
+---
+layout: "base"
+title: Rust Training
+description: "We train teams to succeed with Rust – covering a wide range from basics to advanced topics, onsite or remote."
+og:
+  image: "/assets/images/services/rust-training-og-image.jpg"
+eleventyImport:
+  collections: ["workshops"]
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "workshop-card.njk" import workshopCard %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
+{% from "logo-list.njk" import logoList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "tech-cards.njk" import techCards %}
+{% from "workshop-instructors.njk" import workshopInstructors %}
+{% from "service-cta.njk" import serviceCta %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+
+{% set heroEyebrow %}
+  <a class="workshops-page-hero__eyebrow-link" href="/training/">
+    <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+    <span class="workshops-page-hero__eyebrow-text">Developer Training</span>
+  </a>
+{% endset %}
+
+{%
+  set heroContent = {
+  "eyebrow": heroEyebrow,
+  "title": "Rust Training",
+  "text": "We teach teams like yours how to adopt and succeed with Rust. Our workshops catalog covers a wide range of topics and all our workshops are hands-on, as the best way to learn is by doing.",
+  "image": "/assets/images/hero/rust-workshops.jpg",
+  "alt": "Crabs climbing a rock on a beach",
+  "loading": "eager",
+  "class": "workshops-page-hero",
+  "toc": [
+    ["Workshops", "#workshops"],
+    ["Instructors", "#instructor"],
+    ["Attendees Say", "#attendees-say"]
+  ],
+  "hideFirstTocItemOnDesktop": false,
+  "containerType": "lp"
+  }
+%}
+{{ colorHero('purple', heroContent) }}
+
+{%
+  set rustWorkshops = [
+    collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
+    collections.workshops | findByCollectionSlug("c-to-rust"),
+    collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
+    collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
+    collections.workshops | findByCollectionSlug("rust-python-interoperability"),
+    collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust"),
+    collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
+    collections.workshops | findByCollectionSlug("foundations-of-embedded-rust")
+  ]
+%}
+
+<div class="workshops-page">
+  <section class="container container--xl my-10" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <h2 class="mb-2">Rust workshops</h2>
+        <p>
+          We teach Rust across a range of use-cases: API services, workers, data pipelines, native
+          extensions, WASM, and more. We can walk alongside you on a journey from zero to hero,
+          starting from the basics of the language all the way to advanced testing techniques and
+          comprehensive telemetry instrumentation.
+        </p>
+        <p>
+          We're also happy to prepare custom workshops – <a href="/contact/?service=Training"
+            >get in touch with us</a
+          > to talk about what curriculum fits your team best!
+        </p>
+      </div>
+      <div class="workshops-page__certificate-container">
+        <span
+          >We are an officially accredited
+          <a href="https://rustfoundation.org/rust-foundation-trusted-training/"
+            >Rust Foundation Trusted Training Provider</a
+          ></span
+        >
+        <img
+          class="workshops-page__certificate"
+          src="/assets/images/rust/rust-foundation-certificate.svg"
+          alt="Rust Foundation Silver Member"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <ul class="workshops-page__list">
+      {% for workshop in rustWorkshops %}
+        <li>{{ workshopCard(workshop) }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  {%
+    set teamCta = {
+    "title": "Can't find the right workshop for your team?",
+    "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+    "linkUrl": "/contact/?service=Training",
+    "linkText": "Get in Touch"
+    }
+  %}
+  {{ ctaBanner('purple', 'medium', teamCta) }}
+
+  {%
+    set logoCompanies = [
+    'Redis',
+    'Keyrock',
+    'CERN',
+    'Thales',
+    'Süddeutsche Zeitung',
+    'faculty',
+    'CERN',
+    'Canonical',
+    'NTT Data',
+    'Truelayer',
+    'Lego',
+    'BMW Car IT',
+    'Change Healthcare'
+    ]
+  %}
+  {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
+
+  {%
+    set instructors = [
+    {
+    "name": "Luca Palmieri",
+    "bio": "Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology products for a living. His current focus is on backend development, software architecture and the Rust programming language. He is the author of <a href=\"https://zero2prod.com\">\"Zero to Production in Rust\"</a> and <a href=\"https://rust-exercises.com/\">\"100 Exercises To Learn Rust\"</a>.",
+    "image": "/assets/images/authors/algo_luca.jpg"
+    },
+    {
+    "name": "Jonas Kruckenberg",
+    "bio": "Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure, including k23 - an experimental operating system. As a TC39 Invited Expert, he helps shape the future of web standards by bringing non-browser WebAssembly perspectives to language standardization. He is the author of the <a href=\"/c-to-rust-migration-book/\">\"C to Rust Migration Book\"</a>.",
+    "image": "/assets/images/authors/JonasKruckenberg.jpg"
+    }
+    ]
+  %}
+
+  {{ workshopInstructors(instructors) }}
+
+  <section class="container container--lg my-10">
+    <h3 class="mb-2">Our methodology</h3>
+    <p class="body">
+      All our workshops are hands-on. We believe that the best way to learn is by doing. Workshop
+      attendees spend most of their time writing code, working through exercises with automated
+      solution-checking. This structure allows our trainers to spend most of their time in 1:1
+      conversations with attendees, providing tailored feedback and guidance.
+    </p>
+  </section>
+
+  <section class="container container--lg my-10" id="attendees-say">
+    <h2 class="mb-4">Our attendees say</h2>
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
+  </section>
+
+  {%
+    set trainingMaterials = [
+
+    {
+      "title": "C to Rust Migration Book",
+      "titleHtml": "C to Rust<br>Migration Book",
+      "link": "/c-to-rust-migration-book/",
+      "logo": "rust"
+    },
+    {
+      "title": "100 Exercises to Learn Rust",
+      "titleHtml": "100 Exercises<br>to Learn Rust",
+      "link": "https://rust-exercises.com/",
+      "logo": "rust"
+    },
+     {
+      "title": "Rust Adoption Handbook",
+      "link": "/rust-adoption-handbook/",
+      "logo": "rust"
+    }
+    ]
+  %}
+
+  {{ techCards('workshops-page-materials', 'Explore our other training materials', '', trainingMaterials) }}
+
+  {{ serviceCta(["rust"]) }}
+
+  <section>
+    {%
+      set imageData = {
+      "imgPath": "/assets/images/photos/rust-workshops-footer.jpg",
+      "alt": "Crab toys on a beach",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+      }
+    %}
+    {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+  </section>
+</div>

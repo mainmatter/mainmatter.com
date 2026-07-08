@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Rust for Web Developers"
 tags: "rust"
-format: "Workshop: 2-3 days"
+format: "2-3 days"
 subtext: "Bookable for teams – on-site or remote"
 description: In this 2-3 days workshop, we will explore the main concepts of Rust by developing web applications. We will cover topics such as ownership and borrowing, concurrency, types and structs, all while building a real-world web app together.
 introduction:

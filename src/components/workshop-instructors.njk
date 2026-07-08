@@ -1,0 +1,34 @@
+{% from "secondary-feature.njk" import secondaryFeature %}
+
+{%- macro workshopInstructors(instructors) -%}
+  <section class="container container--lg my-10" id="instructor">
+    {% for instructor in instructors %}
+      <div
+        class="split-content no-link {% if loop.index is even %}split-content--reversed{% endif %}"
+      >
+        <div class="split-content__wrapper">
+          <div class="split-content__content">
+            {% if loop.first %}
+              <h5 class="workshops-page__instructor-eyebrow mb-015">
+                <img src="/assets/images/icons/instructor.svg" alt="" loading="lazy" />
+                <span>Our Expert Instructor{% if instructors.length > 1 %}s{% endif %}</span>
+              </h5>
+            {% endif %}
+            <h3 class="mb-2">{{ instructor.name }}</h3>
+            <p>{{ instructor.bio | safe }}</p>
+          </div>
+          <div class="split-content__feature">
+            {%
+              set instructorImage = {
+              "image": instructor.image,
+              "alt": instructor.name,
+              "loading": "lazy"
+              }
+            %}
+            {{ secondaryFeature(instructorImage, 'split-content__author') }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{%- endmacro -%}

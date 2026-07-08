@@ -1,14 +1,24 @@
 ---
-title: "Svelte 5 & Runes"
-tags: "svelte"
-format: "Workshop: 1 day"
-subtext: "Bookable for teams – on-site or remote"
-description: This 1-day workshop is an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.
-introduction: "<p>Svelte 5 is a major step forward from version 4 and simplifies how Svelte applications are written. Concepts like snippets and runes, Svelte 5's new set of primitives for controlling reactivity, will replace a number of current concepts that will no longer by required with runes. Yet, as these concept are newly introduced, developers need to learn and them before they can leverage them. This workshop serves as an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.</p>"
+title: Svelte 5 & Runes
+tags: svelte
+format: 1 day
+subtext: Bookable for teams – on-site or remote
+description: >-
+  This 1-day workshop is an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.
+
+
+introduction: >-
+  <p>Svelte 5 is a major step forward from version 4 and simplifies how Svelte applications are written. Concepts like snippets and runes, Svelte 5's new set of primitives for controlling reactivity, will replace a number of current concepts that will no longer by required with runes. Yet, as these concept are newly introduced, developers need to learn and them before they can leverage them. This workshop serves as an introduction to Svelte 5's new concepts, as well as a hands-on guide to migrating from old patterns to Svelte 5 and runes.</p>
+
+
+ticket_tailor_event_series_id: es_2302518
 hero:
   color: purple
-  image: "/assets/images/workshops/svelte-5-runes/runes.jpg"
-  imageAlt: "A bunch of white stones with yellow runes written on them lying on a grey surface"
+  image: /assets/images/workshops/svelte-5-runes/runes.jpg
+  imageAlt: >-
+    A bunch of white stones with yellow runes written on them lying on a grey surface
+
+
 og:
   image: /assets/images/workshops/svelte-5-runes/og-image.jpg
 topics:
@@ -54,6 +64,21 @@ topics:
 
 leads:
   - handle: paoloricciuti
+upcomingDates:
+  - date: "2026-09-17"
+    endDate: "2026-09-18"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8676050/chk/fe7db18e4c586d34947ff4dc6ba66c81/
+
+
+    price: 30000
+  - date: "2026-11-19"
+    endDate: "2026-11-20"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8676052/chk/1388fc9ca75b741df205dac6d41684cb/
+
+
+    price: 30000
 ---
 
 <!--break-->

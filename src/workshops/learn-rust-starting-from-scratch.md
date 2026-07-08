@@ -1,23 +1,37 @@
 ---
 title: "Learn Rust, starting from scratch"
-tags: "rust"
-format: "Workshop: 4 days"
-subtext: "Bookable for teams – on-site or remote"
-description: This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
-introduction: |
+tags: rust
+format: 4 days
+subtext: Bookable for teams – on-site or remote
+description: >-
+  This 4-days workshop helps you get started with Rust, assuming no prior knowledge of the language. The workshop starts from the absolute basics and gradually builds up to more advanced topics.
+
+
+ticket_tailor_event_series_id: es_2298521
+introduction: >
   <p>Rust is a general-purpose programming languages that's been growing in popularity over the past few years.
     It's known for its strong type system, its focus on safety and performance, and its modern tooling.</p>
   <p>We designed this workshop to help you get started with Rust, assuming no prior knowledge of the language.</p>
+  
   <p>The workshop starts from the absolute basics and gradually builds up to more advanced topics, interleaving theory with practice.</p>
-  The goal is to offer you a coherent learning path that provides the right level of challenge at every step, 
+  
+  <p>The goal is to offer you a coherent learning path that provides the right level of challenge at every step, 
+  
   without being overwhelming.</p>
+  
   <p>By the end of the workshop, you will have a solid understanding of the Rust language, its standard library,
     and its testing and async programming capabilities. You will be well equipped to start your Rust journey!</p>
   <p>The workshop is designed for software developers who have never used Rust before, but 
+  
   it assumes you're familiar with at least another programming language.</p>
+
+
 hero:
-  image: "/assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg"
-  imageAlt: "A drawing of a giant crab standing in a village."
+  image: >-
+    /assets/images/workshops/an-introduction-to-testing-in-rust/header-background.jpg
+
+
+  imageAlt: A drawing of a giant crab standing in a village.
 og:
   image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
 topics:
@@ -48,12 +62,35 @@ topics:
 
 leads:
   - handle: algo_luca
-
 quotes:
-  - text: "Amazing support from Luca! Detailed explanation of different topics whenever requested."
+  - text: >-
+      Amazing support from Luca! Detailed explanation of different topics whenever requested.
+
+
     source: Onsite attendee
-  - text: "Great format to allow people to go at their own pace. Like that we're building towards a bigger structure."
+  - text: >-
+      Great format to allow people to go at their own pace. Like that we're building towards a bigger structure.
+
+
     source: Onsite attendee
-  - text: "The flow of the exercises is very good and easy to follow, even for one who has never used Rust before. The companion book is also useful."
+  - text: >-
+      The flow of the exercises is very good and easy to follow, even for one who has never used Rust before. The companion book is also useful.
+
+
     source: Onsite attendee
+upcomingDates:
+  - date: "2026-09-21"
+    endDate: "2026-10-01"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8648534/chk/2d918faa5d55567d4c8cc0adb38878b3/
+
+
+    price: 160000
+  - date: "2026-11-24"
+    endDate: "2026-12-04"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8648536/chk/487c899c40804b271575e58ac8b1129a/
+
+
+    price: 160000
 ---

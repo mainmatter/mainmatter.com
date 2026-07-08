@@ -1,19 +1,25 @@
 ---
-title: "Svelte & SvelteKit"
-tags: "svelte"
-format: "Workshop: 2-3 days"
-subtext: "Bookable for teams – on-site or remote"
-description: This 2-3days workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.
-introduction:
+title: Svelte & SvelteKit
+tags: svelte
+format: 2-3 days
+subtext: Bookable for teams – on-site or remote
+description: >-
+  This 2-3days workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.
+
+
+ticket_tailor_event_series_id: es_2302511
+introduction: >-
   <p>Svelte is great choice for building fast and light-weight web applications. Its unique approach of generating reactive code at compile time instead of relying on a runtime, moves work out of the browser and results in highly efficient code. Combined with SvelteKit, it enables engineers to build large applications with ease while being able to choose among patterns like SPA, MPA, SSR, SSG on a per-route basis.</p>
-
+  
   <p>This workshop takes participants through the entire process of building a complete, real-world application and teaches the theoretical concepts along the way. Each topic is introduced via an in-depth presentation followed by a practice exercise.</p>
-
+  
   <p>All examples and practical assignments from the workshop are available publicly on GitHub.</p>
+
+
 hero:
   color: purple
-  image: "/assets/images/workshops/svelte-and-sveltekit/hero.jpg"
-  imageAlt: "Photo of a computer screen showing an IDE with an open Svelte project"
+  image: /assets/images/workshops/svelte-and-sveltekit/hero.jpg
+  imageAlt: Photo of a computer screen showing an IDE with an open Svelte project
 og:
   image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
 topics:
@@ -47,8 +53,29 @@ topics:
       The final stage of the workshop teaches how to implement progressive enhancement with forms. We cover how to send data to an API, how to validate forms, what server folders are, and give a brief introduction into hooks. We close by looking into how to implement authentication.
 
 
+quotes:
+  - text: >-
+      I enjoyed the workshop, Paolo managed to balance well its content between theory and practice.
+
+
+    source: Onsite attendee
 leads:
   - handle: paoloricciuti
+upcomingDates:
+  - date: "2026-09-23"
+    endDate: "2026-09-30"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8676044/chk/92317e8d37f64ca42c909b77822717be/
+
+
+    price: 90000
+  - date: "2026-11-25"
+    endDate: "2026-12-02"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8676047/chk/8e28bb209d88a876e8ab5dd6ae35aeb2/
+
+
+    price: 90000
 ---
 
 <!--break-->

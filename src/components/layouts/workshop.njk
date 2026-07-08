@@ -2,243 +2,542 @@
 layout: "base"
 ---
 
+{% from "btn-primary.njk" import btnPrimary %}
 {% from "author-socials.njk" import authorSocials %}
 {% from "color-hero.njk" import colorHero %}
+{% from "cta-link.njk" import ctaLink %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "newsletter-cta.njk" import newsletterCta %}
-{% from "strategy-list.njk" import strategyList %}
 {% from "global/invisible-captcha.njk" import invisibleCaptcha %}
 {% from "global/li-fat-id.njk" import liFatId %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "logo-list.njk" import logoList %}
+{% from "quote.njk" import quote %}
+
+{% macro workshopIndividualTickets(className = "") %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
+  {% set ticketPrice = null %}
+  {% if hasUpcomingDates and upcomingDates[0].price %}
+    {% set ticketPrice = upcomingDates[0].price %}
+  {% endif %}
+  <section class="workshop-detail__ticket-panel {{ className }}">
+    <h3 class="h4">Individual tickets</h3>
+    {% if ticketPrice %}
+      <p class="workshop-detail__ticket-price">
+        <img src="/assets/images/icons/bills.svg" alt="" loading="lazy" />
+        {{ ticketPrice | euroCents }}
+      </p>
+    {% endif %}
+
+    {% if hasUpcomingDates %}
+      <ul class="workshop-detail__dates">
+        {% for date in upcomingDates %}
+          {% set workshopDate = date.date or date %}
+          {% set workshopEndDate = date.endDate or date.end %}
+          <li>
+            {% if date.url %}
+              <a href="{{ date.url }}">
+                <span>{{ workshopDate | dateRange(workshopEndDate) }}</span>
+                {% include 'svg/arrow.njk' %}
+              </a>
+            {% else %}
+              <span>
+                <span>{{ workshopDate | dateRange(workshopEndDate) }}</span>
+                {% include 'svg/arrow.njk' %}
+              </span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+{% endmacro %}
+
+{% macro workshopTicketPanels() %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
+  {% set hasIndividualTickets = price or hasUpcomingDates %}
+  <div
+    class="workshop-detail__ticket-panels {% if not hasIndividualTickets %}workshop-detail__ticket-panels--team-only{% endif %}"
+  >
+    <section class="workshop-detail__ticket-panel workshop-detail__ticket-panel--team">
+      <div>
+        <h3 class="h4">Bookable for teams</h3>
+        {% if format %}
+          <p class="workshop-detail__ticket-meta">
+            <img src="/assets/images/icons/calendar.svg" alt="" loading="lazy" />
+            {{ format }}
+          </p>
+        {% endif %}
+        <p class="workshop-detail__ticket-meta">
+          <img src="/assets/images/icons/map.svg" alt="" loading="lazy" />
+          On-site or remote
+        </p>
+      </div>
+      {%
+        set teamLink = {
+        "label": "Book for your team",
+        "url": "#book-workshop"
+        }
+      %}
+      {{ btnPrimary(teamLink, 'aqua', 'workshop-detail__ticket-link') }}
+    </section>
+
+    {% if hasIndividualTickets %}
+      {{ workshopIndividualTickets() }}
+    {% endif %}
+  </div>
+{% endmacro %}
 
 {%- block content -%}
+  {% set workshopCategoryUrl = "/training/" %}
+  {% set workshopCategoryLabel = "Workshops" %}
+  {% if "rust" in tags %}
+    {% set workshopCategoryUrl = "/training/rust/" %}
+    {% set workshopCategoryLabel = "Rust Workshops" %}
+    {% elseif "svelte" in tags %}
+    {% set workshopCategoryUrl = "/training/svelte/" %}
+    {% set workshopCategoryLabel = "Svelte Workshops" %}
+    {% elseif "ember" in tags %}
+    {% set workshopCategoryUrl = "/training/ember/" %}
+    {% set workshopCategoryLabel = "Ember Workshops" %}
+  {% endif %}
+  {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
+  {% set heroText %}
+    <span class="workshop-detail-hero__meta">
+      {% if format %}
+        <strong class="strong">
+          <img src="/assets/images/icons/calendar.svg" alt="" loading="lazy" />
+          {{ format }}
+        </strong>
+      {% endif %}
+      {% if subtext %}
+        <strong class="strong">
+          <img src="/assets/images/icons/map.svg" alt="" loading="lazy" />
+          {{ subtext }}
+        </strong>
+      {% endif %}
+      {% if price or hasUpcomingDates %}
+        <a class="workshop-detail-hero__ticket-link" href="#workshop-tickets">
+          <img src="/assets/images/icons/ticket.svg" alt="" loading="lazy" />
+          <span>Individual tickets available</span>
+          {% include 'svg/arrow.njk' %}
+        </a>
+      {% endif %}
+    </span>
+    <div class="workshop-detail-hero__actions">
+      {{ ctaLink("#book-workshop", "Book for your team", "color-hero__link") }}
+    </div>
+  {% endset %}
+  {% set heroEyebrow %}
+    <a class="workshop-detail-hero__eyebrow-link" href="{{ workshopCategoryUrl }}">
+      <span class="workshop-detail-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
+      <span class="workshop-detail-hero__eyebrow-text">All {{ workshopCategoryLabel }}</span>
+    </a>
+  {% endset %}
   {%
-    set 'hero' = {
-    "eyebrow": format,
+    set hero = {
+    "eyebrow": heroEyebrow,
     "title": title,
-    "text": subtext,
+    "text": heroText,
     "image": hero.image,
     "alt": hero.imageAlt,
-    "loading": "eager"
+    "loading": "eager",
+    "class": "workshop-detail-hero",
+    "containerType": "lp"
     }
   %}
   {{ colorHero('purple', hero) }}
 
-  <section class="container container--lg my-10">
-    <div class="workshop__content post__content--workshop rte">
-      <h2 class="workshop-topics__heading mb-2">Workshop description</h2>
-      <div class="post__tagline">
+  <div class="workshop-detail">
+    <section class="container container--lg my-10" id="about">
+      <div class="workshop-detail__richtext">
+        <h2 class="mb-4">About this workshop</h2>
         {% if tagline %}
           {{ tagline | safe }}
           {% elseif introduction %}
           {{ introduction | safe }}
-        {% else %}
-          {{ description | safe }}
+          {% elseif description %}
+          <p>{{ description | safe }}</p>
+        {% endif %}
+
+        {% if prerequisites %}
+          <h4 class="mt-2">Prerequisites</h4>
+          <ul>
+            {% for prerequisite in prerequisites %}
+              <li>{{ prerequisite | safe }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if outcomes %}
+          <h4 class="mt-2">Outcomes</h4>
+          <ul>
+            {% for outcome in outcomes %}
+              <li>{{ outcome | safe }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if certifications %}
+          <h4 class="mt-2">Certifications</h4>
+          <ul>
+            {% for certification in certifications %}
+              <li>{{ certification | safe }}</li>
+            {% endfor %}
+          </ul>
         {% endif %}
       </div>
-    </div>
-  </section>
+    </section>
 
-  {%
-    set 'content' = {
-    "title": "Book this workshop",
-    "text": "Our mentors look forward to working with your team and unlocking new capabilities.",
-    "linkUrl": "#book-workshop",
-    "linkText": "Get in touch"
-    }
-  %}
-  {{ ctaBanner('purple', 'default', content) }}
+    <section
+      class="container container--xl my-10"
+      id="workshop-tickets"
+      aria-label="Workshop booking options"
+    >
+      {{ workshopTicketPanels() }}
+    </section>
 
-  {{ strategyList('workshop', '', topics) }}
-
-  <section class="workshop-authors container container--lg">
-    <div class="workshop__content post__content--workshop">
-      <h2 class="workshop-topics__heading">
-        Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
-      </h2>
-      {%- for lead in leads -%}
-
-        {% set author = collections.authors | getAuthor(lead.handle) %}
-
-        <div class="author__wrapper">
-          <div class="author">
-            <div class="workshop-authors__image-wrapper author__image-wrapper">
-              {% image "/assets/images/authors/" + lead.handle + ".jpg", author.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
-            </div>
-            <div class="author__text-wrapper">
-              <div class="author__name-wrapper">
-                <h4 class="author__name">{{ author.data.name }}</h4>
-                {{ authorSocials(lead.handle) }}
-              </div>
-
-              <p class="author__title large">{{ author.data.title }}</p>
-            </div>
-          </div>
-          <div class="author__details mt-3 author__details--full-width">
-            <p>
-              {% if lead.bio %}
-                {{ lead.bio | safe }}
-              {% else %}
-                {{ author.data.longBio | safe }}
-              {% endif %}
-            </p>
-          </div>
-        </div>
-      {%- endfor -%}
-    </div>
-  </section>
-
-  {%- if quotes -%}
-    <section class="quotes-list">
-      <div class="container container--lg">
-        <h2 class="quotes-list__title h2">Listen to our students</h2>
-        <ul class="quotes-list__list" style="grid-template-columns: repeat(2, 1fr);">
-          {%- for quote in quotes -%}
-            <li class="quotes-list__quote">
-              <div class="quotes-list__quote-text text--sm">
-                <blockquote>”{{ quote.text }}”</blockquote>
-                <figcaption class="quotes-list__quote-source">
-                  {{ quote.source }}<span class="quotes-list__quote-source--separator"></span>
-                </figcaption>
+    {% if topics %}
+      <section class="container container--lg my-10" id="syllabus">
+        <h2 class="mb-4">Syllabus</h2>
+        <ol class="workshop-detail__syllabus">
+          {% for topic in topics %}
+            <li>
+              <div>
+                <h4 class="h4">{{ topic.heading or topic.title }}</h4>
+                <div class="workshop-detail__topic-text">{{ topic.text | safe }}</div>
               </div>
             </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    </section>
-  {%- endif -%}
+          {% endfor %}
+        </ol>
+      </section>
+    {% endif %}
 
-  <section
-    class="cta-banner cta-banner--purple container container--xl my-10"
-    data-background-color="purple"
-  >
-    <a id="book-workshop"></a>
-    <div class="cta-banner__wrapper">
-      <div class="cta-banner__main">
-        <h2 class="cta-banner__title">Book this workshop</h2>
-        <div class="cta-banner__text">
-          Our mentors look forward to working with your team and unlocking new capabilities.
-        </div>
-        <form
-          data-contact-form
-          class="contact-form__form"
-          data-status="initial"
-          data-action="https://hooks.mainmatter.com/hooks/catch/4837956/ur7jr6p/"
-          data-method="POST"
-          data-goal="Workshop+Contact"
-        >
-          <fieldset data-form-content tabindex="-1" disabled>
-            <input type="hidden" name="workshop" value="{{ title }}" />
-            <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
-              <input
-                class="contact-form__input"
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-              />
-              <label class="contact-form__label h4" for="name">
-                Name
-                <span class="screenreader">(Required)</span>
-              </label>
-              <span class="contact-form__label-required" aria-hidden="true">Required</span>
-            </div>
-            <div class="contact-form__field cta__input mb-2 mt-2">
-              <input
-                class="contact-form__input"
-                id="company"
-                type="text"
-                name="company"
-                placeholder="Company Name"
-              />
-              <label class="contact-form__label h4" for="name">Company name </label>
-            </div>
-            <div class="contact-form__field cta__input mb-2 mt-2">
-              <input
-                class="contact-form__input"
-                id="email"
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                required
-              />
-              <label class="contact-form__label h4" for="email">
-                E-mail
-                <span class="screenreader">(Required)</span>
-              </label>
-              <span class="contact-form__label-required" aria-hidden="true">Required</span>
-            </div>
-            <div class="contact-form__field">
-              <input
-                class="contact-form__input"
-                id="contact-referral-source"
-                type="text"
-                name="referral_source"
-                placeholder="How did you find us?"
-                required
-              />
-              <label class="contact-form__label h4" for="contact-referral-source">
-                How did you find us?
-              </label>
-            </div>
-            <div class="contact-form__field">
-              <textarea
-                class="contact-form__input"
-                id="contact-message"
-                name="message"
-                type="text"
-                placeholder="Tell us about your training needs"
-                rows="8"
-              ></textarea>
-              <label class="contact-form__label h4" for="contact-message">
-                Tell us about your training needs
-              </label>
-            </div>
-            <button class="btn-primary btn-primary--white" type="submit">
-              <span>Get in touch</span>
-              {% include 'svg/arrow.njk' %}
-            </button>
-          </fieldset>
-          <div class="contact-form__status">
-            <button class="contact-form__close" data-reset-form>
-              {% include 'svg/close.njk' %}
-              <span class="screenreader">Close</span>
-            </button>
-            <div class="contact-form__loading h4" data-form-loading>
-              Your message is being sent…
-              <div class="loader" aria-hidden="true"></div>
-            </div>
-            <div class="contact-form__error" tabindex="-1" data-form-error>
-              <div class="contact-form__status-wrapper">
-                <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+    {% if leads %}
+      <section class="workshop-authors workshop-detail__mentor container container--lg" id="mentor">
+        <div class="workshop__content post__content--workshop">
+          <h2 class="workshop-topics__heading">
+            Your mentor{%- if (leads | default([])).length > 1 -%}s{%- endif -%}
+          </h2>
+          {% for lead in leads %}
+            {% set author = collections.authors | getAuthor(lead.handle) %}
+            <div class="author__wrapper">
+              <div class="author">
+                <div class="workshop-authors__image-wrapper author__image-wrapper">
+                  {% image "/assets/images/authors/" + lead.handle + ".jpg", author.data.name, '3.75rem', 'eager', 'author__lead-image', [120] %}
+                </div>
+                <div class="author__text-wrapper">
+                  <div class="author__name-wrapper">
+                    <h4 class="author__name">{{ author.data.name }}</h4>
+                    {{ authorSocials(lead.handle) }}
+                  </div>
+                  <p class="author__title large">{{ author.data.title }}</p>
+                </div>
+              </div>
+              <div class="author__details mt-3 author__details--full-width">
                 <p>
-                  Please try again later or contact us at
-                  <a href="mailto:info@mainmatter.com">info@mainmatter.com</a>
+                  {% if lead.bio %}
+                    {{ lead.bio | safe }}
+                  {% else %}
+                    {{ author.data.longBio | safe }}
+                  {% endif %}
                 </p>
               </div>
             </div>
-            <div class="contact-form__success" tabindex="-1" data-form-success>
-              <div class="contact-form__status-wrapper">
-                <h2 class="contact-form__success-heading h3">Thank you!</h2>
-                <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if quotes and quotes.length %}
+      <section class="workshop-detail__quote container container--lg my-10" id="attendees-say">
+        <h2 class="mb-4">Our Attendees Say...</h2>
+        <div class="workshop-detail__quote-list training-quotes">
+          {% for workshopQuote in quotes %}
+            {%
+              set quoteContent = {
+              "text": workshopQuote.text,
+              "source": workshopQuote.source,
+              "position": workshopQuote.position or "",
+              "styling": "redesigned"
+              }
+            %}
+            {{ quote(quoteContent) }}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% if "rust" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Mainmatter has been active in the Rust ecosystem for years, creating the
+              <a href="https://rust-exercises.com">100 Exercises to Learn Rust</a>
+              course, the
+              <a href="/c-to-rust-migration-book/">C to Rust Migration Book</a> organizing
+              <a href="https://www.eurorust.eu">EuroRust</a>, and contributing to open source.
+            </p>
+            <p>
+              We help teams adopt and build on Rust with confidence via trainings and workshops,
+              hands-on team reinforcement, codebase assessments, and more.
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+    {% elif "svelte" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Our team is led by Paolo Ricciuti, Svelte maintainer and co-author of SvelteLab.
+              Mainmatter is also the driving force behind the
+              <a href="https://svelte-custom-renderers.com/">Svelte Custom Renderers initiative</a>,
+              an active contributor to a number of open source projects and co-organizer of
+              <a href="https://www.sveltesummit.com/">Svelte Summit</a>.
+            </p>
+            <p>
+              We help teams adopt and build on Svelte with confidence via trainings and workshops,
+              hands-on team reinforcement, codebase assessments, and more.
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+    {% elif "ember" in tags %}
+      <section class="container container--lg my-10">
+        <div class="workshop-detail__who-we-are">
+          <div>
+            <h2 class="mb-2">Who we are</h2>
+            <p class="medium">
+              Mainmatter has been actively involved in shaping Ember for years. We’re behind The
+              <a href="/ember-initiative/">Ember Initiative</a> that supports the Ember ecosystem.
+              We also maintain key add-ons such as Ember Simple Auth, QUnit Dom, and Ember Test
+              Selectors.
+            </p>
+            <p>
+              Our team includes many experienced engineers, including Chris Manson (Ember Core Team
+              member, Ember Initiative lead), Nick Schot (long-time open-source contributor) and
+              Marine Dunstetter (Ember Initiative team member).
+            </p>
+          </div>
+          <img
+            class="workshop-detail__brand-mark"
+            src="/icon-512.png"
+            alt=""
+            loading="lazy"
+            aria-hidden="true"
+          />
+        </div>
+      </section>
+    {% endif %}
+
+    {% if "rust" in tags %}
+      {%
+        set logoCompanies = [
+        'Redis',
+        'Keyrock',
+        'Thales',
+        'Süddeutsche Zeitung',
+        'faculty',
+        'CERN',
+        'Canonical',
+        'NTT Data',
+        'Truelayer',
+        'Lego',
+        'BMW Car IT',
+        'Change Healthcare'
+        ]
+      %}
+      {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
+    {% else %}
+      {%
+        set logoCompanies = [
+        'Rail Europe',
+        'Keyrock',
+        'Strabag',
+        'Thales',
+        'Google',
+        'faculty',
+        'Canonical',
+        'Hyland',
+        'Lego',
+        'Rillet',
+        'Qonto',
+        'Trainline',
+        'HashiCorp',
+        'Intercom'
+        ]
+      %}
+      {{ logoList(logoCompanies, "We are trusted by startups and Fortune Global 500 companies", "h4", "h5") }}
+    {% endif %}
+
+    <section class="container container--xl my-10" aria-label="Workshop booking options">
+      {{ workshopTicketPanels() }}
+    </section>
+
+    {%
+      set moreWorkshops = {
+      "title": "Can't Find the Right Workshops for Your Team?",
+      "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
+      "linkUrl": "/contact/?service=Training",
+      "linkText": "Get in Touch",
+      "class": "workshop-detail__more-workshops-cta"
+      }
+    %}
+    {{ ctaBanner('white', 'medium', moreWorkshops) }}
+
+    <section
+      class="cta-banner cta-banner--purple"
+      id="book-workshop"
+      data-background-color="purple"
+    >
+      <div class="cta-banner__wrapper container container--lg">
+        <div class="cta-banner__main">
+          <h2 class="cta-banner__title">Book This Workshop</h2>
+          <div class="cta-banner__text">
+            Our mentors look forward to working with your team and unlocking new capabilities.
+          </div>
+          <h4 class="mt-2">Send us a message</h4>
+          <form
+            data-contact-form
+            class="contact-form__form"
+            data-status="initial"
+            data-action="https://hooks.mainmatter.com/hooks/catch/4837956/ur7jr6p/"
+            data-method="POST"
+            data-goal="Workshop+Contact"
+          >
+            <fieldset data-form-content tabindex="-1" disabled>
+              <input type="hidden" name="workshop" value="{{ title }}" />
+              <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+                <input
+                  class="contact-form__input"
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <label class="contact-form__label h4" for="name">
+                  Name
+                  <span class="screenreader">(Required)</span>
+                </label>
+                <span class="contact-form__label-required" aria-hidden="true">Required</span>
+              </div>
+              <div class="contact-form__field cta__input mb-2 mt-2">
+                <input
+                  class="contact-form__input"
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Company Name"
+                />
+                <label class="contact-form__label h4" for="company">Company name </label>
+              </div>
+              <div class="contact-form__field cta__input mb-2 mt-2">
+                <input
+                  class="contact-form__input"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  required
+                />
+                <label class="contact-form__label h4" for="email">
+                  E-mail
+                  <span class="screenreader">(Required)</span>
+                </label>
+                <span class="contact-form__label-required" aria-hidden="true">Required</span>
+              </div>
+              <div class="contact-form__field">
+                <input
+                  class="contact-form__input"
+                  id="contact-referral-source"
+                  type="text"
+                  name="referral_source"
+                  placeholder="How did you find us?"
+                  required
+                />
+                <label class="contact-form__label h4" for="contact-referral-source">
+                  How did you find us?
+                </label>
+              </div>
+              <div class="contact-form__field">
+                <textarea
+                  class="contact-form__input"
+                  id="contact-message"
+                  name="message"
+                  type="text"
+                  placeholder="Tell us about your training needs"
+                  rows="8"
+                ></textarea>
+                <label class="contact-form__label h4" for="contact-message">
+                  Tell us about your training needs
+                </label>
+              </div>
+              <button class="btn-primary btn-primary--white" type="submit">
+                <span>Contact us</span>
+                {% include 'svg/arrow.njk' %}
+              </button>
+            </fieldset>
+            <div class="contact-form__status">
+              <button class="contact-form__close" data-reset-form>
+                {% include 'svg/close.njk' %}
+                <span class="screenreader">Close</span>
+              </button>
+              <div class="contact-form__loading h4" data-form-loading>
+                Your message is being sent…
+                <div class="loader" aria-hidden="true"></div>
+              </div>
+              <div class="contact-form__error" tabindex="-1" data-form-error>
+                <div class="contact-form__status-wrapper">
+                  <h2 class="contact-form__success-subheading h3">Unable to send message.</h2>
+                  <p>
+                    Please try again later or contact us at
+                    <a href="mailto:info@mainmatter.com">info@mainmatter.com</a>
+                  </p>
+                </div>
+              </div>
+              <div class="contact-form__success" tabindex="-1" data-form-success>
+                <div class="contact-form__status-wrapper">
+                  <h2 class="contact-form__success-heading h3">Thank you!</h2>
+                  <p class="contact-form__success-subheading h3">We will be in touch soon.</p>
+                </div>
               </div>
             </div>
-          </div>
-          {{ invisibleCaptcha() }}
-          {{ liFatId() }}
-        </form>
+            {{ invisibleCaptcha() }}
+            {{ liFatId() }}
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  {%
-    set 'content' = {
-    "title": "Not the right workshop for you?",
-    "text": "Take a look at our wide range of workshops to take your team to the next level",
-    "linkUrl": "/services/workshops/",
-    "linkText": "Our workshops"
-    }
-  %}
-  {{ ctaBanner('aqua', 'default', content) }}
-  {{ newsletterCta(tags) }}
+    <section>
+      {%
+        set imageData = {
+        "imgPath": hero.image,
+        "alt": hero.imageAlt or title,
+        "sizes": "100vw",
+        "loading": "lazy",
+        "sizesArray": [760, 1440, 1920]
+        }
+      %}
+      {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+    </section>
+  </div>
 {%- endblock -%}

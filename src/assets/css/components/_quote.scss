@@ -128,3 +128,64 @@
     margin: 2rem auto 0 auto;
   }
 }
+
+.training-quotes {
+  display: grid;
+  gap: 5rem;
+  margin-top: 5rem;
+
+  .quote__redesigned {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 3rem 2rem;
+    margin: 0;
+    width: 100%;
+
+    @media (min-width: $breakpoint-s) {
+      grid-template-columns: 3rem minmax(0, 1fr);
+    }
+  }
+
+  .quote__figure {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-width: 0;
+
+    @media (min-width: $breakpoint-s) {
+      grid-column: 2;
+    }
+  }
+
+  .quote__icon {
+    grid-column: 1;
+    grid-row: 1;
+    width: 2rem;
+    margin: 0;
+
+    @media (min-width: $breakpoint-s) {
+      width: 3rem;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .quote__content {
+    display: grid;
+    gap: 2rem;
+    width: fit-content;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .quote__text {
+    margin: 0;
+  }
+
+  .quote__source {
+    text-align: right;
+  }
+}

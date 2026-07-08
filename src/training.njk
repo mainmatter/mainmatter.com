@@ -1,0 +1,169 @@
+---
+layout: "base"
+title: Developer Training
+description: "We teach teams like yours how to build sustainable products that work well today and keep working well tomorrow"
+eleventyNavigation:
+  key: training
+  order: 7
+  title: Developer Training
+og:
+  image: "/assets/images/services/training-og-image.jpg"
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "logo-list.njk" import logoList %}
+{% from "quote.njk" import quote %}
+{% from "tech-cards.njk" import techCards %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+
+{%
+  set rustTraining = {
+  "logo": "rust",
+  "link": "/training/rust/",
+  "linkText": "Rust Training"
+  }
+%}
+{%
+  set svelteTraining = {
+  "logo": "svelte",
+  "link": "/training/svelte/",
+  "linkText": "Svelte Training"
+  }
+%}
+{%
+  set emberTraining = {
+  "logo": "ember",
+  "link": "/training/ember/",
+  "linkText": "Ember Training"
+  }
+%}
+
+{%
+  set hero = {
+  "title": "Developer Training",
+  "text": "We offer a range of workshops bookable for teams that want to grow – on-site or remote. We're also happy to prepare custom workshops – <a href='/contact/?service=Training'>get in touch</a> with us to talk about what curriculum fits your team best!",
+  "image": "/assets/images/hero/workshops-hero.jpg",
+  "alt": "Paperbacks stacked together in a small space",
+  "loading": "eager",
+  "class": "training-landing-hero",
+  "technologies": [rustTraining, svelteTraining, emberTraining]
+  }
+%}
+{{ colorHero('purple', hero) }}
+
+{%
+  set logoCompanies = [
+  'Redis',
+  'Keyrock',
+  'Generali',
+  'CERN',
+  'Thales',
+  'Süddeutsche Zeitung',
+  'faculty',
+  'CERN',
+  'Canonical',
+  'NTT Data',
+  'Truelayer',
+  'Lego',
+  'BMW Car IT',
+  'Change Healthcare',
+  'Rail Europe'
+  ]
+%}
+<div class="workshops-landing__logos">
+  {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h2') }}
+</div>
+
+<section class="workshops-landing__quotes pt-7" id="our-attendees-say">
+  <div class="container container--lg">
+    <h2 class="mb-4">Our attendees say</h2>
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "It's not like the typical workshop where the presenter just goes through some topics which could be researched individually. I really get the feeling of learning something here.",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
+  </div>
+</section>
+
+<section class="workshops-landing__photos mt-10" aria-label="Workshop photos">
+  <div class="container container--lg">
+    <div class="photo-grid">
+      <img
+        class="photo-grid__img-1"
+        src="/assets/images/photos/mainmatter-team-brainstorm.jpg"
+        alt="Workshop attendees brainstorming"
+      />
+      <img
+        class="photo-grid__img-2"
+        src="/assets/images/photos/workshop.jpg"
+        alt="Workshop attendees"
+      />
+      <img
+        class="photo-grid__img-3"
+        src="/assets/images/rust-telemetry-workshop/rust-telemetry-workshop-eurorust-2023.jpg"
+        alt="Workshop talk"
+      />
+      <img
+        class="photo-grid__img-4"
+        src="/assets/images/photos/events.jpg"
+        alt="Speaker on stage"
+      />
+      <img
+        class="photo-grid__img-5"
+        src="/assets/images/photos/luca.jpg"
+        alt="Luca Palmieri giving a talk"
+      />
+    </div>
+  </div>
+</section>
+
+{%
+  set workshopCards = [
+  {
+  "logo": "rust",
+  "title": "Rust Training",
+  "link": "/training/rust/"
+  },
+  {
+  "logo": "svelte",
+  "title": "Svelte Training",
+  "link": "/training/svelte/"
+  },
+  {
+  "logo": "ember",
+  "title": "Ember Training",
+  "link": "/training/ember/"
+  }
+  ]
+%}
+<div class="workshops-landing__catalog">
+  {{ techCards('workshops-landing-catalog', 'Explore our training offering', null, workshopCards) }}
+</div>
+
+<section>
+  {%
+    set imageData = {
+    "imgPath": "/assets/images/photos/colorful-pens.jpg",
+    "alt": "Colorful pens",
+    "sizes": "100vw",
+    "loading": "lazy",
+    "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "4/1", "35/19") }}
+</section>
