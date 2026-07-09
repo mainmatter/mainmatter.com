@@ -12,6 +12,11 @@
 
 .tech-cards-homepage__grid-element {
   min-height: 20rem;
+
+  .tech-cards-homepage__logo.ai {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
   svg g {
     fill: rgba(255, 255, 255, 0.6);
   }
@@ -39,6 +44,14 @@
   }
 
   &.ember {
+    max-width: 11rem;
+
+    @media (min-width: $breakpoint-s) {
+      max-width: 70%;
+    }
+  }
+
+  &.ai {
     max-width: 11rem;
 
     @media (min-width: $breakpoint-s) {
