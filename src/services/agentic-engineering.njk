@@ -1,0 +1,215 @@
+---
+layout: base
+title: Agentic Engineering | Our Services
+description: "Mainmatter helps engineering teams adopt AI agents in practical, maintainable ways: from workflow assessments and pilot projects to enablement, tooling, and long-term engineering practice."
+eleventyNavigation:
+  key: agentic engineering
+  order: 7
+  title: Agentic engineering
+permalink: /services/agentic-engineering/
+type: service
+meta:
+  name: "Agentic Engineering Consulting"
+  serviceType: Consulting
+  description: "Mainmatter helps teams adopt agentic engineering practices, build AI-assisted workflows, and create durable internal capability."
+  areaServed: Worldwide
+  provider:
+    name: "Mainmatter"
+og:
+  image: /assets/images/services/agentic-engineering-og-image.jpg
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "logo-list.njk" import logoList %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+
+{%
+  set content = {
+    "title": "Make AI agents useful in real engineering teams",
+    "eyebrow": "Agentic engineering consulting",
+    "text": "We help product engineering teams move from AI experiments to reliable day-to-day workflows. Together, we identify high-value use cases, design practical agent-assisted processes, improve developer experience, and build the internal skills your team needs to keep improving after we leave.",
+    "image": "/assets/images/hero/agentic-engineering.jpg",
+    "alt": "Desk setup for agentic engineering work",
+    "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+{%
+  set list_1 = {
+    "title": "Assess your engineering workflow",
+    "text": "We map current delivery bottlenecks, codebase constraints, tooling, review practices, and security requirements to find where agents can help without adding unmanaged risk."
+  }
+%}
+{%
+  set list_2 = {
+    "title": "Design and ship agentic workflows",
+    "text": "We work with your team to build useful pilot workflows for coding, reviews, testing, migrations, documentation, support, and maintenance tasks."
+  }
+%}
+{%
+  set list_3 = {
+    "title": "Enable sustainable adoption",
+    "text": "We establish playbooks, guardrails, evaluation practices, and team habits so agentic engineering becomes a dependable part of how your organization ships software."
+  }
+%}
+{% set elements = [list_1, list_2, list_3] %}
+<div id="services">
+  {{ strategyList('agentic-engineering', 'We’ll work with you to:', elements) }}
+</div>
+
+{%
+  set trainingContent = {
+    "title": "Training for AI-assisted engineering",
+    "text": "Agentic tools only pay off when teams know how to use them with clear intent, good context, and strong engineering judgment. We can run focused workshops and hands-on mentoring sessions for your engineers, tech leads, and product teams.",
+    "linkUrl": "/training/",
+    "linkText": "Explore training"
+  }
+%}
+<section id="training">{{ ctaBanner('purple', 'default', trainingContent) }}</section>
+
+<section class="mt-7 mb-5" id="successes">
+  <div class="container container--lg mb-6">
+    <h1>Success Stories</h1>
+    {%
+      set content = {
+        "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
+        "source": "Andreas Hartel",
+        "position": "Senior Engineer at Aleph Alpha",
+        "styling": "redesigned"
+      }
+    %}
+    {% from "quote.njk" import quote %}
+    {{ quote(content) }}
+  </div>
+  <div class="container container--lg mb-6">
+    {%
+      set link = {
+        "label": 'Rewriting a critial data platform to Rust, one C module at a time',
+        "url": '/cases/anondb'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+
+    {%
+      set link = {
+        "label": 'Server, AWS Lambda, Edge: Rust to rule them all at KISTERS',
+        "url": '/cases/kisters/'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+
+    {%
+      set link = {
+        "label": 'Preprocessing trillions of tokens for LLM training at Aleph Alpha',
+        "url": '/cases/aleph-alpha/'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+  </div>
+  {%
+    set logoCompanies = [
+      'Aleph Alpha',
+      'Google',
+      'KISTERS',
+      'BMW Car IT',
+      'Faculty',
+      'Otto',
+      'Redis',
+      'unpkg'
+    ]
+  %}
+  {{ logoList(logoCompanies) }}
+</section>
+
+{{ contactFormLP('Agentic engineering') }}
+
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
+  <div class="">
+    <h1 class="opensource-list__title">You Might Like...</h1>
+    <ul class="opensource-list__list opensource-list__list-redesigned">
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/rust/redis-youtube-talk.webp"
+              alt="Luca Palmieri presenting Mainmatter's Redis contributions on stage"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">A deep-dive into our work for Redis at EuroRust 2025</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Watch on YouTube',
+            "url": 'https://youtube.com/watch?v=XklFGy3aUX4'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">
+              Blog post: eserde: Don't stop at the first deserialization error
+            </h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Read Blog Post',
+            "url": '/blog/2025/02/13/eserde/'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/rust/rust-handbook.webp"
+              alt="Hand reaching out to a crab-shaped toy"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">The Rust Adoption Handbook</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Download Handbook',
+            "url": '/rust-adoption-handbook/'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="mt-10">
+  {%
+    set imageData = {
+      "imgPath": "/assets/images/photos/agentic-engineering-footer.jpg",
+      "alt": "Agentic engineering workspace",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/8", "35/19") }}
+</section>
