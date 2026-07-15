@@ -116,3 +116,5 @@ What follows is a literal glossary of commonly used terms related to Agentic Cod
 **Terminal-Bench 2.0:** a benchmark of difficult tasks performed in terminal environments, intended to test long-horizon command-line operation, tool use, and environment interaction.
 
 **Benchmark contamination:** exposure of a model or agent to benchmark tasks, solutions, patches, or close duplicates during training or development. Contamination can inflate scores without reflecting general capability.
+
+That is it: a comprehensive glossary of the most usual terms related to AI and agentic engineering. As we said, however, this is a fast moving world: found some term that is not elencated here? [Open an issue](https://github.com/mainmatter/mainmatter.com) on our repo and we'll take care of it.
