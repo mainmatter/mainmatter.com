@@ -1,6 +1,6 @@
 ---
 title: "Agentic Engineering with Svelte"
-tags: "svelte"
+tags: ai
 format: "Workshop: 3 days"
 subtext: "Bookable for teams - on-site or remote"
 description: "Learn how to use AI agents effectively in Svelte and SvelteKit projects, from setup and MCP integration to test-driven workflows, code review, automations, and production debugging."

@@ -1,6 +1,6 @@
 ---
 title: "Building MCP Servers"
-tags: "mcp"
+tags: "ai"
 format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
 description: Learn to build powerful Model Context Protocol (MCP) servers that extend AI capabilities with custom tools, resources, and integrations. This comprehensive workshop covers MCP fundamentals through advanced deployment strategies.
