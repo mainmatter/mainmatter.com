@@ -1,0 +1,84 @@
+---
+title: "Agentic Engineering with Svelte"
+tags: "svelte"
+format: "Workshop: 3 days"
+subtext: "Bookable for teams - on-site or remote"
+description: "Learn how to use AI agents effectively in Svelte and SvelteKit projects, from setup and MCP integration to test-driven workflows, code review, automations, and production debugging."
+introduction: "<p>AI is changing how software gets built. But faster delivery doesn't follow automatically from handing everyone a Claude license. Agents need to be steered in the right direction, and everything they produce has to be validated thoroughly — otherwise the time saved writing code is spent again reviewing and fixing it. Getting that balance right and adapting the software development lifecycle (SDLC) to this new way of development is what turns AI into a real velocity booster.</p><p>This hands-on workshop teaches teams how to use AI agents as effective engineering collaborators when building Svelte 5 and SvelteKit applications. Participants learn how to use the Svelte MCP server, skills, subagents, validate generated changes, and combine TDD, code review, repository automations, and observability to allow for a reliable agentic workflow.</p>"
+hero:
+  color: purple
+  image: "/assets/images/workshops/agentic-engineering-with-svelte/hero.jpg"
+  imageAlt: "Photo of a computer screen showing an IDE with an open Svelte project"
+og:
+  image: /assets/images/workshops/agentic-engineering-with-svelte/og-image.jpg
+topics:
+  - title: Introduction to Agentic Engineering
+    text: >
+      We'll introduce agentic engineering and the current challenges of using AI effectively with Svelte applications.
+
+
+  - title: Project setup
+    text: >
+      We'll create a SvelteKit application with a recommended development stack, including TypeScript, ESLint, Prettier, testing, authentication, database integration, and deployment.
+
+
+  - title: Svelte MCP server
+    text: >
+      We'll explain what MCP is, how it improves AI-generated code, and how to use MCP tools for documentation lookup, code validation, auto-fixing, and playground generation.
+
+
+  - title: AI coding best practices
+    text: >
+      We'll cover when to use AI, how to manage LLM context efficiently, and how skills, MCP servers, and context optimization fit together.
+
+
+  - title: Working with AI agents
+    text: >
+      We'll use sub-agents for parallel and isolated tasks, configure agent instructions in <code>AGENTS.md</code>, and discuss security considerations for MCP servers and AI skills.
+
+
+  - title: AI-assisted UI/UX workflow
+    text: >
+      We'll explore how to convert a Figma design into code and how to use agents without losing design intent or implementation quality.
+
+
+  - title: Development workflow
+    text: >
+      We'll establish a Git workflow for reviewing AI-generated changes, practice Test-Driven Development with AI agents, build reusable components following TDD principles, and explain why extensive testing and validation are essential for both engineers and agents.
+
+
+  - title: Prompting strategies
+    text: >
+      We'll compare a direct prompt with a structured planning approach by solving the same complex task both ways, then analyze when planning produces better outcomes than immediately generating code.
+
+
+  - title: Kanban board implementation
+    text: >
+      We'll kick off a Kanban board implementation using the established AI-driven workflow. Along the way, we will update <code>AGENTS.md</code> when necessary, discuss what belongs there vs. more specialized documentation, create codebase-specific skills, and write ad hoc ESLint rules that keep the agent on track.
+
+
+  - title: Code review with AI
+    text: >
+      We'll explore AI-assisted code review options, set up Greptile, and use it to review and improve generated code.
+
+
+  - title: Repository automations
+    text: >
+      We'll set up repository automations that automatically triage issues and improve CI workflows.
+
+
+  - title: Observability and debugging
+    text: >
+      We'll integrate Sentry into the application and use it to diagnose, debug, and fix runtime issues in an AI-assisted development workflow.
+
+
+  - title: Loop engineering
+    text: >
+      We'll end the workshop exploring what's every manager's dream: giving the agent full autonomy to own the complete development cycle from making a code change to merging the PR, and deploying. We'll set up the necessary tools and infrastructure and uncover where the limits are.
+
+
+leads:
+  - handle: paoloricciuti
+---
+
+<!--break-->
