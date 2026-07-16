@@ -8,7 +8,7 @@ description: >-
 
 
 introduction: >-
-  <p>AI is changing how software gets built. But faster delivery doesn't follow automatically from handing everyone a Claude license. Agents need to be steered in the right direction, and everything they produce has to be validated thoroughly — otherwise the time saved writing code is spent again reviewing and fixing it. Getting that balance right and adapting the software development lifecycle (SDLC) to this new way of development is what turns AI into a real velocity booster.</p><p>This hands-on workshop teaches teams how to use AI agents as effective engineering collaborators when building Svelte 5 and SvelteKit applications. Participants learn how to use the Svelte MCP server, skills, subagents, validate generated changes, and combine TDD, code review, repository automations, and observability to allow for a reliable agentic workflow.</p>
+  <p>AI is changing how software gets built. But faster delivery doesn't follow automatically from handing everyone a Claude license. Agents need to be steered in the right direction, and everything they produce has to be validated thoroughly — otherwise the time saved writing code is spent again reviewing and fixing it. Getting that balance right and adapting the software development lifecycle (SDLC) to this new way of development is what turns AI into a real velocity booster.</p><p>This hands-on workshop teaches teams how to use AI agents as effective engineering collaborators when building Svelte 5 and SvelteKit applications. Participants learn how to use the Svelte MCP server, skills, sub-agents, validate generated changes, and combine TDD, code review, repository automations, and observability to allow for a reliable agentic workflow.</p>
 
 
 ticket_tailor_event_series_id: es_2315129
@@ -81,7 +81,7 @@ topics:
 
   - title: Loop engineering
     text: >
-      We'll end the workshop exploring what's every manager's dream: giving the agent full autonomy to own the complete development cycle from making a code change to merging the PR, and deploying. We'll set up the necessary tools and infrastructure and uncover where the limits are.
+      We'll end the workshop exploring every manager's dream: giving the agent full autonomy to own the complete development cycle from making a code change through merging the PR and deploying it. We'll set up the necessary tools and infrastructure and uncover where the limits are.
 
 
 leads:

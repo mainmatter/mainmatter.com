@@ -29,7 +29,7 @@ topics:
 
   - title: MCP Lifecycle
     text: >
-      Understanding the complete lifecycle of an MCP session from initialization to shutdown, including connection management and error handling.
+      We'll cover the complete lifecycle of an MCP session from initialization to shutdown, including connection management and error handling.
 
 
   - title: Transports
@@ -74,7 +74,7 @@ topics:
 
   - title: Deployment
     text: >
-      MCP servers are stateful by nature so deploying them to serverless needs a bit more carefulness...let's learn the ins and outs of how to deploy an MCP server.
+      MCP servers are stateful by nature so running them on serverless infrastructure requires more care... We'll learn the ins and outs of how to deploy an MCP server.
 
 
 leads:
