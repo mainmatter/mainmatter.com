@@ -1,6 +1,6 @@
 ---
 layout: "base"
-title: Rust Training
+title: Rust training
 description: "We train teams to succeed with Rust – covering a wide range from basics to advanced topics, onsite or remote."
 og:
   image: "/assets/images/services/rust-training-og-image.jpg"
@@ -23,23 +23,26 @@ eleventyImport:
 {% set heroEyebrow %}
   <a class="workshops-page-hero__eyebrow-link" href="/training/">
     <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
-    <span class="workshops-page-hero__eyebrow-text">Developer Training</span>
+    <span class="workshops-page-hero__eyebrow-text">Training and workshops</span>
   </a>
 {% endset %}
 
 {%
   set heroContent = {
   "eyebrow": heroEyebrow,
-  "title": "Rust Training",
+  "title": "Rust training",
   "text": "We teach teams like yours how to adopt and succeed with Rust. Our workshops catalog covers a wide range of topics and all our workshops are hands-on, as the best way to learn is by doing.",
   "image": "/assets/images/hero/rust-workshops.jpg",
   "alt": "Crabs climbing a rock on a beach",
   "loading": "eager",
   "class": "workshops-page-hero",
   "toc": [
-    ["Workshops", "#workshops"],
-    ["Instructors", "#instructor"],
-    ["Attendees Say", "#attendees-say"]
+    ["Our workshops", "#workshops"],
+    ["Custom workshops", "#custom-workshops"],
+    ["Our instructors", "#instructor"],
+
+    ["Our attendees say", "#attendees-say"],
+    ["More training material", "#more-training-material"]
   ],
   "hideFirstTocItemOnDesktop": false,
   "containerType": "lp"
@@ -103,10 +106,11 @@ eleventyImport:
 
   {%
     set teamCta = {
+    "id": "custom-workshops",
     "title": "Can't find the right workshop for your team?",
     "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
     "linkUrl": "/contact/?service=Training",
-    "linkText": "Get in Touch"
+    "linkText": "Get in touch"
     }
   %}
   {{ ctaBanner('purple', 'medium', teamCta) }}
@@ -203,7 +207,7 @@ eleventyImport:
     ]
   %}
 
-  {{ techCards('workshops-page-materials', 'Explore our other training materials', '', trainingMaterials) }}
+  {{ techCards('more-training-material', 'Explore our other training materials', '', trainingMaterials) }}
 
   {{ serviceCta(["rust"]) }}
 
