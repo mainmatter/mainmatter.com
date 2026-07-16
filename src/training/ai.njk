@@ -11,7 +11,6 @@ eleventyImport:
 {% from "color-hero.njk" import colorHero %}
 {% from "workshop-card.njk" import workshopCard %}
 {% from "cta-banner.njk" import ctaBanner %}
-{% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
 {% from "workshop-instructors.njk" import workshopInstructors %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
@@ -114,29 +113,6 @@ eleventyImport:
   %}
 
   {{ workshopInstructors(instructors) }}
-
-  <section class="container container--lg my-10" id="attendees-say">
-    <h2 class="mb-4">Our attendees say</h2>
-    <div class="training-quotes">
-      {%
-        set quoteContent = {
-        "text": "The workshop helped us understand how to turn AI ideas into concrete product experiments.",
-        "source": "Remote attendee",
-        "styling": "redesigned"
-        }
-      %}
-      {{ quote(quoteContent) }}
-
-      {%
-        set quoteContent = {
-        "text": "The hands-on exercises made the AI concepts much easier to evaluate and apply to our own work.",
-        "source": "Onsite attendee",
-        "styling": "redesigned"
-        }
-      %}
-      {{ quote(quoteContent) }}
-    </div>
-  </section>
 
   <section>
     {%
