@@ -1,7 +1,7 @@
 ---
 layout: base
 title: Agentic Engineering | Our Services
-description: "Mainmatter helps engineering teams adopt AI agents in practical, maintainable ways: from workflow assessments and pilot projects to enablement, tooling, and long-term engineering practice."
+description: "Mainmatter guides engineering teams through that adopting Agentic Engineering efficiently, responsibly, and sustainably for lasting productivity gains."
 eleventyNavigation:
   key: agentic engineering
   order: 7
@@ -11,7 +11,7 @@ type: service
 meta:
   name: "Agentic Engineering Consulting"
   serviceType: Consulting
-  description: "Mainmatter helps teams adopt agentic engineering practices, build AI-assisted workflows, and create durable internal capability."
+  description: "Mainmatter guides engineering teams through that adopting Agentic Engineering efficiently, responsibly, and sustainably for lasting productivity gains."
   areaServed: Worldwide
   provider:
     name: "Mainmatter"
@@ -26,12 +26,13 @@ og:
 {% from "logo-list.njk" import logoList %}
 {% from "btn-secondary.njk" import btnSecondary %}
 {% from "contact-form-LP.njk" import contactFormLP %}
+{% from "quote.njk" import quote %}
 
 {%
   set content = {
-    "title": "Make AI agents useful in real engineering teams",
+    "title": "Turn AI into lasting productivity gains",
     "eyebrow": "Agentic engineering consulting",
-    "text": "We help product engineering teams move from AI experiments to reliable day-to-day workflows. Together, we identify high-value use cases, design practical agent-assisted processes, improve developer experience, and build the internal skills your team needs to keep improving after we leave.",
+    "text": "AI delivers real productivity gains for engineering teams, but capturing them takes more than getting Claude license for everyone. Agents produce valuable, reliable code only when they're steered with the right context and guardrails. And generating more code quickly shifts the bottleneck downstream, to validation and release: code that never ships has no value, and shipping broken code has negative value even. We guide engineering teams through that complexity so they adopt AI efficiently, responsibly, and sustainably for lasting productivity gains.",
     "image": "/assets/images/hero/agentic-engineering.jpg",
     "alt": "Desk setup for agentic engineering work",
     "loading": "eager"
@@ -39,34 +40,53 @@ og:
 %}
 {{ colorHero('purple', content) }}
 
+<section class="container container--lg my-10">
+  <div class="workshops-page__intro">
+    <div class="workshops-page__intro-text">
+      <p>
+        Mainmatter has guided engineering teams for years, not just to adopt new technologies, but
+        to improve the way they build: tightening their processes, practices, and infrastructure so
+        that shipping is fast, safe, and repeatable. Those are the hallmarks of a strong engineering
+        culture, and they matter more than ever as teams adopt AI.
+      </p>
+    </div>
+  </div>
+</section>
+
 {%
   set list_1 = {
-    "title": "Assess your engineering workflow",
-    "text": "We map current delivery bottlenecks, codebase constraints, tooling, review practices, and security requirements to find where agents can help without adding unmanaged risk."
+    "title": "Assess the status quo",
+    "text": "We map your team's setup and maturity, covering composition and experience, tooling and infrastructure, development practices, testing and release processes. That surfaces the blockers holding back your software delivery lifecycle."
   }
 %}
 {%
   set list_2 = {
-    "title": "Design and ship agentic workflows",
-    "text": "We work with your team to build useful pilot workflows for coding, reviews, testing, migrations, documentation, support, and maintenance tasks."
+    "title": "Define what success looks like",
+    "text": "Together we set the target and put tracking in place for metrics like velocity, lead time for changes, and change failure rate, so progress stays visible and grounded in real outcomes."
   }
 %}
 {%
   set list_3 = {
-    "title": "Enable sustainable adoption",
-    "text": "We establish playbooks, guardrails, evaluation practices, and team habits so agentic engineering becomes a dependable part of how your organization ships software."
+    "title": "Clear the path",
+    "text": "We close the gaps in your delivery pipeline: testing, automation, infrastructure, observability. A pipeline that strains under today's volume will only buckle when AI accelerates code production."
   }
 %}
-{% set elements = [list_1, list_2, list_3] %}
+{%
+  set list_4 = {
+    "title": "Roll out tools and practices",
+    "text": "With the foundation in place, we roll out tools incrementally, working alongside your engineers to support and mentor them as they go."
+  }
+%}
+{% set elements = [list_1, list_2, list_3, list_4] %}
 <div id="services">
   {{ strategyList('agentic-engineering', 'We’ll work with you to:', elements) }}
 </div>
 
 {%
   set trainingContent = {
-    "title": "Training for AI-assisted engineering",
-    "text": "Agentic tools only pay off when teams know how to use them with clear intent, good context, and strong engineering judgment. We can run focused workshops and hands-on mentoring sessions for your engineers, tech leads, and product teams.",
-    "linkUrl": "/training/",
+    "title": "AI and agentic engineering training",
+    "text": "We teach teams like yours how to adopt AI and keep up with a fast-moving field.",
+    "linkUrl": "/training/ai/",
     "linkText": "Explore training"
   }
 %}
@@ -74,31 +94,30 @@ og:
 
 <section class="mt-7 mb-5" id="successes">
   <div class="container container--lg mb-6">
-    <h1>Success Stories</h1>
     {%
-      set content = {
-        "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
-        "source": "Andreas Hartel",
-        "position": "Senior Engineer at Aleph Alpha",
-        "styling": "redesigned"
+      set 'content' = {
+      "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+      "source": "Jürgen Witte, CPO @ Rail Europe",
+      "image": "/assets/images/photos/juergen-witte.png",
+      "alt": "Jürgen Witte",
+      "loading": "lazy"
       }
     %}
-    {% from "quote.njk" import quote %}
     {{ quote(content) }}
   </div>
   <div class="container container--lg mb-6">
     {%
       set link = {
-        "label": 'Rewriting a critial data platform to Rust, one C module at a time',
-        "url": '/cases/anondb'
+        "label": 'RailEurope: Transformation for Growth',
+        "url": '/cases/rail-europe/'
       }
     %}
     {{ btnSecondary(link, 'mt-2') }}
 
     {%
       set link = {
-        "label": 'Server, AWS Lambda, Edge: Rust to rule them all at KISTERS',
-        "url": '/cases/kisters/'
+        "label": 'Qonto: Supporting scaling on 3 axes: product, team, and productivity',
+        "url": '/cases/qonto/'
       }
     %}
     {{ btnSecondary(link, 'mt-2') }}
