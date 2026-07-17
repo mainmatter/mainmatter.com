@@ -1,6 +1,6 @@
 {% from "btn-secondary.njk" import btnSecondary %}
-{% macro strategyList(id, eyebrow, list) %}
-  <section class="strategy-list my-10">
+{% macro strategyList(id, eyebrow, list, spacing = 'my-10') %}
+  <section class="strategy-list {{ spacing }}">
     <div class="strategy-list__container container container--lg">
       {% if eyebrow %}
         <h2 class="strategy-list__eyebrow h5">{{ eyebrow }}</h2>

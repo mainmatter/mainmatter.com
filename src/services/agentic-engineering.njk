@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Agentic Engineering | Our Services
+title: Agentic Engineering Consulting| Our Services
 description: "Mainmatter guides engineering teams through that adopting Agentic Engineering efficiently, responsibly, and sustainably for lasting productivity gains."
 eleventyNavigation:
   key: agentic engineering
@@ -40,7 +40,7 @@ og:
 %}
 {{ colorHero('purple', content) }}
 
-<section class="container container--lg my-10">
+<section class="container container--lg my-5">
   <div class="workshops-page__intro">
     <div class="workshops-page__intro-text">
       <p>
@@ -79,7 +79,7 @@ og:
 %}
 {% set elements = [list_1, list_2, list_3, list_4] %}
 <div id="services">
-  {{ strategyList('agentic-engineering', 'We’ll work with you to:', elements) }}
+  {{ strategyList('agentic-engineering', 'We’ll work with you to:', elements, 'my-5') }}
 </div>
 
 {%
@@ -155,8 +155,8 @@ og:
         <div>
           <div class="opensource-list__project-image">
             <img
-              src="/assets/images/rust/redis-youtube-talk.webp"
-              alt="Luca Palmieri presenting Mainmatter's Redis contributions on stage"
+              src="/assets/images/svelte/agentic-engineering-learn-more.webp"
+              alt="Paolo Ricciuti presenting on stage"
             />
           </div>
           <div class="opensource-list__project-text">
@@ -176,11 +176,11 @@ og:
       <li class="opensource-list__project">
         <div>
           <div class="opensource-list__project-image">
-            <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
+            <img src="/assets/images/blog/ai-blog-post.webp" alt="A lightbulb next to an AI logo" />
           </div>
           <div class="opensource-list__project-text">
             <h4 class="mb-015 medium">
-              Blog post: eserde: Don't stop at the first deserialization error
+              Blog post: A complete Agentic Engineering glossary
             </h4>
           </div>
         </div>
@@ -188,7 +188,7 @@ og:
           {%
             set link = {
             "label": 'Read Blog Post',
-            "url": '/blog/2025/02/13/eserde/'
+            "url": '/blog/2026/07/25/agentic-engineering-glossary/'
             }
           %}
           {{ btnSecondary( link, 'link-purple' ) }}
@@ -198,18 +198,18 @@ og:
         <div>
           <div class="opensource-list__project-image">
             <img
-              src="/assets/images/rust/rust-handbook.webp"
-              alt="Hand reaching out to a crab-shaped toy"
+              src="/assets/images/blog/beyond-the-ai-hype-learn-more-image.webp"
+              alt="Wooden robot toys"
             />
           </div>
           <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">Beyond the AI Hype: Realizing Real Engineering Value</h4>
+            <h4 class="mb-015 medium">Blog post: Beyond the AI Hype: Realizing Real Engineering Value</h4>
           </div>
         </div>
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Read post',
+            "label": 'Read Blog Post',
             "url": '/blog/2025/12/05/beyond-the-ai-hype-realizing-real-engineering-value/'
             }
           %}
@@ -220,7 +220,7 @@ og:
   </div>
 </section>
 
-<section class="mt-10">
+<section>
   {%
     set imageData = {
       "imgPath": "/assets/images/photos/agentic-engineering-footer.jpg",
