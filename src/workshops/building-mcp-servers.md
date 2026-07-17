@@ -1,14 +1,24 @@
 ---
-title: "Building MCP Servers"
-tags: "mcp"
-format: "2 days"
-subtext: "Bookable for teams – on-site or remote"
-description: Learn to build powerful Model Context Protocol (MCP) servers that extend AI capabilities with custom tools, resources, and integrations. This comprehensive workshop covers MCP fundamentals through advanced deployment strategies.
-introduction: "<p>The Model Context Protocol (MCP) is revolutionizing how AI systems interact with external data and services. This hands-on workshop teaches you to build sophisticated MCP servers that can provide AI models with custom tools, dynamic resources, and contextual information. From basic server setup to advanced features like authorization and deployment, you'll gain the skills to create MCP servers that unlock new possibilities for AI-powered applications.</p>"
+title: Building MCP Servers
+tags: ai
+format: 2 days
+subtext: Bookable for teams – on-site or remote
+description: >-
+  Learn to build powerful Model Context Protocol (MCP) servers that extend AI capabilities with custom tools, resources, and integrations. This comprehensive workshop covers MCP fundamentals through advanced deployment strategies.
+
+
+introduction: >-
+  <p>The Model Context Protocol (MCP) is revolutionizing how AI systems interact with external data and services. This hands-on workshop teaches you to build sophisticated MCP servers that can provide AI models with custom tools, dynamic resources, and contextual information. From basic server setup to advanced features like authorization and deployment, you'll gain the skills to create MCP servers that unlock new possibilities for AI-powered applications.</p>
+
+
+ticket_tailor_event_series_id: es_2315136
 hero:
   color: purple
-  image: "/assets/images/workshops/mcp/header.jpg"
-  imageAlt: "Traditional colorful Rajasthani string puppets (Kathputli) dressed in bright red and yellow clothes with painted wooden faces and intricate headgear, hanging on strings and used in folk performances."
+  image: /assets/images/workshops/mcp/header.jpg
+  imageAlt: >-
+    Traditional colorful Rajasthani string puppets (Kathputli) dressed in bright red and yellow clothes with painted wooden faces and intricate headgear, hanging on strings and used in folk performances.
+
+
 og:
   image: /assets/images/workshops/mcp/og-image.jpg
 topics:
@@ -19,7 +29,7 @@ topics:
 
   - title: MCP Lifecycle
     text: >
-      Understanding the complete lifecycle of an MCP session from initialization to shutdown, including connection management and error handling.
+      We'll cover the complete lifecycle of an MCP session from initialization to shutdown, including connection management and error handling.
 
 
   - title: Transports
@@ -64,11 +74,19 @@ topics:
 
   - title: Deployment
     text: >
-      MCP servers are stateful by nature so deploying them to serverless needs a bit more carefulness...let's learn the ins and outs of how to deploy an MCP server.
+      MCP servers are stateful by nature so running them on serverless infrastructure requires more care... We'll learn the ins and outs of how to deploy an MCP server.
 
 
 leads:
   - handle: paoloricciuti
+upcomingDates:
+  - date: "2026-10-06"
+    endDate: "2026-10-09"
+    url: >-
+      https://www.tickettailor.com/checkout/view-event/id/8724997/chk/a215ffb174cd94de7c040941bf27ba58/
+
+
+    price: 60000
 ---
 
 <!--break-->

@@ -10,6 +10,10 @@
     max-width: 55%;
   }
 
+  &.ai {
+    max-width: 55%;
+  }
+
   &.rust {
     max-width: 60%;
   }
@@ -41,6 +45,10 @@
   svg g {
     fill: #5600d1;
   }
+
+  .tech-cards__logo.ai {
+    color: #5600d1;
+  }
 }
 
 .tech-cards__grid-element:nth-child(2n) {
@@ -49,6 +57,10 @@
   svg g {
     fill: #2b2b2b;
   }
+
+  .tech-cards__logo.ai {
+    color: #2b2b2b;
+  }
 }
 
 .tech-cards__grid-element:nth-child(5n + 1) {
@@ -56,5 +68,9 @@
 
   svg g {
     fill: #55e6d8;
+  }
+
+  .tech-cards__logo.ai {
+    color: #55e6d8;
   }
 }

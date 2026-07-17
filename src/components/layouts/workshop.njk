@@ -99,6 +99,9 @@ layout: "base"
     {% elseif "ember" in tags %}
     {% set workshopCategoryUrl = "/training/ember/" %}
     {% set workshopCategoryLabel = "Ember Workshops" %}
+    {% elseif "ai" in tags %}
+    {% set workshopCategoryUrl = "/training/ai/" %}
+    {% set workshopCategoryLabel = "AI Workshops" %}
   {% endif %}
   {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
   {% set heroText %}
