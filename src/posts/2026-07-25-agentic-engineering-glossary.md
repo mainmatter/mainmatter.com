@@ -73,7 +73,7 @@ tagline: <p>Agentic Engineering is a new and complex topic that's constantly cha
 
 **Agentic workflow:** a repository or business workflow expressed as a goal and a series of verification checks rather than a deterministic script. The coding agent decides how to complete the task and when it is actually done.
 
-**Plan / plan mode:** a specific mode that prevents the agent from making any changes to the code. In this mode, the only things an agent can do are reason about the task, research it, and output an `md` file with the implementation plan. This allows the agent to execute bigger tasks without getting lost in the weeds of the code, focusing on the important aspects of the task.
+**Plan / plan mode:** a specific mode that prevents the agent from making any changes to the code. In this mode, the only things an agent can do are reason about the task, research it, and output an `md` file with the implementation plan. This allows the agent to execute bigger tasks without getting lost in the weeds of the code, focusing on the important aspects of the task. This also allows the developer to review plan (and it SHOULD be reviewed to be effective) before executing on it saving from unnecessary "rabbit holes" in case the model misunderstood the assignment.
 
 **Human in the loop, or HITL:** the practice of making the agent request permission for every action, introducing a human element into the agentic loop.
 
