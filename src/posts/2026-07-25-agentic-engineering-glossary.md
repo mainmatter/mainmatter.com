@@ -4,14 +4,12 @@ authorHandle: paoloricciuti
 tags: [ai, agentic_engineering]
 description: "Agentic Engineering is a new and complex topic. Having a glossary can help you get the most out of it!"
 autoOg: true
-tagline: <p>Agentic Engineering is a new and complex topic. Having a glossary can help you get the most out of it!</p>
+tagline: <p>Agentic Engineering is a new and complex topic that's constantly changing and evolving. We set down and wrote up a glossary to help you stay up to date with all the new terms!</p>
 ---
-
-What follows is a literal glossary of commonly used terms related to Agentic Coding and Engineering. The aim is to give you a broad understanding of the terms and definitions the industry uses.
 
 **Neural network:** a combination of a data structure and an algorithm that is meant to mimic the human brain by correlating certain outputs with certain inputs. Its "neurons" (nodes in a graph with an activation function and a weight) are interconnected. A series of inputs starts the process and goes through a series of neurons, where the different weights activate different paths. At the end of the graph, some output nodes "activate" a certain answer.
 
-**LLM:** an acronym for large language model. It's the kind of neural network that is most popular nowadays. As the name suggests, it's a **model** that tries to predict the next token in a sentence by using the fact that, in a **language**, the distribution of words isn't random. These models are **large** because they've been trained on very large quantities of text to make them as precise as possible.
+**LLM:** an acronym for large language model. It's the kind of neural network that is most popular nowadays. As the name suggests, it's a **model** that tries to predict the next token in a sentence by using the fact that, in a **language**, the distribution of words isn't random. These models are **large** because they've been trained on very large quantities of text to make them as accurate as possible.
 
 **Token:** one of the possible "words" in a model's vocabulary, extracted from the entire corpus of text the LLM ingested during its training phase. The word "words" is quoted because the tokenization process splits some words for efficiency (for example, the word `unhappy` can be split into the two tokens `un` and `happy`).
 
@@ -31,9 +29,9 @@ What follows is a literal glossary of commonly used terms related to Agentic Cod
 
 **Tools:** deterministic functions that the model can invoke by sending a message in a specific format. Generally provided by the harness, they allow the agent to be agentic. The tools that almost every harness has include `read`, `bash`, `update`, and `web_search`, but users can often define their own. They reintroduce a bit of determinism into the stochastic process of LLM generation.
 
-**Subagent:** we already explained how context is the most important resource for agents. Subagents aim to solve part of that problem: every atomic operation (like running tests and figuring out why they fail or writing a file) can technically be done without "polluting" the main agent (the one that has the whole context of the task). This is possible by allowing the agent to create a new instance of itself with a new prompt. This means subagents can be spawned in parallel and work on that one task without increasing the token count in the main agent.
+**Subagent:** Context is the most important resource for agents. Subagents aim to solve part of that problem: every atomic operation (like running tests and figuring out why they fail or writing a file) can technically be done without "polluting" the main agent (the one that has the whole context of the task). This is possible by allowing the agent to create a new instance of itself with a new prompt. This means subagents can be spawned in parallel and work on that one task without increasing the token count in the main agent.
 
-**MCP:** stands for Model Context Protocol; as the name suggests, it is a protocol, which means a shared contract between two parties that need to communicate. This allows MCP clients (a role generally fulfilled by the harness) to talk to MCP servers (programs that listen for JSON-RPC payloads and expose tools, resources, prompts, etc.). It's an easy way for developers to "package" a series of tools and provide them to the model.
+**MCP:** stands for Model Context Protocol; as the name suggests, it is a protocol, which means a shared contract between two parties that need to communicate. This allows MCP clients (a role generally fulfilled by the harness) to talk to MCP servers (programs that listen for JSON-RPC payloads and expose tools, resources, prompts, etc.), e.g. to retrieve information or invoke tools. It's an easy way for developers to "package" a series of tools and provide them to the model.
 
 **Skills:** after MCP became popular, a few companies started developing very bloated MCP servers: they had a lot of tools with very lengthy descriptions. Based on how the MCP specification worked, this had the unwanted side effect of unnecessarily polluting the context. The reason is that once an MCP server was added, all the tools and tool definitions ended up in the context: there was no progressive disclosure. Skills were the answer to this problem: they are simple Markdown files that describe a "way of doing something." They have a basic description, which is injected into the context and allows the model to load the full file only when it deems it necessary. They can also have scripts that the agent can run, allowing them to act somewhat like `tools`.
 
@@ -53,7 +51,7 @@ What follows is a literal glossary of commonly used terms related to Agentic Cod
 
 **Context engineering:** applying engineering practices to context management by fine-tuning the amount of context fed to the agent to provide just enough to get the task done, and no more.
 
-**Compaction:** as we said, when models reach a certain threshold of used context, their intelligence drops drastically. To solve this, many harnesses trigger a compaction when the context reaches that threshold. A compaction means summarizing the current thread with an AI model to extract only the relevant information, then resetting the context to include only that summary.
+**Compaction:** When models reach a certain threshold of used context, their intelligence drops drastically. To solve this, many harnesses trigger a compaction when the context reaches that threshold. A compaction means summarizing the current thread with an AI model to extract only the relevant information, then resetting the context to include only that summary.
 
 **Prompt injection:** instructions designed to manipulate a model into ignoring its intended task or policy. It can be direct (when the instruction is supplied directly by the user) or indirect (when the instructions are included in a file or a website that the agent is reading).
 
@@ -67,7 +65,7 @@ What follows is a literal glossary of commonly used terms related to Agentic Cod
 
 **Agent harness:** the software surrounding the model that manages system prompts, context, tool execution, permissions, retries, state, stopping rules, and outputs. While it may seem like just a detail (like the editor you choose when writing your code), the same model can [behave completely differently in different harnesses](https://x.com/edwinarbus/status/2033625866350334333). This is both because the system prompt and tool descriptions can steer the agent toward better or worse results, and because certain models are trained on specific harnesses and will work better when the tools available match their training set.
 
-**Harness engineering:** as a segue from the previous point, harness engineering is the practice of applying engineering principles to the harness to get the best possible result with a given **model+harness** pair. This means introducing the right set of skills, tools, subagents, and instructions, and having the right codebase structure, abstractions, and developer tools to make the job of an agent working in said codebase as smooth as possible.
+**Harness engineering:** Harness engineering is the practice of applying engineering principles to the harness to get the best possible result with a given **model+harness** pair. This means introducing the right set of skills, tools, subagents, and instructions, and having the right codebase structure, abstractions, and developer tools to make the job of an agent working in said codebase as smooth as possible.
 
 **Model-native harness:** a harness developed by the same company that also develops the model (e.g., Claude Code for Anthropic, Codex for OpenAI). While some people think these are optimized for the model, research shows that's not the case.
 
