@@ -107,6 +107,8 @@ tagline: <p>Agentic Engineering is a new and complex topic that's constantly cha
 
 **Worktree:** an isolated working copy associated with a Git branch. Agents use worktrees to work on multiple branches at the same time without stepping on each other's toes.
 
+**Benchmark:** in the dev ecosystem a benchmark is usually meant to measure performance. This is also true for models but they aim to evaluate the performance of a specific model to solve tasks rather than CPU cycles.
+
 **SWE-bench Verified:** a curated set of 500 SWE-bench tasks reviewed for solvability. It became a widely cited coding-agent benchmark, but by February 2026, OpenAI argued that contamination and task-quality problems had reduced its usefulness for measuring frontier agents.
 
 **Deep-SWE:** a long-horizon software engineering benchmark that delivers four major advances over today's public benchmarks: no contamination, high diversity, real-world complexity, and reliable verification. It gained popularity for being much closer to what the public perceives as intelligence.
