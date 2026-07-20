@@ -7,5 +7,5 @@ bluesky: paolo.ricciuti.me
 mastodon: "@paoloricciuti@front-end.social"
 bio: "Senior Software Engineer at Mainmatter, Svelte Maintainer"
 title: Senior Frontend Engineer
-longBio: Paolo is a huge nerd and Svelte maintainer. He's also one of the creators of <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit.
+longBio: Paolo is a huge nerd and Svelte maintainer. He's also a member of the Svelte Core Team and one of the creators of <a href="https://sveltelab.dev">sveltelab.dev</a> - a REPL for SvelteKit.
 ---

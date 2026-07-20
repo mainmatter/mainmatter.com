@@ -449,6 +449,52 @@
   }
 }
 
+.training-landing-hero,
+.workshops-landing-catalog {
+  .card__grid-element {
+    @media (min-width: $breakpoint-s) {
+      min-height: 14rem;
+    }
+
+    @media (min-width: $breakpoint-l) {
+      min-height: 12rem;
+    }
+  }
+
+  .caption {
+    @media (min-width: $breakpoint-l) {
+      font-size: 1.3rem;
+      line-height: 1.4;
+    }
+  }
+
+  .cards__grid {
+    gap: 0.5rem;
+
+    @media (min-width: $breakpoint-l) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .tech-cards__logo {
+    @media (min-width: $breakpoint-s) {
+      display: flex;
+      align-items: flex-start;
+      width: auto;
+      height: 5rem;
+      max-width: none;
+    }
+
+    svg {
+      @media (min-width: $breakpoint-s) {
+        width: auto;
+        height: 100%;
+        max-width: none;
+      }
+    }
+  }
+}
+
 .workshops-landing__logos {
   .logo-list__title {
     width: 90%;
