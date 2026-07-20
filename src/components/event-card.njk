@@ -44,14 +44,14 @@ event: A event object
         {% if event.data.kind == "Workshop" %}
           {%
             set link = {
-            "label": 'Register Now',
+            "label": 'Register now',
             "url": event.data.url
             }
           %}
         {% else %}
           {%
             set link = {
-            "label": 'Visit Website',
+            "label": 'Visit website',
             "url": event.data.url
             }
           %}

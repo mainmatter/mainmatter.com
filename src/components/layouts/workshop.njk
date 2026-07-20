@@ -92,16 +92,16 @@ layout: "base"
   {% set workshopCategoryLabel = "Workshops" %}
   {% if "rust" in tags %}
     {% set workshopCategoryUrl = "/training/rust/" %}
-    {% set workshopCategoryLabel = "Rust Workshops" %}
+    {% set workshopCategoryLabel = "Rust workshops" %}
     {% elseif "svelte" in tags %}
     {% set workshopCategoryUrl = "/training/svelte/" %}
-    {% set workshopCategoryLabel = "Svelte Workshops" %}
+    {% set workshopCategoryLabel = "Svelte workshops" %}
     {% elseif "ember" in tags %}
     {% set workshopCategoryUrl = "/training/ember/" %}
-    {% set workshopCategoryLabel = "Ember Workshops" %}
+    {% set workshopCategoryLabel = "Ember workshops" %}
     {% elseif "ai" in tags %}
     {% set workshopCategoryUrl = "/training/ai/" %}
-    {% set workshopCategoryLabel = "AI Workshops" %}
+    {% set workshopCategoryLabel = "AI workshops" %}
   {% endif %}
   {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
   {% set heroText %}
@@ -253,7 +253,7 @@ layout: "base"
 
     {% if quotes and quotes.length %}
       <section class="workshop-detail__quote container container--lg my-10" id="attendees-say">
-        <h2 class="mb-4">Our Attendees Say...</h2>
+        <h2 class="mb-4">Our attendees say...</h2>
         <div class="workshop-detail__quote-list training-quotes">
           {% for workshopQuote in quotes %}
             {%
@@ -396,10 +396,10 @@ layout: "base"
 
     {%
       set moreWorkshops = {
-      "title": "Can't Find the Right Workshops for Your Team?",
+      "title": "Can't find the right workshops for your team?",
       "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
       "linkUrl": "/contact/?service=Training",
-      "linkText": "Get in Touch",
+      "linkText": "Get in touch",
       "class": "workshop-detail__more-workshops-cta"
       }
     %}
@@ -412,7 +412,7 @@ layout: "base"
     >
       <div class="cta-banner__wrapper container container--lg">
         <div class="cta-banner__main">
-          <h2 class="cta-banner__title">Book This Workshop</h2>
+          <h2 class="cta-banner__title">Book this workshop</h2>
           <div class="cta-banner__text">
             Our mentors look forward to working with your team and unlocking new capabilities.
           </div>
@@ -448,7 +448,7 @@ layout: "base"
                   id="company"
                   type="text"
                   name="company"
-                  placeholder="Company Name"
+                  placeholder="Company name"
                 />
                 <label class="contact-form__label h4" for="company">Company name </label>
               </div>

@@ -75,7 +75,7 @@ type: post
     <div class="post">
       <div class="post__content rte container container--lg ">{{ content | safe }}</div>
       {{ serviceCta(tags, customCta) }}
-      <nav aria-label="Post Pagination" class="prev-next pagination container container--lg ">
+      <nav aria-label="Post pagination" class="prev-next pagination container container--lg ">
         {% set previous = collections.posts | getPreviousCollectionItem %}
         {% set next = collections.posts | getNextCollectionItem %}
         {% if previous %}

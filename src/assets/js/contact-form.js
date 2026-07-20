@@ -68,7 +68,7 @@ export class ContactForm {
       if (window.location.host === "mainmatter.com") {
         Sentry.addBreadcrumb({
           category: "post",
-          message: "Submit Contact Form",
+          message: "Submit contact form",
           level: "info",
           data: formData,
         });

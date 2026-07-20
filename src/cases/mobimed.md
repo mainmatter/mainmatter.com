@@ -1,8 +1,8 @@
 ---
 layout: case-study
 company: Mobi.MED
-title: Modernizing Code and Design for a Healthcare Software Supplier
-displayTitle: "Modernizing Healthcare Software"
+title: Modernizing code and design for a healthcare software supplier
+displayTitle: "Modernizing healthcare software"
 problem: mobi.MED needed to refresh their codebase and UI.
 solution: Our team developed a design system, implemented it in the application, and modernized the codebase along the way.
 tags: Tech modernization

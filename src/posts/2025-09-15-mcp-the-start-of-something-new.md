@@ -237,7 +237,7 @@ The MCP spec defines two official ways to communicate between clients and server
 
 **STDIO** is how the protocol started, and if built properly an STDIO MCP server can be very powerful... you can publish it as an npm package, set up the MCP client to invoke your package with `npx`, and have powerful tools that read and write to the file system.
 
-{% note "warning", "Security Considerations" %}
+{% note "warning", "Security considerations" %}
 
 If you’re as much of a security nerd as I am, you might be terrified at the thought of allowing an LLM to delete your file system through an MCP server. This is definitely something to be wary of: an STDIO MCP server—just like any other dependency you install from `npm`—is something you need to vet carefully. Don’t blindly install any random npm MCP server that <strong>awesome-mcp-server-that-will-definitely-not-delete-your-computer.com</strong> recommends; check the repository for suspicious code, look on reputable websites to assess whether it’s secure, and possibly run it inside a sandboxed environment.
 

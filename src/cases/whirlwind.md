@@ -1,8 +1,8 @@
 ---
 layout: case-study
 company: Whirlwind
-title: "Whirlwind Chat: Connect with Peers – 2 Minutes at a Time! | Work"
-displayTitle: "Whirlwind Chat: Connect with Peers – 2 Minutes at a Time"
+title: "Whirlwind Chat: connect with peers – 2 minutes at a time! | Work"
+displayTitle: "Whirlwind Chat: connect with peers – 2 minutes at a time"
 description: "<p>Connecting with others remotely is hard.</p><p>After years of running hybrid conferences, we noticed a recurring problem: remote attendees often felt isolated, disconnected from the onsite energy, and unable to engage meaningfully with others. We built Whirlwind to fix that: it's a fun and intuitive tool for remote groups to connect, interact, and build new relationships.</p>"
 cta: whirlwind
 hero:

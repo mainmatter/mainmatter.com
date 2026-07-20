@@ -1,5 +1,5 @@
 ---
-title: "Modernising your Ember App Development with GJS and Vite"
+title: "Modernising your Ember app development with GJS and Vite"
 tags: "ember"
 format: "2–5 days"
 subtext: "Bookable for teams – on-site or remote"

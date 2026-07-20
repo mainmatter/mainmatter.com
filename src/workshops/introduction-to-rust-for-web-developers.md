@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Rust for Web Developers"
+title: "Introduction to Rust for web developers"
 tags: "rust"
 format: "2-3 days"
 subtext: "Bookable for teams – on-site or remote"
