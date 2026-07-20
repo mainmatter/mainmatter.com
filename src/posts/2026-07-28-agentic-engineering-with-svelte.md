@@ -23,7 +23,7 @@ One of the first big products that doubled down on this was Claude Code from Ant
 
 On the 2nd of February 2025, Andrej Karpathy (one of the most influential voices in the AI world, co-founder of OpenAI) sent a tweet that defined a new term: **Vibe Coding**.
 
-![tweet from Andrej Karpathy that first introduced the concept of vibe coding](/assets/images/posts/2026-06-01-agentic-engineering-with-svelte/vibe-coding.png)
+![tweet from Andrej Karpathy that first introduced the concept of vibe coding](/assets/images/posts/2026-07-28-agentic-engineering-with-svelte/vibe-coding.png)
 
 The idea of vibe coding is that you let the agent take the wheel: you express what you need in a prompt, the agent produces it, and you accept without looking at the code. If bugs arise, you tell the agent to fix them. Rinse and repeat until you have an app.
 
@@ -31,7 +31,7 @@ This concept exploded in popularity. Countless businesses were built on the conc
 
 However, as you might imagine, this utopia wasn't there to last. Sure, as long as you build your own hyper-specific app with one user, vibe coding might serve you well enough, but try to scale that to build an actual product and the cracks start to show.
 
-![a Reddit post titled "What's the point of vibe coding if I still have to pay a dev to fix it?"](/assets/images/posts/2026-06-01-agentic-engineering-with-svelte/cracks.png)
+![a Reddit post titled "What's the point of vibe coding if I still have to pay a dev to fix it?"](/assets/images/posts/2026-07-28-agentic-engineering-with-svelte/cracks.png)
 
 The term quickly became synonymous with "bad software" but the fundamental idea was so strong that people with actual engineering experience started to approach it from the other side of the line.
 
@@ -39,7 +39,7 @@ Automated tests, linters, LSP, Git... all these tools allowed people who knew ho
 
 One year goes by (which means at least 100 years in AI years _\*ba-dun-tss\*_) and Karpathy tries to do it again... and somewhat surprisingly he's successful: but now he's talking to the engineers, to the ones who know how to build software and use AI "responsibly"; they not only read but try to understand the code, they steer the agent towards the right solution, not just a solution, they write tests, they think about how to make the code maintainable.
 
-![a tweet from Andrej Karpathy explaining agentic engineering](/assets/images/posts/2026-06-01-agentic-engineering-with-svelte/agentic-engineering.png)
+![a tweet from Andrej Karpathy explaining agentic engineering](/assets/images/posts/2026-07-28-agentic-engineering-with-svelte/agentic-engineering.png)
 
 This was the start of **Agentic engineering**.
 
@@ -156,7 +156,7 @@ The more people started using these tools, the more everyone realized the main r
 
 However, even if your model had an infinite token window, the quality of the model rapidly degrades after the 100k mark.
 
-![a graph showing how performance degrades when the context length increases](/assets/images/posts/2026-06-01-agentic-engineering-with-svelte/context-rot.png)
+![a graph showing how performance degrades when the context length increases](/assets/images/posts/2026-07-28-agentic-engineering-with-svelte/context-rot.png)
 
 This also led to a series of tools and techniques to reduce the amount of tokens the agent produces.
 
