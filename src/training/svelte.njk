@@ -31,15 +31,15 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Svelte training",
-  "text": "We teach teams like yours how to succeed with Svelte and SvelteKit. Our workshops catalog covers a wide range of topics and all our workshops are hands-on, as the best way to learn is by doing.",
+  "text": "We teach teams and individuals how to adopt and succeed with Svelte. All of our workshops are hands-on, since the best way to learn is by doing. The workshops cover everything from language basics to advanced testing, Svelte 5 migrations, progressive enhancement, and authentication. We're also happy to prepare custom workshops, as well as on-site ones. <a href='/contact/?service=Training'>Get in touch with us</a> with us to talk about what curriculum fits best.",
   "image": "/assets/images/hero/table-soccer.jpg",
   "alt": "Close-up photo of table soccer figures",
   "loading": "eager",
   "class": "workshops-page-hero",
   "toc": [
     ["Our workshops", "#workshops"],
-    ["Our instructors", "#instructor"],
     ["Custom workshops", "#custom-workshops"],
+    ["Our instructors", "#instructor"],
     ["Our attendees say", "#attendees-say"],
     ["More training material", "#more-training-material"]
   ],
@@ -62,23 +62,7 @@ eleventyImport:
 %}
 
 <div class="workshops-page">
-  <section class="container container--xl my-10" id="workshops">
-    <div class="workshops-page__intro">
-      <div class="workshops-page__intro-text">
-        <h2 class="mb-2">Svelte workshops</h2>
-        <p>
-          We offer a range of workshops bookable for teams that want to grow – on-site or remote. We
-          can get teams up to speed with Svelte from scratch, or help them tackle a range of
-          specific topics.
-        </p>
-        <p>
-          We're also happy to prepare custom workshops – <a href="/contact/?service=Training"
-            >get in touch with us</a
-          > to talk about what curriculum fits your team best!
-        </p>
-      </div>
-    </div>
-
+  <section class="container container--xl my-5" id="workshops">
     <ul class="workshops-page__list">
       {% for workshop in svelteWorkshops %}
         <li>{{ workshopCard(workshop) }}</li>
@@ -120,7 +104,7 @@ eleventyImport:
     set instructors = [
     {
     "name": "Paolo Ricciuti",
-    "bio": "Paolo Ricciuti is a Svelte maintainer and one of the creators of <a href=\"https://sveltelab.dev\">sveltelab.dev</a>, a REPL for SvelteKit.",
+    "bio": "Our team is led by Paolo Ricciuti, Svelte maintainer and co-author of SvelteLab. Mainmatter is also the driving force behind the <a href=\"https://svelte-custom-renderers.com\" target=\"_blank\">Svelte Custom Renderers initiative</a>, an active contributor to a number of open source projects and co-organizer of <a href=\"https://sveltesummit.com\" target=\"_blank\">Svelte Summit</a>.",
     "image": "/assets/images/authors/paoloricciuti.jpg"
     }
     ]
@@ -134,6 +118,24 @@ eleventyImport:
       {%
         set quoteContent = {
         "text": "I enjoyed the workshop, Paolo managed to balance well its content between theory and practice.",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!",
         "source": "Onsite attendee",
         "styling": "redesigned"
         }

@@ -31,15 +31,16 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Ember training",
-  "text": "We teach teams like yours how to succeed with Ember.js. We're long-term Ember core team members, community veterans, and the team behind the Ember Initiative.",
+  "text": "We teach teams and individuals how to adopt and succeed with Ember. We're long-term Ember core team members, community veterans, and the team behind the Ember Initiative. All of our workshops are hands-on, since the best way to learn is by doing. The workshops cover everything from Ember.js fundamentals to modernizing your app with GJS and Vite. We're also happy to prepare custom workshops, as well as on-site ones. <a href='/contact/?service=Training'>Get in touch with us</a> with us to talk about what curriculum fits best.",
   "image": "/assets/images/hero/ember.jpg",
   "alt": "Abstract Ember workshop hero image",
   "loading": "eager",
   "class": "workshops-page-hero",
   "toc": [
     ["Our workshops", "#workshops"],
-    ["Our instructors", "#instructor"],
     ["Custom workshops", "#custom-workshops"],
+    ["Our instructor", "#instructor"],
+    ["Our attendees say", "#attendees-say"],
     ["More training material", "#more-training-material"]
   ],
   "hideFirstTocItemOnDesktop": false,
@@ -57,19 +58,7 @@ eleventyImport:
 %}
 
 <div class="workshops-page">
-  <section class="container container--xl my-10" id="workshops">
-    <div class="workshops-page__intro">
-      <div class="workshops-page__intro-text">
-        <h2 class="mb-2">Ember workshops</h2>
-        <p>
-          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
-          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
-            >get in touch with us</a
-          > to talk about what curriculum fits your team best!
-        </p>
-      </div>
-    </div>
-
+  <section class="container container--xl my-5" id="workshops">
     <ul class="workshops-page__list">
       {% for workshop in emberWorkshops %}
         <li>{{ workshopCard(workshop) }}</li>
@@ -114,13 +103,37 @@ eleventyImport:
     set instructors = [
     {
     "name": "Chris Manson",
-    "bio": "Chris Manson is a member of the Ember Core team and a long-time Ember user, building his first Ember app in 2011. He is also the lead engineer behind the Ember initiative.",
+    "bio": "Mainmatter has been actively involved in shaping Ember for years. We’re behind <a href=\"/ember-initiative/\">The Ember Initiative</a> that supports the Ember ecosystem. We also maintain key add-ons such as <a href=\"https://ember-simple-auth.com/\">Ember Simple Auth</a>, <a href=\"http://qunit-dom.com/\">QUnit Dom</a>, and <a href=\"https://ember-test-selectors.com\">Ember Test Selectors</a>.",
+    "additionalBio": "Our team includes many experienced engineers, including Chris Manson (Ember Core Team member, Ember Initiative lead), Nick Schot (long-time open-source contributor) and Marine Dunstetter (Ember Initiative team member).",
     "image": "/assets/images/authors/real_ate.jpg"
     }
     ]
   %}
 
   {{ workshopInstructors(instructors) }}
+
+  <section class="container container--lg my-10" id="attendees-say">
+    <h2 class="mb-4">Our attendees say</h2>
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
+  </section>
 
   {%
     set 'content' = {

@@ -567,9 +567,9 @@
 
   .workshops-page__certificate-container {
     width: 24rem;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-    text-align: right;
+    text-align: left;
   }
 
   .workshop-card {
