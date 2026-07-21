@@ -38,6 +38,13 @@ og:
   "linkText": "Ember training"
   }
 %}
+{%
+  set aiTraining = {
+  "logo": "ai",
+  "link": "/training/ai/",
+  "linkText": "AI Training"
+  }
+%}
 
 {%
   set hero = {
@@ -47,7 +54,7 @@ og:
   "alt": "Paperbacks stacked together in a small space",
   "loading": "eager",
   "class": "training-landing-hero",
-  "technologies": [rustTraining, svelteTraining, emberTraining]
+  "technologies": [rustTraining, svelteTraining, emberTraining, aiTraining]
   }
 %}
 {{ colorHero('purple', hero) }}
@@ -148,6 +155,11 @@ og:
   "logo": "ember",
   "title": "Ember training",
   "link": "/training/ember/"
+  },
+  {
+  "logo": "ai",
+  "title": "AI Training",
+  "link": "/training/ai/"
   }
   ]
 %}

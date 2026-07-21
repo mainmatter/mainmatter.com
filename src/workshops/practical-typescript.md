@@ -1,6 +1,6 @@
 ---
 title: "Practical TypeScript"
-tags: "typescript"
+tags: "svelte"
 format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
 description: This comprehensive 2-day workshop covers TypeScript from basics to advanced concepts, providing hands-on experience with type safety, modern development patterns, and best practices for building robust applications.

@@ -72,8 +72,8 @@ upcomingDates:
 
 
     price: 30000
-  - date: "2026-11-19"
-    endDate: "2026-11-20"
+  - date: "2026-11-23"
+    endDate: "2026-11-24"
     url: >-
       https://www.tickettailor.com/checkout/view-event/id/8676052/chk/1388fc9ca75b741df205dac6d41684cb/
 
