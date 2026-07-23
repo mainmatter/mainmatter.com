@@ -1,5 +1,6 @@
 .rust-consulting__rcn-badge {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   margin-top: 2.5rem;
@@ -7,6 +8,7 @@
 
   span {
     display: block;
+    flex-shrink: 0;
     width: min(20rem, 100%);
     font-size: 1rem;
   }
