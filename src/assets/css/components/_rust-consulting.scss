@@ -1,24 +1,48 @@
-.rust-consulting__rcn-badge {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
+@use "../base/breakpoints" as *;
+
+.rust-consulting__credentials {
+  display: grid;
+  gap: 1.5rem;
   margin-top: 2.5rem;
   margin-bottom: 1.5rem;
+}
+
+.rust-consulting__credential {
+  display: grid;
+  gap: 0.5rem;
 
   span {
     display: block;
-    flex-shrink: 0;
-    width: min(20rem, 100%);
     font-size: 1rem;
   }
 
   img {
     display: block;
+    align-self: center;
     width: min(12rem, 100%);
   }
 }
 
+.rust-consulting__credential--training img {
+  width: min(5rem, 100%);
+}
+
 .rust-consulting__luca-feature {
   align-self: flex-start;
+}
+
+@media (min-width: $breakpoint-s) {
+  .rust-consulting__credentials {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
+
+  .rust-consulting__credential {
+    grid-template-rows: 8rem auto;
+    gap: 0;
+  }
+
+  .rust-consulting__luca-feature .secondary-feature__image-wrapper {
+    padding-left: 0;
+  }
 }
