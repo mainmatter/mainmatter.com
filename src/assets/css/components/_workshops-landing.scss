@@ -140,11 +140,6 @@
   pointer-events: auto;
 }
 
-.workshop-card--full .workshop-card__main,
-.workshop-card--full .workshop-card__description {
-  max-width: none;
-}
-
 .workshop-card__title {
   order: 2;
   margin-bottom: 1rem;
@@ -579,10 +574,6 @@
   .workshop-card__main,
   .workshop-card__details {
     align-self: first baseline;
-  }
-
-  .workshop-card--full {
-    grid-template-columns: 1fr;
   }
 
   .workshop-card__title {
