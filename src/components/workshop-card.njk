@@ -10,9 +10,7 @@
     {% set ticketPrice = dates[0].price %}
   {% endif %}
 
-  <article
-    class="workshop-card {% if not price and not hasUpcomingDates %}workshop-card--full{% endif %}"
-  >
+  <article class="workshop-card">
     <a
       class="workshop-card__overlay-link"
       href="/training/{{ workshop.fileSlug }}/"
