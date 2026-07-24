@@ -31,7 +31,7 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Ember training",
-  "text": "We teach teams and individuals how to adopt and succeed with Ember. We're long-term Ember core team members, community veterans, and the team behind the Ember Initiative. All of our workshops are hands-on, since the best way to learn is by doing. The workshops cover everything from Ember.js fundamentals to modernizing your app with GJS and Vite. We're also happy to prepare custom workshops, as well as on-site ones. <a href='/contact/?service=Training'>Get in touch with us</a> to talk about what curriculum fits best.",
+  "text": "We teach teams and individuals how to adopt and succeed with Ember. Our hands-on workshops cover everything from Ember.js fundamentals to modernizing your app with GJS and Vite.",
   "image": "/assets/images/hero/ember.jpg",
   "alt": "Abstract Ember workshop hero image",
   "loading": "eager",
@@ -59,6 +59,18 @@ eleventyImport:
 
 <div class="workshops-page">
   <section class="container container--xl my-5" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <p>
+          We're long-term Ember core team members, community veterans, and the team behind the Ember
+          Initiative. All of our workshops are hands-on, since the best way to learn is by doing.
+          We're also happy to prepare custom workshops, remote and on-site.
+          <a href="/contact/?service=Training">Get in touch with us</a> to talk about what best fits
+          your team.
+        </p>
+      </div>
+    </div>
+
     <ul class="workshops-page__list">
       {% for workshop in emberWorkshops %}
         <li>{{ workshopCard(workshop) }}</li>

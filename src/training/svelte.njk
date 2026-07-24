@@ -31,7 +31,7 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Svelte training",
-  "text": "We teach teams and individuals how to adopt and succeed with Svelte. All of our workshops are hands-on, since the best way to learn is by doing. The workshops cover everything from language basics to advanced testing, Svelte 5 migrations, progressive enhancement, and authentication. We're also happy to prepare custom workshops, as well as on-site ones. <a href='/contact/?service=Training'>Get in touch with us</a> to talk about what curriculum fits best.",
+  "text": "We teach teams and individuals how to adopt and succeed with Svelte. Our hands-on workshops cover everything from language basics to advanced testing, Svelte 5 migrations, progressive enhancement, and authentication.",
   "image": "/assets/images/hero/table-soccer.jpg",
   "alt": "Close-up photo of table soccer figures",
   "loading": "eager",
@@ -63,6 +63,22 @@ eleventyImport:
 
 <div class="workshops-page">
   <section class="container container--xl my-5" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <p>
+          We teach Svelte across a range of use-cases: language basics, advanced testing, Svelte 5
+          migrations, progressive enhancement, and authentication. We'll guide you on your Svelte
+          journey, starting from the basics of the language all the way to advanced testing
+          techniques.
+        </p>
+        <p>
+          We're also happy to prepare custom workshops, remote and on-site.
+          <a href="/contact/?service=Training">Get in touch with us</a> to talk about what best fits
+          your team.
+        </p>
+      </div>
+    </div>
+
     <ul class="workshops-page__list">
       {% for workshop in svelteWorkshops %}
         <li>{{ workshopCard(workshop) }}</li>

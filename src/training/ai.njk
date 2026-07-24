@@ -1,6 +1,6 @@
 ---
 layout: "base"
-title: AI Training
+title: AI training
 description: "We offer workshops that teach teams how to build AI-enabled products and adopt AI for the software engineering process."
 og:
   image: "/assets/images/services/ai-training-og-image.jpg"
@@ -20,15 +20,15 @@ eleventyImport:
 {% set heroEyebrow %}
   <a class="workshops-page-hero__eyebrow-link" href="/training/">
     <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
-    <span class="workshops-page-hero__eyebrow-text">Developer Training</span>
+    <span class="workshops-page-hero__eyebrow-text">Training and workshops</span>
   </a>
 {% endset %}
 
 {%
   set heroContent = {
   "eyebrow": heroEyebrow,
-  "title": "AI Training",
-  "text": "We teach teams and individuals how to adopt AI and succeed with AI. We look past the hype to where the real value is, so you can leverage AI efficiently, responsibly, and sustainably. All our workshops are hands-on, since the best way to learn is by doing, and we add new topics to the catalog frequently as the field evolves. The workshops cover everything from building AI-enabled products to agentic engineering and MCP servers. We're also happy to prepare custom workshops, as well as on-site ones. <a href='/contact/?service=Training'>Get in touch with us</a> to talk about what curriculum fits best.",
+  "title": "AI training",
+  "text": "We teach teams and individuals how to adopt and succeed with AI. Our hands-on workshops cover everything from building AI-enabled products to agentic engineering and MCP servers.",
   "image": "/assets/images/hero/ai-workshops.jpg",
   "alt": "A close-up of a circuit board",
   "loading": "eager",
@@ -54,6 +54,22 @@ eleventyImport:
 
 <div class="workshops-page">
   <section class="container container--xl my-5" id="workshops">
+    <div class="workshops-page__intro">
+      <div class="workshops-page__intro-text">
+        <p>
+          We teach AI across a range of use-cases: building AI-enabled products, agentic
+          engineering, MCP servers, and more. We'll guide you on your AI journey, looking past the
+          hype to focus on where the real value is, so you can leverage AI efficiently, responsibly,
+          and sustainably. We add new topics to the catalog frequently as the field evolves.
+        </p>
+        <p>
+          We're also happy to prepare custom workshops, remote and on-site.
+          <a href="/contact/?service=Training">Get in touch with us</a> to talk about what best fits
+          your team.
+        </p>
+      </div>
+    </div>
+
     <ul class="workshops-page__list">
       {% for workshop in aiWorkshops %}
         {% if workshop %}
