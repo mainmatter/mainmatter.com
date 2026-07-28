@@ -92,16 +92,16 @@ layout: "base"
   {% set workshopCategoryLabel = "Workshops" %}
   {% if "rust" in tags %}
     {% set workshopCategoryUrl = "/training/rust/" %}
-    {% set workshopCategoryLabel = "Rust Workshops" %}
+    {% set workshopCategoryLabel = "Rust workshops" %}
     {% elseif "svelte" in tags %}
     {% set workshopCategoryUrl = "/training/svelte/" %}
-    {% set workshopCategoryLabel = "Svelte Workshops" %}
+    {% set workshopCategoryLabel = "Svelte workshops" %}
     {% elseif "ember" in tags %}
     {% set workshopCategoryUrl = "/training/ember/" %}
-    {% set workshopCategoryLabel = "Ember Workshops" %}
+    {% set workshopCategoryLabel = "Ember workshops" %}
     {% elseif "ai" in tags %}
     {% set workshopCategoryUrl = "/training/ai/" %}
-    {% set workshopCategoryLabel = "AI Workshops" %}
+    {% set workshopCategoryLabel = "AI workshops" %}
   {% endif %}
   {% set hasUpcomingDates = upcomingDates and upcomingDates.length %}
   {% set heroText %}
@@ -399,7 +399,7 @@ layout: "base"
       "title": "Can't Find the Right Workshops for Your Team?",
       "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
       "linkUrl": "/contact/?service=Training",
-      "linkText": "Get in Touch",
+      "linkText": "Get in touch",
       "class": "workshop-detail__more-workshops-cta"
       }
     %}

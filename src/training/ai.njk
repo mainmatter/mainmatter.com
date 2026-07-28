@@ -1,6 +1,6 @@
 ---
 layout: "base"
-title: AI Training
+title: AI training
 description: "We offer workshops that teach teams how to build AI-enabled products and adopt AI for the software engineering process."
 og:
   image: "/assets/images/services/ai-training-og-image.jpg"
@@ -11,6 +11,7 @@ eleventyImport:
 {% from "color-hero.njk" import colorHero %}
 {% from "workshop-card.njk" import workshopCard %}
 {% from "cta-banner.njk" import ctaBanner %}
+{% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
 {% from "workshop-instructors.njk" import workshopInstructors %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
@@ -19,23 +20,24 @@ eleventyImport:
 {% set heroEyebrow %}
   <a class="workshops-page-hero__eyebrow-link" href="/training/">
     <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
-    <span class="workshops-page-hero__eyebrow-text">Developer Training</span>
+    <span class="workshops-page-hero__eyebrow-text">Training and workshops</span>
   </a>
 {% endset %}
 
 {%
   set heroContent = {
   "eyebrow": heroEyebrow,
-  "title": "AI Training",
-  "text": "We teach teams like yours how to adopt AI and keep up with a fast-moving field. We look past the hype to where the real value is, so your team can leverage AI efficiently, responsibly, and sustainably.",
+  "title": "AI training",
+  "text": "We teach teams and individuals how to adopt and succeed with AI. Our hands-on workshops cover everything from agentic engineering to MCP servers.",
   "image": "/assets/images/hero/ai-workshops.jpg",
   "alt": "A close-up of a circuit board",
   "loading": "eager",
   "class": "workshops-page-hero",
   "toc": [
-    ["Workshops", "#workshops"],
-    ["Instructor", "#instructor"],
-    ["Attendees Say", "#attendees-say"]
+    ["Our workshops", "#workshops"],
+    ["Custom workshops", "#custom-workshops"],
+    ["Our instructor", "#instructor"],
+    ["Our attendees say", "#attendees-say"]
   ],
   "hideFirstTocItemOnDesktop": false,
   "containerType": "lp"
@@ -51,20 +53,19 @@ eleventyImport:
 %}
 
 <div class="workshops-page">
-  <section class="container container--xl my-10" id="workshops">
+  <section class="container container--xl my-5" id="workshops">
     <div class="workshops-page__intro">
       <div class="workshops-page__intro-text">
-        <h2 class="mb-2">AI workshops</h2>
         <p>
-          We teach product and engineering teams how to put AI to work with topics ranging from
-          building AI-enabled products to adopting AI for the software engineering process. We add
-          new workshops to our catalog frequently as the field evolves. All our workshops are
-          hands-on, because the best way to learn is by doing.
+          We teach AI across a range of use-cases: agentic engineering, MCP servers, and more. We'll
+          guide you on your AI journey, looking past the hype to focus on where the real value is,
+          so you can leverage AI efficiently, responsibly, and sustainably. We add new topics to the
+          catalog frequently as the field evolves.
         </p>
         <p>
-          We're also happy to prepare custom workshops – <a href="/contact/?service=Training"
-            >get in touch with us</a
-          > to talk about what curriculum fits your team best!
+          We're also happy to prepare custom workshops, remote and on-site.
+          <a href="/contact/?service=Training">Get in touch with us</a> to talk about what best fits
+          your team.
         </p>
       </div>
     </div>
@@ -80,6 +81,7 @@ eleventyImport:
 
   {%
     set teamCta = {
+    "id": "custom-workshops",
     "title": "Can't find the right workshop for your team?",
     "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
     "linkUrl": "/contact/?service=Training",
@@ -106,13 +108,45 @@ eleventyImport:
     set instructors = [
     {
     "name": "Paolo Ricciuti",
-    "bio": "Paolo Ricciuti is a Svelte maintainer and one of the creators of <a href=\"https://sveltelab.dev\">sveltelab.dev</a>, a REPL for SvelteKit.",
+    "bio": "Our team is led by Paolo Ricciuti, Svelte maintainer and co-author of SvelteLab. Mainmatter is also the driving force behind the <a href=\"https://svelte-custom-renderers.com\" target=\"_blank\">Svelte Custom Renderers initiative</a>, an active contributor to a number of open source projects and co-organizer of <a href=\"https://sveltesummit.com\" target=\"_blank\">Svelte Summit</a>.",
     "image": "/assets/images/authors/paoloricciuti.jpg"
     }
     ]
   %}
 
   {{ workshopInstructors(instructors) }}
+
+  <section class="container container--lg my-10" id="attendees-say">
+    <h2 class="mb-4">Our attendees say</h2>
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "I enjoyed the workshop, Paolo managed to balance well its content between theory and practice.",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
+  </section>
 
   <section>
     {%
