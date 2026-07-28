@@ -1,0 +1,234 @@
+---
+layout: base
+title: Agentic Engineering Consulting| Our Services
+description: "Mainmatter guides engineering teams through that adopting Agentic Engineering efficiently, responsibly, and sustainably for lasting productivity gains."
+eleventyNavigation:
+  key: agentic engineering
+  order: 7
+  title: Agentic engineering
+permalink: /services/agentic-engineering/
+type: service
+meta:
+  name: "Agentic Engineering Consulting"
+  serviceType: Consulting
+  description: "Mainmatter guides engineering teams through that adopting Agentic Engineering efficiently, responsibly, and sustainably for lasting productivity gains."
+  areaServed: Worldwide
+  provider:
+    name: "Mainmatter"
+og:
+  image: /assets/images/services/agentic-engineering-og-image.jpg
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "logo-list.njk" import logoList %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "quote.njk" import quote %}
+
+{%
+  set content = {
+    "title": "Turn AI into lasting productivity gains",
+    "eyebrow": "Agentic engineering consulting",
+    "text": "AI delivers real productivity gains for engineering teams, but capturing them takes more than getting everyone a Claude license. Agents produce valuable, reliable code only when they're steered with the right context and guardrails. Generating more code quickly also shifts the bottleneck downstream, to validation and release: code that never ships has no value, and shipping broken code has negative value even. We guide engineering teams through that complexity so they adopt AI efficiently, responsibly, and sustainably for lasting productivity gains.",
+    "image": "/assets/images/hero/agentic-engineering.jpg",
+    "alt": "Desk setup for agentic engineering work",
+    "loading": "eager"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="container container--lg my-5">
+  <div class="workshops-page__intro">
+    <div class="workshops-page__intro-text">
+      <p>
+        Mainmatter has guided engineering teams for years, not just to adopt new technologies, but
+        to improve the way they build: tightening their processes, practices, and infrastructure so
+        that shipping is fast, safe, and repeatable. Those are the hallmarks of a strong engineering
+        culture, and they matter more than ever as teams adopt AI.
+      </p>
+    </div>
+  </div>
+</section>
+
+{%
+  set list_1 = {
+    "title": "Assess the status quo",
+    "text": "We map your team's setup and maturity, covering composition and experience, tooling and infrastructure, development practices, testing and release processes. That surfaces the blockers holding back your software delivery lifecycle."
+  }
+%}
+{%
+  set list_2 = {
+    "title": "Define what success looks like",
+    "text": "Together we set the target and put tracking in place for metrics like velocity, lead time for changes, and change failure rate, so progress stays visible and grounded in real outcomes."
+  }
+%}
+{%
+  set list_3 = {
+    "title": "Clear the path",
+    "text": "We close the gaps in your delivery pipeline: testing, automation, infrastructure, observability. A pipeline that strains under today's volume will only buckle when AI accelerates code production."
+  }
+%}
+{%
+  set list_4 = {
+    "title": "Roll out tools and practices",
+    "text": "With the foundation in place, we roll out tools incrementally, working alongside your engineers to support and mentor them as they go."
+  }
+%}
+{% set elements = [list_1, list_2, list_3, list_4] %}
+<div id="services">
+  {{ strategyList('agentic-engineering', 'We’ll work with you to:', elements, 'my-5') }}
+</div>
+
+{%
+  set trainingContent = {
+    "title": "AI and agentic engineering training",
+    "text": "We teach teams like yours how to adopt AI and keep up with a fast-moving field.",
+    "linkUrl": "/training/ai/",
+    "linkText": "Explore training"
+  }
+%}
+<section id="training">{{ ctaBanner('purple', 'default', trainingContent) }}</section>
+
+<section class="mt-7 mb-5" id="successes">
+  <div class="container container--lg mb-6">
+    {%
+      set 'content' = {
+      "text": "Mainmatter enabled us to take our Product Development Organization to the next level. They work closely with our team and help us establish new practices while simultaneously delivering on our day to day product initiatives. Their technical and organizational expertise and fresh views allow us to set up the foundation for future success.",
+      "source": "Jürgen Witte, CPO @ Rail Europe",
+      "image": "/assets/images/photos/juergen-witte.png",
+      "alt": "Jürgen Witte",
+      "loading": "lazy"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+  <div class="container container--lg mb-6">
+    {%
+      set link = {
+        "label": 'RailEurope: Transformation for Growth',
+        "url": '/cases/rail-europe/'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+
+    {%
+      set link = {
+        "label": 'Qonto: Supporting scaling on 3 axes: product, team, and productivity',
+        "url": '/cases/qonto/'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+
+    {%
+      set link = {
+        "label": 'Preprocessing trillions of tokens for LLM training at Aleph Alpha',
+        "url": '/cases/aleph-alpha/'
+      }
+    %}
+    {{ btnSecondary(link, 'mt-2') }}
+  </div>
+  {%
+    set logoCompanies = [
+      'Aleph Alpha',
+      'Google',
+      'KISTERS',
+      'BMW Car IT',
+      'Faculty',
+      'Otto',
+      'Redis',
+      'unpkg'
+    ]
+  %}
+  {{ logoList(logoCompanies) }}
+</section>
+
+{{ contactFormLP('Agentic engineering') }}
+
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
+  <div class="">
+    <h1 class="opensource-list__title">You Might Like...</h1>
+    <ul class="opensource-list__list opensource-list__list-redesigned">
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/svelte/agentic-engineering-learn-more.webp"
+              alt="Paolo Ricciuti presenting on stage"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">Agentic Engineering with Svelte</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Watch on YouTube',
+            "url": 'https://youtube.com/playlist?list=PLdAi-nB9AYut1ixrraX3E96rNNVj3iq4F'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img src="/assets/images/blog/ai-blog-post.webp" alt="A lightbulb next to an AI logo" />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">Blog post: Agentic Engineering with Svelte</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Read Blog Post',
+            "url": '/blog/2026/07/28/agentic-engineering-with-svelte/'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img
+              src="/assets/images/blog/beyond-the-ai-hype-learn-more-image.webp"
+              alt="Wooden robot toys"
+            />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">
+              Blog post: Beyond the AI Hype: Realizing Real Engineering Value
+            </h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">
+          {%
+            set link = {
+            "label": 'Read Blog Post',
+            "url": '/blog/2025/12/05/beyond-the-ai-hype-realizing-real-engineering-value/'
+            }
+          %}
+          {{ btnSecondary( link, 'link-purple' ) }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  {%
+    set imageData = {
+      "imgPath": "/assets/images/photos/agentic-engineering-footer.jpg",
+      "alt": "Agentic engineering workspace",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/8", "35/19") }}
+</section>
