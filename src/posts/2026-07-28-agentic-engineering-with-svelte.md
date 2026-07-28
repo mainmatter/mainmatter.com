@@ -3,6 +3,8 @@ title: "Agentic Engineering with Svelte"
 authorHandle: paoloricciuti
 tags: [svelte]
 customCta: "global/svelte-cta.njk"
+ctaLinkUrl: "/services/agentic-engineering/"
+ctaLinkText: "Learn more"
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "Agents can boost your productivity to unprecedented levels... but how do you get the best out of them? And what are the best practices for agentic engineering with Svelte? In this article we will explore what agentic coding is, how it evolved and how to approach it without turning your codebase into a spaghetti-mess (with a very practical example 👀)."
 autoOg: true
