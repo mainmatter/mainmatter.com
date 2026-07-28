@@ -9,4 +9,5 @@ hero:
   image: "/assets/images/calendar/2026-10-01-c-to-rust-migration-ama/video-call.webp"
   imageAlt: "Video call on a computer"
 ---
+
 Luca Palmieri and Jonas Kruckenberg will hold a free AMA about C-to-Rust migrations. Don't miss this opportunity to learn everything you've always wanted to know about migrating codebases to idiomatic Rust successfully.
