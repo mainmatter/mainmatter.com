@@ -1,0 +1,13 @@
+{#
+A call-to-action meant to be displayed at the beginning of a blog post.
+#}
+{% from "cta-banner.njk" import ctaBanner %}
+{%
+  set content = {
+  "title": "If you're looking to adopt Agentic Engineering and need guidance along the way, reach out!",
+  "text": "We will work with you to <a href='/services/agentic-engineering/' class='plausible-event-name=Agentic+Engineering+Consulting'>assess the status quo, remove blockers and impediments, and roll out tools and practices</a>.",
+  "linkUrl": "/contact/",
+  "linkText": "Contact us"
+  }
+%}
+{{ ctaBanner('purple', 'default', content) }}

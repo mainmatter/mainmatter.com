@@ -17,16 +17,24 @@
     flex-direction: column;
   }
 
-  & .opensource-list__project-image {
-    height: auto;
-  }
-
   & .btn-secondary__text {
     font-size: 1.5rem;
   }
 
   & .opensource-list__project-image {
+    width: 100%;
+    height: auto;
     max-width: 32rem;
+    aspect-ratio: 19 /8;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
   }
 }
 

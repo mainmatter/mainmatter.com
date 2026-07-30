@@ -1,5 +1,5 @@
 {% macro techCards(id, title, intro, cards) %}
-  <section class="tech-cards {% if id %}{{ id }}{% endif %} my-10">
+  <section class="tech-cards {{ id if id else '' }} my-10" {% if id %}id="{{ id }}"{% endif %}>
     <div class="tech-cards__container container container--xl">
       {% if title %}
         <h2 class="tech-cards__title">{{ title }}</h2>
