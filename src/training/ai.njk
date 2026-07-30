@@ -1,7 +1,7 @@
 ---
 layout: "base"
 title: AI training
-description: "We offer workshops that teach teams how to build AI-enabled products and adopt AI for the software engineering process."
+description: "Mainmatter offers AI training. Workshops include building MCP servers, agentic engineering, and more, for teams and individuals. Hands-on, onsite and remote."
 og:
   image: "/assets/images/services/ai-training-og-image.jpg"
 eleventyImport:
@@ -14,6 +14,7 @@ eleventyImport:
 {% from "quote.njk" import quote %}
 {% from "logo-list.njk" import logoList %}
 {% from "workshop-instructors.njk" import workshopInstructors %}
+{% from "service-cta.njk" import serviceCta %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
 
@@ -147,6 +148,8 @@ eleventyImport:
       {{ quote(quoteContent) }}
     </div>
   </section>
+
+  {{ serviceCta([], "global/ai-cta.njk") }}
 
   <section>
     {%
