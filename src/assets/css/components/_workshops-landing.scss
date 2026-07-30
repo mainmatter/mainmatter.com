@@ -15,6 +15,19 @@
   width: 100%;
 }
 
+.workshops-page-hero .table-of-contents__list {
+  flex-wrap: wrap;
+  gap: 0 30px;
+
+  @media (min-width: $breakpoint-m) {
+    justify-content: flex-start;
+  }
+
+  .btn-secondary__text {
+    text-wrap-mode: nowrap;
+  }
+}
+
 .workshops-page-hero .color-hero__eyebrow .workshops-page-hero__eyebrow-link {
   --icon-arrow-size: 1rem;
   --icon-arrow-margin: 0 0.5rem 0 0;
@@ -125,11 +138,6 @@
 .workshop-card__date,
 .workshop-card__mobile-details {
   pointer-events: auto;
-}
-
-.workshop-card--full .workshop-card__main,
-.workshop-card--full .workshop-card__description {
-  max-width: none;
 }
 
 .workshop-card__title {
@@ -554,9 +562,9 @@
 
   .workshops-page__certificate-container {
     width: 24rem;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
-    text-align: right;
+    text-align: left;
   }
 
   .workshop-card {
@@ -566,10 +574,6 @@
   .workshop-card__main,
   .workshop-card__details {
     align-self: first baseline;
-  }
-
-  .workshop-card--full {
-    grid-template-columns: 1fr;
   }
 
   .workshop-card__title {

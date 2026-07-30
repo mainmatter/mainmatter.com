@@ -45,10 +45,19 @@
           <li class="mobile-menu__item">
             <a
               class="mobile-menu__link h4"
+              {% if '/services/agentic-engineering/'== page.url %}aria-current="page"{% endif %}
+              href="/services/agentic-engineering/"
+            >
+              {% include 'svg/arrow.njk' %} Agentic Engineering
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a
+              class="mobile-menu__link h4"
               {% if '/training/'==page.url %}aria-current="page"{% endif %}
               href="/training/"
             >
-              {% include 'svg/arrow.njk' %} Developer training
+              {% include 'svg/arrow.njk' %} Training and workshops
             </a>
           </li>
         </ul>

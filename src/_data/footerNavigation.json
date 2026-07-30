@@ -20,7 +20,11 @@
           "link": "/services/strategic-advice/"
         },
         {
-          "text": "Developer training",
+          "text": "Agentic Engineering",
+          "link": "/services/agentic-engineering/"
+        },
+        {
+          "text": "Training and workshops",
           "link": "/training/"
         }
       ]

@@ -23,7 +23,7 @@ eleventyImport:
 {% set heroEyebrow %}
   <a class="workshops-page-hero__eyebrow-link" href="/training/">
     <span class="workshops-page-hero__eyebrow-arrow">{% include 'svg/arrow.njk' %}</span>
-    <span class="workshops-page-hero__eyebrow-text">Developer training</span>
+    <span class="workshops-page-hero__eyebrow-text">Training and workshops</span>
   </a>
 {% endset %}
 
@@ -31,14 +31,17 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Ember training",
-  "text": "We teach teams like yours how to succeed with Ember.js. We're long-term Ember core team members, community veterans, and the team behind the Ember Initiative.",
+  "text": "We teach teams and individuals how to adopt and succeed with Ember. Our hands-on workshops cover everything from Ember.js fundamentals to modernizing your app with GJS and Vite.",
   "image": "/assets/images/hero/ember.jpg",
   "alt": "Abstract Ember workshop hero image",
   "loading": "eager",
   "class": "workshops-page-hero",
   "toc": [
-    ["Workshops", "#workshops"],
-    ["Instructor", "#instructor"]
+    ["Our workshops", "#workshops"],
+    ["Custom workshops", "#custom-workshops"],
+    ["Our instructor", "#instructor"],
+    ["Our attendees say", "#attendees-say"],
+    ["More training material", "#more-training-material"]
   ],
   "hideFirstTocItemOnDesktop": false,
   "containerType": "lp"
@@ -55,15 +58,15 @@ eleventyImport:
 %}
 
 <div class="workshops-page">
-  <section class="container container--xl my-10" id="workshops">
+  <section class="container container--xl my-5" id="workshops">
     <div class="workshops-page__intro">
       <div class="workshops-page__intro-text">
-        <h2 class="mb-2">Ember workshops</h2>
         <p>
-          We offer a range of workshops bookable for teams that want to grow – on-site or remote.
-          We're also happy to prepare custom workshops – <a href="/contact/?service=workshops"
-            >get in touch with us</a
-          > to talk about what curriculum fits your team best!
+          We're long-term Ember core team members, community veterans, and the team behind the
+          <a href="/ember-initiative/">Ember Initiative</a>. All of our workshops are hands-on,
+          since the best way to learn is by doing. We're also happy to prepare custom workshops,
+          remote and on-site. <a href="/contact/?service=Training">Get in touch with us</a> to talk
+          about what best fits your team.
         </p>
       </div>
     </div>
@@ -77,6 +80,7 @@ eleventyImport:
 
   {%
     set teamCta = {
+    "id": "custom-workshops",
     "title": "Can't find the right workshop for your team?",
     "text": "We are happy to tailor the curriculum to your needs. We can combine multiple workshops, pick and choose modules, as well as develop new content if desired.",
     "linkUrl": "/contact/?service=Training",
@@ -111,13 +115,37 @@ eleventyImport:
     set instructors = [
     {
     "name": "Chris Manson",
-    "bio": "Chris Manson is a member of the Ember Core team and a long-time Ember user, building his first Ember app in 2011. He is also the lead engineer behind the Ember initiative.",
+    "bio": "Mainmatter has been actively involved in shaping Ember for years. We’re behind <a href=\"/ember-initiative/\">The Ember Initiative</a> that supports the Ember ecosystem. We also maintain key add-ons such as <a href=\"https://ember-simple-auth.com/\">Ember Simple Auth</a>, <a href=\"http://qunit-dom.com/\">QUnit Dom</a>, and <a href=\"https://ember-test-selectors.com\">Ember Test Selectors</a>.",
+    "additionalBio": "Our team includes many experienced engineers, including Chris Manson (Ember Core Team member, Ember Initiative lead), Nick Schot (long-time open-source contributor) and Marine Dunstetter (Ember Initiative team member).",
     "image": "/assets/images/authors/real_ate.jpg"
     }
     ]
   %}
 
   {{ workshopInstructors(instructors) }}
+
+  <section class="container container--lg my-10" id="attendees-say">
+    <h2 class="mb-4">Our attendees say</h2>
+    <div class="training-quotes">
+      {%
+        set quoteContent = {
+        "text": "The individual exercises build on each other very well. Direct practice makes it easier to understand the topics. I have rarely taken part in such a good practical workshop!",
+        "source": "Remote attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+
+      {%
+        set quoteContent = {
+        "text": "I usually avoid workshops. The pace of more than 3 people is hard to sync: I always feel rushed in some bits, slowed down in others. You fixed that with your code-centric approach: I was able to fully use the time and the knowledge of the trainer!",
+        "source": "Onsite attendee",
+        "styling": "redesigned"
+        }
+      %}
+      {{ quote(quoteContent) }}
+    </div>
+  </section>
 
   {%
     set 'content' = {
@@ -128,6 +156,28 @@ eleventyImport:
     }
   %}
   {{ ctaBanner('aqua', 'default', content) }}
+
+  {%
+    set trainingMaterials = [
+    {
+      "title": "Bridging frameworks: running React in an Ember.JS app",
+      "link": "/blog/2025/12/12/react-ember/",
+      "logo": "ember"
+    },
+    {
+      "title": "Migrating to ember-mirage",
+      "link": "/blog/2026/07/14/ember-mirage/",
+      "logo": "ember"
+    },
+    {
+      "title": "From EmberData to WarpDrive",
+      "link": "/blog/2026/04/30/from-ember-data-to-warp-drive-1/",
+      "logo": "ember"
+    }
+    ]
+  %}
+
+  {{ techCards('more-training-material', 'Explore our other training materials', '', trainingMaterials) }}
 
   <section>
     {%

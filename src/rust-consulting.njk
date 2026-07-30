@@ -72,7 +72,7 @@ og:
 %}
 {%
   set 'tech_3' = {
-  "title": "Trainings and workshops",
+  "title": "Training and workshops",
   "text": "We’ve trained hundreds of engineers at all levels. We help you strengthen your ability to ship safer, faster, and more robust Rust code.",
   "label": "Learn more",
   "link": "/training/rust/"
@@ -93,7 +93,12 @@ og:
             course, organizing <a href="https://www.eurorust.eu" class="link-black">EuroRust</a>,
             contributing to <a href="https://crates.io" class="link-black">crates.io</a>, and
             maintaining several other
-            <a href="#open-source" class="link-black">open-source&nbsp;projects</a>.
+            <a href="#open-source" class="link-black">open-source&nbsp;projects</a>. We are also a
+            founding member of the
+            <a href="https://rustfoundation.org/rust-commercial-network/" class="link-black"
+              >Rust Commercial Network</a
+            >, where we work with ecosystem members to solve shared problems and advance Rust
+            adoption.
           </p>
           <p class="medium">
             Our team is led by Luca Palmieri, author of
@@ -187,19 +192,19 @@ og:
         <div>
           <div class="opensource-list__project-image">
             <img
-              src="/assets/images/rust/redis-youtube-talk.webp"
-              alt="Luca Palmieri presenting Mainmatter's Redis contributions on stage"
+              src="/assets/images/rust/c-to-rust-migration-book/c-to-rust-books.webp"
+              alt="C to Rust book cover"
             />
           </div>
           <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">A deep-dive into our work for Redis at EuroRust 2025</h4>
+            <h4 class="mb-015 medium">The C to Rust Migration Book</h4>
           </div>
         </div>
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Watch on YouTube',
-            "url": 'https://youtube.com/watch?v=XklFGy3aUX4'
+            "label": 'Read the book',
+            "url": '/c-to-rust-migration-book/'
             }
           %}
           {{ btnSecondary( link, 'link-purple' ) }}
@@ -208,19 +213,20 @@ og:
       <li class="opensource-list__project">
         <div>
           <div class="opensource-list__project-image">
-            <img src="/assets/images/rust/eserde-blog-post.webp" alt="Rust logo" />
+            <img
+              src="/assets/images/rust/luca-livestream.jpg"
+              alt="Luca Palmieri YouTube thumbnail"
+            />
           </div>
           <div class="opensource-list__project-text">
-            <h4 class="mb-015 medium">
-              Blog post: eserde: Don't stop at the first deserialization error
-            </h4>
+            <h4 class="mb-015 medium">How do you rewrite C/C++ projects to Rust?</h4>
           </div>
         </div>
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Read blog post',
-            "url": '/blog/2025/02/13/eserde/'
+            "label": 'Watch on YouTube',
+            "url": 'https://www.youtube.com/watch?v=_LtgHxuysUo'
             }
           %}
           {{ btnSecondary( link, 'link-purple' ) }}
@@ -241,7 +247,7 @@ og:
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Download handbook',
+            "label": 'Read the book',
             "url": '/rust-adoption-handbook/'
             }
           %}

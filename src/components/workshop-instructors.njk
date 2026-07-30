@@ -16,6 +16,9 @@
             {% endif %}
             <h3 class="mb-2">{{ instructor.name }}</h3>
             <p>{{ instructor.bio | safe }}</p>
+            {% if instructor.additionalBio %}
+              <p>{{ instructor.additionalBio | safe }}</p>
+            {% endif %}
           </div>
           <div class="split-content__feature">
             {%
