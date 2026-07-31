@@ -1,3 +1,5 @@
+const { JSDOM } = require("@tbranyen/jsdom");
+
 const SITE_URL = "https://mainmatter.com";
 
 function absoluteUrl(value) {
@@ -13,16 +15,10 @@ function stripHtml(value) {
     return undefined;
   }
 
-  return String(value)
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/\s+/g, " ")
-    .trim();
+  const htmlWithoutTags = String(value).replace(/<[^>]*>/g, " ");
+  const text = JSDOM.fragment(htmlWithoutTags).textContent;
+
+  return text.replace(/\s+/g, " ").trim();
 }
 
 function workshopUrl(data) {
@@ -51,20 +47,10 @@ function courseListSchema(workshops, name) {
   };
 }
 
-function serializeJsonLd(value) {
-  return JSON.stringify(value, null, 2)
-    .replace(/</g, "\\u003c")
-    .replace(/>/g, "\\u003e")
-    .replace(/&/g, "\\u0026")
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029");
-}
-
 module.exports = {
   SITE_URL,
   absoluteUrl,
   courseListSchema,
-  serializeJsonLd,
   stripHtml,
   workshopUrl,
 };

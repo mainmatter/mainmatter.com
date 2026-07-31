@@ -26,7 +26,7 @@ require("dotenv").config();
  */
 const pathConfig = require("./src/_data/paths.json");
 const { findByCollectionSlug } = require("./utils/findByCollectionSlug.mjs");
-const { courseListSchema, serializeJsonLd, stripHtml } = require("./utils/schema.js");
+const { courseListSchema, stripHtml } = require("./utils/schema.js");
 
 module.exports = async function (eleventyConfig) {
   /**
@@ -148,7 +148,7 @@ module.exports = async function (eleventyConfig) {
       return "";
     }
 
-    return `<script type="application/ld+json">${serializeJsonLd(schema)}</script>`;
+    return `<script type="application/ld+json">${JSON.stringify(schema, null, 2)}</script>`;
   });
 
   const mdRender = new markdownIt({
