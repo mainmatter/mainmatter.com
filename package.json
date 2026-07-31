@@ -58,6 +58,7 @@
     "got": "^15.1.0",
     "gray-matter": "^4.0.3",
     "html-minifier": "4.0.0",
+    "html-to-text": "^10.0.0",
     "markdown-it": "14.1.0",
     "markdown-it-footnote": "^4.0.0",
     "netlify-plugin-11ty": "^1.5.0",

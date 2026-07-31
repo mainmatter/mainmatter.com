@@ -1,4 +1,4 @@
-const { JSDOM } = require("@tbranyen/jsdom");
+const { convert } = require("html-to-text");
 
 const SITE_URL = "https://mainmatter.com";
 
@@ -15,10 +15,9 @@ function stripHtml(value) {
     return undefined;
   }
 
-  const htmlWithoutTags = String(value).replace(/<[^>]*>/g, " ");
-  const text = JSDOM.fragment(htmlWithoutTags).textContent;
-
-  return text.replace(/\s+/g, " ").trim();
+  return convert(String(value), { wordwrap: false })
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function workshopUrl(data) {
