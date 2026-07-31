@@ -13,7 +13,7 @@ hero:
   imageAlt: "Woman holds a credit card while using the Qonto web application"
   tags: "development / architecture / mentoring"
 og:
-  image: /assets/images/cases/cs-qonto-og-image.jpg
+  image: /assets/images/cases/cs-qonto-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

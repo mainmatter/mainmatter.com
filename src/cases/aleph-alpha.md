@@ -13,7 +13,7 @@ hero:
   imageAlt: "Router on a white background"
   tags: "development / architecture / Rust"
 og:
-  image: /assets/images/cases/cs-aleph-alpha-og-image.jpg
+  image: /assets/images/cases/cs-aleph-alpha-og-image.webp
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}

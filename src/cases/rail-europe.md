@@ -13,7 +13,7 @@ hero:
   imageAlt: "Train tracks on gravel"
   tags: "strategic advice / process / development"
 og:
-  image: /assets/images/cases/cs-rail-europe-og-image.jpeg
+  image: /assets/images/cases/cs-rail-europe-og-image.webp
 ---
 
 {% from "quote.njk" import quote %} {% from "image-aspect-ratio.njk" import imageAspectRatio %}

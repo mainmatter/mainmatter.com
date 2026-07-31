@@ -13,7 +13,7 @@ hero:
   imageAlt: "Router on a white background"
   tags: "development / Ember.js"
 og:
-  image: /assets/images/cases/cs-dd-wrt-og-image.jpg
+  image: /assets/images/cases/cs-dd-wrt-og-image.webp
 ---
 
 {% from "secondary-feature.njk" import secondaryFeature %} {% from "quote.njk" import quote %} {% from "btn-secondary.njk" import btnSecondary %}
