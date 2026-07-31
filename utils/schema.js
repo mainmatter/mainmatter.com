@@ -15,7 +15,7 @@ function stripHtml(value) {
     return undefined;
   }
 
-  return convert(String(value), { wordwrap: false }).replace(/\s+/g, " ").trim();
+  return convert(String(value), { wordwrap: false });
 }
 
 function workshopUrl(data) {
