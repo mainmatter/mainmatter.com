@@ -5,7 +5,7 @@ tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"
 description: "Luciano Mammino, Senior Architect, and Luca Palmieri, Principal Engineering Consultant, discuss Luciano’s shift from JavaScript to Rust for serverless computing, highlighting Rust’s performance, safety, and its potential to optimize AWS Lambda functions."
 og:
-  image: "/assets/images/posts/2024-09-27-exploring-the-potential-of-rust-in-serverless-computing-with-luciano-mammino/og-image.png"
+  image: "/assets/images/posts/2024-09-27-exploring-the-potential-of-rust-in-serverless-computing-with-luciano-mammino/og-image.webp"
 tagline: |
   <p>
   Luciano Mammino, Senior Architect, and Luca Palmieri, Principal Engineering Consultant, discuss Luciano’s shift from JavaScript to Rust for serverless computing, highlighting Rust’s performance, safety, and its potential to optimize AWS Lambda functions.

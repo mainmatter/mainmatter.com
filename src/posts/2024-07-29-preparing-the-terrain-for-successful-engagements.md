@@ -6,7 +6,7 @@ tags: [startups, consulting]
 bio: "Oliver Azevedo Barnes"
 description: "Oliver Barnes on the importance of getting the team onboard when bringing in a consultancy"
 og:
-  image: /assets/images/posts/2024-07-29-preparing-the-terrain-for-successful-engagements/og-image.jpg
+  image: /assets/images/posts/2024-07-29-preparing-the-terrain-for-successful-engagements/og-image.webp
 tagline: |
   <p>A consultancy engagement can be a very productive, gratifying collaborative process. That's _if_ the client's team is onboard with having it come in to help</p>
 ---

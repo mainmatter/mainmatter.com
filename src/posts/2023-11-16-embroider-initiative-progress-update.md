@@ -5,7 +5,7 @@ tags: [ember]
 bio: "Chris Manson"
 description: "Chris Manson gives an update on the work the Mainmatter team has done on the Embroider initiative so far, the achievements that have been made and what the next steps ahead are."
 og:
-  image: /assets/images/posts/2023-11-16-embroider-initiative-progress-update/og-image.jpeg
+  image: /assets/images/posts/2023-11-16-embroider-initiative-progress-update/og-image.webp
 tagline: |
   <p>This post covers the progress over the last few months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="/ember-initiative/">Embroider Initiative</a>. While this isn't a comprehensive update, it should give you a taste of the significant progress we've made and understand some of the challenges that are still remaining.</p>
 image: /assets/images/posts/2023-11-16-embroider-initiative-progress-update/header-visual.jpeg

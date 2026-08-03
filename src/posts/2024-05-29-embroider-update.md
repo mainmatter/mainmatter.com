@@ -5,7 +5,7 @@ tags: [ember, embroider]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "A summary of the progress over the last six months on the Embroider project that has been made through Mainmatter's Embroider Initiative."
 og:
-  image: /assets/images/posts/2024-05-29-embroider-update/og-image.jpg
+  image: /assets/images/posts/2024-05-29-embroider-update/og-image.webp
 tagline: |
   <p>
     This post covers the progress over the last six months on <a href="https://github.com/embroider-build/embroider">the Embroider project</a> that has been made through Mainmatter's <a href="/ember-initiative/">Embroider Initiative</a>.

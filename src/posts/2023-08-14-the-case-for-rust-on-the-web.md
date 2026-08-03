@@ -5,7 +5,7 @@ tags: [rust]
 bio: "Marco Otte-Witte"
 description: "Marco Otte-Witte explains why Mainmatter believes Rust has a bright future for web backend development."
 og:
-  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.png
+  image: /assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/og-image.webp
 tagline: '<p>Mainmatter <a href="/blog/2022/10/12/making-a-strategic-bet-on-rust/">made a strategic bet on Rust for the web</a> in the last year. Our goal is to guide teams during the process of adopting Rust in web environments and we''re on our way towards reaching that goal: we started the EuroRust conference, we joined the Rust Foundation, we hired Rust expert and author <a href="http://twitter.com/algo_luca/">Luca Palmieri</a> as our Principal Engineering Consultant and are working on a number of Rust projects internally as well as in the open source space.</p><p>In this post, I want to share why we''re confident taking that bet and why we believe Rust has a great future ahead of it in the web and cloud space.</p>'
 image: "/assets/images/posts/2023-08-14-the-case-for-rust-on-the-web/header.png"
 imageAlt: "The Rust logo on top of a stylized world map"

@@ -5,7 +5,7 @@ tags: [ember, embroider]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "A summary of what Mainmatter achieved with the Embroider Initiative and what are the next steps for the community."
 og:
-  image: /assets/images/posts/2024-05-29-embroider-update/og-image.jpg
+  image: /assets/images/posts/2024-05-29-embroider-update/og-image.webp
 tagline: |
   <p>
     The Embroider initiative was a big success for the Ember ecosystem that opened the door to building Ember apps with Vite. Having two engineers work full-time on Embroider allowed many important achievements towards that goal. In this blog post, we will look back at the roadmap to present how far we could go, what are the next steps for the community, and how Mainmatter can make them happen through the new <a href="/ember-initiative/">Ember Initiative</a>.

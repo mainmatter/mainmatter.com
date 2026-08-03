@@ -5,7 +5,7 @@ tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"
 description: "JetBrains' Vitaly Bragilevsky and Luca Palmieri discuss the reasons behind the launch of RustRover, the current state of Rust's ecosystem, and the status quo of developer tooling for Rust."
 og:
-  image: "/assets/images/posts/2024-02-29-launching-rustrover/og-image.png"
+  image: "/assets/images/posts/2024-02-29-launching-rustrover/og-image.webp"
 tagline: |
   <p>
   Vitaly Bragilevsky, Developer Advocate at JetBrains, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, talked about JetBrains’ Rust IDE RustRover and discussed Vitaly’s experience with Rust as well as the challenges and benefits of the language.
