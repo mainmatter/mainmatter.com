@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/edge-computing-with-webassembly/edge-computing-with-webassembly-hero.jpg"
   imageAlt: "A dense, abstract network of thin black lines and nodes forming geometric, web-like connections against a light background."
 og:
-  image: /assets/images/workshops/edge-computing-with-webassembly/og-image.jpg
+  image: /assets/images/workshops/edge-computing-with-webassembly/og-image.webp
 topics:
   - title: Getting Started with WebAssembly
     text: >

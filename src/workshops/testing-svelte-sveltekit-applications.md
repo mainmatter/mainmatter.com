@@ -17,7 +17,7 @@ hero:
   image: /assets/images/workshops/testing-svelte-sveltekit-applications/classroom.jpg
   imageAlt: Photo of a classroom with benches facing a blackboard
 og:
-  image: /assets/images/workshops/testing-svelte-sveltekit-applications/og-image.jpg
+  image: /assets/images/workshops/testing-svelte-sveltekit-applications/og-image.webp
 topics:
   - title: The Testing Pyramid
     text: >

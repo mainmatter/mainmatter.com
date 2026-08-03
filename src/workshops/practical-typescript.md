@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/typescript/header.jpg"
   imageAlt: "Close-up of vintage metal letterpress type blocks arranged in rows, showing reversed letters and numbers in various fonts and sizes."
 og:
-  image: /assets/images/workshops/typescript/og-image.png
+  image: /assets/images/workshops/typescript/og-image.webp
 topics:
   - title: TypeScript Fundamentals
     text: >

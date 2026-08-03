@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/telemetry-for-rust-apis/header-background.jpg"
   imageAlt: "2 people in front of a notebook with 3 charts on the screen, only their arms visible, one points at the screen"
 og:
-  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.jpg
+  image: /assets/images/workshops/telemetry-for-rust-apis/og-image.webp
 topics:
   - title: Structured logging (tracing)
     text: >

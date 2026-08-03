@@ -33,7 +33,7 @@ hero:
 
   imageAlt: A drawing of a giant crab standing in a village.
 og:
-  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.jpg
+  image: /assets/images/workshops/learn-rust-starting-from-scratch/og-image.webp
 topics:
   - heading: The toolbox
     text: >

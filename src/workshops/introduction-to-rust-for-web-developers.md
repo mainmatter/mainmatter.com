@@ -13,7 +13,7 @@ hero:
   image: "/assets/images/workshops/introduction-to-rust-for-web-developers/header-background.jpg"
   imageAlt: "The Rust logo in white on top of a photo of a rusty metal surface"
 og:
-  image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.jpg
+  image: /assets/images/workshops/introduction-to-rust-for-web-developers/og-image.webp
 topics:
   - title: Getting Started
     text: >

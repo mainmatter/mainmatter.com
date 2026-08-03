@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/svelte-without-svelte/magician.jpg"
   imageAlt: "A magician in a vintage suit holds a large Ace of Hearts card, performing a dramatic trick against a blue background."
 og:
-  image: /assets/images/workshops/svelte-without-svelte/og-image.jpg
+  image: /assets/images/workshops/svelte-without-svelte/og-image.webp
 topics:
   - title: Introduction to Web Components
     text: >

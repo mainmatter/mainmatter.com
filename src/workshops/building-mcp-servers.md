@@ -20,7 +20,7 @@ hero:
 
 
 og:
-  image: /assets/images/workshops/mcp/og-image.jpg
+  image: /assets/images/workshops/mcp/og-image.webp
 topics:
   - title: What is MCP?
     text: >

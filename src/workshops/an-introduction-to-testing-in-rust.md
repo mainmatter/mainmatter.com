@@ -20,7 +20,7 @@ hero:
   imageAlt: "A drawing of a giant crab standing in a village."
 
 og:
-  image: /assets/images/workshops/an-introduction-to-testing-in-rust/og-image.jpg
+  image: /assets/images/workshops/an-introduction-to-testing-in-rust/og-image.webp
 topics:
   - title: Writing your first unit test
     text: >

@@ -17,7 +17,7 @@ hero:
   image: /assets/images/workshops/agentic-engineering-with-svelte/hero.jpg
   imageAlt: Photo of a computer screen showing an IDE with an open Svelte project
 og:
-  image: /assets/images/workshops/agentic-engineering-with-svelte/og-image.jpg
+  image: /assets/images/workshops/agentic-engineering-with-svelte/og-image.webp
 topics:
   - title: Introduction to Agentic Engineering
     text: >

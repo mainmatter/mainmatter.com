@@ -16,7 +16,7 @@ hero:
   imageAlt: "Hamster sitting behind a hamster-sized desk"
 
 og:
-  image: /assets/images/workshops/modernising-ember-development/og-image.jpg
+  image: /assets/images/workshops/modernising-ember-development/og-image.webp
 topics:
   - title: Introduction to Ember single-file-components (GJS)
     text: >

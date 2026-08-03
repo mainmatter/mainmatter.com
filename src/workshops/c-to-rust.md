@@ -29,7 +29,7 @@ hero:
 
 
 og:
-  image: /assets/images/workshops/c-to-rust/og-image.jpg
+  image: /assets/images/workshops/c-to-rust/og-image.webp
 topics:
   - heading: The basics
     text: >
