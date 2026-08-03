@@ -21,7 +21,7 @@ hero:
   image: /assets/images/workshops/svelte-and-sveltekit/hero.jpg
   imageAlt: Photo of a computer screen showing an IDE with an open Svelte project
 og:
-  image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
+  image: /assets/images/workshops/svelte-and-sveltekit/og-image.webp
 topics:
   - title: Svelte Basics
     text: >

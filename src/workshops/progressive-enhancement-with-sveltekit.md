@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/progressive-enhancement-with-sveltekit/lego-superman.jpg"
   imageAlt: "A Lego superman figure with their cape flying in a wind in front of a dramatic orange/pink sky"
 og:
-  image: /assets/images/workshops/progressive-enhancement-with-sveltekit/og-image.jpg
+  image: /assets/images/workshops/progressive-enhancement-with-sveltekit/og-image.webp
 topics:
   - title: Progressive Enhancement
     text: >

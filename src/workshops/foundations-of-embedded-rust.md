@@ -13,7 +13,7 @@ hero:
   image: "/assets/images/workshops/foundations-of-embedded-rust/embedded-rust-hero.jpg"
   imageAlt: "A crab standing on a printed circuit board"
 og:
-  image: /assets/images/workshops/foundations-of-embedded-rust/og-image.jpg
+  image: /assets/images/workshops/foundations-of-embedded-rust/og-image.webp
 topics:
   - title: Rust's embedded ecosystem
     text: >

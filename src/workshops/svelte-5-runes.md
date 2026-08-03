@@ -20,7 +20,7 @@ hero:
 
 
 og:
-  image: /assets/images/workshops/svelte-5-runes/og-image.jpg
+  image: /assets/images/workshops/svelte-5-runes/og-image.webp
 topics:
   - title: From Svelte 4 to 5
     text: >

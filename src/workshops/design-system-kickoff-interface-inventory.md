@@ -10,7 +10,7 @@ hero:
   image: "/assets/images/workshops/design-system-kickoff-interface-inventory/design-system-kickoff-interface-inventory-hero.jpg"
   imageAlt: "Design system on a computer screen"
 og:
-  image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.jpg
+  image: /assets/images/workshops/design-system-kickoff-interface-inventory/og-image.webp
 topics:
   - title: People, process, and tools
     text: >

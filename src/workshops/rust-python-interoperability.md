@@ -12,7 +12,7 @@ hero:
   image: "/assets/images/workshops/rust-python-interoperability/header-background.jpg"
   imageAlt: "Close-up photo of 3 snake bodies (or 3 parts of the same snake body) stacked on top of each other."
 og:
-  image: /assets/images/workshops/rust-python-interoperability/og-image.jpg
+  image: /assets/images/workshops/rust-python-interoperability/og-image.webp
 topics:
   - title: Introduction to Rust-Python Interoperability
     text: >
