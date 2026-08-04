@@ -19,7 +19,7 @@ hero:
 og:
   image: /assets/images/workshops/testing-svelte-sveltekit-applications/og-image.webp
 topics:
-  - title: The Testing Pyramid
+  - title: The testing pyramid
     text: >
       We'll start off with some basic theory, talking about the testing pyramid. The testing pyramid gives guidance on what kind of test to use for testing what aspect of a system as well as how much coverage is required at what level of the pyramid.
 

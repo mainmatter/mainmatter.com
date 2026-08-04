@@ -36,7 +36,7 @@ topics:
       We will cover the essentials of FFI-safe Rust: <code>extern "C"</code>, ABI considerations, <code>#[no_mangle]</code>, and when to use <code>repr(C)</code>.
 
 
-  - heading: Building and Linking
+  - heading: Building and linking
     text: >
       We will look at how Rust links C code in practice: the <code>-sys</code> crate pattern, using <code>build.rs</code>, integrating with existing build systems, and generating bindings with bindgen — followed by how to build safe abstractions on top of unsafe bindings.
 
@@ -46,7 +46,7 @@ topics:
       We will translate common C idioms into idiomatic Rust: iterators instead of manual loops, return values vs out-parameters, vtables vs traits (and when to keep the C shape), strings and encodings (<code>CStr</code> vs <code>str</code>), return codes vs errors, as well as bitflags.
 
 
-  - heading: "Testing, Benchmarks, and Sanitizers"
+  - heading: "Testing, benchmarks, and sanitizers"
     text: >
       Testing, benchmarks, sanitizers, and more. We will put our FFI code on solid foundations. We will learn how to effectively use tools like Valgrind, sanitizers, and Miri. We will discover their limitations and when to reach for which tool.
 

@@ -1,5 +1,5 @@
 ---
-title: Building MCP Servers
+title: Building MCP servers
 tags: ai
 format: 2 days
 subtext: Bookable for teams – on-site or remote
@@ -27,7 +27,7 @@ topics:
       We'll explore what the Model Context Protocol is and the main applications for extending AI capabilities.
 
 
-  - title: MCP Lifecycle
+  - title: MCP lifecycle
     text: >
       We'll cover the complete lifecycle of an MCP session from initialization to shutdown, including connection management and error handling.
 

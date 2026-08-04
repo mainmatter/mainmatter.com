@@ -1,5 +1,5 @@
 ---
-title: "Edge Computing with WebAssembly"
+title: "Edge computing with WebAssembly"
 tags: "rust"
 format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
@@ -12,27 +12,27 @@ hero:
 og:
   image: /assets/images/workshops/edge-computing-with-webassembly/og-image.webp
 topics:
-  - title: Getting Started with WebAssembly
+  - title: Getting started with WebAssembly
     text: >
       We introduce the core concepts by building a WebAssembly HTTP handler in Rust from setup to deployment. You’ll create your first modules, examine raw WebAssembly binaries, and explore the surrounding standards and tooling, while seeing how Rust compiles to WebAssembly.
 
 
-  - title: Understanding Memory and the Component Model
+  - title: Understanding memory and the component model
     text: >
       After calling your first functions and confronting core WebAssembly's manual memory model, you'll transition to the Component Model, use WIT to enable automatic type marshaling, and finish by building a standalone WebAssembly CLI component.
 
 
-  - title: Going Serverless
+  - title: Going serverless
     text: >
       We expand the basic HTTP handler to explore different Wasm runtimes, deployment options, and common backend patterns in WebAssembly. You'll see why WebAssembly excels in serverless environments, learn its capability-based security model by explicitly granting outbound HTTP access, and build robust HTTP endpoints with proper error handling.
 
 
-  - title: Data Persistence and Routing
+  - title: Data persistence and routing
     text: >
       You’ll add persistent state using a key–value store, upgrade to SQLite for safe and efficient data access, and implement both in-component routing with path parameters and multi-component routing within a larger architecture.
 
 
-  - title: Debugging and Observability
+  - title: Debugging and observability
     text: >
       No production application is complete without effective debugging and observability, so we explore debugging tools, performance profiling, and monitoring solutions. You’ll instrument your application with OpenTelemetry, examine metrics, traces, and logs using common observability stacks.
 

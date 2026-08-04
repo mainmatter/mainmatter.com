@@ -17,7 +17,7 @@ topics:
       Go over your goals, desired features, mission statement, and possible key performance indicators (KPIs). We also develop personas to gain a better understanding of who we are building this product for
 
 
-  - title: Minimum Viable Product (MVP)
+  - title: Minimum viable product (MVP)
     text: >
       Collaboratively strip down features and develop an understanding of the product's core functionality. The MVP is the sole focus for the rest of the exercises in the workshop
 

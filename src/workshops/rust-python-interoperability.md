@@ -1,5 +1,5 @@
 ---
-title: "Rust-Python Interoperability"
+title: "Rust-Python interoperability"
 tags: "rust"
 format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
@@ -14,17 +14,17 @@ hero:
 og:
   image: /assets/images/workshops/rust-python-interoperability/og-image.webp
 topics:
-  - title: Introduction to Rust-Python Interoperability
+  - title: Introduction to Rust-Python interoperability
     text: >
       We kick off with looking at the advantages of combining Rust and Python, understanding where each language shines and why interoperability is valuable. This module introduces tools like <code>PyO3</code>, which enables Rust code integration within Python environments, and <code>maturin</code>, a library for building, packaging and publishing Python extensions written in Rust.
 
 
-  - title: Building Python Extensions in Rust
+  - title: Building Python extensions in Rust
     text: >
       We'll continue with the process of creating Python-callable Rust functions, setting up projects using <code>PyO3</code>, and configuring the development environment to handle Rust extensions in Python.
 
 
-  - title: Managing Data and Types
+  - title: Managing data and types
     text: >
       Next, participants will learn how to handle complex data structures shared between Rust and Python, with a focus on type conversions, data ownership, and ensuring memory safety across both languages.
 
@@ -34,12 +34,12 @@ topics:
       The workshop covers Python’s Global Interpreter Lock (GIL) and strategies for concurrent programming, including async programming in Rust that can enhance Python’s parallel processing capabilities.
 
 
-  - title: Creating Python Classes with Rust
+  - title: Creating Python classes with Rust
     text: >
       We move on to explore creating Python-accessible classes directly in Rust using <code>PyO3</code>'s <code>#[pyclass]</code> attribute. This module teaches struct definition, implementing methods, and adding Rust-based functionality to Python classes.
 
 
-  - title: Static Methods and Inheritance
+  - title: Static methods and inheritance
     text: >
       The final module details adding static methods to Rust-backed Python classes, along with managing inheritance and visibility in Python environments.
 
