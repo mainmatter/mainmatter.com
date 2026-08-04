@@ -1,5 +1,5 @@
 ---
-title: "Progressively Improving a Massive Codebase With Lint to the Future"
+title: "Progressively improving a massive codebase with Lint to the Future"
 authorHandle: real_ate
 tags: ["process"]
 bio: "Senior Software Engineer, Creator of Lint to the Future"

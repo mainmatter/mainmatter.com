@@ -1,5 +1,5 @@
 ---
-title: "From EmberData to WarpDrive (1/2): Migrating to WarpDrive, what does that mean?"
+title: "From EmberData to WarpDrive (1/2): migrating to WarpDrive, what does that mean?"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"

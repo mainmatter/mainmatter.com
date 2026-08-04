@@ -1,5 +1,5 @@
 ---
-title: "Assert Your Style - Testing CSS in Ember Apps"
+title: "Assert your style - testing CSS in Ember apps"
 authorHandle: jjordan_dev
 bio: "Senior Frontend Engineer, Ember Learning core team member"
 description: "Jessica Jordan explains approaches and patterns for testing styles in Ember.js applications."

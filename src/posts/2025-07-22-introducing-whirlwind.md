@@ -1,5 +1,5 @@
 ---
-title: "Whirlwind Chat: Learnings from building a browser-based P2P video chat"
+title: "Whirlwind Chat: learnings from building a browser-based P2P video chat"
 authorHandle: bobrimperator
 tags: [rust, svelte, webrtc]
 bio: "Bartlomiej Dudzik, Software Developer"

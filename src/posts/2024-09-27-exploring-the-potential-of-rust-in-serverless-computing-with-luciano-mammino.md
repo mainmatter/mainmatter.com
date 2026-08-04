@@ -1,5 +1,5 @@
 ---
-title: "Exploring the Potential of Rust in Serverless Computing with Luciano Mammino"
+title: "Exploring the potential of Rust in serverless computing with Luciano Mammino"
 authorHandle: algo_luca
 tags: [rust]
 bio: "Luca Palmieri, Principal Engineering Consultant"

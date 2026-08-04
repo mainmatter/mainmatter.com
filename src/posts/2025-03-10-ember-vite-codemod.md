@@ -1,5 +1,5 @@
 ---
-title: "Ember Vite Codemod"
+title: "Ember Vite codemod"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"

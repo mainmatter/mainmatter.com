@@ -1,5 +1,5 @@
 ---
-title: "The Case against Project Managers"
+title: "The case against project managers"
 authorHandle: sarahlorenzu
 tags: [startups]
 bio: "Sarah Lorenz"

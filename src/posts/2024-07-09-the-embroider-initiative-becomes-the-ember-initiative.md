@@ -1,5 +1,5 @@
 ---
-title: "The Embroider Initiative Becomes the Ember Initiative"
+title: "The Embroider Initiative becomes the Ember Initiative"
 authorHandle: marcoow
 tags: [ember]
 bio: "Marco Otte-Witte"

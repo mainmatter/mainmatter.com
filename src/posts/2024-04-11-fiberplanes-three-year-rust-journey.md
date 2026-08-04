@@ -1,5 +1,5 @@
 ---
-title: "Exploring Fiberplane's 3-Year Rust Journey"
+title: "Exploring Fiberplane's 3-year Rust journey"
 authorHandle: algo_luca
 tags: [rust]
 bio: "Principal Engineering Consultant"

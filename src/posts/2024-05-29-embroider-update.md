@@ -1,5 +1,5 @@
 ---
-title: "Embroider Initiative: Progress Update"
+title: "Embroider Initiative: progress update"
 authorHandle: academierenards
 tags: [ember, embroider]
 bio: "Marine Dunstetter, Senior Software Engineer"

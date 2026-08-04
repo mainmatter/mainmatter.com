@@ -1,5 +1,5 @@
 ---
-title: "Truly Native Apps with Svelte?"
+title: "Truly native apps with Svelte?"
 authorHandle: paoloricciuti
 tags: [svelte]
 customCta: "global/svelte-custom-renders.njk"

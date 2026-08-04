@@ -1,5 +1,5 @@
 ---
-title: "The Value of Unguided Work"
+title: "The value of unguided work"
 authorHandle: sarahlorenzu
 tags: [culture]
 bio: "Sarah Lorenz"

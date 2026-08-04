@@ -1,5 +1,5 @@
 ---
-title: "(better) Authentication in ember.js"
+title: "(better) authentication in ember.js"
 authorHandle: marcoow
 bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description: "Marco Otte-Witte introduces an update to the mechanism for implementing a session, authentication and authorization in Ember.js applications."

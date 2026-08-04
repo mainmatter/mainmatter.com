@@ -1,5 +1,5 @@
 ---
-title: "Why Companies Invest In Open-Source and Why Yours Should, Too"
+title: "Why companies invest in open-source and why yours should, too"
 authorHandle: jjordan_dev
 tags: opensource
 bio: "Senior Frontend Engineer, Ember Learning Core team member"

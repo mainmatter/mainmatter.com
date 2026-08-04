@@ -1,5 +1,5 @@
 ---
-title: "Migrating to ember-mirage: Modern MirageJS for Vite and Embroider"
+title: "Migrating to ember-mirage: modern MirageJS for Vite and Embroider"
 authorHandle: nickschot
 tags: [ember, mirage, mainmatter]
 bio: "Nick Schot"

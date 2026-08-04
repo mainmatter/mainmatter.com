@@ -1,5 +1,5 @@
 ---
-title: Bringing the Matrix Protocol to Elixir
+title: Bringing the Matrix protocol to Elixir
 authorHandle: niklas_long
 tags: elixir
 bio: "Backend Engineer, author of the Matrix Elixir SDK"

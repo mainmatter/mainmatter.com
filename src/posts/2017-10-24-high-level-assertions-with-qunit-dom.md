@@ -1,5 +1,5 @@
 ---
-title: High Level Assertions with qunit-dom
+title: High level assertions with qunit-dom
 authorHandle: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek introduces qunit-dom, an extension for qunit that allows writing more expressive and less complex UI tests using high level DOM assertions."

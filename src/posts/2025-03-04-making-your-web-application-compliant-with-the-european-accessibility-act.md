@@ -1,5 +1,5 @@
 ---
-title: "Making Your Web Application Compliant With the European Accessibility Act"
+title: "Making your web application compliant with the European Accessibility Act"
 authorHandle: zeppelin
 tags: [process]
 bio: "Gabor Babicz, Senior Software Engineering Consultant"

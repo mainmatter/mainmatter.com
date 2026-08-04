@@ -1,5 +1,5 @@
 ---
-title: "Managing modal dialogs in Ember.js with Promises"
+title: "Managing modal dialogs in Ember.js with promises"
 authorHandle: pichfl
 tags: ember
 bio: "Consultant for Technology and Design at Mainmatter"

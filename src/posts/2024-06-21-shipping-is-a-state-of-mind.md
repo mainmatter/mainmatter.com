@@ -1,5 +1,5 @@
 ---
-title: "Shipping Is a State of Mind"
+title: "Shipping is a state of mind"
 authorHandle: marcoow
 tags: [process]
 bio: "Marco Otte-Witte"

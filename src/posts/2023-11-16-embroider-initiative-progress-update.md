@@ -1,5 +1,5 @@
 ---
-title: "Embroider Initiative: Progress Update"
+title: "Embroider Initiative: progress update"
 authorHandle: real_ate
 tags: [ember]
 bio: "Chris Manson"

@@ -1,5 +1,5 @@
 ---
-title: "Embroider Initiative: Conclusion"
+title: "Embroider Initiative: conclusion"
 authorHandle: academierenards
 tags: [ember, embroider]
 bio: "Marine Dunstetter, Senior Software Engineer"

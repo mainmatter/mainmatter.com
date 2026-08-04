@@ -1,5 +1,5 @@
 ---
-title: "From React To Ember: Building a Personal Website"
+title: "From React to Ember: building a personal website"
 authorHandle: inesoaresilva
 tags: [ember, react]
 bio: "Inês Silva"

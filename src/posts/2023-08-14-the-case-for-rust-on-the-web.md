@@ -1,5 +1,5 @@
 ---
-title: "The Case for Rust on the Web"
+title: "The case for Rust on the web"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"

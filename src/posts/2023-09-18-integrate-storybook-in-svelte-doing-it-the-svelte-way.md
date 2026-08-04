@@ -1,5 +1,5 @@
 ---
-title: "Integrate Storybook in Svelte: Doing it the Svelte-way"
+title: "Integrate Storybook in Svelte: doing it the Svelte-way"
 authorHandle: oscard0m_
 tags: [svelte, storybook]
 bio: "Óscar Domínguez Celada"

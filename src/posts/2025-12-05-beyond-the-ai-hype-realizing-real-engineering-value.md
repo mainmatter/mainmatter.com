@@ -1,5 +1,5 @@
 ---
-title: "Beyond the AI Hype: Realizing Real Engineering Value"
+title: "Beyond the AI hype: realizing real engineering value"
 authorHandle: marcoow
 tags: [ai, process, mainmatter]
 bio: "Marco Otte-Witte"

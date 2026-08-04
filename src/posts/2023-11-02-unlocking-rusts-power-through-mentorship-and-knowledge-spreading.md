@@ -1,5 +1,5 @@
 ---
-title: "Unlocking Rust’s Power through Mentorship and Knowledge Spreading"
+title: "Unlocking Rust’s power through mentorship and knowledge spreading"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"

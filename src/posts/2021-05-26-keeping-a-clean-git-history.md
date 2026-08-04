@@ -1,5 +1,5 @@
 ---
-title: "Git Good - The magic of keeping a clean Git history"
+title: "Git good - the magic of keeping a clean Git history"
 authorHandle: real_ate
 tags: [git, misc]
 bio: "Senior Software Engineer, Ember Learning Core Team member"

@@ -1,5 +1,5 @@
 ---
-title: The True Cost Of A Quickfix
+title: The true cost of a quickfix
 authorHandle: patsy_issa_p
 tags: process
 bio: "Senior Frontend Engineer"

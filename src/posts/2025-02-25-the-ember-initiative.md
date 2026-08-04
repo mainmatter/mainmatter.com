@@ -1,5 +1,5 @@
 ---
-title: "The Start of the Ember Initiative"
+title: "The start of the Ember Initiative"
 authorHandle: real_ate
 tags: ["ember"]
 bio: "Senior Software Engineer, Member of the Ember Core Learning and Ember Core Tooling teams."

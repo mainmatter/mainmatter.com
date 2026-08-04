@@ -1,5 +1,5 @@
 ---
-title: "Open Source Maintenance"
+title: "Open source maintenance"
 authorHandle: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek introduces best practices for simplifying and speeding up his work on open-source and other projects."

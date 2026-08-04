@@ -1,5 +1,5 @@
 ---
-title: "Ember Initative - First Update"
+title: "Ember Initative - first update"
 authorHandle: real_ate
 tags: ["ember"]
 bio: "Senior Software Engineer, Member of the Ember Core Learning and Ember Core Tooling teams."
