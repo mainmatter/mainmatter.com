@@ -1,7 +1,7 @@
 ---
 layout: case-study
 company: Qonto
-title: Co-Engineering the Future of Banking for SMEs with Qonto | Work
+title: Co-engineering the future of banking for SMEs with Qonto | Work
 displayTitle: "A helping hand for a visionary fintech startup"
 problem: Qonto was facing a number of impediments that were slowing down their workflow.
 solution: We helped them release new features quickly while laying the foundations for sustainable growth at an accelerated pace.
@@ -13,7 +13,7 @@ hero:
   imageAlt: "Woman holds a credit card while using the Qonto web application"
   tags: "development / architecture / mentoring"
 og:
-  image: /assets/images/cases/cs-qonto-og-image.jpg
+  image: /assets/images/cases/cs-qonto-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

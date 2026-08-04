@@ -13,7 +13,7 @@ hero:
   imageAlt: "2 walls with bank lockers, most closed but some open"
   tags: "design / development / React"
 og:
-  image: /assets/images/cases/cs-ais-og-image.jpg
+  image: /assets/images/cases/cs-ais-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

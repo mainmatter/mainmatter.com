@@ -1,5 +1,5 @@
 ---
-title: "From EmberData to WarpDrive (2/2): Using WarpDrive in Super Rentals Tutorial"
+title: "From EmberData to WarpDrive (2/2): using WarpDrive in Super Rentals tutorial"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"

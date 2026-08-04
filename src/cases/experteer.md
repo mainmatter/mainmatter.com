@@ -13,7 +13,7 @@ hero:
   imageAlt: "Collage of the Experteer mobile application"
   tags: "development / process / React"
 og:
-  image: /assets/images/cases/cs-experteer-og-image.jpg
+  image: /assets/images/cases/cs-experteer-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

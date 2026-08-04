@@ -11,7 +11,7 @@ tagline: |
   </p>
 
 og:
-  image: /assets/images/posts/2023-12-13-adopting-rust/og-image.png
+  image: /assets/images/posts/2023-12-13-adopting-rust/og-image.webp
 image: "/assets/images/posts/2023-12-13-adopting-rust/header.png"
 imageAlt: "The Rust logo on top of a street map"
 ---

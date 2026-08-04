@@ -1,5 +1,5 @@
 ---
-title: "Scaling Tech Teams"
+title: "Scaling tech teams"
 authorHandle: marcoow
 tags: process
 bio: "Founder and Managing Director of Mainmatter"

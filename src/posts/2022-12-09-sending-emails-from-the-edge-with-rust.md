@@ -1,5 +1,5 @@
 ---
-title: "Sending Emails from the Edge with Rust"
+title: "Sending emails from the edge with Rust"
 authorHandle: marcoow
 tags: rust
 bio: "Marco Otte-Witte"

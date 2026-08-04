@@ -10,19 +10,19 @@ hero:
   image: "/assets/images/workshops/authentication-for-svelte-sveltekit/lock.jpg"
   imageAlt: "Close-up photo of a lock attached to a metal fence"
 og:
-  image: /assets/images/workshops/authentication-for-svelte-sveltekit/og-image.jpg
+  image: /assets/images/workshops/authentication-for-svelte-sveltekit/og-image.webp
 topics:
-  - title: The Basics of Authentication
+  - title: The basics of authentication
     text: >
       We'll start with a bit of theory, looking into what authentication is, what the options are to implement authentication in web apps and what the relevant security aspects are to keep in mind.
 
 
-  - title: The Demo Project
+  - title: The demo project
     text: >
       We continue by setting up a demo project we'll be using throughout the workshop to set up a full authentication system.
 
 
-  - title: Username & Password
+  - title: Username & password
     text: >
       We'll build basic authentiation via a username and password first as a simple and straight forward means for users to login.
 
@@ -32,7 +32,7 @@ topics:
       Next, we'll move to OAuth, which most real-world applications are likely to use. We'll look into the theory behind the approach and implement authentication via an OAuth provider in the demo project.
 
 
-  - title: Application Concerns
+  - title: Application concerns
     text: >
       We end by looking into application concerns around authentication like deciding whether a user is currently logged in, and rendering the according UI, seamlessly moving the authentication state between the browser and the server side of a SvelteKit application, or persisting the authentication state beyond refreshs.
 

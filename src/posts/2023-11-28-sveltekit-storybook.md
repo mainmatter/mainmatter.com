@@ -5,7 +5,7 @@ tags: [svelte, storybook]
 bio: "Paolo Ricciuti, Senior Software Engineer"
 description: "Paolo Ricciuti (paoloricciuti) shows the newest addition to Storybook that allows for a tighter integration between Storybook and SvelteKit"
 og:
-  image: /assets/images/posts/2023-11-28-sveltekit-storybook/og-image.jpg
+  image: /assets/images/posts/2023-11-28-sveltekit-storybook/og-image.webp
 tagline: |
   <p>Are you using SvelteKit? Are you using Storybook with it? Well, i have good news for you because the SvelteKit integration just got a whole lot better!</p>
 

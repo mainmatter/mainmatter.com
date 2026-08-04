@@ -1,11 +1,11 @@
 ---
-title: "The Embroider Initiative Becomes the Ember Initiative"
+title: "The Embroider Initiative becomes the Ember Initiative"
 authorHandle: marcoow
 tags: [ember]
 bio: "Marco Otte-Witte"
 description: "Marco Otte-Witte introduces the Ember Initiative – a permanent effort to advance the Ember ecosystem, building on the success of the Embroider Initiative."
 og:
-  image: /assets/images/posts/2024-07-09-the-embroider-initiative-becomes-the-ember-initiative/og-image.png
+  image: /assets/images/posts/2024-07-09-the-embroider-initiative-becomes-the-ember-initiative/og-image.webp
 tagline: "<p>The Embroider initiative was a big success for the Ember ecosystem. Having two engineers work full-time on Embroider for a year allowed us to reach a point where new Ember apps can now be built with Vite from the start. It might not be as easy for teams working on slightly older Ember versions, but the path to Vite is open. Most teams just need to update their apps to the latest Ember version to get on to Vite.</p> <p>While the Embroider initiative has come to a successful end, we don’t want to stop pushing the Ember ecosystem forward. The success of the initiative has shown that crowd-funded work on Ember is effective: companies see the reasons to invest, and we can reach our goals, which have real value for everyone in the ecosystem. That’s why we’re proposing to turn the Embroider initiative into a permanent effort – the <strong>Ember Initiative</strong>.</p>"
 image: "/assets/images/ember/ember-consulting.jpeg"
 imageAlt: "A group of hamsters"

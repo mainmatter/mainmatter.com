@@ -1,5 +1,5 @@
 ---
-title: "Agentic Engineering with Svelte"
+title: "Agentic engineering with Svelte"
 authorHandle: paoloricciuti
 tags: [svelte]
 customCta: "global/ai-cta.njk"

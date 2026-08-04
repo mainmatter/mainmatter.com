@@ -1,5 +1,5 @@
 ---
-title: "ember-test-selectors: The road to 1.0"
+title: "ember-test-selectors: the road to 1.0"
 authorHandle: tobiasbieniek
 bio: "Senior Frontend Engineer, Ember CLI core team member"
 description: "Tobias Bieniek goes through what happened in ember-test-selectors during the past year and what the roadmap towards a 1.0 release is."

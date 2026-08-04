@@ -1,11 +1,11 @@
 ---
-title: "Embedding an Ember App with Webpack"
+title: "Embedding an Ember app with Webpack"
 authorHandle: bobrimperator
 tags: [ember]
 bio: "Software Developer"
 description: "Bartlomiej Dudzik shows how to make an Ember App embeddable in non-Ember projects."
 og:
-  image: /assets/images/posts/2024-03-27-embeddable-ember-apps/og-image.png
+  image: /assets/images/posts/2024-03-27-embeddable-ember-apps/og-image.webp
 image: /assets/images/posts/2024-03-27-embeddable-ember-apps/header.jpg
 tagline: |
   <p>Taking a look at making an Ember app embeddable in non-Ember projects and allowwing for communication between both apps. Showing how to wrangle Webpack, Ember's build systems and their caveats.</p>

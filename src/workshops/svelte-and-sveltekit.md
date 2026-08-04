@@ -21,14 +21,14 @@ hero:
   image: /assets/images/workshops/svelte-and-sveltekit/hero.jpg
   imageAlt: Photo of a computer screen showing an IDE with an open Svelte project
 og:
-  image: /assets/images/workshops/svelte-and-sveltekit/og-image.jpg
+  image: /assets/images/workshops/svelte-and-sveltekit/og-image.webp
 topics:
-  - title: Svelte Basics
+  - title: Svelte basics
     text: >
       Rendering reactive UIs is the core functionality of Svelte. We cover Svelte’s unique approach to reactivity, the <code>$</code> syntax and its template language. We then look into writing Svelte components, accepting props, and its CSS scoping feature.
 
 
-  - title: SvelteKit Basics
+  - title: SvelteKit basics
     text: >
       This stage introduces SvelteKit, the project framework built on Svelte. We cover project creation and management, SvelteKit’s file system as well as creating and managing pages.
 
@@ -48,7 +48,7 @@ topics:
       This stage kicks off with an introduction of what stores are and how they work. We continue with looking into implementing the three main stores: writable, readable, and derived.
 
 
-  - title: SvelteKit and Progressive Enhancement
+  - title: SvelteKit and progressive enhancement
     text: >
       The final stage of the workshop teaches how to implement progressive enhancement with forms. We cover how to send data to an API, how to validate forms, what server folders are, and give a brief introduction into hooks. We close by looking into how to implement authentication.
 

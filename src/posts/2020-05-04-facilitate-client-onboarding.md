@@ -1,5 +1,5 @@
 ---
-title: "How to Improve Kick-off Meetings to Spark Collaboration"
+title: "How to improve kick-off meetings to spark collaboration"
 authorHandle: ghislaineguerin
 tags: design
 bio: "Process Designer and Facilitator"

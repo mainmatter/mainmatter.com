@@ -1,5 +1,5 @@
 ---
-title: "Rustler - Using Rust crates in Elixir"
+title: "Rustler - using Rust crates in Elixir"
 authorHandle: bobrimperator
 tags: [elixir, rust]
 bio: "Software Developer"

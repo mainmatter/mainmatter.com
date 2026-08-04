@@ -1,5 +1,5 @@
 ---
-title: "Ember.js: The Documentary - Berlin Screening"
+title: "Ember.js: The Documentary - Berlin screening"
 authorHandle: mrmrcoleman
 tags: ember
 bio: "Communications and Community Outreach Specialist"

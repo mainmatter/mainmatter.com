@@ -13,7 +13,7 @@ hero:
   imageAlt: "Back view of a man standing in front of departure boards"
   tags: "development / process / Ruby on Rails"
 og:
-  image: /assets/images/cases/cs-trainline-og-image.jpg
+  image: /assets/images/cases/cs-trainline-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

@@ -13,7 +13,7 @@ hero:
   imageAlt: "Servers in Rack"
   tags: "architecture / development / process"
 og:
-  image: /assets/images/cases/cs-mvb-og-image.jpg
+  image: /assets/images/cases/cs-mvb-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

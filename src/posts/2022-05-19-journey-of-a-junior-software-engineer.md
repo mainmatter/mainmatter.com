@@ -1,5 +1,5 @@
 ---
-title: "Journey of a Junior Software-Engineer"
+title: "Journey of a junior software-engineer"
 authorHandle: inesoaresilva
 tags: process
 bio: "Junior Software-Engineer"

@@ -1,11 +1,11 @@
 ---
-title: "Setting up OAuth with Auth.js in a SvelteKit Project"
+title: "Setting up OAuth with Auth.js in a SvelteKit project"
 authorHandle: lolmaus
 tags: [svelte, sveltekit, oauth, authjs]
 bio: "Andrey Mikhaylov (lolmaus)"
 description: "Andrey Mikhaylov (lolmaus) provides a step-by-step guide for setting up OAuth authentication using the Auth.js library in a SvelteKit project. He describes a number of pitfalls that may be a source of frustration even to experienced developers, due to error messages being unhelpful — and explains how to get around them."
 og:
-  image: /assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/og-image.jpg
+  image: /assets/images/posts/2023-11-23-setting-up-oauth-with-auth-js-and-sveltekit/og-image.webp
 tagline: |
   <p>There are numerous OAuth articles and libraries available, and yet setting it up may appear challenging — not due to any particular code complexity, but rather to small details missing or incorrectly configured. This article provides a step-by-step guide for setting up OAuth using a specific combination of technologies, SvelteKit + Auth.js, along with explanations of all the pitfalls.</p>
   <p>This article focuses on the configuration of Google and GitHub OAuth providers since they are among the most popular ones with developers. You're not limited with those two, though: set it up with any other OAuth provider of choice.</p>

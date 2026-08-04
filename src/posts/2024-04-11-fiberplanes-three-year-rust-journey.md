@@ -1,11 +1,11 @@
 ---
-title: "Exploring Fiberplane's 3-Year Rust Journey"
+title: "Exploring Fiberplane's 3-year Rust journey"
 authorHandle: algo_luca
 tags: [rust]
 bio: "Principal Engineering Consultant"
 description: "Fiberplane's Benno van den Berg and Luca Palmieri discuss Fiberplane’s reasons for choosing Rust and their 3-year experience maintaining a large Rust codebase and building an observability product."
 og:
-  image: "/assets/images/posts/2024-04-11-fiberplanes-three-year-rust-journey/og-image.png"
+  image: "/assets/images/posts/2024-04-11-fiberplanes-three-year-rust-journey/og-image.webp"
 tagline: |
   <p>
   Benno van den Berg, Principal Software Engineer at Fiberplane, and Luca Palmieri, Principal Engineering Consultant at Mainmatter, discussed Fiberplane’s 3-year Rust journey building an observability product and interactive notebook with Rust.

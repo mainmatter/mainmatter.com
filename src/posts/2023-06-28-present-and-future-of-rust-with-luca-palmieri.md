@@ -1,5 +1,5 @@
 ---
-title: "Adopting Rust: present and future of the Rust Web Ecosystem - with Luca Palmieri"
+title: "Adopting Rust: present and future of the Rust web ecosystem - with Luca Palmieri"
 authorHandle: marcoow
 tags: [rust]
 bio: "Marco Otte-Witte"

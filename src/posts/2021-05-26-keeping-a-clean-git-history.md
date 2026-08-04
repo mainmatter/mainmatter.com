@@ -1,5 +1,5 @@
 ---
-title: "Git Good - The magic of keeping a clean Git history"
+title: "Git good - the magic of keeping a clean Git history"
 authorHandle: real_ate
 tags: [git, misc]
 bio: "Senior Software Engineer, Ember Learning Core Team member"
@@ -8,7 +8,7 @@ description: |
   describes some tips and tricks that really help you clean up your branches and
   Pull Requests
 og:
-  image: /assets/images/posts/2021-05-26-keeping-a-clean-git-history/og-image.jpg
+  image: /assets/images/posts/2021-05-26-keeping-a-clean-git-history/og-image.webp
 tagline: |
   <p>This post is designed to help you form a solid mental model while working with Git both professionally and in an open source project, and how to ensure you are following best practices to make the process easier for everyone.</p>
 ---

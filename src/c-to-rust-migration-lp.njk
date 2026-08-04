@@ -93,22 +93,22 @@ og:
 
   {%
     set topics = [{
-    "title": "Foreign Function Interfaces",
+    "title": "Foreign function interfaces",
     "text": "The fundamentals of FFI: how C and Rust communicate at the binary level through the C ABI, symbol tables, and the linker. You'll write your first <code>extern \"C\"</code> blocks by hand and see what you're promising the compiler when you declare a binding, and what goes wrong when the signature doesn't match."
     },{
-    "title": "Types and Data Across the Boundary",
+    "title": "Types and data across the boundary",
     "text": "How to move primitive values, strings, structs, and collections across the language boundary while keeping ownership clear. You'll use <code>bindgen</code> to generate Rust bindings from C headers, and <code>cheadergen</code>, the tool for the reverse direction, to generate C headers from your Rust code, and configure both for non-trivial types."
     },{
-    "title": "FFI-Safe Types",
+    "title": "FFI-safe types",
     "text": "Raw pointers and untyped primitives are a major source of bugs at the FFI boundary. You'll learn safer alternatives: <code>NonNull</code>, <code>Option</code>, newtype wrappers, and enum discriminants that carry meaning instead of bare values, and how to design types that make invalid states unrepresentable even when talking to C code that has no type safety of its own."
     },{
     "title": "FFI validation",
     "text": "Every FFI function is a trust boundary. C callers can pass null pointers, out-of-range values, or invalid UTF-8, and Rust can't catch that at compile time. You'll build the discipline of validating and narrowing inputs at the boundary, so invalid data from C never reaches safe Rust or your business logic."
     },{
-    "title": "Error Handling and API Design",
+    "title": "Error handling and API design",
     "text": "Rust's <code>Result</code> and <code>?</code> stop at <code>extern \"C\"</code>. You'll convert Rust error types into C-compatible results with error-code enums and out-parameters, and surface failure information without leaking Rust internals. You'll also learn to expose coarse operations rather than per-field setters and keep your API surface small."
     },{
-    "title": "Production-Quality FFI",
+    "title": "Production-quality FFI",
     "text": "You'll document FFI functions with Rust's <code>/// # Safety</code> convention and numbered invariants, so every unsafe contract is explicit and surfaces as C doc comments in the generated headers via <code>cheadergen</code>. We cover build integration, automated checks, and treating your FFI surface as an API you'll maintain forever."
     }]
   %}

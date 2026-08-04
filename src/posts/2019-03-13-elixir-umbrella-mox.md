@@ -1,5 +1,5 @@
 ---
-title: Elixir Umbrella Applications and Testing with Mox
+title: Elixir umbrella applications and testing with Mox
 authorHandle: niklas_long
 tags: elixir
 bio: "Backend Engineer, author of Breethe API"

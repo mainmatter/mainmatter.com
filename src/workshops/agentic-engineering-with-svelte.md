@@ -1,5 +1,5 @@
 ---
-title: Agentic Engineering with Svelte
+title: Agentic engineering with Svelte
 tags: ai
 format: "Workshop: 3 days"
 subtext: Bookable for teams - on-site or remote
@@ -17,9 +17,9 @@ hero:
   image: /assets/images/workshops/agentic-engineering-with-svelte/hero.jpg
   imageAlt: Photo of a computer screen showing an IDE with an open Svelte project
 og:
-  image: /assets/images/workshops/agentic-engineering-with-svelte/og-image.jpg
+  image: /assets/images/workshops/agentic-engineering-with-svelte/og-image.webp
 topics:
-  - title: Introduction to Agentic Engineering
+  - title: Introduction to agentic engineering
     text: >
       We'll introduce agentic engineering and the current challenges of using AI effectively with Svelte applications.
 

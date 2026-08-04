@@ -1,5 +1,5 @@
 ---
-title: On Computed Properties vs. Helpers
+title: On computed properties vs. helpers
 authorHandle: marcoow
 bio: "Founding Director of Mainmatter, author of Ember Simple Auth"
 description: "Marco Otte-Witte discusses differences between computed properties and helpers and explains pros and cons of each alternative."

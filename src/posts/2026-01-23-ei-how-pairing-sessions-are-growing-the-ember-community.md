@@ -1,5 +1,5 @@
 ---
-title: "Ember Initiative: How pairing sessions are growing the Ember community"
+title: "Ember Initiative: how pairing sessions are growing the Ember community"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"

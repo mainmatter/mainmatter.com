@@ -1,11 +1,11 @@
 ---
-title: "Shipping Is a State of Mind"
+title: "Shipping is a state of mind"
 authorHandle: marcoow
 tags: [process]
 bio: "Marco Otte-Witte"
 description: "Marco Otte-Witte explains how, for the leading teams in the industry, shipping is a permanent state rather than an occasional event."
 og:
-  image: /assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/og-image.png
+  image: /assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/og-image.webp
 tagline: "<p>Shipping software to production so it’s available to real users is the ultimate goal of every digital product development team. There is no value in specs, designs, or changes committed to git, unless the code has made it to the production system and thus into the hands of users. The best teams ship dozens of times per day, every day, instead of every 2 weeks on particularly designated release days, or only at the end of the sprint – for those teams, shipping is a permanent state rather than an occasional event.</p>"
 image: "/assets/images/posts/2024-06-21-shipping-is-a-state-of-mind/header.jpg"
 imageAlt: "Close-up photo of a green rope on a sailboat, with blurred figures in the background and a sail catching the wind against a clear blue sky."

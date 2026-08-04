@@ -1,5 +1,5 @@
 ---
-title: "Ember Initiative: Tell us how much faster Vite makes your Ember app"
+title: "Ember Initiative: tell us how much faster Vite makes your Ember app"
 authorHandle: pichfl
 tags: [ember, embroider, vite]
 bio: "Florian Pichler, Software Developer"

@@ -13,7 +13,7 @@ hero:
   imageAlt: "Wave in the ocean"
   tags: "development / architecture / Rust"
 og:
-  image: /assets/images/cases/cs-kisters-og-image.jpg
+  image: /assets/images/cases/cs-kisters-og-image.webp
 ---
 
 {% from "image-aspect-ratio.njk" import imageAspectRatio %} {% from "quote.njk" import quote %}

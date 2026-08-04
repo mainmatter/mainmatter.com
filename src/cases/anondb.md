@@ -11,9 +11,9 @@ hero:
   imageAlt: "Close-up of a red LED grid pattern."
   tags: "Rust / development / mentoring"
 og:
-  image: /assets/images/cases/anondb-og-image.jpg
-title: "Modernizing a Database With Rust: Safe, Fast, Future-Ready | Work"
-displayTitle: "Modernizing a Database With Rust: Safe, Fast, Future-Ready"
+  image: /assets/images/cases/anondb-og-image.webp
+title: "Modernizing a database with Rust: safe, fast, future-ready | Work"
+displayTitle: "Modernizing a database with Rust: safe, fast, future-ready"
 ---
 
 {% from "quote.njk" import quote %} {% from "image-aspect-ratio.njk" import imageAspectRatio %}

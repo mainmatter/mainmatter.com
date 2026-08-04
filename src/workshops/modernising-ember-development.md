@@ -1,5 +1,5 @@
 ---
-title: "Modernising your Ember App Development with GJS and Vite"
+title: "Modernising your Ember app development with GJS and Vite"
 tags: "ember"
 format: "2–5 days"
 subtext: "Bookable for teams – on-site or remote"
@@ -16,7 +16,7 @@ hero:
   imageAlt: "Hamster sitting behind a hamster-sized desk"
 
 og:
-  image: /assets/images/workshops/modernising-ember-development/og-image.jpg
+  image: /assets/images/workshops/modernising-ember-development/og-image.webp
 topics:
   - title: Introduction to Ember single-file-components (GJS)
     text: >
@@ -43,7 +43,7 @@ topics:
       Because of the differences between the classic build system and the new Vite-based system, it can be tricky to migrate from one to the other. This is why the <code>ember-vite-codemod</code> was created. The codemod can check for issues you might see while migrating, alerting you to fix things before proceeding, and once everything is good to go, it will move the required files around for you and make the necessary changes to those files. We will review some of the changes the codemod will make and help you identify any issues that can show up when upgrading your application.
 
 
-  - title: Updating Addons to V2 (optional)
+  - title: Updating addons to V2 (optional)
     text: >
       The new Vite-based build system uses Embroider to automatically convert classic v1 addons to v2 addons under the hood. This is great because it means you don't need to convert all your addons before moving to Vite. If you have any internal addons you maintain, it can improve build times and significantly improve DX if you upgrade them to v2 instead of having Embroider do it every time you start a build. We can go through some of the techniques and considerations for upgrading classic v1 addons and work through a few example addons to show you real-world examples.
 

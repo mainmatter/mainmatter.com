@@ -1,11 +1,11 @@
 ---
-title: "Ember Vite Codemod"
+title: "Ember Vite codemod"
 authorHandle: academierenards
 tags: [ember, embroider, vite]
 bio: "Marine Dunstetter, Senior Software Engineer"
 description: "Announcing the first release of ember-vite-codemod"
 og:
-  image: "/assets/images/posts/2025-03-10-ember-vite-codemod/og-image.jpg"
+  image: "/assets/images/posts/2025-03-10-ember-vite-codemod/og-image.webp"
 tagline: |
   <p>
    As part of our work on the <a href="/ember-initiative/">Ember Initiative</a>, we are thrilled to announce the initial release of <a href="https://github.com/mainmatter/ember-vite-codemod">ember-vite-codemod</a>, a codemod that brings Vite to Ember apps with just one command.

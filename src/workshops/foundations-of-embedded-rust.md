@@ -1,5 +1,5 @@
 ---
-title: "Foundations of Embedded Rust"
+title: "Foundations of embedded Rust"
 tags: "rust"
 format: "3 days"
 subtext: "Bookable for teams – on-site or remote"
@@ -13,7 +13,7 @@ hero:
   image: "/assets/images/workshops/foundations-of-embedded-rust/embedded-rust-hero.jpg"
   imageAlt: "A crab standing on a printed circuit board"
 og:
-  image: /assets/images/workshops/foundations-of-embedded-rust/og-image.jpg
+  image: /assets/images/workshops/foundations-of-embedded-rust/og-image.webp
 topics:
   - title: Rust's embedded ecosystem
     text: >

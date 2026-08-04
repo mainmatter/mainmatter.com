@@ -1,8 +1,8 @@
 ---
 layout: case-study
 company: Mobi.MED
-title: Modernizing Code and Design for a Healthcare Software Supplier
-displayTitle: "Modernizing Healthcare Software"
+title: Modernizing code and design for a healthcare software supplier
+displayTitle: "Modernizing healthcare software"
 problem: mobi.MED needed to refresh their codebase and UI.
 solution: Our team developed a design system, implemented it in the application, and modernized the codebase along the way.
 tags: Tech modernization
@@ -13,7 +13,7 @@ hero:
   imageAlt: "Woman in green protective clothes sitting in front of 3 computer screens holding a computer mouse"
   tags: "design / development / mentoring"
 og:
-  image: /assets/images/cases/cs-mobimed-og-image.jpg
+  image: /assets/images/cases/cs-mobimed-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

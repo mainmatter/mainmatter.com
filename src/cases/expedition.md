@@ -13,7 +13,7 @@ hero:
   imageAlt: "Expedition homepage viewed on an iPad"
   tags: "development / architecture / Elixir"
 og:
-  image: /assets/images/cases/cs-expedition-og-image.jpg
+  image: /assets/images/cases/cs-expedition-og-image.webp
 ---
 
 {% from "quote.njk" import quote %}

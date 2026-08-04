@@ -11,14 +11,14 @@ eleventyNavigation:
 permalink: /svelte-consulting/
 type: service
 meta:
-  name: "Svelte Consulting"
+  name: "Svelte consulting"
   description: "Mainmatter migrates codebases to Svelte 5, augments teams to help them deliver on time and on budget, and provides training on basic and advanced topics."
   serviceType: Consulting
   areaServed: Worldwide
   provider:
     name: "Mainmatter"
 og:
-  image: /assets/images/svelte/og-image.png
+  image: /assets/images/svelte/og-image.webp
 ---
 
 {% from "image-banner-with-text.njk" import imageBannerWithText %}
@@ -36,15 +36,15 @@ og:
 
 {%
   set toc = {
-    'What We Do Best': '#services',
-    'Our Team': '#team',
-    'Success Stories': '#successes',
-    'Let’s Talk': '#contact'
+    'What we do best': '#services',
+    'Our team': '#team',
+    'Success stories': '#successes',
+    'Let’s talk': '#contact'
   }
 %}
 {%
   set 'content' = {
-  "title": "Accelerate Your Svelte Projects!",
+  "title": "Accelerate your Svelte projects!",
   "text": "Svelte combines great developer experience with leading performance and maintainability. But in order to effectively utilize its full potential, nothing beats experience. That’s where Mainmatter comes in—our experts join your team to accelerate velocity and minimize execution risk.",
   "loading": "eager",
   "containerType": "lp",
@@ -63,7 +63,7 @@ og:
 %}
 {%
   set 'tech_2' = {
-  "title": "Team Augmentation",
+  "title": "Team augmentation",
   "text": "We support you in delivering in time and on budget. We don’t just write code, we architect advanced solutions and help teams level up through direct collaboration.",
   "label": "Learn more",
   "link": "#successes"
@@ -78,12 +78,12 @@ og:
   }
 %}
 {% set technologies = [tech_1, tech_2, tech_3] %}
-{{ serviceCards('services', 'What We Do Best', technologies) }}
+{{ serviceCards('services', 'What we do best', technologies) }}
 
 <section class="py-7 background-aqua">
   <div class="container container--lg p-2 p-3 background-white" id="team">
     <div class="split-content no-link m-0">
-      <h1 class="mb-2">We Are Svelte Experts</h1>
+      <h1 class="mb-2">We are Svelte experts</h1>
       <div class="split-content__wrapper">
         <div class="split-content__content m-0">
           <p class="medium">
@@ -113,7 +113,7 @@ og:
       "sizesArray": [760, 1440, 1920],
       "aspectRatioDesktop": "32/6",
       "linkUrl": "#contact",
-      "linkText": "Let's Talk"
+      "linkText": "Let's talk"
     }
   %}
   {{ imageAspectRatioWithButton(content) }}
@@ -121,7 +121,7 @@ og:
 
 <section class="mt-7 mb-5" id="successes">
   <div class="container container--lg mb-6">
-    <h1>Our Success Stories</h1>
+    <h1>Our success stories</h1>
   </div>
   <div class="container container--lg mb-6">
     {%
@@ -179,12 +179,12 @@ og:
 
 <section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
   <div class="">
-    <h1 class="opensource-list__title">You Might Like...</h1>
+    <h1 class="opensource-list__title">You might like...</h1>
     <ul class="opensource-list__list opensource-list__list-redesigned">
       <li class="opensource-list__project">
         <div>
           <div class="opensource-list__project-image">
-            <img src="/assets/images/svelte/svelte-custom-renderers.webp" alt="Custom Renderers" />
+            <img src="/assets/images/svelte/svelte-custom-renderers.webp" alt="Custom renderers" />
           </div>
           <div class="opensource-list__project-text">
             <h4 class="mb-015 medium">Join Mainmatter’s Svelte Custom Renderers Initiative</h4>
@@ -193,7 +193,7 @@ og:
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Learn More',
+            "label": 'Learn more',
             "url": 'https://svelte-custom-renderers.com/?utm_source=mainmatter.com'
             }
           %}
@@ -212,7 +212,7 @@ og:
         <div class="opensource-list__project-link">
           {%
             set link = {
-            "label": 'Read Blog Post',
+            "label": 'Read blog post',
             "url": '/blog/2026/02/24/why-choose-svelte/'
             }
           %}

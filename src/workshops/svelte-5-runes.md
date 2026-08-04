@@ -1,5 +1,5 @@
 ---
-title: Svelte 5 & Runes
+title: Svelte 5 & runes
 tags: svelte
 format: 1 day
 subtext: Bookable for teams – on-site or remote
@@ -20,7 +20,7 @@ hero:
 
 
 og:
-  image: /assets/images/workshops/svelte-5-runes/og-image.jpg
+  image: /assets/images/workshops/svelte-5-runes/og-image.webp
 topics:
   - title: From Svelte 4 to 5
     text: >
@@ -52,12 +52,12 @@ topics:
       Once we covered runes, we'll briefly look into JavaScript's upcoming <a href="https://github.com/tc39/proposal-signals">signals primitive</a> which runes are based on. We'll cover the fundamentals of signals and how they might eventually establish a cross-framework reactivity primitive.
 
 
-  - title: From Slots to Snippets
+  - title: From slots to snippets
     text: >
       Snippets are a new concept in Svelte 5 that replace slots which are less powerful and flexible. We'll look into how snippets work, what new patterns they enable, and how to migrate from slots to snippets.
 
 
-  - title: Automating the Migration
+  - title: Automating the migration
     text: >
       At least parts of the migration from Svelte 4 to 5 can be automated. We'll look into how that works, what to be aware of, and how to resolve situations where automatic migration fails.
 

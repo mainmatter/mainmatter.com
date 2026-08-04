@@ -5,7 +5,7 @@ tags: javascript
 bio: "Senior Software Engineer"
 description: "Michael Kerr gives a quick introduction into code mods in JavaScript and how to create your own."
 og:
-  image: /assets/images/posts/2022-03-30-getting-started-with-code-mods/og-image.jpg
+  image: /assets/images/posts/2022-03-30-getting-started-with-code-mods/og-image.webp
 tagline: |
   <p>With the ever-changing landscape in web development, code is forever needing to
   be updated, whether that be due to updates in frameworks and libraries or new

@@ -1,5 +1,5 @@
 ---
-title: "Runes and Global state: do's and don'ts"
+title: "Runes and global state: do's and don'ts"
 authorHandle: paoloricciuti
 tags: [svelte]
 bio: "Paolo Ricciuti, Senior Software Engineer"

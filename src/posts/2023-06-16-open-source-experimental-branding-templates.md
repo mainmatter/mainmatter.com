@@ -1,5 +1,5 @@
 ---
-title: "Open-source Experimental Branding Templates"
+title: "Open-source experimental branding templates"
 authorHandle: davidhajba
 tags: [open-source, branding]
 bio: David Hajba

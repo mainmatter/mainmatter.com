@@ -1,5 +1,5 @@
 ---
-title: "Progressive Enhancement with SvelteKit"
+title: "Progressive enhancement with SvelteKit"
 tags: "svelte"
 format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
@@ -10,9 +10,9 @@ hero:
   image: "/assets/images/workshops/progressive-enhancement-with-sveltekit/lego-superman.jpg"
   imageAlt: "A Lego superman figure with their cape flying in a wind in front of a dramatic orange/pink sky"
 og:
-  image: /assets/images/workshops/progressive-enhancement-with-sveltekit/og-image.jpg
+  image: /assets/images/workshops/progressive-enhancement-with-sveltekit/og-image.webp
 topics:
-  - title: Progressive Enhancement
+  - title: Progressive enhancement
     text: >
       We'll start by looking into what progressive enhancement is and why it's relevant. We'll look at network speeds and typical latency numbers, as well as at JavaScript bundle sizes, and their impact on load times.
 
@@ -22,12 +22,12 @@ topics:
       One of SvelteKit's main mechanisms for supporting progressive enhancment are forms and form actions that can run in Node on the server side. We'll look at data flows, how forms can be enhanced to be handled on the clients side, and a bit at the underlying magic that makes that process seamless for the developer.
 
 
-  - title: "Example: Autocomplete"
+  - title: "Example: autocomplete"
     text: >
       We'll build am input component that starts off as a simple text field without JavaScript and is progressively enhanced into an auto-complete input with JavaScript.
 
 
-  - title: "Example: Search"
+  - title: "Example: search"
     text: >
       Next, we'll build a search UI that works with and without JavaScript.
 
@@ -37,12 +37,12 @@ topics:
       Building progressively enhanced applications requires testing two scenarios for all flows: one with and one without JavaScript. We'll cover the topic by writing Playwright tests for the previously implemented examples.
 
 
-  - title: CSS & Progressive Enhancement
+  - title: CSS & progressive enhancement
     text: >
       Some elements of user interfaces can be made functional with CSS alone. We'll look at typical scenarios where that approach works and how UI state can be kept in sync with our Svelte application.
 
 
-  - title: "Example: Dialog with inline JavaScript"
+  - title: "Example: dialog with inline JavaScript"
     text: >
       Finally, we'll build a dialog with a tiny snipped of inline JavaScript that works without the entirety of the Svelte application having started.
 

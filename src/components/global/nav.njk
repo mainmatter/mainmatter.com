@@ -23,13 +23,13 @@
 
     <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
       {% include 'svg/menu.njk' %}
-      <span class="screenreader">Open Menu</span>
+      <span class="screenreader">Open menu</span>
     </button>
 
     <div id="nav-menu" popover>
       <button type="button" popovertarget="nav-menu" popovertargetaction="hide" class="nav-button">
         {% include 'svg/close.njk' %}
-        <span class="screenreader">Close Menu</span>
+        <span class="screenreader">Close menu</span>
       </button>
 
       {% macro navListItem(entry) -%}
@@ -71,7 +71,7 @@
               </li>
               <li>
                 <a href="https://rust-exercises.com/" class="nav__link-text">
-                  <span>Rust Exercises</span>
+                  <span>Rust exercises</span>
                 </a>
               </li>
             </ul>

@@ -19,7 +19,7 @@ hero:
   image: "/assets/images/workshops/advanced-testing-in-rust/header-background.jpg"
   imageAlt: "A schematic drawing of a grid with files on top and connecting lines between the files."
 og:
-  image: /assets/images/workshops/advanced-testing-in-rust/og-image.jpg
+  image: /assets/images/workshops/advanced-testing-in-rust/og-image.webp
 topics:
   - title: "Expanding your toolbox: better assertions"
     text: >
