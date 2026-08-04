@@ -47,13 +47,16 @@
 {%- endif -%}
 
 {%- if ogImageUrl -%}
+  {% set ogImageAlt = og.imageAlt or hero.imageAlt or featured_image_caption %}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ pageTitle }}" />
   <meta name="twitter:site" content="@mainmatter" />
   <meta property="og:image" content="{{ config.url }}{{ ogImageUrl }}" />
   <meta name="twitter:image" content="{{ config.url }}{{ ogImageUrl }}" />
-  <meta property="og:image:alt" content="{{ featured_image_caption }}" />
-  <meta name="twitter:image:alt" content="{{ featured_image_caption }}" />
+  {%- if ogImageAlt -%}
+    <meta property="og:image:alt" content="{{ ogImageAlt | striptags(true) | escape }}" />
+    <meta name="twitter:image:alt" content="{{ ogImageAlt | striptags(true) | escape }}" />
+  {%- endif -%}
 {%- endif -%}
 
 {%- if config.paymentPointer -%}
@@ -77,13 +80,17 @@
     },
     "url": pageUrl,
     "title": pageTitle,
-    "description": pageDesc,
+    "description": meta.description or pageDesc,
     "organization": meta.organization,
     "published": meta.published,
     "serviceType": meta.serviceType,
     "areaServed": meta.areaServed,
     "provider": meta.provider,
-    "name": meta.name
+    "name": meta.name,
+    "coursePrerequisites": meta.coursePrerequisites,
+    "hasCourseInstance": meta.hasCourseInstance,
+    "keywords": meta.keywords,
+    "inLanguage": meta.inLanguage
   }
 %}
 {% jsonLdScript schemaMeta, type, tags %}
