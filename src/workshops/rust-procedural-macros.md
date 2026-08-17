@@ -3,7 +3,8 @@ title: "Procedural Macros: extend the compiler, one token at a time"
 tags: "rust"
 format: "1 day"
 subtext: "Bookable for teams – on-site or remote"
-description: >
+description: This 1-day workshop will make you comfortable writing procedural macros in Rust. We cover all relevant topics from advantages and disadvantages of Rust, the kinds of procedural macros, toos like syn and quote, as well as error handling and testing.
+introduction: >
   <p>Most Rust codebases depend on procedural macros like <code>#[derive(Serialize)]</code>, <code>#[tokio::main]</code>, and <code>sqlx::query!</code>. They keep a large amount of repetitive code out of your project by generating it at compile time. The same applies to your own code: custom macros can keep codebases tidy, concise, and consistent.</p><p>This workshop teaches you how to write your own macros. You will build all three kinds of procedural macros – derive macros, attribute macros, and function-like macros – parsing Rust syntax with <code>syn</code> and generating code with <code>quote</code>. By the end of the day you will know when a macro is the right call and how to write one your colleagues can use without reading its source.</p><p>The workshop is designed for developers who have a good understanding of Rust. If you are new to Rust, start with our <a href="/training/learn-rust-starting-from-scratch/">"Learn Rust, starting from scratch"</a> workshop for an introduction to the language.</p>
 
 
