@@ -1,9 +1,9 @@
 ---
 title: "Async Rust: concurrency you can reason about"
 tags: "rust"
-format: "1 day"
+format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
-description: A 1-day workshop for developers who have written async Rust and want to stop guessing, covering Tokio, cancellation, backpressure, and graceful shutdown.
+description: A 2-day workshop for developers who have written async Rust and want to stop guessing, covering Tokio, cancellation, backpressure, and graceful shutdown.
 introduction: >
   <p>You have written async Rust before. You know what <code>async fn</code> and <code>.await</code> do, you have used Tokio, and you have at some point watched a program do something other than what you expected it to. This workshop is about the advanced async topics that come after the syntax: who owns your state, what happens when a future is dropped halfway through, and what your server does when it is asked for more than it can deliver.</p><p>You will turn the example <code>minidb</code>, a small in-memory key-value store, into a networked service. By the end of the workshop you will have added support for a line protocol over TCP, and built an architecture where one task owns the data and everything else asks it for what it needs. With that setup, a slow client cannot starve a fast one, an overloaded server says so instead of falling over, and a restart picks up where the last one left off.</p><p>The workshop is designed for developers who have written async Rust before. If you are new to Rust altogether, start with our <a href="/training/learn-rust-starting-from-scratch/">"Learn Rust, starting from scratch"</a> workshop for an introduction to the language.</p>
 
