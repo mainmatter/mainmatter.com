@@ -5,7 +5,7 @@ format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
 description: A 2-day workshop for Rust developers who want to stop guessing about async, covering Tokio, state ownership, cancellation, backpressure, graceful shutdown, and durability.
 introduction: >
-  <p>You are comfortable with Rust: ownership, traits, <code>Arc</code>, and what <code>Send</code> means. Async is the part you are less sure of, whether you have written an <code>async fn</code> and left it there or watched a Tokio service in production do something other than what you expected. The workshop makes the vocabulary precise first, then spends its time on the questions that come after the syntax: who owns your state, what happens when a future is dropped halfway through, and what your server does when it is asked for more than it can deliver.</p><p>You will turn the example <code>minidb</code>, a small in-memory key-value store, into a networked service: a length-prefixed protocol over TCP with several requests in flight per connection, one task owning the data and everything else asking it, durability pluggable behind a trait, and tests that run the whole server on a simulated network. A slow client cannot starve a fast one, an overloaded server says so instead of falling over, and a restart picks up where the last one left off.</p><p>The workshop is designed for developers who are comfortable writing Rust and want to stop guessing when it comes to async. If you are new to Rust instead, start with <a href="/training/learn-rust-starting-from-scratch/">Learn Rust, starting from scratch</a>.</p>
+  <p>You are comfortable with Rust: ownership, traits, <code>Arc</code>, and what <code>Send</code> means. Async is the part you are less sure of, whether you have written an <code>async fn</code> and left it there or watched a Tokio service in production do something other than what you expected. This workshop answers the async questions that come after the syntax: who owns your state, what happens when a future is dropped halfway through, and what your server does when it is asked for more than it can deliver.</p><p>You will turn the example <code>minidb</code>, a small in-memory key-value store, into a networked service. By the end of the workshop, you will have added a length-prefixed protocol over TCP, handling several requests in flight per connection, an architecture where one task owns the data and everything else asks it, durability pluggable behind a trait, and tests that run the whole server on a simulated network. With that setup, a slow client cannot starve a fast one, an overloaded server says so instead of falling over, and a restart picks up where the last one left off.</p><p>The workshop is designed for developers who are comfortable writing Rust and want to stop guessing when it comes to async. If you are new to Rust instead, start with <a href="/training/learn-rust-starting-from-scratch/">Learn Rust, starting from scratch</a>.</p>
 
 
 hero:
@@ -62,7 +62,7 @@ topics:
 
   - title: AsyncRead and AsyncWrite
     text: >
-      We will go underneath all of Tokio's IO, to the traits it is built on. We will cover the <code>poll_read</code> and <code>poll_write</code> contract and <code>ReadBuf</code>, and you will write an IO wrapper of your own that counts every byte passing through the server, dropping into the connection handler without changing a signature.
+      We will go underneath Tokio's IO, to the traits it is built on. We will cover the <code>poll_read</code> and <code>poll_write</code> contract as well as <code>ReadBuf</code>, and you will write an IO wrapper of your own that counts every byte passing through the server, dropping into the connection handler without changing a signature.
 
 
   - title: Codecs and framing
@@ -77,7 +77,7 @@ topics:
 
   - title: Async functions in traits
     text: >
-      You will make the store's durability pluggable behind a trait with async methods, and meet the compile error that made async fn in traits famous: the spawned actor demands <code>Send</code> futures the trait does not promise. We will cover <code>impl Future</code> in return position as the fix, and what <code>dyn</code> does and does not allow.
+      You will make the store's durability pluggable behind a trait with async methods, and meet the compile error that made <code>async fn</code> in traits famous: the spawned actor demands <code>Send</code> futures the trait does not promise. We will cover <code>impl Future</code> in return position as the fix, and what <code>dyn</code> does and does not allow.
 
 
   - title: Diagnosing a stuck runtime
