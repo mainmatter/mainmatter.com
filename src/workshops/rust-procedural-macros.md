@@ -15,59 +15,35 @@ hero:
 og:
   image: /assets/images/workshops/rust-python-interoperability/og-image.webp
 topics:
-  - title: When to reach for a procedural macro
+  - title: Introduction
     text: >
-      We will place procedural macros next to the alternatives and compare what a plain function can do, what <code>macro_rules!</code> can do, and what only a procedural macro can do. We will also cover the downsides of macros, and when to write the code by hand instead.
+      Rust has three kinds of procedural macros, and you have used all of them already. We will look at derive, function-like, and attribute macros in the wild, expand <code>thiserror</code> with <code>cargo expand</code> to see what they generate, and compare macros against plain functions and <code>macro_rules!</code> so you know when a procedural macro is the right call – and when it is not.
 
 
-  - title: Tokens, token streams, and <code>cargo expand</code>
+  - title: The proc-macro toolkit
     text: >
-      Everything a procedural macro receives and returns is a <code>TokenStream</code>. We will cover how the compiler turns source text into tokens, why the result is a tree, and how to use <code>cargo expand</code> to see the generated code.
+      Time to get your hands dirty. You will set up a proc-macro crate, write a minimal derive macro, and learn what a macro actually receives and returns: tokens and token streams, why <code>proc-macro2</code> makes your code testable, parsing Rust code with <code>syn</code>, and generating it with <code>quote</code>. We will also cover the re-export pattern used by <code>serde</code> and <code>thiserror</code>, and how to test a macro with <code>trybuild</code>.
 
 
-  - title: Writing your first derive macro
+  - title: Derive macros
     text: >
-      You will write a derive macro end to end: setting up the proc-macro crate, parsing the annotated item into a <code>syn::DeriveInput</code>, generating an <code>impl</code> block with <code>quote!</code>, and moving your logic behind <code>proc-macro2</code> types so it can be unit tested.
+      Where the real work happens: handling every struct field layout and enums, absolute paths and hygienic identifiers so your output compiles in anyone's crate, error reporting from <code>panic!</code> to <code>compile_error!</code> to properly spanned <code>syn::Error</code>s, container and field attributes by hand and then with <code>darling</code>, and generics with lifetimes and <code>where</code> clauses.</code>.
 
 
-  - title: Testing macros with <code>trybuild</code>
+  - title: Function-like macros
     text: >
-      Unit tests prove that your macro emits well-formed tokens, but not that the generated code compiles. <code>trybuild</code> closes that gap, and snapshots the compiler's output in case of errors.
-
-
-  - title: Deriving over real types
-    text: >
-      Real derive macros handle more than named structs. We will cover tuple structs, unit structs, and enums via the match on <code>syn::Fields</code>, and generics with <code>split_for_impl</code>.
-
-
-  - title: Code that compiles in someone else's crate
-    text: >
-      Your macro will be compiled in modules you have never seen, os it needs to be robust. We will cover absolute references like <code>::std::string::String</code>, so a local <code>type String = MyString;</code> cannot change what your macro means, and identifier scoping, so two types deriving the same macro in one module do not collide.
-
-
-  - title: Error messages your users can act on
-    text: >
-      We will work through the progression from a panicking macro to a useful diagnostic: <code>compile_error!</code>, then <code>syn::Error</code> and <code>syn::Result</code>, and spans that make the compiler underline the field that is actually wrong.
-
-
-  - title: "Attributes: container, field, and <code>darling</code>"
-    text: >
-      Helper attributes are what make a derive macro configurable, as in <code>#[serde(rename_all = "camelCase")]</code>. We will cover reading them with <code>parse_nested_meta</code> and <code>parse_args</code>, then replacing that with darling, and finish with a custom <code>#[derive(Builder)]</code> derive macro.
-
-
-  - title: Function-like macros and custom syntax
-    text: >
-      Whatever sits between a macros's parentheses is yours to parse. We will cover why <code>println!</code> has to be a macro, when to prefer this over <code>macro_rules!</code>, and build a small DSL along the lines of a <code>routes!</code> macro.
+      Whatever sits between a macro's delimiters is yours to interpret, even if it is not valid Rust. We will cover why <code>println!</code> has to be a macro, how to parse arbitrary token input, how to define your own syntax, and when to prefer this over a declarative macro. You will finish by building a small DSL: a <code>routes!</code> macro.
 
 
   - title: Attribute macros
     text: >
-      Unlike a derive, an attribute macro replaces the item it is attached to. We will cover wrapping a function, re-emitting the original item on failure, and parsing arguments with <code>darling</code>'s <code>FromMeta</code> to build <code>#[retry(times = 3, delay_ms = 100)]</code>.
+      Unlike a derive, an attribute macro receives the annotated item and returns its replacement. We will cover the parse-tweak-re-emit loop on a function, graceful error handling by re-emitting the original item to avoid cascading errors, and parsing attribute arguments with <code>darling</code>'s <code>FromMeta</code> to build a <code>#[retry(times = 3, delay_ms = 100)]</code> attribute.
 
 
-  - title: "Capstone: a state machine macro"
+  - title: "Putting it all together"
     text: >
-      You will build one macro that uses everything: code generation over an enum, custom attributes declaring transitions and the initial state, invalid transitions rejected at compile time, and hygienic identifiers.
+      A capstone that draws on the whole day: a <code>#[derive(StateMachine)]</code> macro. Code generation over an enum's variants, custom helper attributes declaring the initial state and the allowed transitions, invalid transitions rejected at compile time with the error spanned on the offending token, and generated identifiers that never clash.
+
 
 
 leads:
