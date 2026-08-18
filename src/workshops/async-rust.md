@@ -3,9 +3,9 @@ title: "Async Rust: concurrency you can reason about"
 tags: "rust"
 format: "2 days"
 subtext: "Bookable for teams – on-site or remote"
-description: A 2-day workshop for developers who have written async Rust and want to stop guessing, covering Tokio, cancellation, backpressure, and graceful shutdown.
+description: A 2-day workshop for Rust developers who want to stop guessing about async, covering Tokio, state ownership, cancellation, backpressure, graceful shutdown, and durability.
 introduction: >
-  <p>You have written async Rust before. You know what <code>async fn</code> and <code>.await</code> do, you have used Tokio, and you have at some point watched a program do something other than what you expected it to. This workshop is about the advanced async topics that come after the syntax: who owns your state, what happens when a future is dropped halfway through, and what your server does when it is asked for more than it can deliver.</p><p>You will turn the example <code>minidb</code>, a small in-memory key-value store, into a networked service. By the end of the workshop you will have added support for a line protocol over TCP, and built an architecture where one task owns the data and everything else asks it for what it needs. With that setup, a slow client cannot starve a fast one, an overloaded server says so instead of falling over, and a restart picks up where the last one left off.</p><p>The workshop is designed for developers who have written async Rust before. If you are new to Rust altogether, start with our <a href="/training/learn-rust-starting-from-scratch/">"Learn Rust, starting from scratch"</a> workshop for an introduction to the language.</p>
+  <p>You are comfortable with Rust: ownership, traits, <code>Arc</code>, and what <code>Send</code> means. Async is the part you are less sure of, whether you have written an <code>async fn</code> and left it there or watched a Tokio service in production do something other than what you expected. The workshop makes the vocabulary precise first, then spends its time on the questions that come after the syntax: who owns your state, what happens when a future is dropped halfway through, and what your server does when it is asked for more than it can deliver.</p><p>You will turn the example <code>minidb</code>, a small in-memory key-value store, into a networked service: a length-prefixed protocol over TCP with several requests in flight per connection, one task owning the data and everything else asking it, durability pluggable behind a trait, and tests that run the whole server on a simulated network. A slow client cannot starve a fast one, an overloaded server says so instead of falling over, and a restart picks up where the last one left off.</p><p>The workshop is designed for developers who are comfortable writing Rust and want to stop guessing when it comes to async. If you are new to Rust instead, start with <a href="/training/learn-rust-starting-from-scratch/">Learn Rust, starting from scratch</a>.</p>
 
 
 hero:
@@ -17,7 +17,7 @@ og:
 topics:
   - title: The Tokio runtime
     text: >
-      We will cover what Tokio adds on top of the language, why a future does nothing until something polls it, and why <code>.await</code> is a suspension point rather than a call. This section also covers fundamentals like <code>Future</code>, <code>poll</code>, and <code>Pin</code>.
+      We will cover what Tokio adds on top of the language, why a future does nothing until something polls it, and why <code>.await</code> is a suspension point rather than a call, along with as much of <code>Future</code>, <code>poll</code>, and <code>Pin</code> as reasoning about the runtime demands; a later chapter returns to them at the poll level.
 
 
   - title: Tasks
@@ -58,6 +58,36 @@ topics:
   - title: Durability across restarts
     text: >
       You will add a write-ahead log, recording every mutating request before it is applied, batching the syncs into a group commit so that a busy server does not make one trip to the disk per request, and replaying the log on startup so that a restart preserves the data.
+
+
+  - title: AsyncRead and AsyncWrite
+    text: >
+      We will go underneath all of Tokio's IO, to the traits it is built on. We will cover the <code>poll_read</code> and <code>poll_write</code> contract and <code>ReadBuf</code>, and you will write an IO wrapper of your own that counts every byte passing through the server, dropping into the connection handler without changing a signature.
+
+
+  - title: Codecs and framing
+    text: >
+      You will replace the hand-rolled line loop with a length-prefixed frame, implementing <code>Decoder</code> and <code>Encoder</code> and driving them with <code>Framed</code>. The same codec then carries the write-ahead log, and a restriction the old framing forced on values disappears. This also closes the loop on cancel safety: a partial frame lives in the codec's buffer, not on a dropped future's stack.
+
+
+  - title: Streams, sinks, and pipelining
+    text: >
+      We will cover the <code>Stream</code> and <code>Sink</code> traits and splitting a connection into independently owned halves. You will then let one connection have several requests in flight at once, choosing the in-flight bound and keeping the responses in order deliberately rather than by accident.
+
+
+  - title: Async functions in traits
+    text: >
+      You will make the store's durability pluggable behind a trait with async methods, and meet the compile error that made async fn in traits famous: the spawned actor demands <code>Send</code> futures the trait does not promise. We will cover <code>impl Future</code> in return position as the fix, and what <code>dyn</code> does and does not allow.
+
+
+  - title: Diagnosing a stuck runtime
+    text: >
+      A blocked worker thread does not announce itself. You will find one with <code>tokio-console</code>, and we will cover the runtime's metrics as well as the bridges between sync and async code, <code>block_in_place</code> and <code>Handle::block_on</code>, and the ways they go wrong quietly.
+
+
+  - title: Testing against a hostile network
+    text: >
+      You will run the whole server on a simulated network with <code>turmoil</code>: injected latency, dropped connections, and partitions, all deterministic and all inside a unit test, using the same abstractions that made the store pluggable.
 
 
 leads:
