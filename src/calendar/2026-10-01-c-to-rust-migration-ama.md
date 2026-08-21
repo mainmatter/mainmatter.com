@@ -4,7 +4,7 @@ image: "/assets/images/calendar/2026-10-01-c-to-rust-migration-ama/rust.png"
 location: "Online"
 url: https://luma.com/m2gplobz
 kind: ama
-color: purple
+color: aqua
 hero:
   image: "/assets/images/calendar/2026-10-01-c-to-rust-migration-ama/video-call.webp"
   imageAlt: "Video call on a computer"
