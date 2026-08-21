@@ -10,10 +10,10 @@ introduction: >
 
 hero:
   color: purple
-  image: "/assets/images/workshops/rust-python-interoperability/header-background.jpg"
-  imageAlt: "Close-up photo of 3 snake bodies (or 3 parts of the same snake body) stacked on top of each other."
+  image: "/assets/images/workshops/advanced-rust-apis/hero-image.webp"
+  imageAlt: "Close-up of interlocking gears and chains."
 og:
-  image: /assets/images/workshops/rust-python-interoperability/og-image.webp
+  image: /assets/images/workshops/advanced-rust-apis/og-image.webp
 topics:
   - title: Names and documentation
     text: >

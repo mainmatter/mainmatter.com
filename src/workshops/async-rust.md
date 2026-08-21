@@ -10,10 +10,10 @@ introduction: >
 
 hero:
   color: purple
-  image: "/assets/images/workshops/rust-python-interoperability/header-background.jpg"
-  imageAlt: "Close-up photo of 3 snake bodies (or 3 parts of the same snake body) stacked on top of each other."
+  image: "/assets/images/workshops/async-rust/hero-image.webp"
+  imageAlt: "Aerial view of a multilayer highway interchange."
 og:
-  image: /assets/images/workshops/rust-python-interoperability/og-image.webp
+  image: /assets/images/workshops/async-rust/og-image.webp
 topics:
   - title: The Tokio runtime
     text: >
