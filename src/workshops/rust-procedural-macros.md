@@ -45,7 +45,6 @@ topics:
       A capstone that draws on the whole day: a <code>#[derive(StateMachine)]</code> macro. Code generation over an enum's variants, custom helper attributes declaring the initial state and the allowed transitions, invalid transitions rejected at compile time with the error spanned on the offending token, and generated identifiers that never clash.
 
 
-
 leads:
   - handle: algo_luca
 ---
