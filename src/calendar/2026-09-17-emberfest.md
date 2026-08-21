@@ -11,4 +11,4 @@ hero:
   imageAlt: "View over Prague and the Vltava river"
 ---
 
-Emberfest is the European Community Ember Conference. If you’re looking for updates on the latest and greatest in Ember and Glimmer this is the place to be. EmberFest is also a great opportunity to get in touch with the European Ember Community (and friends from abroad) and hiring Ember talent.
+Emberfest is the European Community Ember Conference. Chris Manson, Nick Schot, and Marco Otte-Witte will be in Prague delivering talks about Vite and what's coming after it, the ongoing work on the Ember router, as well as agentic engineering with Ember.
