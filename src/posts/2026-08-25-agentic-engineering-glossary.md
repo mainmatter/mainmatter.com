@@ -15,7 +15,7 @@ tagline: <p>Agentic Engineering is a new and complex topic that's constantly cha
 
 <strong id="agent-loop">[Agent loop](#agent-loop):</strong> the main loop in every [harness](#agent-harness), where the inference API is invoked over and over until a [stopping condition](#stopping-condition) is met.
 
-<strong id="agent-swarm">[Agent swarm](#agent-swarm):</strong> a loose label for a larger, distributed group of [agents](#agent) working concurrently. It has no single standardized technical definition and is often used more broadly than "multi-agent system."
+<strong id="agent-swarm">[Agent swarm](#agent-swarm):</strong> a loose label for a larger, distributed group of [agents](#agent) that works concurrently each with their own responsibilities and goals. It has no single standardized technical definition and is often used more broadly than "multi-agent system."
 
 <strong id="a2a">[Agent2Agent Protocol, or A2A](#a2a):</strong> an open protocol for communication and collaboration between independent [agents](#agent), potentially built by different vendors. It is intended for delegation, coordination, status exchange, and delivery of results while allowing each agent's internal implementation to remain opaque.
 
@@ -57,7 +57,9 @@ tagline: <p>Agentic Engineering is a new and complex topic that's constantly cha
 
 <strong id="llm">[LLM](#llm):</strong> an acronym for large language model. It's the kind of [neural network](#neural-network) that is most popular nowadays. As the name suggests, it's a **model** that tries to predict the next [token](#token) in a sentence by using the fact that, in a **language**, the distribution of words isn't random. These models are **large** because they've been trained on very large quantities of text to make them as accurate as possible.
 
-<strong id="long-horizon-task">[Long-horizon task](#long-horizon-task):</strong> a task that requires many actions, [context](#context) updates, or [sessions](#turn-thread-session) rather than one model response. Examples include implementing an application, upgrading a large dependency, or resolving a complex repository issue. This is also used as a measure of a model's quality by measuring the longest-horizon task it can perform.
+<strong id="long-context-task">[Long-context task](#long-context-task):</strong> a task that requires many actions, [context](#context) updates, or [sessions](#turn-thread-session) rather than one model response. Examples include implementing an application, upgrading a large dependency, or resolving a complex repository issue. This is also used as a measure of a model's quality by measuring the longest-horizon task it can perform.
+
+<strong id="long-horizon-task">[Long-horizon task](#long-horizon-task):</strong> similar to [Long-context task](#long-context-task) but it heavily relies on information only available in the context, forcing the agent to pick the right information to maintain while [compacting](#compaction).
 
 <strong id="managed-agent">[Managed agent](#managed-agent):</strong> an [agent](#agent) whose runtime, [session](#turn-thread-session) state, [sandbox](#sandbox), [tools](#tools), and execution infrastructure are provided as a managed service, allowing applications to introduce [agentic workflows](#agentic-workflow) without the burden of managing retries, sandboxing, etc.
 
@@ -97,7 +99,7 @@ tagline: <p>Agentic Engineering is a new and complex topic that's constantly cha
 
 <strong id="stopping-condition">[Stopping condition / termination criterion](#stopping-condition):</strong> the rule that ends an [agent loop](#agent-loop): the goal is satisfied, tests pass, a maximum number of steps is reached, the budget is exhausted, the [agent](#agent) requests help, or a safety rule blocks further action.
 
-<strong id="subagent">[Subagent](#subagent):</strong> [Context](#context) is the most important resource for [agents](#agent). Subagents aim to solve part of that problem: every atomic operation (like running tests and figuring out why they fail or writing a file) can technically be done without "polluting" the main agent (the one that has the whole context of the task). This is possible by allowing the agent to create a new instance of itself with a new prompt. This means subagents can be spawned in parallel and work on that one task without increasing the [token](#token) count in the main agent.
+<strong id="subagent">[Subagent](#subagent):</strong> [Context](#context) is the most important resource for [agents](#agent). Subagents aim to solve part of that problem: every atomic operation (like running tests and figuring out why they fail or writing a file) can technically be done without "polluting" the main agent (the one that has the whole context of the task). This is possible by allowing the agent to create a new instance of itself with a new prompt. This means subagents can be spawned in parallel and work on that one task without increasing the [token](#token) count in the main agent. The isolation also helps because their [context](#context) is not polluted by the main agent [context](#context) and because they can be spawned with a different model/set of [tools](#tools).
 
 <strong id="swe-bench-verified">[SWE-bench Verified](#swe-bench-verified):</strong> a curated set of 500 SWE-bench tasks reviewed for solvability. It became a widely cited coding-agent [benchmark](#benchmark), but by February 2026, OpenAI argued that [contamination](#benchmark-contamination) and task-quality problems had reduced its usefulness for measuring frontier [agents](#agent).
 
