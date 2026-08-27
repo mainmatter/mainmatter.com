@@ -206,7 +206,7 @@ layout: "base"
           {% for topic in topics %}
             <li>
               <div>
-                <h4 class="h4">{{ topic.heading or topic.title }}</h4>
+                <h4 class="h4">{{ topic.heading or topic.title | safe }}</h4>
                 <div class="workshop-detail__topic-text">{{ topic.text | safe }}</div>
               </div>
             </li>

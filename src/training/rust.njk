@@ -31,7 +31,7 @@ eleventyImport:
   set heroContent = {
   "eyebrow": heroEyebrow,
   "title": "Rust training",
-  "text": "We teach teams and individuals how to adopt and succeed with Rust. Our hands-on workshops cover everything from language basics to advanced testing, embedded Rust, and migrating C to Rust.",
+  "text": "We teach teams and individuals how to adopt and succeed with Rust. Our hands-on workshops cover everything from language basics to async, proc macros, advanced testing, embedded Rust, and migrating C to Rust.",
   "image": "/assets/images/hero/rust-workshops.jpg",
   "alt": "Crabs climbing a rock on a beach",
   "loading": "eager",
@@ -54,9 +54,12 @@ eleventyImport:
   set rustWorkshops = [
     collections.workshops | findByCollectionSlug("learn-rust-starting-from-scratch"),
     collections.workshops | findByCollectionSlug("c-to-rust"),
+    collections.workshops | findByCollectionSlug("rust-procedural-macros"),
+    collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
+    collections.workshops | findByCollectionSlug("async-rust"),
+    collections.workshops | findByCollectionSlug("advanced-rust"),
     collections.workshops | findByCollectionSlug("an-introduction-to-testing-in-rust"),
     collections.workshops | findByCollectionSlug("advanced-testing-in-rust"),
-    collections.workshops | findByCollectionSlug("edge-computing-with-webassembly"),
     collections.workshops | findByCollectionSlug("rust-python-interoperability"),
     collections.workshops | findByCollectionSlug("build-production-ready-apis-in-rust"),
     collections.workshops | findByCollectionSlug("telemetry-for-rust-apis"),
