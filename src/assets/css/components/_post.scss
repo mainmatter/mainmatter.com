@@ -100,7 +100,8 @@
 .post__heading--anchor {
   position: relative;
 
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     .post__heading-anchor {
       opacity: 1;
       pointer-events: auto;
