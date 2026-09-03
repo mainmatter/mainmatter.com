@@ -1,0 +1,160 @@
+name: Update mdbooks
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "*/60 */1 * * *"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure git
+        run: |
+          git config --global user.name 'Updater'
+          git config --global user.email 'updater@mainmatter.com'
+      # - name: Download "100 Exercises To Learn Rust" HTML
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     # Optional, GitHub token, a Personal Access Token with `public_repo` scope if needed
+      #     # Required, if the artifact is from a different repo
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/100-exercises-to-learn-rust
+      #     # Optional, workflow file name or ID
+      #     # If not specified, will be inferred from run_id (if run_id is specified), or will be the current workflow
+      #     workflow: ci.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     # Optional, uploaded artifact name,
+      #     # will download all artifacts if not specified
+      #     # and extract them into respective subdirectories
+      #     # https://github.com/actions/download-artifact#download-all-artifacts
+      #     # is treated as a regular expression if input name_is_regexp is true
+      #     # will download only those artifacts with a name that matches this regular expression
+      #     # https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions
+      #     name: book
+      #     # A directory where to extract artifact(s), defaults to the current directory
+      #     path: mdbook/100-exercises
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated material for '100 exercises to learn Rust'" && git push
+      # - name: Download "100 Exercises To Learn Rust" PDF
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/100-exercises-to-learn-rust
+      #     workflow: ci.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     name: online-pdf
+      #     path: static/assets
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated book for 100 exercises" && git push
+      # - name: Download "Rust-Python Interoperability" HTML
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/rust-python-interoperability
+      #     workflow: site.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     name: book
+      #     path: mdbook/rust-python-interop
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated material for 'Rust-Python interoperability'" && git push
+      # - name: Download "Telemetry for Rust applications" HTML
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/rust-telemetry-workshop
+      #     workflow: site.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     name: book
+      #     path: mdbook/telemetry
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated material for telemetry" && git push
+      # - name: Download "Advanced testing" HTML
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/rust-advanced-testing-workshop
+      #     workflow: site.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     name: book
+      #     path: mdbook/advanced-testing
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated material for advanced testing" && git push
+      # - name: Download "Rust proc-macro workshop" HTML
+      #   uses: dawidd6/action-download-artifact@v6
+      #   with:
+      #     github_token: ${{secrets.GITHUB_TOKEN}}
+      #     repo: mainmatter/rust-proc-macro-workshop
+      #     workflow: site.yml
+      #     workflow_conclusion: success
+      #     branch: main
+      #     event: push
+      #     name: book
+      #     path: mdbook/proc-macro
+      #     if_no_artifact_found: ignore
+      # - name: Commit and push if changed
+      #   run: |
+      #     git add site
+      #     git diff-index --quiet HEAD || git commit -m "Updated material for proc macro" && git push
+      - name: Download "Migrate C to Rust" HTML
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          repo: mainmatter/migrating-c-to-rust
+          workflow: ci.yml
+          workflow_conclusion: success
+          branch: main
+          event: push
+          name: book
+          path: mdbook/migrating-c-to-rust
+          if_no_artifact_found: ignore
+      - name: Commit and push if changed
+        run: |
+          git add site
+          git diff-index --quiet HEAD || git commit -m "Updated material for 'Migrate C to Rust'" && git push
+      - name: Download "Migrate C to Rust" PDF
+        uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          repo: mainmatter/migrating-c-to-rust
+          workflow: ci.yml
+          workflow_conclusion: success
+          branch: main
+          event: push
+          name: online-pdf
+          path: static/assets
+          if_no_artifact_found: ignore
+      - name: Commit and push if changed
+        run: |
+          git add site
+          git diff-index --quiet HEAD || git commit -m "Updated book for 'Migrate C to Rust'" && git push
