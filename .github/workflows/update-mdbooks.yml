@@ -140,7 +140,7 @@ jobs:
           if_no_artifact_found: ignore
       - name: Commit and push if changed
         run: |
-          git add site
+          git add mdbook
           git diff-index --quiet HEAD || git commit -m "Updated material for 'Migrate C to Rust'" && git push
       - name: Download "Migrate C to Rust" PDF
         uses: dawidd6/action-download-artifact@v6
@@ -156,5 +156,5 @@ jobs:
           if_no_artifact_found: ignore
       - name: Commit and push if changed
         run: |
-          git add site
+          git add static
           git diff-index --quiet HEAD || git commit -m "Updated book for 'Migrate C to Rust'" && git push
