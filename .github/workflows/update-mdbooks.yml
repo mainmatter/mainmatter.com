@@ -136,7 +136,7 @@ jobs:
           branch: main
           event: push
           name: book
-          path: mdbook/migrating-c-to-rust
+          path: mdbook/c-to-rust-migration-book
           if_no_artifact_found: ignore
       - name: Commit and push if changed
         run: |
