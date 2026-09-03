@@ -15,8 +15,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-ac90ec63.js"></script>
+        <script src="../toc-fc4c9b7e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -179,18 +179,18 @@
                     <main>
                         <h1 id="when-hand-written-bindings-drift"><a class="header" href="#when-hand-written-bindings-drift">When hand-written bindings drift</a></h1>
 <p>In the previous exercise you wrote an <code>extern "C"</code> block binding to C code. It
-worked great, but can you imagine yourself doing that for <em>hundreds</em>, maybe
-<em>thousands</em>, of functions and types? Of course not! There’s a subtler problem,
-too. Hand-written bindings will <em>inevitably</em> drift out of sync with the C
-header, especially at scale.</p>
-<p>Neither the C nor Rust compiler can detect this because each operate in their
-own small universe called a <em>compilation unit</em>. A compilation unit is the single
-chunk of work that flows through the various stages of the compiler. In C/C++
-this would typically be a <code>.c/.cpp</code> file and in Rust that is typically a single
-crate. The compiler will parse, typecheck, optimize the compilation unit and
-produce an <em>intermediate</em> object file. Once all the compilation units that make
-up your project are built, the intermediate object files are gathered and passed
-to the <em>linker</em>, which produces the final executable or library.</p>
+worked great, but can you imagine doing that for <em>hundreds</em>, maybe <em>thousands</em>,
+of functions and types? There’s a subtler problem, too. Hand-written bindings
+will <em>inevitably</em> drift out of sync with the C header, especially at scale.</p>
+<p>Neither the C nor the Rust compiler can detect this, because each operates in
+its own small universe, called a <em>compilation unit</em>. A compilation unit is the
+single chunk of work that flows through the various stages of the compiler. In
+C/C++ this would typically be a <code>.c/.cpp</code> file and in Rust that is typically a
+single crate. The compiler parses, typechecks, and optimizes the compilation
+unit, then produces an <em>intermediate</em> object file. Once all the compilation
+units that make up your project are built, the intermediate object files are
+gathered and passed to the <em>linker</em>, which produces the final executable or
+library.</p>
 <pre><code class="language-text">┌─────────────────────┐          ┌─────────────────────┐
 │   Rust source       │          │   C source          │
 └──────────┬──────────┘          └──────────┬──────────┘
@@ -213,70 +213,80 @@ to the <em>linker</em>, which produces the final executable or library.</p>
                 │   final binary      │
                 └─────────────────────┘
 </code></pre>
-<p>This model is great for compilation performance because we can process many of
-these compilation units <em>in parallel</em>! There is a catch, though: compilation
-units <em>must not</em> share information since that would destroy our ability to
-process them in parallel! Each compilation <em>must</em> be its own self-contained
-universe.</p>
+<p>This model is great for compilation performance, because we can process many of
+these compilation units <em>in parallel</em>. There is a catch: they <em>must not</em> share
+information, since that would destroy the parallelism. Each compilation <em>must</em>
+be its own self-contained universe.</p>
 <p>And even if we had a mechanism to share information between compilation units,
-we would need to make that language agnostic so that a C compilation unit and a
+we would need to make it language-agnostic so that a C compilation unit and a
 Rust compilation unit can interoperate. How would that even work with wildly
-different type systems? <sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+different type systems?<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
 <p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
 block you wrote. You as the programmer promise to the compiler that a function
-with given name and given signature will exist at link-time and the compiler
-takes your word for it.</p>
-<h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible Consequences</a></h2>
-<p>The consequences of drift between the two versions can be dire: If C expects
-<code>int</code> but Rust expects <code>float</code> the integer bit patterns are being reinterpreted
-as floats. The result is almost always nonsensical.</p>
-<p>It can be worse though: passing too many or too few arguments can result in
-either overwriting important information on the stack or reading garbage from
-the stack!</p>
-<p>Here is an especially insidious case; the function as we have established is the
-following:</p>
+with a given name and a given signature will exist at link time, and the
+compiler takes your word for it.</p>
+<h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible consequences</a></h2>
+<p>The consequences of drift between the two versions can be dire: if C expects
+<code>int</code> but Rust expects <code>float</code>, the integer bit patterns are reinterpreted as
+floats. The result is almost always nonsensical.</p>
+<p>It can be worse: passing too many or too few arguments can result in either
+overwriting important information on the stack or reading garbage from it.</p>
+<p>Here is an especially insidious case. The function, as we have established, is
+the following:</p>
 <pre><code class="language-c">int bm_add(int a, int b);
 </code></pre>
 <p>but now in the Rust code, we expect it to return 64-bit integers instead of
 32-bit integers:</p>
-<pre><code class="language-rust">unsafe extern "C" {
+<pre><code class="language-rust no_run"><span class="boring">use std::ffi::c_longlong;
+</span>unsafe extern "C" {
     fn bm_add(a: c_longlong, b: c_longlong) -&gt; c_longlong;
 }</code></pre>
-<p>How will this example fail? If you try this yourself you will notice: It
-doesn’t! The reason is that modern CPUs pass function arguments in registers and
-these registers are always <em>word-sized</em>, meaning 64-bit on 64-bit machines. This
-means that internally even 32-bit ints are passed as 64-bit integers instead.</p>
+<p>How will this example fail? If you try it yourself, you will notice that it
+doesn’t. Function arguments are passed in registers, and on a 64-bit machine
+those registers are 64 bits wide, so a 32-bit <code>int</code> occupies one of them with
+room to spare. What the upper half of the register holds is not something the
+declaration can rely on: some ABIs require a narrow integer to be sign-extended
+across the full register, others leave the high bits unspecified entirely.
+Nothing widens the argument on your behalf. Reading it back as a 64-bit integer
+just happens to give the right answer here.</p>
 <p>You can see this in Compiler Explorer here:
 <a href="https://godbolt.org/z/PzrM4a575">The correct version</a> passes <code>a</code> and <code>b</code> in the
 <code>a0</code> and <code>a1</code> registers (the <code>li a0, 1</code> and <code>li a1, 2</code> lines do the loading) and
-passes the return value in the <code>a0</code> register. Those registers are 64-bit
-registers though and so you can see the
+passes the return value in the <code>a0</code> register. Those registers are 64 bits wide,
+so you can see the
 <a href="https://godbolt.org/z/E97EeoEP6">incorrect <code>c_longlong</code>-expecting version</a>
-<strong>just works</strong> because the registers were 64-bit anyway.</p>
+<strong>just works</strong>: the values are small and positive, and nothing has put anything
+else in the upper halves of <code>a0</code> and <code>a1</code>.</p>
 <p>Now, if your 64-bit numbers stay below the 32-bit max value, everything just
 happens to work. But it is <em>very</em> fragile. As you can see here,
-<a href="https://godbolt.org/z/bGfocb43f">when we compile to 32-bit target instead</a>,
+<a href="https://godbolt.org/z/bGfocb43f">when we compile to a 32-bit target instead</a>,
 everything breaks and we end up adding <code>0</code> to <code>a</code> instead.</p>
-<p>I find this example particularly scary, because for 99% of inputs and deployment
-configurations this mistake will be virtually consequence-free. The addition
-will continue to work as expected. But as soon as the input is unusual, the
+<p>This example is particularly scary, because for 99% of inputs and deployment
+configurations the mistake is virtually consequence-free. The addition will
+continue to work as expected. But as soon as the input is unusual, the
 deployment target is different, <em>or you add code that will make the compiler
-change the generated code even a bit</em> this will be a bug that takes you weeks to
-troubleshoot in the worst case.</p>
+change the generated code even a bit</em>, this will be a bug that takes you weeks
+to troubleshoot in the worst case.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift">the exercise</a> and play with the different “drifted” C implementations of
-<code>bm_add</code>, see what happens on your machine. Feel free to also play around a bit
-with the Compiler Explorer playgrounds to see how different miscompilations
-manifest in the generated assembly.</p>
+<p>The exercise turns this around: the Rust binding stays fixed and correct-looking
+while the C implementation drifts underneath it. It is the same mismatch, and
+therefore the same bug, from either side. Drifting the C side just keeps the
+Rust crate compiling, so you can run it and watch what happens.</p>
+<p>Play with the different “drifted” C implementations of <code>bm_add</code> to see what
+happens on your machine. Feel free to also play around a bit with the Compiler
+Explorer playgrounds to see how different miscompilations manifest in the
+generated assembly.</p>
+<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift"><code>01_intro/02_drift</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>Yes the LLVM bitcode embedded by toolchains for LTO (Rust’s
+<p>Yes, the LLVM bitcode embedded by toolchains for LTO (Rust’s
 <code>-Clto=thin -Cembed-bitcode=yes</code> and Clang’s <code>-flto=thin</code>) <em>does</em> carry the
 information to catch problems like this at link-time and it <em>is</em>
-cross-language, but linkers do not generally validate it (the <code>wasm-ld</code>
-linker does, but only for Wasm!). The reasons are manifold but most
-importantly because it would break existing compiler optimizations. You
+cross-language, but linkers do not generally validate it. (The <code>wasm-ld</code>
+linker does, but only for Wasm.) The reasons are many, the most important
+being that validating it would break existing compiler optimizations. You
 <em>could</em> write custom LLVM-bitcode parsing tooling to check this if you
 wanted. <a href="#fr-1-1">↩</a></p>
 </li>
@@ -326,11 +336,11 @@ wanted. <a href="#fr-1-1">↩</a></p>
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

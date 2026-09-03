@@ -15,8 +15,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-ac90ec63.js"></script>
+        <script src="../toc-fc4c9b7e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -178,23 +178,24 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="exposing-rust-to-c-with-cheadergen"><a class="header" href="#exposing-rust-to-c-with-cheadergen">Exposing Rust to C with <code>cheadergen</code></a></h1>
-<p>So far, we’ve always called C from Rust. Now we flip. Remember that our goal is
-to <em>migrate</em> C code to Rust. We’ll eventually need C to call into our new Rust
-code!</p>
+<p>So far we’ve always called C from Rust. Now we go the other way: our goal is to
+<em>migrate</em> C code to Rust, so eventually C will need to call into our new Rust
+code.</p>
 <p>To make a Rust function callable from C we’ll need to first annotate it
 correctly:</p>
-<pre><code class="language-rust">use std::ffi::c_char;
+<pre><code class="language-rust no_run">use std::ffi::c_char;
 
 #[unsafe(no_mangle)]
 pub extern "C" fn bm_strlower(s: *mut c_char) {
     // ...
 }</code></pre>
-<p>Much like the FFI function declaration we saw in the first exercise, we instruct
-rustc to use a C-compatible calling convention through <code>extern "C" fn</code> (without
-it, Rust uses its own ABI that of course C knows nothing about).</p>
+<p>Much like in the FFI function declaration we saw in the first exercise, we
+instruct <code>rustc</code> to use a C-compatible calling convention through
+<code>extern "C" fn</code> (without it, Rust uses its own ABI, which of course C knows
+nothing about).</p>
 <p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
 Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
-identifier that in regular Rust code prevents two equally named types or
+identifier that in regular Rust code prevents two identically named types or
 functions from causing “duplicate symbol” linking errors.</p>
 <p>In this case we do want the symbol name to be the same plain identifier we gave
 it, so the C code linking to us can actually find the function.</p>
@@ -202,13 +203,12 @@ it, so the C code linking to us can actually find the function.</p>
 API. You could write it by hand, but you’d be maintaining two sources of truth.
 <strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
 headers from Rust code.</p>
-<p><code>cheadergen</code> (created and maintained by fellow Mainmatter engineer Luca
-Palmieri) will read your Rust code and automatically generate a C header for the
-relevant FFI-visible symbols.</p>
-<p>Install the CLI by following the instructions here
-<a href="https://github.com/LukeMathWalker/cheadergen/releases">https://github.com/LukeMathWalker/cheadergen/releases</a>.</p>
-<p>Then you can run the following command in your crate root (e.g. the current
-exercise crate):</p>
+<p><code>cheadergen</code>, created and maintained by our colleague Luca Palmieri, reads your
+Rust code and generates a C header for the relevant FFI-visible symbols.</p>
+<p>Install the CLI from the
+<a href="https://github.com/LukeMathWalker/cheadergen/releases"><code>cheadergen</code> releases page</a>.</p>
+<p>Then you can run the following command in your crate root (for example, the
+current exercise crate):</p>
 <pre><code class="language-sh">cheadergen generate
 </code></pre>
 <p>and a header will appear:</p>
@@ -224,12 +224,12 @@ documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/config_refer
 You can apply this attribute to any Rust type. It lets you configure per-type
 options such as renaming fields, skipping exporting, forcing exporting, and
 more. See the full documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/index.html">here</a>.</p>
-<h3 id="a-note-on-cbindgen"><a class="header" href="#a-note-on-cbindgen">A note on <code>cbindgen</code></a></h3>
-<p>If you’ve been researching Rust FFI tooling, you undoubtedly came across
-<a href="https://github.com/mozilla/cbindgen"><code>cbindgen</code></a>, a <em>very similar</em> tool maintained by Mozilla, and you may
-ask yourself: “Why did you just introduce me to this custom tool instead?”</p>
+<h2 id="a-note-on-cbindgen"><a class="header" href="#a-note-on-cbindgen">A note on <code>cbindgen</code></a></h2>
+<p>If you’ve been researching Rust FFI tooling, you’ve undoubtedly come across
+<a href="https://github.com/mozilla/cbindgen"><code>cbindgen</code></a>, a similar tool maintained by Mozilla, and you may be
+wondering: “Why did you just introduce me to this custom tool instead?”</p>
 <p>Well, we wouldn’t have built a new tool if the existing one fit. <code>cbindgen</code>
-dates back to 2017, when the Rust ecosystem looked very different. To read your
+dates back to 2017, when the Rust ecosystem looked quite different. To read your
 Rust and emit headers, it had to parse the source itself with a custom
 <code>syn</code>-based parser. At the time, that was the only way, since the compiler
 didn’t expose enough information.</p>
@@ -240,9 +240,11 @@ why. None of this is a knock on <code>cbindgen</code>: it’s what the constrain
 allowed. <code>cheadergen</code> exists because those constraints have since eased, letting
 us build something with better diagnostics and fewer surprises.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen">the exercise</a>. You’ll port the <code>bm_strlower</code> function to Rust and call
-<code>cheadergen generate --lang c --output-dir c_test -p cheadergen</code> to generate the
-header automatically.</p>
+<p>You’ll port the <code>bm_strlower</code> function to Rust and call
+<code>cheadergen generate --lang c --output-dir c_test -p bm_cheadergen</code> to generate
+the header automatically.</p>
+<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen"><code>01_intro/04_cheadergen</code></a></p>
 
                     </main>
 
@@ -288,11 +290,11 @@ header automatically.</p>
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

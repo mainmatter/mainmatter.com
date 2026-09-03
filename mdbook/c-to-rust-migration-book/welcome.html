@@ -15,8 +15,8 @@
         <link rel="icon" href="favicon-de23e50b.svg">
         <link rel="shortcut icon" href="favicon-8114d1fc.png">
         <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
         <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-65aa6a29.js";
+            window.path_to_searchindex_js = "searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-ac90ec63.js"></script>
+        <script src="toc-fc4c9b7e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -179,19 +179,19 @@
                     <main>
                         <h1 id="welcome"><a class="header" href="#welcome">Welcome</a></h1>
 <p>Welcome to the <strong>“C to Rust Migration Book”</strong>!</p>
-<p>This course will teach you techniques for migration C codebases to Rust.<br>You’ll learn how to maintain a safe mixed C-Rust codebase, incrementally migrate
-modules, translate common C idioms to Rust and learn the debugging tools to use
-when things inevitably break.</p>
+<p>This course will teach you techniques for migrating C codebases to Rust.<br>You’ll learn how to maintain a safe mixed C-Rust codebase, incrementally migrate
+modules, translate common C idioms to Rust, and use the debugging tools you’ll
+need when things inevitably break.</p>
 <p>We assume prior knowledge of Rust and some C.</p>
 <p>You’ll build up your knowledge in small, manageable steps. By the end of the
-course, you will have solved many exercises, and should be prepared to migrate
+course, you will have solved many exercises and should be prepared to migrate
 even larger C codebases to Rust.</p>
 <h2 id="methodology"><a class="header" href="#methodology">Methodology</a></h2>
 <p>This course is based on the “learn by doing” principle.<br>It has been designed to be interactive and hands-on.</p>
 <p><a href="https://mainmatter.com/rust-consulting/">Mainmatter</a> developed this course to
-be delivered in a classroom setting, over 4 days: each attendee advances through
-the lessons at their own pace, with an experienced instructor providing
-guidance, answering questions and diving deeper into the topics as needed.<br>If you’d like to organize a private session for your company, please
+be delivered in a classroom setting, over four days: each attendee advances
+through the lessons at their own pace, with an experienced instructor providing
+guidance, answering questions, and diving deeper into the topics as needed.<br>If you’d like to organize a private session for your company, please
 <a href="https://mainmatter.com/contact/">get in touch</a>.</p>
 <p>You can also take the course on your own, but we recommend you find a friend or
 a mentor to help you along the way should you get stuck.</p>
@@ -211,7 +211,7 @@ machine:</p>
 </code></pre>
 <p>We also recommend you work on a branch, so you can easily track your progress
 and pull in updates from the main repository, if needed:</p>
-<pre><code class="language-bash">cd c-to-rust-migration-book
+<pre><code class="language-bash">cd migrating-c-to-rust
 git checkout -b my-solutions
 </code></pre>
 <p>All exercises are located in the <code>exercises</code> folder. Each exercise is structured
@@ -230,11 +230,11 @@ recommend one of the following:
 <ul>
 <li><a href="https://www.jetbrains.com/rust/">RustRover</a>;</li>
 <li><a href="https://code.visualstudio.com">Visual Studio Code</a> with the
-<a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer"><code>rust-analyzer</code></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer"><code>rust-analyzer</code></a>
 extension.</li>
 </ul>
 </li>
-<li>A C compiler. The one provided by your Operating System will be good enough.</li>
+<li>A C compiler. The one provided by your operating system will be good enough.</li>
 </ul>
 <h3 id="workshop-runner"><a class="header" href="#workshop-runner">Workshop runner</a></h3>
 <p>To verify your solutions, we’ve also provided a tool to guide you through the
@@ -253,22 +253,23 @@ course, so you can easily track your progress and “restart” from a known poi
 if needed.</p>
 </blockquote>
 <p>Enjoy the course!</p>
-<h2 id="author"><a class="header" href="#author">Author</a></h2>
+<h2 id="authors"><a class="header" href="#authors">Authors</a></h2>
 <p>This course was written by <a href="https://jonaskruckenberg.de">Jonas Kruckenberg</a>,
-Engineering Consultant at
-<a href="https://mainmatter.com/rust-consulting/">Mainmatter</a>.<br>Jonas Kruckenberg is a systems engineer and technologist focused on
-next-generation computing infrastructure. He is the lead author of k23, an
-experimental high-reliability operating system. As a TC39 Invited Expert, he
-helps shape the future of web by bringing non-browser perspectives to JavaScript
-language standardization.</p>
-<p><a href="https://mainmatter.com/rust-consulting/">Mainmatter</a> is an engineering consultancy specializing in Rust. We offer engineering services, training, and mentorship to companies that aim to migrate from C to Rust or introduce Rust into an existing codebase.</p>
+Engineering Consultant at <a href="https://mainmatter.com/rust-consulting/">Mainmatter</a>,
+and Artur Jakubiec.<br>Jonas Kruckenberg is a systems engineer working on operating systems and
+low-level infrastructure. He is the lead author of k23, an experimental
+high-reliability operating system. As a TC39 Invited Expert, he helps shape the
+future of the web by bringing non-browser perspectives to JavaScript language
+standardization.<br>Artur Jakubiec is a long-time C/C++ engineer and was one of the main developers
+of Cubasis. He is now a tech lead at a company building enterprise SaaS
+productivity software, currently migrating it from C++ to Rust.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="01_intro/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="01_intro/00_README.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -279,7 +280,7 @@ language standardization.</p>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="01_intro/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="01_intro/00_README.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -301,11 +302,11 @@ language standardization.</p>
 
         <script src="elasticlunr-ef4e11c1.min.js"></script>
         <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="searcher-09f2665d.js"></script>
 
         <script src="clipboard-1626706a.min.js"></script>
         <script src="highlight-abc7f01d.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

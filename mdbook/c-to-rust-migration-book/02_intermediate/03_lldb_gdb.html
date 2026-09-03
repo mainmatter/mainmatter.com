@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>FFI-safe types - The C to Rust Migration Book</title>
+        <title>Using lldb/gdb - The C to Rust Migration Book</title>
 
 
         <!-- Custom HTML head -->
@@ -177,162 +177,126 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="ffi-safe-types"><a class="header" href="#ffi-safe-types">FFI-safe types</a></h1>
-<p>We have passed data from C to Rust and from Rust to C in the previous exercises.
-In doing so we have mostly constrained ourselves to pointers or <code>c_</code>-prefixed
-primitives. At this point you may wonder: “What if I want to pass a <code>struct</code>, or
-a <code>String</code>?”</p>
-<h2 id="primitives"><a class="header" href="#primitives">Primitives</a></h2>
-<p>All primitives (<code>i8</code>..<code>i64</code>, <code>u8</code>..<code>u64</code>, <code>f32</code>, <code>f64</code>, <code>bool</code>, and pointers)
-are always safe to share across an FFI boundary, since they correspond 1:1 with
-C types. <code>Option&lt;NonNull&lt;T&gt;&gt;</code> deserves special mention because it is <em>also</em>
-FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.</p>
-<p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
-same thing. But because the C standard’s definition of these types is loose,
-there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
-though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
-<h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
-<p>Much like we need to use the C calling convention to make our Rust functions
-interoperable, we need to use the <code>C</code> struct layout to make our structs
-interoperable. This is because (just like functions) Rust reserves the right to
-change the struct layout at any time (it is “undefined”)<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>. To have a stable
-layout that other languages can understand, we need to mark our structs with the
-<code>repr(C)</code> attribute.</p>
-<pre><code class="language-rust no_run">// we know the layout of this struct is always (16 bytes in total, because the
-// `usize` gives the whole struct an alignment of 8):
-// - `a` - 8 bytes
-// - `b` - 1 byte
-// - 1 byte padding, so that `c` is 2-byte aligned
-// - `c` - 2 bytes
-// - 4 bytes trailing padding, so that the size is a multiple of the alignment
-#[repr(C)]
-struct Foo {
-    a: usize,
-    b: u8,
-    c: u16,
-}
-
-// we DO NOT know the layout of this struct!
-struct Bar {
-    a: usize,
-    b: u8,
-    c: u16,
-}</code></pre>
-<p><code>repr(C)</code> also applies to <em>tuple structs</em> where the layout is exactly the same
-except the fields don’t have names.</p>
-<p>The <code>repr(..)</code> attribute can also be used on <code>enum</code>s:</p>
-<pre><code class="language-rust no_run">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
-#[repr(u8)]
-enum Foo {
-    A,
-    B,
-    C,
-}
-
-<span class="boring">mod explicit_tags {
-</span>// You can of course also assign explicit tags
-#[repr(u8)]
-enum Foo {
-    A = 5,
-    B = 2,
-    C = 8,
-}
-<span class="boring">}
-</span><span class="boring">mod c_abi {
-</span>// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
-#[repr(C)]
-enum Foo {
-    A,
-    B,
-    C,
-}
-<span class="boring">}</span></code></pre>
-<p>You can use enums with fields even though they don’t have an inherent C
-equivalent. Rust defines a stable mapping
-<a href="https://github.com/rust-lang/rfcs/blob/master/text/2195-really-tagged-unions.md">here</a>.</p>
-<pre><code class="language-rust no_run">// A definition like this...
-#[repr(u8)]
-enum TwoCases {
-    A(u8, u16),
-    B(u16),
-}
-
-//...is in essence just syntax sugar for this:
-union TwoCasesRepr {
-    A: TwoCasesVariantA,
-    B: TwoCasesVariantB,
-}
-
-#[repr(u8)]
-#[derive(Clone, Copy)]
-enum TwoCasesTag {
-    A,
-    B,
-}
-
-#[repr(C)]
-#[derive(Clone, Copy)] // union fields have to be Copy
-struct TwoCasesVariantA(TwoCasesTag, u8, u16);
-
-#[repr(C)]
-#[derive(Clone, Copy)]
-struct TwoCasesVariantB(TwoCasesTag, u16);</code></pre>
-<p>So, essentially, an enum with fields decomposes into a tag enum and a union of
-its fields.</p>
-<h3 id="reprtransparent"><a class="header" href="#reprtransparent"><code>repr(transparent)</code></a></h3>
-<p><code>repr(transparent)</code> doesn’t appear as often but warrants special mention. It is
-an attribute that can only be used on types with a single sized field. It
-guarantees that the layout of the outer type will be exactly the same as that of
-the inner type.</p>
-<pre><code class="language-rust no_run">// Foo is guaranteed to have the same representation as `*const u8`!
-#[repr(transparent)]
-struct Foo(*const u8);
-
-<span class="boring">mod generic {
-</span><span class="boring">use std::marker::PhantomData;
-</span>// because this is concerned with _sized_ fields (fields that have a size)
-// fields that have no size such as PhantomData can still be used!
-#[repr(transparent)]
-struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
-<span class="boring">}</span></code></pre>
-<p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
-between types.</p>
-<h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
-anything generic, and any Rust type that is not explicitly FFI-safe, such as
-<code>String</code>.</p>
-<p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
-version of the struct for each type passed into the generic. If we pass the type
-across the FFI boundary, the C compiler, which does not know about
-monomorphization, cannot know which version to pick. There exists no ABI that
-represents generics.</p>
+                        <h1 id="using-lldbgdb"><a class="header" href="#using-lldbgdb">Using <code>lldb</code>/<code>gdb</code></a></h1>
+<p>At some point in a migration, you’ll hit a crash at the FFI boundary with little
+to go on. A C caller passes a string without the NUL terminator the API
+requires, or Rust hands C a pointer whose lifetime has ended. The process takes
+a <code>SIGSEGV</code> and dies before Rust can give you a tidy panic message or backtrace.</p>
+<p><code>gdb</code> and <code>lldb</code> can show the mixed C/Rust stack. Set a breakpoint in Rust, step
+into C, and inspect both sides of the boundary in one session.</p>
+<h2 id="build-with-debug-information"><a class="header" href="#build-with-debug-information">Build with debug information</a></h2>
+<p>Build both sides of the boundary with debug information. Cargo’s <code>dev</code> profile
+already sets <code>debug = true</code>; for a release build, add this to <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[profile.release]
+debug = true
+</code></pre>
+<p>If <code>build.rs</code> compiles the C code with <code>cc</code>, pass <code>-g</code> there too:</p>
+<pre><code class="language-rust no_run">cc::Build::new()
+    .file("c_src/shout.c")
+    .include("c_src")
+    .flag_if_supported("-g")
+    .compile("shout");</code></pre>
+<p>Forget it and you get Rust frames with line numbers and C frames without:
+precisely the half of the stack you opened the debugger for.</p>
+<h2 id="start-the-debugger"><a class="header" href="#start-the-debugger">Start the debugger</a></h2>
+<p>Use <code>rust-gdb</code> or <code>rust-lldb</code> rather than plain <code>gdb</code> and <code>lldb</code>. They’re thin
+wrappers that load Rust’s pretty-printers, which is what makes a <code>String</code>,
+<code>Vec</code>, or <code>Option</code> readable instead of a pile of pointers and capacities.</p>
+<p>On macOS, that’s usually <code>rust-lldb</code>:</p>
+<pre><code class="language-sh">rust-lldb target/debug/bm_lldb_gdb
+</code></pre>
+<p>On Linux, <code>rust-gdb</code>:</p>
+<pre><code class="language-sh">rust-gdb target/debug/bm_lldb_gdb
+</code></pre>
+<p>Program arguments go after <code>--</code> for <code>rust-lldb</code> and after <code>--args</code> for
+<code>rust-gdb</code>.</p>
+<p>If you prefer a graphical frontend, <code>rust-gdbgui</code> starts the browser-based
+<a href="https://gdbgui.com/"><code>gdbgui</code></a> with the same pretty-printers loaded. Install
+<code>gdbgui</code> separately.</p>
+<pre><code class="language-sh">rust-gdbgui target/debug/bm_lldb_gdb
+</code></pre>
+<h2 id="walk-across-the-boundary"><a class="header" href="#walk-across-the-boundary">Walk across the boundary</a></h2>
+<p>If you already know one debugger and need the equivalent command in the other,
+keep the official <a href="https://lldb.llvm.org/use/map.html">GDB to LLDB command map</a>
+open. It covers both directions in one place.</p>
+<p>Say you’re investigating <code>bm_shout</code>, the C helper called by the Rust exercise.
+Set a breakpoint on it, run the program, and look at the stack when execution
+stops (output abbreviated):</p>
+<pre><code class="language-text">(lldb) b bm_shout
+Breakpoint 1: where = bm`bm_shout at shout.c:6
+(lldb) run
+Process 51234 stopped
+* thread #1, stop reason = breakpoint 1.1
+  * frame #0: bm`bm_shout at shout.c:6
+    frame #1: bm`bm_lldb_gdb::shout at lib.rs:17
+    frame #2: bm`bm_lldb_gdb::demo at lib.rs:30
+    frame #3: bm`main at main.rs:2
+</code></pre>
+<p>C frames and Rust frames are interleaved, and the numbering tells you which way
+to walk: frame #0 is where execution stopped, and every higher number is one of
+its callers. <code>up</code> moves toward callers, <code>down</code> back toward the stop. So the code
+that handed over the bad value is always <em>up</em>, whichever language crashed. If
+Rust crashed, <code>up</code> gets you to the C caller and the arguments it passed. If C
+crashed, <code>up</code> gets you to the Rust frame that supplied them.</p>
+<p>From there the usual commands work in both debuggers: <code>s</code> steps into a call, <code>n</code>
+steps over one, <code>finish</code> runs the current frame to completion, <code>bt</code> prints the
+stack, and <code>p</code> prints a value.</p>
+<p>For a <code>char *out</code>, inspect the bytes directly: <code>x/s out</code> in <code>gdb</code>, and either
+<code>x/s out</code> or <code>memory read --format c-string out</code> in <code>lldb</code> (the format name is
+<code>c-string</code>, with the hyphen; <code>cstring</code> is rejected). For a raw buffer, use
+<code>x/16xb out</code> in <code>gdb</code> or <code>memory read --size 1 --count 16 --format x out</code> in
+<code>lldb</code>. This quickly tells you whether the pointer, length, and terminator agree
+with the FFI contract.</p>
+<p>When the process dies outright, you don’t need a breakpoint at all. Run it, let
+it take the signal, and print the stack:</p>
+<pre><code class="language-text">(lldb) run
+Process 51234 stopped
+* thread #1, stop reason = EXC_BAD_ACCESS (code=1, address=0x0)
+(lldb) bt
+</code></pre>
+<p>The frame you land in is where the bad pointer was dereferenced, which is not
+necessarily where the bug is. Walk up until the values stop making sense.</p>
+<h2 id="a-note-on-rust-symbol-names"><a class="header" href="#a-note-on-rust-symbol-names">A note on Rust symbol names</a></h2>
+<p>Everything above assumes your debugger can read the names in that stack. Since
+Rust 1.97, <code>rustc</code> uses the v0 symbol-mangling scheme by default. Nightly has
+done so since November 2025, so the toolchain this book pins already emits v0
+symbols.</p>
+<p>Symbol mangling is how the compiler turns a function into a linker-safe name.
+For a C function, that’s usually just the function name. Rust also has to
+distinguish generic instantiations: <code>Vec&lt;u8&gt;::push</code> and <code>Vec&lt;String&gt;::push</code> are
+different generated functions and therefore need different symbols.</p>
+<p>The old scheme used a hash for much of that distinction. It worked, but a
+backtrace through generic code often left you with a readable function name and
+an opaque suffix. The v0 scheme preserves the concrete generic arguments in a
+form tools can decode, so when you’re debugging or profiling a monomorphized
+call chain, the backtrace can show which instantiation actually ran rather than
+a hash.</p>
+<p>This doesn’t affect functions exported to C with <code>#[unsafe(no_mangle)]</code>, but it
+does require every tool that reads Rust symbols to understand v0. Recent <code>gdb</code>,
+<code>lldb</code>, and Rust tooling do. Older debuggers, profilers, or crash-symbolication
+pipelines may show raw names such as <code>_RNvNtNtCs...</code> instead. Check your whole
+debugging path before upgrading a pinned CI or production toolchain.</p>
+<p>A quick test is enough: write a small generic function that panics, run it with
+<code>RUST_BACKTRACE=1</code>, and read the backtrace.</p>
+<p>See the <a href="https://github.com/rust-lang/rust/pull/151994">stabilization PR</a> and the
+<a href="https://doc.rust-lang.org/stable/rustc/symbol-mangling/v0.html">v0 symbol-format documentation</a> for details.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>There you will find an FFI function that attempts to pass types that are not
-FFI-safe. Notice the compiler-generated warnings: it is your job to fix them by
-using FFI-safe types.</p>
+<p>In this exercise a small C helper and its Rust binding disagree about something
+that only shows up once you call across the boundary. Build it with
+<code>cargo build -p bm_lldb_gdb</code>, then debug <code>target/debug/bm_lldb_gdb</code>. No
+<code>println!</code> allowed.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types"><code>01_intro/05_ffi_safe_types</code></a></p>
-<hr>
-<ol class="footnote-definition">
-<li id="footnote-1">
-<p>The compiler does this to be smart and optimize things. For example,
-<a href="https://godbolt.org/z/bxh5eqM8z">here</a> is the code snippet you saw above in
-Compiler Explorer again. If you look at the rightmost “Compiler Output” pane
-you will see the actual layout of each struct. You can see that for <code>Bar</code>
-the compiler reordered the fields to remove the interior padding byte. <a href="#fr-1-1">↩</a></p>
-</li>
-</ol>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/03_lldb_gdb"><code>02_intermediate/03_lldb_gdb</code></a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01_intro/04_cheadergen.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02_intermediate/02_allocators.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../02_intermediate/04_clippy_lints.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -342,11 +306,11 @@ the compiler reordered the fields to remove the interior padding byte. <a href="
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01_intro/04_cheadergen.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../02_intermediate/02_allocators.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../02_intermediate/04_clippy_lints.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

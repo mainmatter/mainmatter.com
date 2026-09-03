@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>FFI-safe types - The C to Rust Migration Book</title>
+        <title>Clippy lints for unsafe Rust and static verification - The C to Rust Migration Book</title>
 
 
         <!-- Custom HTML head -->
@@ -177,150 +177,164 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="ffi-safe-types"><a class="header" href="#ffi-safe-types">FFI-safe types</a></h1>
-<p>We have passed data from C to Rust and from Rust to C in the previous exercises.
-In doing so we have mostly constrained ourselves to pointers or <code>c_</code>-prefixed
-primitives. At this point you may wonder: “What if I want to pass a <code>struct</code>, or
-a <code>String</code>?”</p>
-<h2 id="primitives"><a class="header" href="#primitives">Primitives</a></h2>
-<p>All primitives (<code>i8</code>..<code>i64</code>, <code>u8</code>..<code>u64</code>, <code>f32</code>, <code>f64</code>, <code>bool</code>, and pointers)
-are always safe to share across an FFI boundary, since they correspond 1:1 with
-C types. <code>Option&lt;NonNull&lt;T&gt;&gt;</code> deserves special mention because it is <em>also</em>
-FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.</p>
-<p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
-same thing. But because the C standard’s definition of these types is loose,
-there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
-though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
-<h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
-<p>Much like we need to use the C calling convention to make our Rust functions
-interoperable, we need to use the <code>C</code> struct layout to make our structs
-interoperable. This is because (just like functions) Rust reserves the right to
-change the struct layout at any time (it is “undefined”)<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>. To have a stable
-layout that other languages can understand, we need to mark our structs with the
-<code>repr(C)</code> attribute.</p>
-<pre><code class="language-rust no_run">// we know the layout of this struct is always (16 bytes in total, because the
-// `usize` gives the whole struct an alignment of 8):
-// - `a` - 8 bytes
-// - `b` - 1 byte
-// - 1 byte padding, so that `c` is 2-byte aligned
-// - `c` - 2 bytes
-// - 4 bytes trailing padding, so that the size is a multiple of the alignment
-#[repr(C)]
-struct Foo {
-    a: usize,
-    b: u8,
-    c: u16,
-}
+                        <h1 id="clippy-lints-for-unsafe-rust-and-static-verification"><a class="header" href="#clippy-lints-for-unsafe-rust-and-static-verification">Clippy lints for unsafe Rust and static verification</a></h1>
+<p>In the previous section we learned how to debug an application, but debugging
+only gets you so far: it starts from a crash you already have, and works
+backward to the root cause.</p>
+<p>Lints, on the other hand, help prevent certain issues in the first place. They
+catch a narrower set of problems and suspicious patterns before the code runs.
+Running them can be fully automated, which helps enforce coding standards across
+an entire team.</p>
+<p>They are especially useful in <code>unsafe</code> code. They can require each unsafe
+operation to be explicit, flag signatures that don’t state the caller’s
+obligations, and surface undocumented assumptions. They can’t prove that a
+pointer is valid or that a C caller is honest, but they can make unchecked
+assumptions visible for review.</p>
+<h2 id="built-in-lints"><a class="header" href="#built-in-lints">Built-in lints</a></h2>
+<p>You already have several useful lints enabled by default.</p>
+<p><code>improper_ctypes</code> and <code>improper_ctypes_definitions</code> are rustc lints,
+warn-by-default, and you’ve encountered them already: they’re what complained
+about the non-FFI-safe types back in Chapter 1. <code>improper_ctypes</code> covers the
+types you declare in an <code>extern</code> block; <code>improper_ctypes_definitions</code> covers the
+ones you define with <code>extern "C"</code>. Between them they catch most type-level
+mistakes long before a linker gets involved.</p>
+<p><code>clippy::not_unsafe_ptr_arg_deref</code> is a correctness lint, so Clippy already
+marks it as deny rather than warn. It fires when a public safe function
+dereferences a raw-pointer argument even though its signature places no
+requirements on the caller. Either make the function unsafe and document its
+pointer contract, or keep it safe and accept a type that can be dereferenced
+safely. Don’t silence the lint.</p>
+<p><code>clippy::missing_safety_doc</code> flags a public <code>unsafe fn</code> whose docs have no
+<code># Safety</code> section. Set <code>check-private-items = true</code> in <code>clippy.toml</code> to apply
+it to private items as well. This is worth doing in an FFI crate, where plenty
+of the interesting unsafe code isn’t public.</p>
+<h2 id="more-lints-to-turn-on"><a class="header" href="#more-lints-to-turn-on">More lints to turn on</a></h2>
+<p>You can configure a lint in code:</p>
+<pre><code class="language-rust no_run">#![warn(clippy::undocumented_unsafe_blocks)]</code></pre>
+<p>Or you can use lint tables in <code>Cargo.toml</code>. We’ll use <code>Cargo.toml</code> here to keep
+this crate-wide policy in one place:<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+<pre><code class="language-toml">[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
 
-// we DO NOT know the layout of this struct!
-struct Bar {
-    a: usize,
-    b: u8,
-    c: u16,
+[lints.clippy]
+undocumented_unsafe_blocks = "warn"
+multiple_unsafe_ops_per_block = "warn"
+unnecessary_safety_doc = "warn"
+ptr_as_ptr = "warn"
+cast_ptr_alignment = "warn"
+transmute_ptr_to_ptr = "warn"
+</code></pre>
+<p>This section focuses on Clippy, but <code>unsafe_op_in_unsafe_fn</code> is a compiler lint,
+not a Clippy lint. It’s worth mentioning here because it makes unsafe operations
+explicit, which is the foundation for the Clippy lints that follow. An
+<code>unsafe fn</code> means its caller has extra obligations. It doesn’t mean every unsafe
+operation in the body is automatically justified. With this lint enabled, each
+dereference, FFI call, or other unsafe operation needs its own <code>unsafe {}</code>
+block. It’s allow-by-default in edition 2021 and warn-by-default in edition
+2024, so it’s worth denying explicitly either way.</p>
+<p>Two lints take that idea a step further. <code>clippy::undocumented_unsafe_blocks</code>
+asks for a <code>// SAFETY:</code> comment before each unsafe block.
+<code>clippy::multiple_unsafe_ops_per_block</code> encourages each block to contain a
+single unsafe operation, keeping its safety argument focused. Together they turn
+a large, vague unsafe region into small claims that can be checked one by one.</p>
+<p><code>clippy::unnecessary_safety_doc</code> catches the opposite documentation mistake: a
+<code># Safety</code> section on a public safe function or trait. A safe API should not
+have safety preconditions for its callers or implementors to uphold. This is a
+restriction lint and allow-by-default, so enable it explicitly.</p>
+<p>The pointer lints earn their keep when you’re porting C habits mechanically.
+Pointer casts and pointer transmutes often compile without complaint, even when
+they introduce a stricter alignment requirement or hide a more direct API. A
+warning doesn’t necessarily mean that the code is wrong, but it’s a good reason
+to double-check what the cast is claiming.</p>
+<h2 id="when-the-lint-is-wrong"><a class="header" href="#when-the-lint-is-wrong">When the lint is wrong</a></h2>
+<p>Porting from C can also produce the opposite problem. Some C naming conventions
+conflict directly with rustc’s style lints: a mirrored <code>bm_db_t</code> typedef
+triggers <code>non_camel_case_types</code>, an extern static trips
+<code>non_upper_case_globals</code>, and a function or variable that keeps its original
+name trips <code>non_snake_case</code>. The group covering all three is
+<code>nonstandard_style</code>.</p>
+<p>Sometimes the name genuinely does have to match, and then an <code>allow</code> is the
+right solution. Scope it as tightly as you can:</p>
+<pre><code class="language-rust no_run">#[allow(non_camel_case_types)]
+pub struct bm_db_t {/* … */}</code></pre>
+<p>A crate-root <code>#![allow(non_snake_case)]</code> also silences names you genuinely got
+wrong. Prefer applying allows to individual items instead of whole modules or
+entire crates. Generated code you don’t control is the exception that can
+justify a module-wide allow. Put it on the module containing the generated
+bindings rather than on the entire crate.</p>
+<p>You can often avoid an <code>allow</code> for functions exposed to C. <code>no_mangle</code> uses the
+Rust function’s name for the exported symbol, but <code>export_name</code> lets you choose
+a different name for the C API:</p>
+<pre><code class="language-rust no_run">#[unsafe(export_name = "BMNormalizeURL")]
+pub extern "C" fn bm_normalize_url() {
+    // ...
 }</code></pre>
-<p><code>repr(C)</code> also applies to <em>tuple structs</em> where the layout is exactly the same
-except the fields don’t have names.</p>
-<p>The <code>repr(..)</code> attribute can also be used on <code>enum</code>s:</p>
-<pre><code class="language-rust no_run">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
-#[repr(u8)]
-enum Foo {
-    A,
-    B,
-    C,
-}
+<p><strong>Note:</strong> <code>cheadergen</code> recognizes <code>export_name</code>, so it emits <code>BMNormalizeURL</code> in
+the C header while the Rust function keeps its idiomatic name.</p>
+<h2 id="share-lint-settings-across-a-workspace"><a class="header" href="#share-lint-settings-across-a-workspace">Share lint settings across a workspace</a></h2>
+<p>The configuration above applies to one crate. To use it across a workspace, put
+the tables in the root <code>Cargo.toml</code> instead. They’ve been available since Rust
+1.74:</p>
+<pre><code class="language-toml"># Cargo.toml at the workspace root
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
 
-<span class="boring">mod explicit_tags {
-</span>// You can of course also assign explicit tags
-#[repr(u8)]
-enum Foo {
-    A = 5,
-    B = 2,
-    C = 8,
-}
-<span class="boring">}
-</span><span class="boring">mod c_abi {
-</span>// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
-#[repr(C)]
-enum Foo {
-    A,
-    B,
-    C,
-}
-<span class="boring">}</span></code></pre>
-<p>You can use enums with fields even though they don’t have an inherent C
-equivalent. Rust defines a stable mapping
-<a href="https://github.com/rust-lang/rfcs/blob/master/text/2195-really-tagged-unions.md">here</a>.</p>
-<pre><code class="language-rust no_run">// A definition like this...
-#[repr(u8)]
-enum TwoCases {
-    A(u8, u16),
-    B(u16),
-}
-
-//...is in essence just syntax sugar for this:
-union TwoCasesRepr {
-    A: TwoCasesVariantA,
-    B: TwoCasesVariantB,
-}
-
-#[repr(u8)]
-#[derive(Clone, Copy)]
-enum TwoCasesTag {
-    A,
-    B,
-}
-
-#[repr(C)]
-#[derive(Clone, Copy)] // union fields have to be Copy
-struct TwoCasesVariantA(TwoCasesTag, u8, u16);
-
-#[repr(C)]
-#[derive(Clone, Copy)]
-struct TwoCasesVariantB(TwoCasesTag, u16);</code></pre>
-<p>So, essentially, an enum with fields decomposes into a tag enum and a union of
-its fields.</p>
-<h3 id="reprtransparent"><a class="header" href="#reprtransparent"><code>repr(transparent)</code></a></h3>
-<p><code>repr(transparent)</code> doesn’t appear as often but warrants special mention. It is
-an attribute that can only be used on types with a single sized field. It
-guarantees that the layout of the outer type will be exactly the same as that of
-the inner type.</p>
-<pre><code class="language-rust no_run">// Foo is guaranteed to have the same representation as `*const u8`!
-#[repr(transparent)]
-struct Foo(*const u8);
-
-<span class="boring">mod generic {
-</span><span class="boring">use std::marker::PhantomData;
-</span>// because this is concerned with _sized_ fields (fields that have a size)
-// fields that have no size such as PhantomData can still be used!
-#[repr(transparent)]
-struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
-<span class="boring">}</span></code></pre>
-<p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
-between types.</p>
-<h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
-anything generic, and any Rust type that is not explicitly FFI-safe, such as
-<code>String</code>.</p>
-<p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
-version of the struct for each type passed into the generic. If we pass the type
-across the FFI boundary, the C compiler, which does not know about
-monomorphization, cannot know which version to pick. There exists no ABI that
-represents generics.</p>
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "warn"
+multiple_unsafe_ops_per_block = "warn"
+</code></pre>
+<p>Each member crate then opts in with:</p>
+<pre><code class="language-toml">[lints]
+workspace = true
+</code></pre>
+<h2 id="-safety-comments-are-part-of-the-code"><a class="header" href="#-safety-comments-are-part-of-the-code"><code>// SAFETY:</code> comments are part of the code</a></h2>
+<p>Consider a pointer that arrives across the FFI boundary:</p>
+<pre><code class="language-rust no_run"><span class="boring">use std::ffi::CStr;
+</span><span class="boring">let raw = c"https://example.com".as_ptr();
+</span>// SAFETY: `raw` is non-null (checked above) and points to a valid
+// NUL-terminated byte sequence, as required by `bm_normalize_url`'s contract.
+let raw = unsafe { CStr::from_ptr(raw) };</code></pre>
+<p>The null check happens in this function; the valid NUL-terminated sequence is
+part of the caller’s documented contract. A reviewer can check both claims
+without re-deriving them from the surrounding code.</p>
+<p>Compare that with this:</p>
+<pre><code class="language-rust no_run"><span class="boring">use std::ffi::CStr;
+</span><span class="boring">let raw = c"https://example.com".as_ptr();
+</span>// SAFETY: this is fine
+let raw = unsafe { CStr::from_ptr(raw) };</code></pre>
+<p>That comment carries no information. The next reader still has to establish
+whether <code>raw</code> is non-null, initialized, and terminated. Write the reasoning
+down.</p>
+<p>It’s the same discipline as the <code># Safety</code> documentation from Chapter 1. The
+function’s <code># Safety</code> section describes what its caller must guarantee. The
+local <code>// SAFETY:</code> comment describes why one operation can rely on those
+guarantees at this exact point in the implementation.</p>
+<h2 id="lints-are-a-starting-point-not-a-proof"><a class="header" href="#lints-are-a-starting-point-not-a-proof">Lints are a starting point, not a proof</a></h2>
+<p>Run the lints with:</p>
+<pre><code class="language-sh">cargo clippy --workspace --all-targets
+</code></pre>
+<p><code>--all-targets</code> matters here. Without it, <code>cargo clippy</code> skips tests, and in
+these exercises the tests are where most of the FFI calls live.</p>
+<p><code>cargo clippy --fix</code> can apply some mechanical fixes. It wants a clean Git tree
+and refuses to run on a dirty one unless you pass <code>--allow-dirty</code>. Review the
+diff: replacing a pointer cast is easy; deciding whether the pointer is
+correctly aligned, valid, and live is the more difficult work.</p>
+<p>Other mistakes won’t trigger a lint at all. No compiler warning can tell you
+that a C caller lies about a buffer length, or that two libraries expect
+different allocators. Keep writing tests, use a debugger when they fail, and
+treat every FFI contract as something to validate at the boundary.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>There you will find an FFI function that attempts to pass types that are not
-FFI-safe. Notice the compiler-generated warnings: it is your job to fix them by
-using FFI-safe types.</p>
+<p>You’ll work through a small FFI module with the full lint set already switched
+on. Some warnings are mechanical, others point to a real bug. The point isn’t to
+make <code>cargo clippy</code> quiet. It’s to understand and document every unsafe
+operation that remains.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types"><code>01_intro/05_ffi_safe_types</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/04_clippy_lints"><code>02_intermediate/04_clippy_lints</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>The compiler does this to be smart and optimize things. For example,
-<a href="https://godbolt.org/z/bxh5eqM8z">here</a> is the code snippet you saw above in
-Compiler Explorer again. If you look at the rightmost “Compiler Output” pane
-you will see the actual layout of each struct. You can see that for <code>Bar</code>
-the compiler reordered the fields to remove the interior padding byte. <a href="#fr-1-1">↩</a></p>
+<p>The complete list of Clippy lints is available at
+<a href="https://rust-lang.github.io/rust-clippy/master/index.html">https://rust-lang.github.io/rust-clippy/master/index.html</a>. <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 
@@ -328,11 +342,11 @@ the compiler reordered the fields to remove the interior padding byte. <a href="
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01_intro/04_cheadergen.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02_intermediate/03_lldb_gdb.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../02_intermediate/05_idiomatic_rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -342,11 +356,11 @@ the compiler reordered the fields to remove the interior padding byte. <a href="
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01_intro/04_cheadergen.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../02_intermediate/03_lldb_gdb.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../02_intermediate/05_idiomatic_rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

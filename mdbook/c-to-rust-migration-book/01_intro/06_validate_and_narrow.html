@@ -15,8 +15,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-ac90ec63.js"></script>
+        <script src="../toc-fc4c9b7e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -180,50 +180,48 @@
                         <h1 id="the-ffi-boundary-as-a-firewall-validate-and-narrow"><a class="header" href="#the-ffi-boundary-as-a-firewall-validate-and-narrow">The FFI boundary as a firewall: validate and narrow</a></h1>
 <p>By now you’ve written <code>extern "C"</code> functions in both directions, seen <code>bindgen</code>
 generate Rust code and <code>cheadergen</code> generate C headers.</p>
-<p>On paper that is everything you need and it’s tempting to just go ahead and
-rewrite your project now. Take your C API and translate it one-for-one into
-Rust.</p>
-<p>The problem is: often you can’t — and just as often, you shouldn’t. Real-world C
-is complicated, idiosyncratic, and (let’s admit it!) full of skeletons. You’re
+<p>On paper that is everything you need, and it’s tempting to go ahead and rewrite
+your project now. Take your C API and translate it one-for-one into Rust.</p>
+<p>The problem is that often you can’t, and just as often you shouldn’t. Real-world
+C is complicated, idiosyncratic, and (let’s admit it!) full of skeletons. You’re
 likely thinking about a Rust rewrite not just to address security problems or
 performance issues; rewriting in Rust is a chance to clean up your codebase:
-re-establish module boundaries, drop the legacy assumptions, write the module
-you wished you had.</p>
+re-establish module boundaries, drop legacy assumptions, write the module you
+wished you had.</p>
 <p>At the same time big-bang rewrites (where you replace the entire codebase at
 once) famously never work. Which leaves a problem: you have a clean Rust
 codebase, a messy legacy codebase, and a need to keep both working together for
 <em>some time</em><sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>.</p>
-<p>During this transitionary period the FFI layer is where those worlds meet. It
-has to bridge unsafe-everything-goes C and the borrow checker — <em>and</em> bridge
-your new design and the old one.</p>
-<p>One major misconception many people have is that FFI is about <em>type
-translation</em>. That is correct, of course, but it’s like saying programming is
-about typing words into a computer; it is missing the point. The <em>main</em> job of
-your FFI interface is <strong>establishing confidence</strong>. In a legacy codebase you
-rarely know with 100% certainty that reality matches your assumptions: some
-caller might actually pass a nullptr, the <code>*const c_char</code> that used to be UTF-8
-might now hold binary data.</p>
+<p>During this transitional period, the FFI layer is where those worlds meet. It
+has to bridge unsafe-everything-goes C and the borrow checker, and bridge your
+new design and the old one.</p>
+<p>Many people think FFI is about <em>type translation</em>. That’s true as far as it
+goes, but it’s like saying programming is about typing words into a computer: it
+misses the point. The <em>main</em> job of your FFI interface is <strong>establishing
+confidence</strong>. In a legacy codebase you rarely know with 100% certainty that
+reality matches your assumptions: some caller might actually pass a null
+pointer, or the <code>*const c_char</code> that used to be UTF-8 might now hold binary
+data.</p>
 <p>The FFI boundary is your chance to turn legacy uncertainty into known-good state
 before it crosses into your new system. Uncertainty leaks. Your FFI must be a
 vigilant firewall against it.</p>
-<p>To this end we at Mainmatter have identified a number of rules that we nowadays
-live by.</p>
+<p>To this end, we’ve settled on a handful of rules that we now live by.</p>
 <h2 id="always-validate-your-inputs"><a class="header" href="#always-validate-your-inputs">Always validate your inputs</a></h2>
 <p>Validate every assumption at the FFI boundary. Null checks, length checks, UTF-8
 checks. Panic or return an error if anything is even slightly off. In web
-servers the HTTP handler function is your primary interface to the “chaos world”
-of the internet, think of FFI functions the same way: they are your primary
-interface to the legacy-C “chaos world”.</p>
+servers, the HTTP handler function is your primary interface to the “chaos
+world” of the internet. Think of FFI functions the same way: they are your
+primary interface to the legacy-C “chaos world”.</p>
 <p>You should also lean on Rust’s type system so “forgot to check” isn’t even an
 option. For example: at Mainmatter, we encourage contributors to use
 <code>Option&lt;NonNull&lt;T&gt;&gt;</code> instead of <code>*mut T</code> as much as possible, for the simple
 reason that a <code>*mut T</code> can be dereferenced directly (<code>*ptr</code>), which triggers UB
 if the pointer is null. You would have to add a manual <code>if ptr.is_null() {}</code>
-check before every pointer dereference. With <code>Option&lt;NonNull&lt;T&gt;&gt;</code> on the other
+check before every pointer dereference. With <code>Option&lt;NonNull&lt;T&gt;&gt;</code>, on the other
 hand, the type system <em>forces</em> you to handle the <code>None</code> case explicitly. Even
 the laziest <code>.unwrap()</code> will result in a loud panic instead of potentially
 silent UB.</p>
-<pre><code class="language-rust">// `*mut T` silently accepts null. You'll remember to check. Until you don't.
+<pre><code class="language-rust compile_fail">// `*mut T` silently accepts null. You'll remember to check. Until you don't.
 pub extern "C" fn bm_do_thing(input: *mut Thing) -&gt; BmResult { /* … */
 }
 
@@ -239,30 +237,31 @@ pub extern "C" fn bm_do_thing(input: Option&lt;NonNull&lt;Thing&gt;&gt;) -&gt; B
 <p>Legacy C code has a habit of packing several meanings into one return type.
 POSIX <code>read()</code> is a good example: <code>-1</code> means error (check <code>errno</code>), <code>0</code> means
 end-of-file, anything positive is the byte count. It is <em>very easy</em> to mess this
-up. Rust gives you better tools — <code>bool</code> for yes/no, an enum for branching
-outcomes, an out-parameter for the count. These types usually translate quite
-well into C headers too, so use them!</p>
-<pre><code class="language-rust">#[repr(C)]
+up. Rust gives you better tools: <code>bool</code> for yes/no, an enum for branching
+outcomes, an out-parameter for the count. These types usually translate well
+into C headers too, so use them.</p>
+<pre><code class="language-rust compile_fail">#[repr(C)]
 pub enum BmReadStatus { Ok, Eof, IoError }
 
 pub extern "C" fn bm_read(/* … */, out_bytes: Option&lt;NonNull&lt;usize&gt;&gt;) -&gt; BmReadStatus;</code></pre>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow">the exercise</a>. We’ll continue with the porting work by taking a look at
-<code>bm_normalize_url</code>, found here <code>exercises/_bm/src/bookmark.c</code>. It will normalize
-a given URL by lowercasing it and writing the normalized string into the
-provided buffer. The exercise already contains our <em>“first draft”</em> Rust
-translation: a naïve transliteration from C to Rust that has a number of issues.</p>
-<p>Let’s apply what we learned above and fix the implementation!</p>
-<p>Hint: check the exercises tests to check the expected behaviour of
-<code>bm_normalize_url</code></p>
+<p>We’ll continue the porting work by looking at <code>bm_normalize_url</code>, in
+<code>exercises/_bm/src/normalize.c</code>. It will normalize a given URL by lowercasing it
+and writing the normalized string into the provided buffer. The exercise already
+contains our <em>“first draft”</em> Rust translation: a naive transliteration from C to
+Rust that has a number of issues.</p>
+<p>Let’s apply what we learned above and fix the implementation.</p>
+<p>Hint: check the exercise’s tests for the expected behavior of
+<code>bm_normalize_url</code>.</p>
+<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow"><code>01_intro/06_validate_and_narrow</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
 <p>The exact amount of time of course varies with the scale of your codebase,
-but let me tell you from hard-won experience: measure this in years. C
-codebase migrations have a funny habit of taking much, much longer than you
-think. As a rule of thumb: take your worst case estimate, double that and
-add a year. Really. <a href="#fr-1-1">↩</a></p>
+but from hard-won experience: measure this in years. C codebase migrations
+have a funny habit of taking much, much longer than you think. As a rule of
+thumb: take your worst-case estimate, double it, and add a year. Really. <a href="#fr-1-1">↩</a></p>
 </li>
 </ol>
 
@@ -310,11 +309,11 @@ add a year. Really. <a href="#fr-1-1">↩</a></p>
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

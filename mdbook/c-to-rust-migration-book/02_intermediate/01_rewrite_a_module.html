@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>FFI-safe types - The C to Rust Migration Book</title>
+        <title>How to rewrite a module - The C to Rust Migration Book</title>
 
 
         <!-- Custom HTML head -->
@@ -177,162 +177,138 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="ffi-safe-types"><a class="header" href="#ffi-safe-types">FFI-safe types</a></h1>
-<p>We have passed data from C to Rust and from Rust to C in the previous exercises.
-In doing so we have mostly constrained ourselves to pointers or <code>c_</code>-prefixed
-primitives. At this point you may wonder: “What if I want to pass a <code>struct</code>, or
-a <code>String</code>?”</p>
-<h2 id="primitives"><a class="header" href="#primitives">Primitives</a></h2>
-<p>All primitives (<code>i8</code>..<code>i64</code>, <code>u8</code>..<code>u64</code>, <code>f32</code>, <code>f64</code>, <code>bool</code>, and pointers)
-are always safe to share across an FFI boundary, since they correspond 1:1 with
-C types. <code>Option&lt;NonNull&lt;T&gt;&gt;</code> deserves special mention because it is <em>also</em>
-FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.</p>
-<p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
-same thing. But because the C standard’s definition of these types is loose,
-there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
-though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
-<h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
-<p>Much like we need to use the C calling convention to make our Rust functions
-interoperable, we need to use the <code>C</code> struct layout to make our structs
-interoperable. This is because (just like functions) Rust reserves the right to
-change the struct layout at any time (it is “undefined”)<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>. To have a stable
-layout that other languages can understand, we need to mark our structs with the
-<code>repr(C)</code> attribute.</p>
-<pre><code class="language-rust no_run">// we know the layout of this struct is always (16 bytes in total, because the
-// `usize` gives the whole struct an alignment of 8):
-// - `a` - 8 bytes
-// - `b` - 1 byte
-// - 1 byte padding, so that `c` is 2-byte aligned
-// - `c` - 2 bytes
-// - 4 bytes trailing padding, so that the size is a multiple of the alignment
-#[repr(C)]
-struct Foo {
-    a: usize,
-    b: u8,
-    c: u16,
-}
-
-// we DO NOT know the layout of this struct!
-struct Bar {
-    a: usize,
-    b: u8,
-    c: u16,
+                        <h1 id="how-to-rewrite-a-module"><a class="header" href="#how-to-rewrite-a-module">How to rewrite a module</a></h1>
+<p>In the previous chapter you learned the FFI building blocks: <code>extern</code> blocks,
+generated bindings, FFI-safe types, and how to design a boundary that acts as a
+firewall. Now we’ll put them to work on a real codebase. Meet <code>bm</code>, a small
+bookmark manager CLI written in C. Over the rest of this course we will migrate
+it to Rust, one module at a time.</p>
+<p>Here is an overview of the C source code:</p>
+<pre><code class="language-text">exercises/_bm/src/
+├── bookmark.c    the Bookmark type
+├── bookmark.h
+├── cli.c         entry point, argument parsing
+├── index.c       in-memory bookmark index
+├── index.h
+├── internal.h    definitions shared by index.c and storage.c
+├── normalize.c   URL and tag normalization
+├── normalize.h
+├── result.h      shared result codes and error-string helper
+├── storage.c     on-disk persistence of .bm files
+├── storage.h
+├── tag.c         tag parsing and matching
+├── tag.h
+├── util.c        string helpers
+└── util.h
+</code></pre>
+<h2 id="picking-the-first-module"><a class="header" href="#picking-the-first-module">Picking the first module</a></h2>
+<p>There is no universally best place to start. A leaf module is often a good
+choice because it has few dependencies. The program’s entry point can also work
+if it mostly calls other modules through simple interfaces. Sometimes the best
+boundary does not match an existing source file at all, and it is worth
+extracting a small module before porting it.</p>
+<p>The right choice depends on the codebase, but a few guidelines help:</p>
+<ul>
+<li>Prefer a small, clearly defined interface.</li>
+<li>Minimize the number of C functions and data structures the Rust code must use.</li>
+<li>Avoid shared global state and complicated ownership rules in the first port.</li>
+<li>Choose code with useful tests, so you can compare behavior before and after.</li>
+<li>Keep the change small enough to review and, if necessary, revert.</li>
+</ul>
+<pre><code class="language-text">cli       → bookmark, index, normalize, result, tag, util
+index     → bookmark, internal, normalize, storage, tag, util
+storage   → bookmark, index, internal, normalize, util
+tag       → normalize, util
+bookmark  → util
+normalize → (no project dependencies)
+util      → (no project dependencies)
+</code></pre>
+<p>Two things are worth noting. <code>normalize</code> and <code>util</code> are the only real leaves:
+every other module pulls in at least one of its siblings. And <code>index</code> and
+<code>storage</code> include each other, so this is not the clean tree the file names
+suggest. Tangles like that are normal in code that has been maintained for a
+while, and they are exactly what you want to know before choosing where to
+start.</p>
+<p>For <code>bm</code>, we chose to start with <code>normalize.c</code>. It exposes two functions: one
+normalizes URLs and the other normalizes tags. Both write into buffers supplied
+by the caller, so no memory changes ownership at the FFI boundary. Why not
+<code>util.c</code> or <code>bookmark.c</code>? Both seem suitable too. <code>util.c</code> is also small, but it
+is mostly thin wrappers around C string and allocation functions. <code>bookmark.c</code>
+contains more substantial logic, but it allocates values that must later be
+freed across the language boundary. We cover that problem in the next section.</p>
+<h2 id="preserve-the-existing-contract"><a class="header" href="#preserve-the-existing-contract">Preserve the existing contract</a></h2>
+<p>When possible, an incremental migration replaces the module’s <em>object file</em>
+without changing the interface used by the remaining C code. The existing C
+header (<code>normalize.h</code> in this example) describes the ABI our Rust implementation
+must initially satisfy. We re-implement every function the header declares in
+Rust and export it under the same symbol name using <code>#[unsafe(no_mangle)]</code> and
+<code>extern "C"</code>:</p>
+<pre><code class="language-rust compile_fail">#[unsafe(no_mangle)]
+pub unsafe extern "C" fn bm_normalize_url(
+    url: Option&lt;NonNull&lt;c_char&gt;&gt;,
+    out: Option&lt;NonNull&lt;c_char&gt;&gt;,
+    out_len: usize,
+) -&gt; BmResult {
+    // ...
 }</code></pre>
-<p><code>repr(C)</code> also applies to <em>tuple structs</em> where the layout is exactly the same
-except the fields don’t have names.</p>
-<p>The <code>repr(..)</code> attribute can also be used on <code>enum</code>s:</p>
-<pre><code class="language-rust no_run">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
-#[repr(u8)]
-enum Foo {
-    A,
-    B,
-    C,
-}
-
-<span class="boring">mod explicit_tags {
-</span>// You can of course also assign explicit tags
-#[repr(u8)]
-enum Foo {
-    A = 5,
-    B = 2,
-    C = 8,
-}
-<span class="boring">}
-</span><span class="boring">mod c_abi {
-</span>// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
-#[repr(C)]
-enum Foo {
-    A,
-    B,
-    C,
-}
-<span class="boring">}</span></code></pre>
-<p>You can use enums with fields even though they don’t have an inherent C
-equivalent. Rust defines a stable mapping
-<a href="https://github.com/rust-lang/rfcs/blob/master/text/2195-really-tagged-unions.md">here</a>.</p>
-<pre><code class="language-rust no_run">// A definition like this...
-#[repr(u8)]
-enum TwoCases {
-    A(u8, u16),
-    B(u16),
-}
-
-//...is in essence just syntax sugar for this:
-union TwoCasesRepr {
-    A: TwoCasesVariantA,
-    B: TwoCasesVariantB,
-}
-
-#[repr(u8)]
-#[derive(Clone, Copy)]
-enum TwoCasesTag {
-    A,
-    B,
-}
-
-#[repr(C)]
-#[derive(Clone, Copy)] // union fields have to be Copy
-struct TwoCasesVariantA(TwoCasesTag, u8, u16);
-
-#[repr(C)]
-#[derive(Clone, Copy)]
-struct TwoCasesVariantB(TwoCasesTag, u16);</code></pre>
-<p>So, essentially, an enum with fields decomposes into a tag enum and a union of
-its fields.</p>
-<h3 id="reprtransparent"><a class="header" href="#reprtransparent"><code>repr(transparent)</code></a></h3>
-<p><code>repr(transparent)</code> doesn’t appear as often but warrants special mention. It is
-an attribute that can only be used on types with a single sized field. It
-guarantees that the layout of the outer type will be exactly the same as that of
-the inner type.</p>
-<pre><code class="language-rust no_run">// Foo is guaranteed to have the same representation as `*const u8`!
-#[repr(transparent)]
-struct Foo(*const u8);
-
-<span class="boring">mod generic {
-</span><span class="boring">use std::marker::PhantomData;
-</span>// because this is concerned with _sized_ fields (fields that have a size)
-// fields that have no size such as PhantomData can still be used!
-#[repr(transparent)]
-struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
-<span class="boring">}</span></code></pre>
-<p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
-between types.</p>
-<h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
-anything generic, and any Rust type that is not explicitly FFI-safe, such as
-<code>String</code>.</p>
-<p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
-version of the struct for each type passed into the generic. If we pass the type
-across the FFI boundary, the C compiler, which does not know about
-monomorphization, cannot know which version to pick. There exists no ABI that
-represents generics.</p>
-<h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>There you will find an FFI function that attempts to pass types that are not
-FFI-safe. Notice the compiler-generated warnings: it is your job to fix them by
-using FFI-safe types.</p>
-<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_ffi_safe_types"><code>01_intro/05_ffi_safe_types</code></a></p>
-<hr>
-<ol class="footnote-definition">
-<li id="footnote-1">
-<p>The compiler does this to be smart and optimize things. For example,
-<a href="https://godbolt.org/z/bxh5eqM8z">here</a> is the code snippet you saw above in
-Compiler Explorer again. If you look at the rightmost “Compiler Output” pane
-you will see the actual layout of each struct. You can see that for <code>Bar</code>
-the compiler reordered the fields to remove the interior padding byte. <a href="#fr-1-1">↩</a></p>
-</li>
+<p>The rest of the C code doesn’t know, and doesn’t need to know, that the
+implementation behind the symbol changed. The linker resolves the same symbol
+names as before; it just finds them in our Rust static library instead of the
+old object file.</p>
+<p>That is a migration constraint, not necessarily the interface we want in the
+long term. Some C headers expose globals, macros, shared data structures, or
+ownership assumptions that cannot be reproduced cleanly in Rust. In those cases,
+we can introduce a small compatibility layer and improve the interface
+separately.</p>
+<p>After that, all you have to do is link against the replacement library written
+in Rust instead of the original one written in C.</p>
+<pre><code class="language-text">before:  cli.o, index.o, normalize.o (C), ...
+after:   cli.o, index.o, libnormalize.a (Rust), ...
+</code></pre>
+<h2 id="structuring-the-rust-side"><a class="header" href="#structuring-the-rust-side">Structuring the Rust side</a></h2>
+<p>Inside the crate we keep two layers, following the firewall pattern from section
+1.6:</p>
+<ol>
+<li>a thin <code>extern "C"</code> surface that validates raw pointers and converts C types
+at the boundary, and</li>
+<li>a safe, idiomatic core that does the actual work with <code>&amp;str</code>, <code>String</code>, and
+<code>Result</code>.</li>
 </ol>
+<p>The safe core is where all new logic lives, and it’s plain Rust: unit-testable
+with <code>cargo test</code>, no <code>unsafe</code> in sight. The FFI layer should stay boring.</p>
+<h2 id="verifying-behavior-parity"><a class="header" href="#verifying-behavior-parity">Verifying behavior parity</a></h2>
+<p>A rewrite is only done when the observable behavior is unchanged. We have two
+safety nets:</p>
+<ul>
+<li>the module’s existing C test suite, which now links against our Rust
+implementation and must keep passing, and</li>
+<li>new Rust unit tests against the safe core, which will outlive the C tests.</li>
+</ul>
+<h2 id="tips"><a class="header" href="#tips">Tips</a></h2>
+<p>If the linker complains about an undefined symbol, inspect the symbols your Rust
+static library exports. The command depends on your toolchain and platform:</p>
+<ul>
+<li>Unix-like systems: <code>nm target/debug/lib&lt;crate&gt;.a</code></li>
+<li>LLVM toolchains: <code>llvm-nm target/debug/lib&lt;crate&gt;.a</code></li>
+<li>Windows with MSVC: <code>dumpbin /symbols target\debug\&lt;crate&gt;.lib</code></li>
+</ul>
+<p>A missing <code>#[unsafe(no_mangle)]</code> is a common cause.</p>
+<p>While both implementations still exist, you can also run the same inputs through
+the C and Rust versions and compare their return values and output buffers. This
+is called differential testing. It catches small differences in behavior that
+the existing tests may not cover.</p>
+<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/01_rewrite_a_module"><code>02_intermediate/01_rewrite_a_module</code></a></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../01_intro/04_cheadergen.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../02_intermediate/00_README.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../02_intermediate/02_allocators.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -342,11 +318,11 @@ the compiler reordered the fields to remove the interior padding byte. <a href="
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../01_intro/04_cheadergen.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../02_intermediate/00_README.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../01_intro/06_validate_and_narrow.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../02_intermediate/02_allocators.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

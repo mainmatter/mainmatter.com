@@ -15,8 +15,8 @@
         <link rel="icon" href="../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../css/general-2459343d.css">
-        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-65aa6a29.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-ac90ec63.js"></script>
+        <script src="../toc-fc4c9b7e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -178,18 +178,16 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="high-quality-ffi-apis"><a class="header" href="#high-quality-ffi-apis">High-quality FFI APIs</a></h1>
-<p>We previously introduced two “mechanical” rules: always validating your input
-and not overloading primitives. Now we will introduce two more rules that are a
-bit more conceptual but have proven themselves <em>very</em> useful.</p>
-<p>But don’t let that fool you, the following rules are just as important as the
-previous two, if not more so.</p>
+<p>We previously introduced two “mechanical” rules: always validate your inputs,
+and don’t overload primitives. The two that follow are more conceptual. Don’t
+let that fool you: they are just as important as the first two, if not more so.</p>
 <h2 id="documentation-documentation-documentation"><a class="header" href="#documentation-documentation-documentation">Documentation, documentation, documentation</a></h2>
-<p>Some invariants you can check at runtime. Many you can’t — who owns this
-pointer, whether the string is copied or borrowed, whether <code>free</code> has run
-before, what each error variant means. Write them all down.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> Rust’s
-<code># Safety</code> convention (being just a comment) works with <code>extern "C"</code> functions
-too! <code>cheadergen</code> will emit them as C doc comments in the header files:</p>
-<pre><code class="language-rust">/// Normalize a URL into the caller's buffer.
+<p>Some invariants you can check at runtime. Many you can’t: who owns this pointer,
+whether the string is copied or borrowed, whether <code>free</code> has already run, what
+each error variant means. Write them all down.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> Rust’s <code># Safety</code> convention,
+being just a comment, works with <code>extern "C"</code> functions too, and <code>cheadergen</code>
+emits those sections as C doc comments in the header files:</p>
+<pre><code class="language-rust compile_fail">/// Normalize a URL into the caller's buffer.
 ///
 /// # Ownership
 /// `url` and `out` are borrowed for the call; the caller continues to own both.
@@ -202,7 +200,7 @@ too! <code>cheadergen</code> will emit them as C doc comments in the header file
 /// - `BmResult::ErrInvalidUrl` if `url` is null or not valid UTF-8.
 /// - `BmResult::ErrBufferTooSmall` if the result wouldn't fit in `out_len` bytes.
 ///
-/// [valid]:
+/// [valid]: https://doc.rust-lang.org/std/ptr/index.html#safety
 #[no_mangle]
 pub unsafe extern "C" fn bm_normalize_url(
     url: Option&lt;NonNull&lt;c_char&gt;&gt;,
@@ -219,38 +217,43 @@ pub unsafe extern "C" fn bm_normalize_url(
 <p>Note how we number safety invariants and force every inline safety comment to
 either:</p>
 <ul>
-<li>Delegate upholding its local invariant to the surrounding function’s safety
-comment. In this case it MUST reference a numbered invariant</li>
-<li>OR it must exhaustively explain why the local invariant is upheld by the code
-itself.</li>
+<li>delegate its local invariant to the surrounding function’s safety comment, in
+which case it must reference a numbered invariant; or</li>
+<li>explain exhaustively why the code itself upholds the local invariant.</li>
 </ul>
 <p>This way we make sure that all invariants are either upheld by the function
 itself or correctly documented as a responsibility of the caller.</p>
-<p>At the moment this is checked by discipline and PR reviews but in the future
-this may soon find its way into Rust/Clippy proper.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+<p>At the moment, the numbered-invariant convention is checked by discipline and PR
+review. Clippy can require <code># Safety</code> documentation and comments on <code>unsafe</code>
+blocks, but it cannot verify that a local justification actually upholds an
+invariant. There are proposals for tools that could make this kind of
+traceability machine-checkable in the future.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
 <h2 id="mind-the-ffi-tax"><a class="header" href="#mind-the-ffi-tax">Mind the FFI tax</a></h2>
 <p>Every exposed function is API surface you’ll maintain forever, an <code>unsafe</code>
-contract to keep correct, and a per-call cost the compiler can’t optimise away.
-Cross-language LTO can inline across, at the cost of a real setup burden. The
-cheapest FFI function is the one you didn’t expose. Expose coarse operations —
-<code>bm_thing_update_with(...)</code> over one setter per field — and treat the boundary
-as a small set of verbs, not a mirror of your internal struct.</p>
+contract to keep correct, and a per-call cost the compiler can’t optimize away.
+Cross-language LTO can inline across the boundary, at the cost of a real setup
+burden. The cheapest FFI function is the one you didn’t expose. Prefer coarse
+operations, such as <code>bm_thing_update_with(...)</code>, over one setter per field, and
+treat the boundary as a small set of verbs, not a mirror of your internal
+struct.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>Head to <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis">the exercise</a> where we will update our exercise 06 solution with the new
-rule(s) we have learned.</p>
+<p>You’ll update your solution to exercise 1.6 with the two rules from this
+section.</p>
+<h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis"><code>01_intro/07_high_quality_ffi_apis</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
-<p>You may (jadedly) say that no one ever reads comments and you may actually
-be correct. BUT, with the rise of LLMs <em>something</em> does actually “read”
-them. We’ve found that LLMs unsurprisingly struggle quite a bit with the
-nuanced, unspoken invariants of FFI code. Turning as many of these unspoken
-invariants into spoken ones helps you get better mileage out of these tools. <a href="#fr-1-1">↩</a></p>
+<p>You may say, jadedly, that no one ever reads comments, and you may be
+right. But with the rise of LLMs, <em>something</em> does read them. We’ve found
+that LLMs struggle with the nuanced, unspoken invariants of FFI code, which
+is not surprising. Turning as many of these unspoken invariants into spoken
+ones helps you get better mileage out of these tools. <a href="#fr-1-1">↩</a></p>
 </li>
 <li id="footnote-2">
 <p>There are a couple of related proposals, all in the “pre-RFC” stage. The
-most interesting one being
-https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md <a href="#fr-2-1">↩</a></p>
+most interesting is the
+<a href="https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md">safety-tags pre-RFC</a>. <a href="#fr-2-1">↩</a></p>
 </li>
 </ol>
 
@@ -262,7 +265,7 @@ https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md <a href="#fr-2-1"
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../02_intermediate/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../02_intermediate/00_README.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -276,7 +279,7 @@ https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md <a href="#fr-2-1"
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../02_intermediate/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../02_intermediate/00_README.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>
@@ -298,11 +301,11 @@ https://github.com/safer-rust/safety-tags/blob/main/pre-RFC.md <a href="#fr-2-1"
 
         <script src="../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../mark-09e88c2c.min.js"></script>
-        <script src="../searcher-c2a407aa.js"></script>
+        <script src="../searcher-09f2665d.js"></script>
 
         <script src="../clipboard-1626706a.min.js"></script>
         <script src="../highlight-abc7f01d.js"></script>
-        <script src="../book-a0b12cfe.js"></script>
+        <script src="../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 
