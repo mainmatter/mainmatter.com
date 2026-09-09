@@ -54,12 +54,6 @@ quotes:
 leads:
   - handle: algo_luca
 upcomingDates:
-  - date: "2026-09-08"
-    endDate: "2026-09-15"
-    url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8648595/chk/92d3092df2934adac875cab889c932d1/
-
-    price: 120000
   - date: "2026-11-10"
     endDate: "2026-11-17"
     url: >-
