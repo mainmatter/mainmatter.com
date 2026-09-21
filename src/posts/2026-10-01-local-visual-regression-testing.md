@@ -270,7 +270,7 @@ Why is this? Because when Claude generated the page, it used the following CSS:
 }
 ```
 
-Do you notice something? Yup, a lot of those are system fonts on macOS, which are missing on Linux. This is why you need consistency.
+Do you notice something? Yup, a lot of those are system fonts on macOS, which are missing on Linux. This is only one of the many inconsistencies you could run into when taking screenshots from different OS (down to how browsers render certain elements).
 
 ## That's it. Or is it?
 
