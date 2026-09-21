@@ -225,7 +225,7 @@ This `docker-compose.yml` does the following things:
 
 - It pins the platform to linux/amd64... this guarantees that even on Apple Silicon we run with the same architecture that a Github runner would use.
 - It pins the Playwright version (we would need to manually keep this in sync whenever we update our dependencies).
-- It mounts two volumes: one that keeps our project in sync with `/app` so that we can make changes to the project without having to rebuild the image, and another that keeps the container's `node_modules` around after the container has been shut down. This keeps the `node_modules` from our machine from leaking into the container.
+- It mounts two volumes: one that bind-mounts our project in `/app` so that we can make changes to the project without having to rebuild the image, and a separate anonymous volume at `/app/node_modules` that is populated with the dependencies installed in the image, keeping them isolated from the host’s dependencies. Importantly: the `--rm` flag we use in our scripts removes this volume along with the container after each run (so make sure to keep that flag in the script).
 
 With this in place, running the visual tests is a single command:
 
