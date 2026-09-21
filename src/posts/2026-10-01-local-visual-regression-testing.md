@@ -13,9 +13,9 @@ The first time I tried the `frontend-design` skill from Anthropic, I was amazed 
 
 Luckily, when doing serious work, you'll always have a designated designer, and there's a reason for that: design consistency matters in a product. Having a dashboard or a public-facing page constantly changing makes your users' experience jarring.
 
-This is why tools like Percy and Chromatic exist: on every PR they'll diff the updated UI against the last known UI and let the designer stamp their approval on the changes.
+This is why tools like Percy and Chromatic exist: on every PR they'll diff the updated UI against the last known UI and let the designer stamp their approval on the changes while simultaneously giving you a red check in case your change introduced some regressions.
 
-In an era where the changes were made by a human who kept a browser page open to check their work before opening a PR, this was fine (maybe not the best experience, but definitely fine). But something changed somewhat recently: we now build with our agents. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but both of these capabilities are different from a human looking at the page as a whole. We need something more: we need to make the loop tighter.
+In an era where the changes were made by a human who kept a browser page open to check their work before opening a PR, this was fine (maybe not the best experience, but definitely fine). But even then a change introduced by mistaken in a different page was difficult to catch and that we build with our agents the problem is even bigger. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but even if your agent has both of these capabilities you still have no guarantee that a change would not go unnoticed. We need something more: we need to make the loop tighter.
 
 ## Visual regression testing
 
