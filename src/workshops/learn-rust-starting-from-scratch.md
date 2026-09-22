@@ -68,12 +68,6 @@ quotes:
 
     source: Onsite attendee
 upcomingDates:
-  - date: "2026-09-21"
-    endDate: "2026-10-01"
-    url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8648534/chk/2d918faa5d55567d4c8cc0adb38878b3/
-
-    price: 160000
   - date: "2026-11-24"
     endDate: "2026-12-04"
     url: >-
