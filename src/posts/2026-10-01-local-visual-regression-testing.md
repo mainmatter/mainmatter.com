@@ -9,23 +9,13 @@ autoOg: true
 tagline: <p>Give your agents a window into your application and yourself peace of mind</p>
 ---
 
-Have you ever asked yourself why we need designers? The naive answer is that they can make a page look pretty. That's true, but the more interesting question is: how?
+Picture this: you open your ticket, it's quite simple, "Make the Login button bold". That's an easy one. You open the codebase, track the login button. It has a `variant="login"` prop. You CMD+click in the component, look for the `.login` class and add a `font-weight: bold`. Done. `git add .`, `git commit -m 'fix: bold login button'`, PR opened, reviewed and merged.
 
-A designer has definitely a sense of what is and is not pretty and designing is definitely an art form. But as in a lot of art forms there are also rules.
-
-Take a look at this famously bad designed website:
-
-![a screenshot of the lingscars.com website](/assets/images/posts/2026-10-01-local-visual-regression-testing/bad-design.png)
-
-It's breaking one of the most fundamental rules of good designs: consistency.
-
-Now, sometimes if a designer is bad they will just make a bad design but very often subtle inconsistencies could be introduced by mistake: a developer changing the default card elevation can change the whole layout of a website, or an overzealous agent could make assumptions about your prompt and change more than you ask it too (Try to change the color of a button to blue in [this game](https://opusfived.dev/)).
-
-This is why it's important to have a good visual regression story. We want to catch unintended regressions before actually shipping them to our users.
+But then you find out that in a different page someone used `variant="login"` because it looked fine. And it was until you changed it. This is just an example of how things can go wrong if you don't have proper visual regression tests.
 
 This is why tools like Percy and Chromatic exist: on every PR they'll diff the updated UI against the last known UI and let the designer/developer stamp their approval on the changes while simultaneously giving you a red check in case your change introduced some regressions.
 
-In an era where the changes were made by a human who kept a browser page open to check their work before opening a PR, this was fine (maybe not the best experience, but definitely fine). But even then a change introduced by mistaken in a different page was difficult to catch and now that we build with our agents the problem is even bigger. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but even if your agent has both of these capabilities you still have no guarantee that a change would not go unnoticed. We need something more: we need to make the loop tighter.
+Now that we build with our agents the problem is even bigger. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but even if your agent has both of these capabilities you still have no guarantee that a change would not go unnoticed. We need something more: we need to make the loop tighter.
 
 ## Visual regression testing
 
