@@ -9,13 +9,23 @@ autoOg: true
 tagline: <p>Give your agents a window into your application and yourself peace of mind</p>
 ---
 
-The first time I tried the `frontend-design` skill from Anthropic, I was amazed by the designs it could generate. When working on a greenfield personal project, I can rarely produce nice designs because, while I can reproduce a design when given one, coming up with a design of my own isn't my strongest suit.
+Have you ever asked yourself why we need designers? The naive answer is that they can make a page look pretty. That's true, but the more interesting question is: how?
 
-Luckily, when doing serious work, you'll always have a designated designer, and there's a reason for that: design consistency matters in a product. Having a dashboard or a public-facing page constantly changing makes your users' experience jarring.
+A designer has definitely a sense of what is and is not pretty and designing is definitely an art form. But as in a lot of art forms there are also rules.
 
-This is why tools like Percy and Chromatic exist: on every PR they'll diff the updated UI against the last known UI and let the designer stamp their approval on the changes while simultaneously giving you a red check in case your change introduced some regressions.
+Take a look at this famously bad designed website:
 
-In an era where the changes were made by a human who kept a browser page open to check their work before opening a PR, this was fine (maybe not the best experience, but definitely fine). But even then a change introduced by mistaken in a different page was difficult to catch and that we build with our agents the problem is even bigger. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but even if your agent has both of these capabilities you still have no guarantee that a change would not go unnoticed. We need something more: we need to make the loop tighter.
+![a screenshot of the lingscars.com website](/assets/images/posts/2026-10-01-local-visual-regression-testing/bad-design.png)
+
+It's breaking one of the most fundamental rules of good designs: consistency.
+
+Now, sometimes if a designer is bad they will just make a bad design but very often subtle inconsistencies could be introduced by mistake: a developer changing the default card elevation can change the whole layout of a website, or an overzealous agent could make assumptions about your prompt and change more than you ask it too (Try to change the color of a button to blue in [this game](https://opusfived.dev/)).
+
+This is why it's important to have a good visual regression story. We want to catch unintended regressions before actually shipping them to our users.
+
+This is why tools like Percy and Chromatic exist: on every PR they'll diff the updated UI against the last known UI and let the designer/developer stamp their approval on the changes while simultaneously giving you a red check in case your change introduced some regressions.
+
+In an era where the changes were made by a human who kept a browser page open to check their work before opening a PR, this was fine (maybe not the best experience, but definitely fine). But even then a change introduced by mistaken in a different page was difficult to catch and now that we build with our agents the problem is even bigger. A few of them have vision capabilities, and when properly set up they can also "keep a browser open", but even if your agent has both of these capabilities you still have no guarantee that a change would not go unnoticed. We need something more: we need to make the loop tighter.
 
 ## Visual regression testing
 
