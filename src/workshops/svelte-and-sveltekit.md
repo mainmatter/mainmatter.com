@@ -62,13 +62,6 @@ quotes:
 leads:
   - handle: paoloricciuti
 upcomingDates:
-  - date: "2026-09-23"
-    endDate: "2026-09-30"
-    url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8676044/chk/92317e8d37f64ca42c909b77822717be/
-
-
-    price: 90000
   - date: "2026-11-25"
     endDate: "2026-12-02"
     url: >-
