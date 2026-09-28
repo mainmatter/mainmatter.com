@@ -272,6 +272,52 @@ Why is this? Because when Claude generated the page, it used the following CSS:
 
 Do you notice something? Yup, a lot of those are system fonts on macOS, which are missing on Linux. This is only one of the many inconsistencies you could run into when taking screenshots from different OS (down to how browsers render certain elements).
 
+## A skill + subagent to nudge the agent into the right direction
+
+While agents already "instinctively" execute tests being able to nudge them into doing it could be beneficial. Further more, if the agent could figure out by itself if a change is expected or not, we would save a lot of time: the agent could simply update the snapshots when it thinks they are congruent with the original request and we would just need to check them before pushing or during the review phase.
+
+This last bit it's important because smart models are trained to minimize destructive actions and updating the snapshots **IS** indeed a destructive action. We know it's fine because we still have `git` to save us from a mis-update but models still think it's too much.
+
+However we can write a custom skill that will help us catch three birds with a stone:
+
+1. We can nudge the agent into actually running the visual regression tests on each visual change
+2. We can tell the agent that is fine to update the snapshots if it thinks the changes corresponds to the original request
+3. We can teach the agent what it means for a visual change to match the original request
+
+So my suggestion is also to add this to your `./.agents/skills/visual-regression` folder
+
+```md
+---
+name: visual-regression
+description: A skill to invoke every time there's a visual change to the app to learn how to perform good visual regression testing
+---
+
+Whenever a visual change happens in the application, you should run visual regression testing.
+
+You can run `pnpm test:visual` to execute the test in a Linux Docker environment for consistency.
+
+Once the tests run, if they fail, you can inspect the test results folder to see:
+
+- which test is failing
+- the expected screenshot
+- the actual screenshot
+- a diff of the two
+
+When investigating, you MUST think about what is the actual request the user made.
+
+**No extra visual changes should be allowed.**
+
+For example for a prompt like "change the color of the button to red", you should only allow the color of the button to change and not any other visual aspects like its size, shadow, or position.
+
+For a prompt like "change the text of the button to 'Submit'", you should only allow the text of the button to change and not any other visual aspects like its color, size, shadow, or position.
+
+If you determine with a reasonable amount of certainty that the change is actually fine, you can also run `pnpm test:visual:update` to update the screenshots.
+
+**Warning**: this is a destructive action because it will override the old screenshot, so you need to be very sure that what changed is exactly what the user asked for. If you are not sure, please ask the user whether the change is needed or not.
+```
+
+Also running the tests and figuring out if they match the original request is an atomic operation that would greatly benefit from a dedicated subagent (to avoid context pollution)...check the documentation of your harness to learn how to create a subagent and then ask your agent to create one for you.
+
 ## That's it. Or is it?
 
 Sounds like we solved every problem we had, so this must be it, right? Well, here's where I have to give you a little warning.
