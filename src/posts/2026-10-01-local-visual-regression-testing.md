@@ -24,6 +24,23 @@ As we said, tools like Percy and Chromatic are good when it comes to a human sig
 - The feedback loop is slow: you have to finish your work, commit, open a PR, wait for the diff to happen, visit the page (which might not even be optimized for agents), and only then can you see what changed.
 - With the productivity agents add, taking that many screenshots can become costly, and you don't want to slow down just because of cost.
 
+---
+
+<details>
+	<summary> <strong>Some real world numbers on cost increase</strong> </summary>
+
+Let's do some back of the napkin calculations to see how much the increase in productivity actually costs you. We're going to use [Actual Budget](https://github.com/actualbudget/actual), an open source financing app that is using a solution similar to the one we propose so we can easily get a sense of how many screenshot they take. They also label their PR with an _[AI]_ label so we can get some actual numbers on how much of the boost is due to AI.
+
+Each run their CI takes ~440 screenshot (this means every new push, every new merge, etc). If we compare the number of PRs from 2023/2024 with todays numbers we can see that the number of PR went from ~70 to ~140 (of which roughly ~40% is labeled with the _[AI]_ tag).
+
+The median number of commits for AI PRs is also higher (4 commits against the 2 commits of an human contributor).
+
+This roughly translate to 2.5x/3x the amount of screenshots taken with cost going up accordingly, and, granted costs would probably be negotiated and thus lowered a bit, it would go from a ~$490 to ~$1600 for Chromatic (~$180 to ~$400 if used with TurboSnap), or from ~$3300 to ~$8300 for Percy. For comparison the cost in CI minutes for Playwright would go from ~$19 to ~$47.
+
+</details>
+
+---
+
 Can we do better? Can we make the feedback loop as tight as a unit test that the agent can run locally, while also saving a bit of money?
 
 Yes, we can.
