@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-be205c5f.js";
+            window.path_to_searchindex_js = "searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-fc4c9b7e.js"></script>
@@ -277,9 +277,9 @@ interoperate between C and Rust, and the common pitfalls.</p>
 <p>Programming language design has taken many different paths over the years. We
 have C-like languages that are compiled all the way down to machine code, but we
 also have interpreted languages, lazy languages, languages that compile to a
-portable bytecode, garbage collected languages, and so much more.</p>
+portable bytecode, garbage-collected languages, and so much more.</p>
 <p>As software engineers, we do not want to duplicate work unnecessarily. So what
-happens when work exists in a language other than the one you’re using?</p>
+happens when work exists in a language other than the one we’re using?</p>
 <p>When developing in Python, for example, we don’t want to port all the code we
 need just to use it. Instead, we rely on infrastructure that lets us call
 functions and use types from other programming languages.</p>
@@ -307,10 +307,9 @@ construct:</p>
 <p>Before we dissect the syntax though: you may have already noticed that nowhere
 in this snippet do we ask for <code>libc</code>. Why is that?</p>
 <p>This is because object file formats (ELF on Linux, Mach-O on macOS, PE on
-Windows) are all quite old and therefore quite simplistic. They have <em>one global
-namespace</em>, called a <em>symbol table</em>, that all functions (and statics) share. So
-you cannot say “call <code>time</code> from <code>libc</code>”, you can only say “call a function
-named <code>time</code>”.</p>
+Windows) are all old and therefore simplistic. They have <em>one global namespace</em>,
+called a <em>symbol table</em>, that all functions (and statics) share. So you cannot
+say “call <code>time</code> from <code>libc</code>”, you can only say “call a function named <code>time</code>”.</p>
 <p>When a compiler builds a program, all function calls reference the function <em>by
 symbol</em> (“call function named <code>X</code>”). To make this actually executable, we need
 to replace every symbol reference with the actual address of the function. This
@@ -406,11 +405,11 @@ be its own self-contained universe.</p>
 <p>And even if we had a mechanism to share information between compilation units,
 we would need to make it language-agnostic so that a C compilation unit and a
 Rust compilation unit can interoperate. How would that even work with wildly
-different type systems? <sup class="footnote-reference" id="fr-1-1-1"><a href="#footnote-1-1">1</a></sup></p>
+different type systems?<sup class="footnote-reference" id="fr-1-1-1"><a href="#footnote-1-1">1</a></sup></p>
 <p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
 block you wrote. You as the programmer promise to the compiler that a function
-with given name and given signature will exist at link-time and the compiler
-takes your word for it.</p>
+with a given name and a given signature will exist at link time, and the
+compiler takes your word for it.</p>
 <h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible consequences</a></h2>
 <p>The consequences of drift between the two versions can be dire: if C expects
 <code>int</code> but Rust expects <code>float</code>, the integer bit patterns are reinterpreted as
@@ -451,8 +450,8 @@ everything breaks and we end up adding <code>0</code> to <code>a</code> instead.
 configurations the mistake is virtually consequence-free. The addition will
 continue to work as expected. But as soon as the input is unusual, the
 deployment target is different, <em>or you add code that will make the compiler
-change the generated code even a bit</em> this will be a bug that takes you weeks to
-troubleshoot in the worst case.</p>
+change the generated code even a bit</em>, this will be a bug that takes you weeks
+to troubleshoot in the worst case.</p>
 <h2 id="head-to-the-exercise-1"><a class="header" href="#head-to-the-exercise-1">Head to the exercise</a></h2>
 <p>The exercise turns this around: the Rust binding stays fixed and correct-looking
 while the C implementation drifts underneath it. It is the same mismatch, and
@@ -482,11 +481,10 @@ wanted. <a href="#fr-1-1-1">↩</a></p>
 <p>In the previous exercise you saw how easy it is for manual bindings to go out of
 sync, and the scary silent corruption that causes. This section introduces a
 tool that avoids all of this: <strong><a href="https://github.com/rust-lang/rust-bindgen"><code>bindgen</code></a></strong>. It’s a library you call
-from your Rust build script to generate Rust bindings to C code from the C
-header files. It runs libclang on a C header and emits matching Rust
-declarations: <code>extern</code> blocks, <code>#[repr(C)]</code> structs, integer constants. The
-header remains the single source of truth, with the Rust bindings being
-generated on every build.</p>
+from your Rust build script to generate Rust bindings to C code from C header
+files. It runs libclang on a C header and emits matching Rust declarations:
+<code>extern</code> blocks, <code>#[repr(C)]</code> structs, integer constants. The header remains the
+single source of truth, with the Rust bindings being generated on every build.</p>
 <p>You call <code>bindgen</code> from your build script like so:</p>
 <pre><code class="language-rust no_run">let bindings = bindgen::Builder::default()
     .header("c_src/bm_legacy.h")
@@ -538,12 +536,13 @@ correctly:</p>
 pub extern "C" fn bm_strlower(s: *mut c_char) {
     // ...
 }</code></pre>
-<p>Much like the FFI function declaration we saw in the first exercise, we instruct
-<code>rustc</code> to use a C-compatible calling convention through <code>extern "C" fn</code>
-(without it, Rust uses its own ABI, which of course C knows nothing about).</p>
+<p>Much like in the FFI function declaration we saw in the first exercise, we
+instruct <code>rustc</code> to use a C-compatible calling convention through
+<code>extern "C" fn</code> (without it, Rust uses its own ABI, which of course C knows
+nothing about).</p>
 <p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
 Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
-identifier that in regular Rust code prevents two equally named types or
+identifier that in regular Rust code prevents two identically named types or
 functions from causing “duplicate symbol” linking errors.</p>
 <p>In this case we do want the symbol name to be the same plain identifier we gave
 it, so the C code linking to us can actually find the function.</p>
@@ -607,9 +606,8 @@ FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.<
 <p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
 same thing. But because the C standard’s definition of these types is loose,
 there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be
-absolutely sure though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or
-<code>c_longlong</code>.</p>
+the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
+though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
 <h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
 <p>Much like we need to use the C calling convention to make our Rust functions
 interoperable, we need to use the <code>C</code> struct layout to make our structs
@@ -717,9 +715,9 @@ struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
 <p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
 between types.</p>
 <h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>This list is long, but as a rule of thumb: any type with <em>generics</em>, and any
-more complex Rust struct that is not explicitly FFI-safe (such as <code>String</code>),
-cannot be shared.</p>
+<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
+anything generic, and any Rust type that is not explicitly FFI-safe, such as
+<code>String</code>.</p>
 <p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
 version of the struct for each type passed into the generic. If we pass the type
 across the FFI boundary, the C compiler, which does not know about
@@ -751,8 +749,8 @@ your project now. Take your C API and translate it one-for-one into Rust.</p>
 C is complicated, idiosyncratic, and (let’s admit it!) full of skeletons. You’re
 likely thinking about a Rust rewrite not just to address security problems or
 performance issues; rewriting in Rust is a chance to clean up your codebase:
-re-establish module boundaries, drop the legacy assumptions, write the module
-you wished you had.</p>
+re-establish module boundaries, drop legacy assumptions, write the module you
+wished you had.</p>
 <p>At the same time big-bang rewrites (where you replace the entire codebase at
 once) famously never work. Which leaves a problem: you have a clean Rust
 codebase, a messy legacy codebase, and a need to keep both working together for
@@ -764,8 +762,9 @@ new design and the old one.</p>
 goes, but it’s like saying programming is about typing words into a computer: it
 misses the point. The <em>main</em> job of your FFI interface is <strong>establishing
 confidence</strong>. In a legacy codebase you rarely know with 100% certainty that
-reality matches your assumptions: some caller might actually pass a nullptr, the
-<code>*const c_char</code> that used to be UTF-8 might now hold binary data.</p>
+reality matches your assumptions: some caller might actually pass a null
+pointer, or the <code>*const c_char</code> that used to be UTF-8 might now hold binary
+data.</p>
 <p>The FFI boundary is your chance to turn legacy uncertainty into known-good state
 before it crosses into your new system. Uncertainty leaks. Your FFI must be a
 vigilant firewall against it.</p>
@@ -781,7 +780,7 @@ option. For example: at Mainmatter, we encourage contributors to use
 <code>Option&lt;NonNull&lt;T&gt;&gt;</code> instead of <code>*mut T</code> as much as possible, for the simple
 reason that a <code>*mut T</code> can be dereferenced directly (<code>*ptr</code>), which triggers UB
 if the pointer is null. You would have to add a manual <code>if ptr.is_null() {}</code>
-check before every pointer dereference. With <code>Option&lt;NonNull&lt;T&gt;&gt;</code> on the other
+check before every pointer dereference. With <code>Option&lt;NonNull&lt;T&gt;&gt;</code>, on the other
 hand, the type system <em>forces</em> you to handle the <code>None</code> case explicitly. Even
 the laziest <code>.unwrap()</code> will result in a loud panic instead of potentially
 silent UB.</p>
@@ -810,7 +809,7 @@ pub enum BmReadStatus { Ok, Eof, IoError }
 pub extern "C" fn bm_read(/* … */, out_bytes: Option&lt;NonNull&lt;usize&gt;&gt;) -&gt; BmReadStatus;</code></pre>
 <h2 id="head-to-the-exercise-5"><a class="header" href="#head-to-the-exercise-5">Head to the exercise</a></h2>
 <p>We’ll continue the porting work by looking at <code>bm_normalize_url</code>, in
-<code>exercises/_bm/src/bookmark.c</code>. It will normalize a given URL by lowercasing it
+<code>exercises/_bm/src/normalize.c</code>. It will normalize a given URL by lowercasing it
 and writing the normalized string into the provided buffer. The exercise already
 contains our <em>“first draft”</em> Rust translation: a naive transliteration from C to
 Rust that has a number of issues.</p>
@@ -830,15 +829,15 @@ thumb: take your worst-case estimate, double it, and add a year. Really. <a href
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="high-quality-ffi-apis"><a class="header" href="#high-quality-ffi-apis">High-quality FFI APIs</a></h1>
-<p>We previously introduced two “mechanical” rules: always validate your input, and
-don’t overload primitives. The two that follow are more conceptual. Don’t let
-that fool you: they are just as important as the first two, if not more so.</p>
+<p>We previously introduced two “mechanical” rules: always validate your inputs,
+and don’t overload primitives. The two that follow are more conceptual. Don’t
+let that fool you: they are just as important as the first two, if not more so.</p>
 <h2 id="documentation-documentation-documentation"><a class="header" href="#documentation-documentation-documentation">Documentation, documentation, documentation</a></h2>
 <p>Some invariants you can check at runtime. Many you can’t: who owns this pointer,
-whether the string is copied or borrowed, whether <code>free</code> has run before, what
+whether the string is copied or borrowed, whether <code>free</code> has already run, what
 each error variant means. Write them all down.<sup class="footnote-reference" id="fr-1-1-4"><a href="#footnote-1-4">1</a></sup> Rust’s <code># Safety</code> convention,
 being just a comment, works with <code>extern "C"</code> functions too, and <code>cheadergen</code>
-emits them as C doc comments in the header files:</p>
+emits those sections as C doc comments in the header files:</p>
 <pre><code class="language-rust compile_fail">/// Normalize a URL into the caller's buffer.
 ///
 /// # Ownership
@@ -883,10 +882,11 @@ traceability machine-checkable in the future.<sup class="footnote-reference" id=
 <h2 id="mind-the-ffi-tax"><a class="header" href="#mind-the-ffi-tax">Mind the FFI tax</a></h2>
 <p>Every exposed function is API surface you’ll maintain forever, an <code>unsafe</code>
 contract to keep correct, and a per-call cost the compiler can’t optimize away.
-Cross-language LTO can inline across, at the cost of a real setup burden. The
-cheapest FFI function is the one you didn’t expose. Expose coarse operations,
-such as <code>bm_thing_update_with(...)</code> over one setter per field, and treat the
-boundary as a small set of verbs, not a mirror of your internal struct.</p>
+Cross-language LTO can inline across the boundary, at the cost of a real setup
+burden. The cheapest FFI function is the one you didn’t expose. Prefer coarse
+operations, such as <code>bm_thing_update_with(...)</code>, over one setter per field, and
+treat the boundary as a small set of verbs, not a mirror of your internal
+struct.</p>
 <h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
 <p>You’ll update your solution to exercise 1.6 with the two rules from this
 section.</p>
@@ -929,14 +929,21 @@ bookmark manager CLI written in C. Over the rest of this course we will migrate
 it to Rust, one module at a time.</p>
 <p>Here is an overview of the C source code:</p>
 <pre><code class="language-text">exercises/_bm/src/
-├── bookmark.c   the Bookmark type
-├── cli.c        entry point, argument parsing
-├── index.c      in-memory bookmark index
-├── normalize.c  URL and tag normalization
-├── result.h     shared result codes and error-string helper
-├── storage.c    on-disk persistence of .bm files
-├── tag.c        tag parsing and matching
-└── util.c       string helpers
+├── bookmark.c    the Bookmark type
+├── bookmark.h
+├── cli.c         entry point, argument parsing
+├── index.c       in-memory bookmark index
+├── index.h
+├── internal.h    definitions shared by index.c and storage.c
+├── normalize.c   URL and tag normalization
+├── normalize.h
+├── result.h      shared result codes and error-string helper
+├── storage.c     on-disk persistence of .bm files
+├── storage.h
+├── tag.c         tag parsing and matching
+├── tag.h
+├── util.c        string helpers
+└── util.h
 </code></pre>
 <h2 id="picking-the-first-module"><a class="header" href="#picking-the-first-module">Picking the first module</a></h2>
 <p>There is no universally best place to start. A leaf module is often a good
@@ -952,14 +959,20 @@ extracting a small module before porting it.</p>
 <li>Choose code with useful tests, so you can compare behavior before and after.</li>
 <li>Keep the change small enough to review and, if necessary, revert.</li>
 </ul>
-<pre><code class="language-text">cli      → index, tag, normalize
-index    → bookmark, storage, tag, normalize, util
-storage  → bookmark, normalize, util
-tag      → normalize, util
-bookmark → util
+<pre><code class="language-text">cli       → bookmark, index, normalize, result, tag, util
+index     → bookmark, internal, normalize, storage, tag, util
+storage   → bookmark, index, internal, normalize, util
+tag       → normalize, util
+bookmark  → util
 normalize → (no project dependencies)
 util      → (no project dependencies)
 </code></pre>
+<p>Two things are worth noting. <code>normalize</code> and <code>util</code> are the only real leaves:
+every other module pulls in at least one of its siblings. And <code>index</code> and
+<code>storage</code> include each other, so this is not the clean tree the file names
+suggest. Tangles like that are normal in code that has been maintained for a
+while, and they are exactly what you want to know before choosing where to
+start.</p>
 <p>For <code>bm</code>, we chose to start with <code>normalize.c</code>. It exposes two functions: one
 normalizes URLs and the other normalizes tags. Both write into buffers supplied
 by the caller, so no memory changes ownership at the FFI boundary. Why not
@@ -997,7 +1010,7 @@ in Rust instead of the original one written in C.</p>
 after:   cli.o, index.o, libnormalize.a (Rust), ...
 </code></pre>
 <h2 id="structuring-the-rust-side"><a class="header" href="#structuring-the-rust-side">Structuring the Rust side</a></h2>
-<p>Inside the crate we keep two layers, following the firewall pattern from Chapter
+<p>Inside the crate we keep two layers, following the firewall pattern from section
 1.6:</p>
 <ol>
 <li>a thin <code>extern "C"</code> surface that validates raw pointers and converts C types
@@ -1525,7 +1538,7 @@ backgrounds.</p>
 <p>Translating between programming languages runs into the same problem as
 translating between human ones. You can do a <em>literal</em> translation of a function
 or module, but it won’t be right: it won’t sit well with the code around it, it
-will cause confusion, and it will destroy the confidence in the code that the
+will cause confusion, and it will destroy confidence in the code that the
 rewrite was supposed to build.</p>
 <p>The good news is that these translations follow fairly regular patterns and are
 easy to wrap your head around. This section walks through several of them,
@@ -1540,8 +1553,7 @@ flexibility brings a lot of potential for ambiguity:</p>
 <p>At a glance: what does this function return, and how does it return it? <code>out</code> is
 a mutable pointer, so <code>add</code> could write the output there, but it also returns
 <code>int</code>, so maybe that’s where the output goes?</p>
-<p>We don’t really have a way of knowing for sure. Here is the equivalent Rust
-function:</p>
+<p>We have no way of knowing for sure. Here is the equivalent Rust function:</p>
 <pre><code class="language-rust compile_fail">fn add(a: i32, b: i32) -&gt; Option&lt;i32&gt;;</code></pre>
 <p>It becomes clearer that <code>add</code> is some kind of “checked” addition function that
 returns an output only sometimes, and otherwise fails.</p>
@@ -1558,9 +1570,9 @@ from the signature alone.</p>
 
 int do_something();
 </code></pre>
-<p>Or alternatively as a <code>typedef enum</code>, which is common in more modern code (this
-is also what <code>bm</code> does).</p>
-<p>Much like out parameters, correct usage relies on conventions, good
+<p>You may also see it written as a <code>typedef enum</code>, which is common in more modern
+code and is what <code>bm</code> does.</p>
+<p>Much like with out parameters, correct usage relies on conventions, good
 documentation, and proper code review. The compiler will not catch you
 accidentally using the wrong constant: C converts these to and from <code>int</code>
 freely.</p>
@@ -1711,18 +1723,18 @@ extra setup.</p>
 <p>When interpreting your Rust code, Miri tracks the initialization state and
 provenance of each allocation. It will flag reads outside the bounds of your
 allocation, before it’s correctly initialized (unless you use <code>MaybeUninit</code>), or
-after it’s freed. Miri will also catch data races including weak-memory
-reorderings and aliasing violations (writing through a mutable reference while
-other code still holds references to the allocation too) such as can happen with
-complex unsafe code. It also catches memory leaks: if a test ends without
-freeing every allocation, for example through <code>Box::into_raw</code> or
+after it’s freed. Miri also catches data races, including weak-memory
+reorderings, and the aliasing violations that complex unsafe code tends to
+produce, such as writing through a mutable reference while other code still
+holds references to the same allocation. It also catches memory leaks: if a test
+ends without freeing every allocation, for example through <code>Box::into_raw</code> or
 <code>CString::into_raw</code> without a matching <code>from_raw</code>, Miri will fail the test.</p>
 <h2 id="the-downsides"><a class="header" href="#the-downsides">The downsides</a></h2>
 <p>Miri is by design an interpreter, meaning it can only ever see code paths that
-actually executed. Code paths never exercised by your test suite are invisible
-to Miri. This also means non-deterministic bugs need luck: a bug that only
-happens on a specific thread interleaving will remain flaky.<sup class="footnote-reference" id="fr-1-1-8"><a href="#footnote-1-8">1</a></sup> Miri is also
-slow: expect a 3,000–7,000× slowdown in some cases.</p>
+actually execute. Code paths never exercised by your test suite are invisible to
+Miri. This also means non-deterministic bugs need luck: a bug that only happens
+on a specific thread interleaving will remain flaky.<sup class="footnote-reference" id="fr-1-1-8"><a href="#footnote-1-8">1</a></sup> Miri is also slow:
+expect a 3,000–7,000× slowdown in some cases.</p>
 <blockquote>
 <h2 id="quick-miri-cheat-sheet"><a class="header" href="#quick-miri-cheat-sheet">Quick Miri cheat sheet</a></h2>
 <p>Using Miri is just like using Cargo, but with <code>miri</code> inserted into the

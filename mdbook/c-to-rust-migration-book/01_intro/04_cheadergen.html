@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-be205c5f.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -189,12 +189,13 @@ correctly:</p>
 pub extern "C" fn bm_strlower(s: *mut c_char) {
     // ...
 }</code></pre>
-<p>Much like the FFI function declaration we saw in the first exercise, we instruct
-<code>rustc</code> to use a C-compatible calling convention through <code>extern "C" fn</code>
-(without it, Rust uses its own ABI, which of course C knows nothing about).</p>
+<p>Much like in the FFI function declaration we saw in the first exercise, we
+instruct <code>rustc</code> to use a C-compatible calling convention through
+<code>extern "C" fn</code> (without it, Rust uses its own ABI, which of course C knows
+nothing about).</p>
 <p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
 Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
-identifier that in regular Rust code prevents two equally named types or
+identifier that in regular Rust code prevents two identically named types or
 functions from causing “duplicate symbol” linking errors.</p>
 <p>In this case we do want the symbol name to be the same plain identifier we gave
 it, so the C code linking to us can actually find the function.</p>
