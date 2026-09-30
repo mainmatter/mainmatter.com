@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-be205c5f.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -185,7 +185,7 @@ backgrounds.</p>
 <p>Translating between programming languages runs into the same problem as
 translating between human ones. You can do a <em>literal</em> translation of a function
 or module, but it won’t be right: it won’t sit well with the code around it, it
-will cause confusion, and it will destroy confidence in the code that the
+will cause confusion, and it will destroy the confidence in the code that the
 rewrite was supposed to build.</p>
 <p>The good news is that these translations follow fairly regular patterns and are
 easy to wrap your head around. This section walks through several of them,
@@ -200,7 +200,8 @@ flexibility brings a lot of potential for ambiguity:</p>
 <p>At a glance: what does this function return, and how does it return it? <code>out</code> is
 a mutable pointer, so <code>add</code> could write the output there, but it also returns
 <code>int</code>, so maybe that’s where the output goes?</p>
-<p>We have no way of knowing for sure. Here is the equivalent Rust function:</p>
+<p>We don’t really have a way of knowing for sure. Here is the equivalent Rust
+function:</p>
 <pre><code class="language-rust compile_fail">fn add(a: i32, b: i32) -&gt; Option&lt;i32&gt;;</code></pre>
 <p>It becomes clearer that <code>add</code> is some kind of “checked” addition function that
 returns an output only sometimes, and otherwise fails.</p>
@@ -217,9 +218,9 @@ from the signature alone.</p>
 
 int do_something();
 </code></pre>
-<p>You may also see it written as a <code>typedef enum</code>, which is common in more modern
-code and is what <code>bm</code> does.</p>
-<p>Much like with out parameters, correct usage relies on conventions, good
+<p>Or alternatively as a <code>typedef enum</code>, which is common in more modern code (this
+is also what <code>bm</code> does).</p>
+<p>Much like out parameters, correct usage relies on conventions, good
 documentation, and proper code review. The compiler will not catch you
 accidentally using the wrong constant: C converts these to and from <code>int</code>
 freely.</p>

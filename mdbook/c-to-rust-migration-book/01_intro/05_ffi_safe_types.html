@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-be205c5f.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -190,8 +190,9 @@ FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.<
 <p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
 same thing. But because the C standard’s definition of these types is loose,
 there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
-though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
+the Rust team decided Rust’s integer types are FFI-safe. If you want to be
+absolutely sure though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or
+<code>c_longlong</code>.</p>
 <h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
 <p>Much like we need to use the C calling convention to make our Rust functions
 interoperable, we need to use the <code>C</code> struct layout to make our structs
@@ -299,9 +300,9 @@ struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
 <p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
 between types.</p>
 <h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
-anything generic, and any Rust type that is not explicitly FFI-safe, such as
-<code>String</code>.</p>
+<p>This list is long, but as a rule of thumb: any type with <em>generics</em>, and any
+more complex Rust struct that is not explicitly FFI-safe (such as <code>String</code>),
+cannot be shared.</p>
 <p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
 version of the struct for each type passed into the generic. If we pass the type
 across the FFI boundary, the C compiler, which does not know about

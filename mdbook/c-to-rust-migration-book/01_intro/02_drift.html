@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-be205c5f.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -220,11 +220,11 @@ be its own self-contained universe.</p>
 <p>And even if we had a mechanism to share information between compilation units,
 we would need to make it language-agnostic so that a C compilation unit and a
 Rust compilation unit can interoperate. How would that even work with wildly
-different type systems?<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+different type systems? <sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
 <p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
 block you wrote. You as the programmer promise to the compiler that a function
-with a given name and a given signature will exist at link time, and the
-compiler takes your word for it.</p>
+with given name and given signature will exist at link-time and the compiler
+takes your word for it.</p>
 <h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible consequences</a></h2>
 <p>The consequences of drift between the two versions can be dire: if C expects
 <code>int</code> but Rust expects <code>float</code>, the integer bit patterns are reinterpreted as
@@ -265,8 +265,8 @@ everything breaks and we end up adding <code>0</code> to <code>a</code> instead.
 configurations the mistake is virtually consequence-free. The addition will
 continue to work as expected. But as soon as the input is unusual, the
 deployment target is different, <em>or you add code that will make the compiler
-change the generated code even a bit</em>, this will be a bug that takes you weeks
-to troubleshoot in the worst case.</p>
+change the generated code even a bit</em> this will be a bug that takes you weeks to
+troubleshoot in the worst case.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
 <p>The exercise turns this around: the Rust binding stays fixed and correct-looking
 while the C implementation drifts underneath it. It is the same mismatch, and
