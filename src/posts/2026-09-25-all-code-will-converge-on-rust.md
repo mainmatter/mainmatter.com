@@ -3,7 +3,7 @@ title: "All code will converge on Rust"
 authorHandle: marcoow
 tags: [ai, rust]
 bio: "Marco Otte-Witte"
-description: "tbd"
+description: "When producing code costs the same in every language, the one that yields better systems wins. Marco Otte-Witte explains why we believe all code will converge on Rust."
 tagline: '<p>When we <a href="/blog/2022/10/12/making-a-strategic-bet-on-rust/">made our strategic bet on Rust back in 2022</a>, we focused on Rust for backends and cloud systems. At the time, that was not an obvious choice. Rust was mostly seen as a systems language only, a safer replacement for C and C++ in operating systems, embedded devices, or browser engines. Suggesting to use it also for the kind of web backends that teams would typically build with Rails, Django, or Node.js required some explaining.</p>'
 autoOg: true
 ---
