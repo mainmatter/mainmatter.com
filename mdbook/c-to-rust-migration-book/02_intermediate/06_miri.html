@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -196,18 +196,18 @@ extra setup.</p>
 <p>When interpreting your Rust code, Miri tracks the initialization state and
 provenance of each allocation. It will flag reads outside the bounds of your
 allocation, before it’s correctly initialized (unless you use <code>MaybeUninit</code>), or
-after it’s freed. Miri will also catch data races including weak-memory
-reorderings and aliasing violations (writing through a mutable reference while
-other code still holds references to the allocation too) such as can happen with
-complex unsafe code. It also catches memory leaks: if a test ends without
-freeing every allocation, for example through <code>Box::into_raw</code> or
+after it’s freed. Miri also catches data races, including weak-memory
+reorderings, and the aliasing violations that complex unsafe code tends to
+produce, such as writing through a mutable reference while other code still
+holds references to the same allocation. It also catches memory leaks: if a test
+ends without freeing every allocation, for example through <code>Box::into_raw</code> or
 <code>CString::into_raw</code> without a matching <code>from_raw</code>, Miri will fail the test.</p>
 <h2 id="the-downsides"><a class="header" href="#the-downsides">The downsides</a></h2>
 <p>Miri is by design an interpreter, meaning it can only ever see code paths that
-actually executed. Code paths never exercised by your test suite are invisible
-to Miri. This also means non-deterministic bugs need luck: a bug that only
-happens on a specific thread interleaving will remain flaky.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> Miri is also
-slow: expect a 3,000–7,000× slowdown in some cases.</p>
+actually execute. Code paths never exercised by your test suite are invisible to
+Miri. This also means non-deterministic bugs need luck: a bug that only happens
+on a specific thread interleaving will remain flaky.<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup> Miri is also slow:
+expect a 3,000–7,000× slowdown in some cases.</p>
 <blockquote>
 <h2 id="quick-miri-cheat-sheet"><a class="header" href="#quick-miri-cheat-sheet">Quick Miri cheat sheet</a></h2>
 <p>Using Miri is just like using Cargo, but with <code>miri</code> inserted into the
@@ -250,7 +250,7 @@ confront the details of a function that we gloss over when we simply call it.
 That usually leads to a much better understanding of the code, which makes it a
 worthwhile exercise in itself.</p>
 <p>You would usually have something like this:</p>
-<pre><code class="language-rust">#[cfg(miri)]
+<pre><code class="language-rust no_run">#[cfg(miri)]
 mod stubs {
     #[unsafe(no_mangle)]
     unsafe extern "C" fn SomeCFunction() {

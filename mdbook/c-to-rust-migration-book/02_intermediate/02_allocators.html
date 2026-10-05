@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -210,7 +210,7 @@ API; export the functions through FFI to Rust.</p>
 allocation, so callers cannot accidentally pass it to Rust’s allocator. A
 null pointer from C becomes <code>None</code>; dropping a successfully created wrapper
 always calls back into C to free it.</p>
-<pre><code class="language-rust">use std::ffi::CStr;
+<pre><code class="language-rust no_run">use std::ffi::CStr;
 use std::ptr::{self, NonNull};
 
 #[repr(C)]
@@ -257,33 +257,33 @@ paired with <code>_free</code> in Rust; C only ever holds the pointer and calls 
 functions to allocate or free an object of that type.</p>
 <p>The basic pattern for this is to convert a <code>Box</code> to and from a raw pointer
 with <code>into_raw</code> and <code>from_raw</code>:<sup class="footnote-reference" id="fr-3-1"><a href="#footnote-3">3</a></sup></p>
-<pre><code class="language-rust">let foo = Box::new(42);
+<pre><code class="language-rust no_run">let foo = Box::new(42);
 let ptr = Box::into_raw(foo);
 // This will convert the raw pointer back into a Box and when dropped free the memory:
 let _foo = unsafe { Box::from_raw(ptr) };</code></pre>
 <p>And a full FFI split would look something like this:</p>
-<pre><code class="language-rust">use std::ptr::NonNull;
+<pre><code class="language-rust no_run">use std::ptr::NonNull;
 
-struct RustType {
-   foo: i32,
-   bar: i32
-};
+pub struct RustType {
+    foo: i32,
+    bar: i32,
+}
 
 #[unsafe(no_mangle)]
 pub extern "C" fn rust_type_new(foo: i32, bar: i32) -&gt; *mut RustType {
-   Box::into_raw(Box::new(RustType{ foo, bar }))
+    Box::into_raw(Box::new(RustType { foo, bar }))
 }
 
 #[unsafe(no_mangle)]
 pub extern "C" fn rust_type_free(b: Option&lt;NonNull&lt;RustType&gt;&gt;) {
-   // To match C's free(NULL) semantics, return immediately when b is null.
-   let Some(b) = b else {
-      return;
-   }
+    // To match C's free(NULL) semantics, return immediately when b is null.
+    let Some(b) = b else {
+        return;
+    };
 
-   // SAFETY: `b` was created by `rust_type_new` via Box::into_raw and is
-   // not used again after this call (documented in bookmark.h).
-   drop(unsafe { Box::from_raw(b.as_ptr()) });
+    // SAFETY: `b` was created by `rust_type_new` via Box::into_raw and is
+    // not used again after this call (documented in bookmark.h).
+    drop(unsafe { Box::from_raw(b.as_ptr()) });
 }</code></pre>
 </li>
 <li>
@@ -325,14 +325,14 @@ lot more flexible and can be used on a per-variable basis. The new API adds
 an <a href="https://doc.rust-lang.org/std/alloc/trait.Allocator.html">Allocator</a>
 trait and <code>Allocator</code> type parameters to many allocation-owning types, such
 as <code>Box</code> or <code>Vec</code>.</p>
-<pre><code class="language-rust ignore">pub struct Box&lt;T, A = Global&gt;()
+<pre><code class="language-rust compile_fail">pub struct Box&lt;T, A = Global&gt;()
 // Global is the global allocator implementing the Allocator trait
 where
     A: Allocator,
     T: ?Sized;</code></pre>
 <p>Additionally, it adds a few new functions where you can pass an allocator,
 for example <code>new_in</code>:</p>
-<pre><code class="language-rust ignore">#![feature(allocator_api)]
+<pre><code class="language-rust compile_fail">#![feature(allocator_api)]
 
 use std::alloc::System;
 let foo = Box::new_in(1, System);
@@ -354,6 +354,9 @@ different allocation system while still using standard owning types such as
 <p>Tools like Valgrind give every allocation a birth certificate: run the test
 binary under <code>valgrind --leak-check=full</code> and it will tell you not just that a
 block leaked, but which call stack allocated it.</p>
+<p>Valgrind has no Apple Silicon support, so on an M-series Mac reach for <code>leaks</code>,
+for AddressSanitizer via <code>-Zsanitizer=address</code>, or, for the Rust side of the
+boundary, for Miri, which we cover in a later section.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
 <p>You’ll port <code>bm</code>’s <code>Bookmark</code> type, including its allocation and deallocation
 functions, to Rust without leaking or double-freeing a single byte.</p>

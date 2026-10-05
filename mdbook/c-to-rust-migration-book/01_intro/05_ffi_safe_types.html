@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -190,9 +190,8 @@ FFI-safe and guaranteed to have the same representation as <code>*mut T</code>.<
 <p>Note that C’s <code>int</code> type and Rust’s <code>i32</code>, for example, <em>almost always</em> mean the
 same thing. But because the C standard’s definition of these types is loose,
 there exist architectures for which this is not true. This is rare enough that
-the Rust team decided Rust’s integer types are FFI-safe. If you want to be
-absolutely sure though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or
-<code>c_longlong</code>.</p>
+the Rust team decided Rust’s integer types are FFI-safe. If you want to be sure,
+though, you can use the <code>std::ffi::c_*</code> types such as <code>c_int</code> or <code>c_longlong</code>.</p>
 <h2 id="reprc"><a class="header" href="#reprc"><code>repr(C)</code></a></h2>
 <p>Much like we need to use the C calling convention to make our Rust functions
 interoperable, we need to use the <code>C</code> struct layout to make our structs
@@ -200,11 +199,13 @@ interoperable. This is because (just like functions) Rust reserves the right to
 change the struct layout at any time (it is “undefined”)<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup>. To have a stable
 layout that other languages can understand, we need to mark our structs with the
 <code>repr(C)</code> attribute.</p>
-<pre><code class="language-rust">// we know the layout of this struct is always:
+<pre><code class="language-rust no_run">// we know the layout of this struct is always (16 bytes in total, because the
+// `usize` gives the whole struct an alignment of 8):
 // - `a` - 8 bytes
 // - `b` - 1 byte
-// - 1 byte padding
-// - `c` two bytes
+// - 1 byte padding, so that `c` is 2-byte aligned
+// - `c` - 2 bytes
+// - 4 bytes trailing padding, so that the size is a multiple of the alignment
 #[repr(C)]
 struct Foo {
     a: usize,
@@ -221,7 +222,7 @@ struct Bar {
 <p><code>repr(C)</code> also applies to <em>tuple structs</em> where the layout is exactly the same
 except the fields don’t have names.</p>
 <p>The <code>repr(..)</code> attribute can also be used on <code>enum</code>s:</p>
-<pre><code class="language-rust">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
+<pre><code class="language-rust no_run">// This corresponds to named u8 constants, where A = 0, B = 1, C = 2
 #[repr(u8)]
 enum Foo {
     A,
@@ -229,25 +230,28 @@ enum Foo {
     C,
 }
 
-// You can of course also assign explicit tags
+<span class="boring">mod explicit_tags {
+</span>// You can of course also assign explicit tags
 #[repr(u8)]
 enum Foo {
     A = 5,
     B = 2,
     C = 8,
 }
-
-// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
+<span class="boring">}
+</span><span class="boring">mod c_abi {
+</span>// repr(C) also works and uses the "default enum size and sign for the target platform's C ABI"
 #[repr(C)]
 enum Foo {
     A,
     B,
     C,
-}</code></pre>
+}
+<span class="boring">}</span></code></pre>
 <p>You can use enums with fields even though they don’t have an inherent C
 equivalent. Rust defines a stable mapping
 <a href="https://github.com/rust-lang/rfcs/blob/master/text/2195-really-tagged-unions.md">here</a>.</p>
-<pre><code class="language-rust">// A definition like this...
+<pre><code class="language-rust no_run">// A definition like this...
 #[repr(u8)]
 enum TwoCases {
     A(u8, u16),
@@ -261,15 +265,18 @@ union TwoCasesRepr {
 }
 
 #[repr(u8)]
+#[derive(Clone, Copy)]
 enum TwoCasesTag {
     A,
     B,
 }
 
 #[repr(C)]
+#[derive(Clone, Copy)] // union fields have to be Copy
 struct TwoCasesVariantA(TwoCasesTag, u8, u16);
 
 #[repr(C)]
+#[derive(Clone, Copy)]
 struct TwoCasesVariantB(TwoCasesTag, u16);</code></pre>
 <p>So, essentially, an enum with fields decomposes into a tag enum and a union of
 its fields.</p>
@@ -278,20 +285,23 @@ its fields.</p>
 an attribute that can only be used on types with a single sized field. It
 guarantees that the layout of the outer type will be exactly the same as that of
 the inner type.</p>
-<pre><code class="language-rust">// Foo is guaranteed to have the same representation as `*const u8`!
+<pre><code class="language-rust no_run">// Foo is guaranteed to have the same representation as `*const u8`!
 #[repr(transparent)]
 struct Foo(*const u8);
 
-// because this is concerned with _sized_ fields (fields that have a size)
+<span class="boring">mod generic {
+</span><span class="boring">use std::marker::PhantomData;
+</span>// because this is concerned with _sized_ fields (fields that have a size)
 // fields that have no size such as PhantomData can still be used!
 #[repr(transparent)]
-struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);</code></pre>
+struct Foo&lt;T&gt;(*const u8, PhantomData&lt;T&gt;);
+<span class="boring">}</span></code></pre>
 <p><code>repr(transparent)</code> comes in handy if you need to cast pointers or <code>transmute</code>
 between types.</p>
 <h2 id="types-that-cannot-cross-the-ffi-boundary"><a class="header" href="#types-that-cannot-cross-the-ffi-boundary">Types that cannot cross the FFI boundary</a></h2>
-<p>This list is long, but as a rule of thumb: any type with <em>generics</em>, and any
-more complex Rust struct that is not explicitly FFI-safe (such as <code>String</code>),
-cannot be shared.</p>
+<p>The list is long, but as a rule of thumb, two kinds of type cannot be shared:
+anything generic, and any Rust type that is not explicitly FFI-safe, such as
+<code>String</code>.</p>
 <p><em>Generics</em> are not FFI-safe because the compiler will monomorphize a concrete
 version of the struct for each type passed into the generic. If we pass the type
 across the FFI boundary, the C compiler, which does not know about

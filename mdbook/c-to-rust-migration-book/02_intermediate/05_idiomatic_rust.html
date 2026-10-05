@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -185,7 +185,7 @@ backgrounds.</p>
 <p>Translating between programming languages runs into the same problem as
 translating between human ones. You can do a <em>literal</em> translation of a function
 or module, but it won’t be right: it won’t sit well with the code around it, it
-will cause confusion, and it will destroy the confidence in the code that the
+will cause confusion, and it will destroy confidence in the code that the
 rewrite was supposed to build.</p>
 <p>The good news is that these translations follow fairly regular patterns and are
 easy to wrap your head around. This section walks through several of them,
@@ -200,9 +200,8 @@ flexibility brings a lot of potential for ambiguity:</p>
 <p>At a glance: what does this function return, and how does it return it? <code>out</code> is
 a mutable pointer, so <code>add</code> could write the output there, but it also returns
 <code>int</code>, so maybe that’s where the output goes?</p>
-<p>We don’t really have a way of knowing for sure. Here is the equivalent Rust
-function:</p>
-<pre><code class="language-rust">fn add(a: i32, b: i32) -&gt; Option&lt;i32&gt;;</code></pre>
+<p>We have no way of knowing for sure. Here is the equivalent Rust function:</p>
+<pre><code class="language-rust compile_fail">fn add(a: i32, b: i32) -&gt; Option&lt;i32&gt;;</code></pre>
 <p>It becomes clearer that <code>add</code> is some kind of “checked” addition function that
 returns an output only sometimes, and otherwise fails.</p>
 <p>This is fundamentally a limitation of what’s possible with C’s type system. A
@@ -216,25 +215,25 @@ from the signature alone.</p>
 #define ERR_FOO 1
 #define ERR_BAR 2
 
-int doSomething();
+int do_something();
 </code></pre>
-<p>Or alternatively as a <code>typedef enum</code>, which is common in more modern code (this
-is also what <code>bm</code> does).</p>
-<p>Much like out parameters, correct usage relies on conventions, good
+<p>You may also see it written as a <code>typedef enum</code>, which is common in more modern
+code and is what <code>bm</code> does.</p>
+<p>Much like with out parameters, correct usage relies on conventions, good
 documentation, and proper code review. The compiler will not catch you
 accidentally using the wrong constant: C converts these to and from <code>int</code>
 freely.</p>
 <p>In Rust we would express this using an <code>enum</code> (actually a combination of enums):</p>
-<pre><code class="language-rust">enum Error {
+<pre><code class="language-rust compile_fail">enum Error {
     Foo,
     Bar,
 }
 
-fn doSomething() -&gt; Result&lt;(), Error&gt;;</code></pre>
+fn do_something() -&gt; Result&lt;(), Error&gt;;</code></pre>
 <p>Here is a neat trick: an enum whose variants carry no fields (a so-called
 <em>field-less</em> enum) is nothing but an integer tag, and you can cast it to an
 integer with <code>as</code>:</p>
-<pre><code class="language-rust">enum Error {
+<pre><code class="language-rust no_run">enum Error {
     Foo,      // variants are numbered starting at zero
     Bar = 45, // explicit tag
 }
@@ -243,20 +242,25 @@ println!("{}", Error::Foo as usize); // prints 0
 println!("{}", Error::Bar as usize); // print 45</code></pre>
 <p>If you want to make sure tags match your old C version exactly (for interop
 purposes, for example), you might do this:</p>
-<pre><code class="language-rust">#[repr(u32)] // make sure we're using "int"s too
+<pre><code class="language-rust compile_fail">#[repr(C)] // use the target's C ABI representation for enums
 enum Error {
     Foo = 0,
     Bar = 1,
 }
 
-fn doSomething() -&gt; Result&lt;(), Error&gt;;</code></pre>
-<p>Now <code>Error</code> has the same layout and bit pattern as the original C version.</p>
+fn do_something() -&gt; Result&lt;(), Error&gt;;</code></pre>
+<p><code>#[repr(C)]</code> gives <code>Error</code> the size and signedness a C compiler would pick for
+the equivalent <code>typedef enum</code> on the same target, so the two agree on the values
+they exchange. Reach for <code>#[repr(i32)]</code> when you want to pin the width yourself,
+which is what the <code>#define</code> version above needs, since it passes plain <code>int</code>s
+around. Don’t reach for <code>#[repr(u32)]</code>: C’s <code>int</code> is signed, and the difference
+surfaces the first time someone adds a negative error code.</p>
 <h2 id="strings"><a class="header" href="#strings">Strings</a></h2>
 <p>Strings deserve extra care. The obvious translation would be <code>char *</code> =&gt; <code>&amp;str</code>
 (or <code>String</code>):</p>
 <pre><code class="language-c">void greet(const char *name);
 </code></pre>
-<pre><code class="language-rust">fn greet(name: &amp;str);</code></pre>
+<pre><code class="language-rust compile_fail">fn greet(name: &amp;str);</code></pre>
 <p>But C and Rust don’t fully agree on what a string <em>is</em>. A C string is a pointer
 to some bytes that end at the first NUL byte. A <code>&amp;str</code> carries its length with
 it, has no terminator, and must be valid UTF-8. Handing a <code>&amp;str</code> to C directly,
@@ -278,7 +282,7 @@ int open_file(const char *path, int flags);
 <code>bitflags</code> crate generates a newtype around the integer with the named
 constants, the <code>|</code>, <code>&amp;</code>, and <code>!</code> operators, and methods like <code>contains</code>,
 <code>insert</code>, and <code>remove</code>:</p>
-<pre><code class="language-rust">use bitflags::bitflags;
+<pre><code class="language-rust compile_fail">use bitflags::bitflags;
 
 bitflags! {
     #[repr(transparent)]
@@ -306,14 +310,21 @@ them as they are.</p>
 return 0;
 </code></pre>
 <p>The literal translation is:</p>
-<pre><code class="language-rust">for i in 0..b.tags.len() { if b.tags[i].contains(query) { return true; } }</code></pre>
+<pre><code class="language-rust no_run"><span class="boring">struct Bookmark { tags: Vec&lt;String&gt; }
+</span><span class="boring">fn matches(b: &amp;Bookmark, query: &amp;str) -&gt; bool {
+</span>for i in 0..b.tags.len() { if b.tags[i].contains(query) { return true; } }
+<span class="boring">false
+</span><span class="boring">}</span></code></pre>
 <p>It works, but every <code>b.tags[i]</code> is a bounds check the optimizer may or may not
 be able to prove away, and Clippy will nag you about it (<code>needless_range_loop</code>).
 Iterate the collection itself instead: <code>for tag in &amp;b.tags</code>, with <code>.enumerate()</code>
 if you actually need the index and <code>.iter_mut()</code> if you need to change elements.</p>
 <p>From there it is a short step to the combinators, and the loop above is just
 <code>any</code> and looks like this:</p>
-<pre><code class="language-rust">b.tags.iter().any(|tag| tag.contains(query))</code></pre>
+<pre><code class="language-rust no_run"><span class="boring">struct Bookmark { tags: Vec&lt;String&gt; }
+</span><span class="boring">fn matches(b: &amp;Bookmark, query: &amp;str) -&gt; bool {
+</span>b.tags.iter().any(|tag| tag.contains(query))
+<span class="boring">}</span></code></pre>
 <p>The other common shape is the pointer-bumping loop:</p>
 <pre><code class="language-c">for (const char *p = s; *p; p++) {
     if (*p == ',')
@@ -323,7 +334,8 @@ if you actually need the index and <code>.iter_mut()</code> if you need to chang
 <p>This one walks bytes until it hits the NUL terminator. In Rust the string knows
 its own length, so loops like these become <code>.bytes()</code> or <code>.chars()</code>.</p>
 <p>The pointer-bumping loop would look like this in Rust:</p>
-<pre><code class="language-rust">let n = s.bytes().filter(|&amp;b| b == b',').count();</code></pre>
+<pre><code class="language-rust no_run"><span class="boring">let s = "rust,ffi,c";
+</span>let n = s.bytes().filter(|&amp;b| b == b',').count();</code></pre>
 <p>A loop that searches for an element is <code>find</code> or <code>position</code>; one with a running
 total is <code>map(..).sum()</code>; one that fills a second array is
 <code>filter(..).map(..).collect()</code>. These are lazy and compile down to the same code

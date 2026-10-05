@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
+            window.path_to_searchindex_js = "../searchindex-7607a426.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -191,7 +191,7 @@ already sets <code>debug = true</code>; for a release build, add this to <code>C
 debug = true
 </code></pre>
 <p>If <code>build.rs</code> compiles the C code with <code>cc</code>, pass <code>-g</code> there too:</p>
-<pre><code class="language-rust">cc::Build::new()
+<pre><code class="language-rust no_run">cc::Build::new()
     .file("c_src/shout.c")
     .include("c_src")
     .flag_if_supported("-g")
