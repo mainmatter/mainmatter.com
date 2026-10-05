@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -183,19 +183,18 @@
 code.</p>
 <p>To make a Rust function callable from C we’ll need to first annotate it
 correctly:</p>
-<pre><code class="language-rust no_run">use std::ffi::c_char;
+<pre><code class="language-rust">use std::ffi::c_char;
 
 #[unsafe(no_mangle)]
 pub extern "C" fn bm_strlower(s: *mut c_char) {
     // ...
 }</code></pre>
-<p>Much like in the FFI function declaration we saw in the first exercise, we
-instruct <code>rustc</code> to use a C-compatible calling convention through
-<code>extern "C" fn</code> (without it, Rust uses its own ABI, which of course C knows
-nothing about).</p>
+<p>Much like the FFI function declaration we saw in the first exercise, we instruct
+<code>rustc</code> to use a C-compatible calling convention through <code>extern "C" fn</code>
+(without it, Rust uses its own ABI, which of course C knows nothing about).</p>
 <p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
 Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
-identifier that in regular Rust code prevents two identically named types or
+identifier that in regular Rust code prevents two equally named types or
 functions from causing “duplicate symbol” linking errors.</p>
 <p>In this case we do want the symbol name to be the same plain identifier we gave
 it, so the C code linking to us can actually find the function.</p>
@@ -241,8 +240,8 @@ allowed. <code>cheadergen</code> exists because those constraints have since eas
 us build something with better diagnostics and fewer surprises.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
 <p>You’ll port the <code>bm_strlower</code> function to Rust and call
-<code>cheadergen generate --lang c --output-dir c_test -p bm_cheadergen</code> to generate
-the header automatically.</p>
+<code>cheadergen generate --lang c --output-dir c_test -p cheadergen</code> to generate the
+header automatically.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen"><code>01_intro/04_cheadergen</code></a></p>
 

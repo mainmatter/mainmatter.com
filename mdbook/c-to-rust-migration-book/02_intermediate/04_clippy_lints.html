@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -210,7 +210,7 @@ it to private items as well. This is worth doing in an FFI crate, where plenty
 of the interesting unsafe code isn’t public.</p>
 <h2 id="more-lints-to-turn-on"><a class="header" href="#more-lints-to-turn-on">More lints to turn on</a></h2>
 <p>You can configure a lint in code:</p>
-<pre><code class="language-rust no_run">#![warn(clippy::undocumented_unsafe_blocks)]</code></pre>
+<pre><code class="language-rust">#![warn(clippy::undocumented_unsafe_blocks)]</code></pre>
 <p>Or you can use lint tables in <code>Cargo.toml</code>. We’ll use <code>Cargo.toml</code> here to keep
 this crate-wide policy in one place:<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
 <pre><code class="language-toml">[lints.rust]
@@ -255,7 +255,7 @@ name trips <code>non_snake_case</code>. The group covering all three is
 <code>nonstandard_style</code>.</p>
 <p>Sometimes the name genuinely does have to match, and then an <code>allow</code> is the
 right solution. Scope it as tightly as you can:</p>
-<pre><code class="language-rust no_run">#[allow(non_camel_case_types)]
+<pre><code class="language-rust">#[allow(non_camel_case_types)]
 pub struct bm_db_t {/* … */}</code></pre>
 <p>A crate-root <code>#![allow(non_snake_case)]</code> also silences names you genuinely got
 wrong. Prefer applying allows to individual items instead of whole modules or
@@ -265,7 +265,7 @@ bindings rather than on the entire crate.</p>
 <p>You can often avoid an <code>allow</code> for functions exposed to C. <code>no_mangle</code> uses the
 Rust function’s name for the exported symbol, but <code>export_name</code> lets you choose
 a different name for the C API:</p>
-<pre><code class="language-rust no_run">#[unsafe(export_name = "BMNormalizeURL")]
+<pre><code class="language-rust">#[unsafe(export_name = "BMNormalizeURL")]
 pub extern "C" fn bm_normalize_url() {
     // ...
 }</code></pre>
@@ -289,18 +289,14 @@ workspace = true
 </code></pre>
 <h2 id="-safety-comments-are-part-of-the-code"><a class="header" href="#-safety-comments-are-part-of-the-code"><code>// SAFETY:</code> comments are part of the code</a></h2>
 <p>Consider a pointer that arrives across the FFI boundary:</p>
-<pre><code class="language-rust no_run"><span class="boring">use std::ffi::CStr;
-</span><span class="boring">let raw = c"https://example.com".as_ptr();
-</span>// SAFETY: `raw` is non-null (checked above) and points to a valid
+<pre><code class="language-rust">// SAFETY: `raw` is non-null (checked above) and points to a valid
 // NUL-terminated byte sequence, as required by `bm_normalize_url`'s contract.
 let raw = unsafe { CStr::from_ptr(raw) };</code></pre>
 <p>The null check happens in this function; the valid NUL-terminated sequence is
 part of the caller’s documented contract. A reviewer can check both claims
 without re-deriving them from the surrounding code.</p>
 <p>Compare that with this:</p>
-<pre><code class="language-rust no_run"><span class="boring">use std::ffi::CStr;
-</span><span class="boring">let raw = c"https://example.com".as_ptr();
-</span>// SAFETY: this is fine
+<pre><code class="language-rust">// SAFETY: this is fine
 let raw = unsafe { CStr::from_ptr(raw) };</code></pre>
 <p>That comment carries no information. The next reader still has to establish
 whether <code>raw</code> is non-null, initialized, and terminated. Write the reasoning
@@ -324,10 +320,10 @@ that a C caller lies about a buffer length, or that two libraries expect
 different allocators. Keep writing tests, use a debugger when they fail, and
 treat every FFI contract as something to validate at the boundary.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>You’ll work through a small FFI module with the full lint set already switched
-on. Some warnings are mechanical, others point to a real bug. The point isn’t to
-make <code>cargo clippy</code> quiet. It’s to understand and document every unsafe
-operation that remains.</p>
+<p>You’ll enable these lints on the crates from the earlier exercises and fix
+everything they flag. Some warnings are mechanical; others point to a real bug.
+The point isn’t to make <code>cargo clippy</code> quiet. It’s to understand and document
+every unsafe operation that remains.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/04_clippy_lints"><code>02_intermediate/04_clippy_lints</code></a></p>
 <hr>

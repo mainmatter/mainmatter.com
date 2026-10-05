@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -185,21 +185,14 @@ bookmark manager CLI written in C. Over the rest of this course we will migrate
 it to Rust, one module at a time.</p>
 <p>Here is an overview of the C source code:</p>
 <pre><code class="language-text">exercises/_bm/src/
-├── bookmark.c    the Bookmark type
-├── bookmark.h
-├── cli.c         entry point, argument parsing
-├── index.c       in-memory bookmark index
-├── index.h
-├── internal.h    definitions shared by index.c and storage.c
-├── normalize.c   URL and tag normalization
-├── normalize.h
-├── result.h      shared result codes and error-string helper
-├── storage.c     on-disk persistence of .bm files
-├── storage.h
-├── tag.c         tag parsing and matching
-├── tag.h
-├── util.c        string helpers
-└── util.h
+├── bookmark.c   the Bookmark type
+├── cli.c        entry point, argument parsing
+├── index.c      in-memory bookmark index
+├── normalize.c  URL and tag normalization
+├── result.h     shared result codes and error-string helper
+├── storage.c    on-disk persistence of .bm files
+├── tag.c        tag parsing and matching
+└── util.c       string helpers
 </code></pre>
 <h2 id="picking-the-first-module"><a class="header" href="#picking-the-first-module">Picking the first module</a></h2>
 <p>There is no universally best place to start. A leaf module is often a good
@@ -215,20 +208,14 @@ extracting a small module before porting it.</p>
 <li>Choose code with useful tests, so you can compare behavior before and after.</li>
 <li>Keep the change small enough to review and, if necessary, revert.</li>
 </ul>
-<pre><code class="language-text">cli       → bookmark, index, normalize, result, tag, util
-index     → bookmark, internal, normalize, storage, tag, util
-storage   → bookmark, index, internal, normalize, util
-tag       → normalize, util
-bookmark  → util
+<pre><code class="language-text">cli      → index, tag, normalize
+index    → bookmark, storage, tag, normalize, util
+storage  → bookmark, normalize, util
+tag      → normalize, util
+bookmark → util
 normalize → (no project dependencies)
 util      → (no project dependencies)
 </code></pre>
-<p>Two things are worth noting. <code>normalize</code> and <code>util</code> are the only real leaves:
-every other module pulls in at least one of its siblings. And <code>index</code> and
-<code>storage</code> include each other, so this is not the clean tree the file names
-suggest. Tangles like that are normal in code that has been maintained for a
-while, and they are exactly what you want to know before choosing where to
-start.</p>
 <p>For <code>bm</code>, we chose to start with <code>normalize.c</code>. It exposes two functions: one
 normalizes URLs and the other normalizes tags. Both write into buffers supplied
 by the caller, so no memory changes ownership at the FFI boundary. Why not
@@ -243,7 +230,7 @@ header (<code>normalize.h</code> in this example) describes the ABI our Rust imp
 must initially satisfy. We re-implement every function the header declares in
 Rust and export it under the same symbol name using <code>#[unsafe(no_mangle)]</code> and
 <code>extern "C"</code>:</p>
-<pre><code class="language-rust compile_fail">#[unsafe(no_mangle)]
+<pre><code class="language-rust">#[unsafe(no_mangle)]
 pub unsafe extern "C" fn bm_normalize_url(
     url: Option&lt;NonNull&lt;c_char&gt;&gt;,
     out: Option&lt;NonNull&lt;c_char&gt;&gt;,
@@ -266,7 +253,7 @@ in Rust instead of the original one written in C.</p>
 after:   cli.o, index.o, libnormalize.a (Rust), ...
 </code></pre>
 <h2 id="structuring-the-rust-side"><a class="header" href="#structuring-the-rust-side">Structuring the Rust side</a></h2>
-<p>Inside the crate we keep two layers, following the firewall pattern from section
+<p>Inside the crate we keep two layers, following the firewall pattern from Chapter
 1.6:</p>
 <ol>
 <li>a thin <code>extern "C"</code> surface that validates raw pointers and converts C types

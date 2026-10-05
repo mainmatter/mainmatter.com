@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -216,11 +216,11 @@ harness = false
 </code></pre>
 <p><code>harness = false</code> tells Cargo not to start its built-in test harness. The
 benchmark binary supplies its own <code>main</code> function and starts Divan instead:</p>
-<pre><code class="language-rust no_run">fn main() {
+<pre><code class="language-rust">fn main() {
     divan::main();
 }</code></pre>
 <p>The build script compiles the original C implementation:</p>
-<pre><code class="language-rust no_run">// Sample build.rs
+<pre><code class="language-rust">// Sample build.rs
 fn main() {
     cc::Build::new()
         .file("c_src/normalize.c")
@@ -240,7 +240,7 @@ allocated:</p>
 <pre><code class="language-c">BmResult bm_normalize_url(const char *raw, char *out, size_t out_len);
 </code></pre>
 <p>Porting it gives you a choice, and this decides what you are able to measure:</p>
-<pre><code class="language-rust compile_fail">// Safe and idiomatic. Not comparable: it allocates, and reaching it from
+<pre><code class="language-rust">// Safe and idiomatic. Not comparable: it allocates, and reaching it from
 // C's `const char *` costs a UTF-8 check on the way in.
 pub fn normalize_url(raw: &amp;str) -&gt; Result&lt;String, InvalidUrl&gt;;
 
@@ -257,9 +257,7 @@ APIs, not two implementations of the same operation.</p>
 design. It does mean you need to state what the benchmark includes.</p>
 <p>For a direct port comparison, take the second signature, and give both
 implementations the same input and equivalent reusable output buffers:</p>
-<pre><code class="language-rust no_run"><span class="boring">use std::ffi::c_char;
-</span><span class="boring">type BmResult = i32;
-</span>unsafe extern "C" {
+<pre><code class="language-rust">unsafe extern "C" {
     #[link_name = "bm_normalize_url"] // bind the C symbol under a second name
     fn bm_normalize_url_c(raw: *const c_char, out: *mut c_char, out_len: usize) -&gt; BmResult;
 }
@@ -362,7 +360,7 @@ hotpath = ["hotpath/hotpath"]
 hotpath-alloc = ["hotpath/hotpath-alloc"]
 </code></pre>
 <p>Mark the functions you want to measure and the application’s entry point:</p>
-<pre><code class="language-rust no_run">#[hotpath::measure] // time every call to this function
+<pre><code class="language-rust">#[hotpath::measure] // time every call to this function
 fn normalize_url(raw: &amp;str) -&gt; String {
     // ...
 }
@@ -383,12 +381,6 @@ changes the code being measured.</p>
 <p>The exercise is in <code>exercises/02_intermediate/07_benchmarking</code>. It ships with
 the C benchmark. Replace the <code>bm_normalize_url_rust</code> stub and add the matching
 Rust benchmark, then run both and compare their median latencies.</p>
-<p>The parity test compares return codes on every input, but compares the output
-buffers only when the call succeeded. The C version lowercases into the caller’s
-buffer before it looks for a tab, so it writes into <code>out</code> even on inputs it
-rejects. Your port validates first, so it doesn’t. That is a difference
-differential testing is supposed to surface, and one worth keeping: the test
-pins it down rather than asking you to reproduce it.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/07_benchmarking"><code>02_intermediate/07_benchmarking</code></a></p>
 <hr>

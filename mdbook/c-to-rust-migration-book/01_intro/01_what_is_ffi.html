@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-9aef369a.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-fc4c9b7e.js"></script>
@@ -181,9 +181,9 @@
 <p>Programming language design has taken many different paths over the years. We
 have C-like languages that are compiled all the way down to machine code, but we
 also have interpreted languages, lazy languages, languages that compile to a
-portable bytecode, garbage-collected languages, and so much more.</p>
+portable bytecode, garbage collected languages, and so much more.</p>
 <p>As software engineers, we do not want to duplicate work unnecessarily. So what
-happens when work exists in a language other than the one we’re using?</p>
+happens when work exists in a language other than the one you’re using?</p>
 <p>When developing in Python, for example, we don’t want to port all the code we
 need just to use it. Instead, we rely on infrastructure that lets us call
 functions and use types from other programming languages.</p>
@@ -204,16 +204,16 @@ standard for language interoperability.</p>
 <p>Let’s say for example we have a Rust program that needs to call the <code>time</code>
 function from <code>libc</code> (a C static library)<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup>. We would use the following
 construct:</p>
-<pre><code class="language-rust no_run"><span class="boring">type time_t = i64;
-</span>unsafe extern "C" {
-    fn time(time: *mut time_t) -&gt; time_t;
+<pre><code class="language-rust">unsafe extern "C" {
+    fn time(time: *mut time_t) -&gt; time_t
 }</code></pre>
 <p>Before we dissect the syntax though: you may have already noticed that nowhere
 in this snippet do we ask for <code>libc</code>. Why is that?</p>
 <p>This is because object file formats (ELF on Linux, Mach-O on macOS, PE on
-Windows) are all old and therefore simplistic. They have <em>one global namespace</em>,
-called a <em>symbol table</em>, that all functions (and statics) share. So you cannot
-say “call <code>time</code> from <code>libc</code>”, you can only say “call a function named <code>time</code>”.</p>
+Windows) are all quite old and therefore quite simplistic. They have <em>one global
+namespace</em>, called a <em>symbol table</em>, that all functions (and statics) share. So
+you cannot say “call <code>time</code> from <code>libc</code>”, you can only say “call a function
+named <code>time</code>”.</p>
 <p>When a compiler builds a program, all function calls reference the function <em>by
 symbol</em> (“call function named <code>X</code>”). To make this actually executable, we need
 to replace every symbol reference with the actual address of the function. This
