@@ -10,7 +10,7 @@ autoOg: true
 
 In conference talks I gave at the time to pitch Rust for these other use cases, I showed the following chart to explain what we considered to be Rust's rather unique advantage:
 
-![Effort for working on codebases with Rust vs. other stacks in 2022](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-1.png)
+![Effort for working on codebases with Rust vs. other stacks in 2022](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-1.webp)
 
 The chart shows the effort it takes to build and evolve a system over time. With Rust, the initial effort is (or was, as we'll see later) much higher than with other languages. With Rust, teams need to learn entirely new and unfamiliar concepts like ownership, borrowing, and lifetimes to get anything useful to even compile. Over time though, the effort goes down naturally and it goes down below the level that you'd typically see in other languages as codebases grow larger, teams change and knowledge about all of the little details that only implicitly live in a codebase but are not actually encoded anywhere is lost. Rust on the other hand encodes a lot more in the language itself – ownership, lifetimes, error handling, exhaustive matching, and a rich type system – so the compiler catches a large class of mistakes before anything runs. That means Rust codebases can be changed with confidence over time, in particular when teams grow and change, and the people who wrote the original code have long moved on – something that's typically not the case with other stacks.
 
@@ -20,7 +20,7 @@ Based on these considerations, we pitched Rust specifically for use cases where 
 
 Today, you could argue the curve looks more like this:
 
-![Effort for working on codebases with Rust vs. other stacks today](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-2.png)
+![Effort for working on codebases with Rust vs. other stacks today](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-2.webp)
 
 The initial effort is still slightly higher for Rust than for other technologies but not nearly by the same margin. You still need to understand the core concepts, the ecosystem, the typical development infrastructure, etc. Yet, it's much easier to generate working code, specifically because of LLMs. Getting Rust code to compile is no longer the bottleneck it once was, since coding agents are good at writing Rust code, working through compiler errors along the way. That spares engineers from having to climb over a huge hurdle to even be able to make the first step and get going (building up expertise long-term is still non-negotiable of course – [more on that below](#beware-the-trap)).
 
