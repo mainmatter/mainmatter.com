@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-41a51967.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-fc4c9b7e.js"></script>
+        <script src="../toc-1da9c46c.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -178,13 +178,14 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="chapter-2-intermediate"><a class="header" href="#chapter-2-intermediate">Chapter 2: Intermediate</a></h1>
+<blockquote>
+<p>Note: the following chapters are <strong>not yet publicly available</strong>!</p>
+<p>we’re working hard on publishing the rest when we can. If you want early
+access, reach out!</p>
+</blockquote>
 <p>From now on we will be porting a “real” C application: the <code>bm</code> bookmark manager
 CLI. We will learn how to approach real-world codebases, structure our approach,
 and debug our code when it breaks.</p>
-<p>In this chapter we’ll pick our first module to rewrite, learn how C and Rust
-allocators (don’t) mix, debug across the language boundary with <code>lldb</code>/<code>gdb</code>,
-harden our <code>unsafe</code> code with Clippy lints, replace C-isms with Rust-isms, catch
-undefined behavior with Miri, and benchmark the port against the C baseline.</p>
 <h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
 <p>The exercises for this section are located in <code>exercises/02_intermediate</code></p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
@@ -198,9 +199,6 @@ undefined behavior with Miri, and benchmark the port against the C baseline.</p>
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../02_intermediate/01_rewrite_a_module.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
-                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -212,9 +210,6 @@ undefined behavior with Miri, and benchmark the port against the C baseline.</p>
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../02_intermediate/01_rewrite_a_module.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
-                    </a>
             </nav>
 
         </div>
