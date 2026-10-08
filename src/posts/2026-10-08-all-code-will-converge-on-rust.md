@@ -10,7 +10,7 @@ autoOg: true
 
 In conference talks I gave at the time to pitch Rust for these other use cases, I showed the following chart to explain what we considered to be Rust's rather unique advantage:
 
-![Effort for working on codebases with Rust vs. other stacks in 2022](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-1.webp)
+![Effort for working on codebases with Rust vs. other stacks in 2022](/assets/images/posts/2026-10-08-all-code-will-converge-on-rust/image-1.webp)
 
 The chart shows the effort it takes to build and evolve a system over time. With Rust, the initial effort is (or was, as we’ll see later) much higher than with other languages: teams need to learn concepts like ownership, borrowing, and lifetimes, which are completely unfamiliar to most developers, before they can even get a simple program to compile. Over time, though, the effort goes down, and eventually it drops below what you’d typically see with other languages.
 
@@ -22,7 +22,7 @@ Based on these considerations, we pitched Rust specifically for use cases where 
 
 Today, you could argue the curve looks more like this:
 
-![Effort for working on codebases with Rust vs. other stacks today](/assets/images/posts/2026-09-25-all-code-will-converge-on-rust/image-2.webp)
+![Effort for working on codebases with Rust vs. other stacks today](/assets/images/posts/2026-10-08-all-code-will-converge-on-rust/image-2.webp)
 
 The effort for writing code has obviously gone down across the board, because LLMs write decent code in any language. The initial effort for writing (or generating) Rust code is probably still slightly higher than for other technologies, but not by nearly the same margin. You still need to understand Rust's core concepts, the ecosystem, the typical development infrastructure, etc. Yet, it's much easier to generate working code. Fighting your way through super-long generic declarations or borrow checker complaints to get Rust code to compile is no longer the bottleneck it once was, since coding agents will do most of the work just fine. That spares engineers from having to climb over what was a huge initial hurdle just to get started (building up expertise long-term is still non-negotiable of course – [more on that below](#beware-the-trap)).
 
