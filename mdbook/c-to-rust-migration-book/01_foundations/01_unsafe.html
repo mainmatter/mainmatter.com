@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-56988386.js";
+            window.path_to_searchindex_js = "../searchindex-650ce897.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -269,10 +269,10 @@ check, then justify, then perform the operation. Writing the <code>// SAFETY:</c
 comment is often how you find out that a check is missing. If you can’t finish
 the sentence, the code isn’t sound yet.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>The exercise is one function: return the last two bytes of a slice, or <code>None</code> if
-it has fewer than two, reading each byte with <code>get_unchecked</code>. Work out the
-condition that makes both indexes valid before you rely on it, and say why in a
-<code>// SAFETY:</code> comment.</p>
+<p>The exercise is one function: return the last byte of a slice, or <code>None</code> if the
+slice is empty, reading the byte with <code>get_unchecked</code>. Work out the condition
+that makes the index valid before you rely on it, and say why in a <code>// SAFETY:</code>
+comment.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/01_unsafe"><code>01_foundations/01_unsafe</code></a></p>
 
