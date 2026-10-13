@@ -343,6 +343,10 @@ This is **a** solution, but it might not be **your** solution.
 
 Visual regression testing is genuinely hard to get right, and that's the reason there are entire companies with full teams of engineers dedicated to solving this problem. In our case the feedback loop is tighter and the cost is lower. But if the quality of the visual regression is also lower, you might end up spending a bunch of time maintaining the solution that was meant to speed you up in the first place.
 
+Another trade-off to keep in mind: committing screenshots can quickly make your Git history huge. Every changed image adds data to the repository, and the old versions remain in its history even after you replace or delete them. There are ways around this: you could store the baselines in an S3 bucket, download them before running the tests, and upload updated snapshots and test artifacts there. We've been experimenting with this approach and we'll share a repository with an example implementation once it's public.
+
+<!-- TODO: Add the link to Bart's experiment repository. -->
+
 Unfortunately, I cannot tell you if this is the right solution for you: you would have to test it yourself, maybe in tandem with Chromatic or Percy, and figure out what actually speeds up your work the most, factoring in how much it would cost you.
 
 And if all of this sounds complicated, that's because it is. If you need help with this, that's the kind of thing we do.
