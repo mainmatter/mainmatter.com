@@ -35,10 +35,10 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-7607a426.js";
+            window.path_to_searchindex_js = "../searchindex-48f81976.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../toc-fc4c9b7e.js"></script>
+        <script src="../toc-d8589799.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -206,49 +206,8 @@ all on a different architecture.</p>
 <code>Drop</code> implementation releases the allocation by calling the matching C
 function, <code>bookmark_free</code>. Keep allocation and deallocation within the same C
 API; export the functions through FFI to Rust.</p>
-<p>Here is the complete shape of that wrapper. <code>OwnedCBookmark</code> owns the C
-allocation, so callers cannot accidentally pass it to Rust’s allocator. A
-null pointer from C becomes <code>None</code>; dropping a successfully created wrapper
-always calls back into C to free it.</p>
-<pre><code class="language-rust no_run">use std::ffi::CStr;
-use std::ptr::{self, NonNull};
-
-#[repr(C)]
-// An opaque type, C owns the layout and allocation.
-struct CBookmark {
-    _data: (),
-    _marker: core::marker::PhantomData&lt;(*mut u8, core::marker::PhantomPinned)&gt;,
-}
-
-// FFI (de)allocation functions
-unsafe extern "C" {
-    fn bookmark_new(
-        url: *const std::ffi::c_char,
-        tags: *const *const std::ffi::c_char,
-        n_tags: usize,
-    ) -&gt; *mut CBookmark;
-    fn bookmark_free(bookmark: *mut CBookmark);
-}
-
-// The Rust wrapper
-struct OwnedCBookmark(NonNull&lt;CBookmark&gt;);
-
-impl OwnedCBookmark {
-    fn new(url: &amp;CStr) -&gt; Option&lt;Self&gt; {
-        // SAFETY: `url` is NUL-terminated. This example passes no tags,
-        // matching the C function's documented null-and-zero contract.
-        let bookmark = unsafe { bookmark_new(url.as_ptr(), ptr::null(), 0) };
-        NonNull::new(bookmark).map(Self)
-    }
-}
-
-impl Drop for OwnedCBookmark {
-    fn drop(&amp;mut self) {
-        // SAFETY: this pointer came from `bookmark_new` and this wrapper is
-        // its unique owner, so `bookmark_free` is called exactly once.
-        unsafe { bookmark_free(self.0.as_ptr()) };
-    }
-}</code></pre>
+<p><a href="../01_intro/05_05_opaque_types.html">Opaque types</a> shows the shape of such a
+wrapper.</p>
 </li>
 <li>
 <p><strong>Use Rust allocators from C.</strong> A Rust type that crosses the boundary will
@@ -261,30 +220,8 @@ with <code>into_raw</code> and <code>from_raw</code>:<sup class="footnote-refere
 let ptr = Box::into_raw(foo);
 // This will convert the raw pointer back into a Box and when dropped free the memory:
 let _foo = unsafe { Box::from_raw(ptr) };</code></pre>
-<p>And a full FFI split would look something like this:</p>
-<pre><code class="language-rust no_run">use std::ptr::NonNull;
-
-pub struct RustType {
-    foo: i32,
-    bar: i32,
-}
-
-#[unsafe(no_mangle)]
-pub extern "C" fn rust_type_new(foo: i32, bar: i32) -&gt; *mut RustType {
-    Box::into_raw(Box::new(RustType { foo, bar }))
-}
-
-#[unsafe(no_mangle)]
-pub extern "C" fn rust_type_free(b: Option&lt;NonNull&lt;RustType&gt;&gt;) {
-    // To match C's free(NULL) semantics, return immediately when b is null.
-    let Some(b) = b else {
-        return;
-    };
-
-    // SAFETY: `b` was created by `rust_type_new` via Box::into_raw and is
-    // not used again after this call (documented in bookmark.h).
-    drop(unsafe { Box::from_raw(b.as_ptr()) });
-}</code></pre>
+<p><a href="../01_intro/05_05_opaque_types.html">Opaque types</a> shows the full
+<code>_new</code>/<code>_free</code> pair.</p>
 </li>
 <li>
 <p><strong>Transfer ownership of a C allocation across the boundary.</strong> Use this when
@@ -358,11 +295,10 @@ block leaked, but which call stack allocated it.</p>
 for AddressSanitizer via <code>-Zsanitizer=address</code>, or, for the Rust side of the
 boundary, for Miri, which we cover in a later section.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
-<p>You’ll port <code>bm</code>’s <code>Bookmark</code> type, including its allocation and deallocation
-functions, to Rust without leaking or double-freeing a single byte.</p>
-<p>You’ll practice both ownership directions from this section in
-<code>exercises/02_intermediate/02_allocators</code>: C holding a Rust allocation, and Rust
-holding a C allocation.</p>
+<p>In <code>exercises/02_intermediate/02_allocators</code>, you’ll write a global allocator
+that wraps the system allocator and counts every allocation and deallocation.
+Then you’ll use it to track down a leak: a pair of functions hands strings to C,
+and one of them never gives the memory back.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/02_allocators"><code>02_intermediate/02_allocators</code></a></p>
 <hr>
