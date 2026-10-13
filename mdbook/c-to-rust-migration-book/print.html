@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-48f81976.js";
+            window.path_to_searchindex_js = "searchindex-56988386.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-d8589799.js"></script>
+        <script src="toc-f32475f9.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -187,6 +187,19 @@ need when things inevitably break.</p>
 <p>You’ll build up your knowledge in small, manageable steps. By the end of the
 course, you will have solved many exercises and should be prepared to migrate
 even larger C codebases to Rust.</p>
+<h2 id="why-ffi-matters"><a class="header" href="#why-ffi-matters">Why FFI matters</a></h2>
+<p>Rewriting a large C codebase in one go rarely works. Instead, you migrate it
+piece by piece, and for a while C and Rust live in the same program and call
+each other. What makes that possible is a <em>Foreign Function Interface</em> (FFI): a
+way for code in one language to call functions and use types defined in another.
+Nearly every language supports the same one: calling functions as if they were
+written in C.</p>
+<p>The boundary between the two languages is where most of the difficulty lives.
+Rust’s compiler can’t check the C side, and C doesn’t know about Rust’s rules,
+so everything that crosses has to be described, validated, and owned correctly
+by hand. This course starts with the <code>unsafe</code> Rust you need to reason about that
+boundary, then covers how values cross it, and finally how to move code from one
+side to the other.</p>
 <h2 id="methodology"><a class="header" href="#methodology">Methodology</a></h2>
 <p>This course is based on the “learn by doing” principle.<br>It has been designed to be interactive and hands-on.</p>
 <p><a href="https://mainmatter.com/rust-consulting/">Mainmatter</a> developed this course to
@@ -223,10 +236,11 @@ solution.</p>
 <p>To work through this course, you’ll need:</p>
 <ul>
 <li>
-<p><a href="https://www.rust-lang.org/tools/install"><strong>Rust</strong></a>. If <code>rustup</code> is already
-installed on your system, run <code>rustup update</code> (or another appropriate command
-depending on how you installed Rust on your system) to ensure you’re running
-on the latest stable version.</p>
+<p><a href="https://www.rust-lang.org/tools/install"><strong>Rust</strong></a>, installed through
+<code>rustup</code>. The repository pins a nightly toolchain in <code>rust-toolchain.toml</code>,
+because some of the tools the course uses, such as Miri, only run on nightly.
+<code>rustup</code> picks it up whenever you run <code>cargo</code> inside the repository. If it
+isn’t installed yet, run <code>rustup toolchain install</code> from the repository root.</p>
 </li>
 <li>
 <p><em>(Optional but recommended)</em> An IDE with Rust autocompletion support. We
@@ -243,7 +257,9 @@ extension.</li>
 </li>
 <li>
 <p>Two extra compilation targets. One exercise type-checks your bindings against
-platforms that disagree with yours, which needs their standard libraries:</p>
+platforms that disagree with yours, which needs their standard libraries. Run
+this from the repository root, so the targets are added to the pinned
+toolchain:</p>
 <pre><code class="language-bash">rustup target add x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu
 </code></pre>
 <p>Nothing is compiled or linked for those targets, so you don’t need a cross
@@ -278,24 +294,21 @@ standardization.<br>Artur Jakubiec is a long-time C/C++ engineer and was one of 
 of Cubasis. He is now a tech lead at a company building enterprise SaaS
 productivity software, currently migrating it from C++ to Rust.</p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="chapter-0-unsafe-rust-foundations"><a class="header" href="#chapter-0-unsafe-rust-foundations">Chapter 0: Unsafe Rust foundations</a></h1>
+<h1 id="chapter-1-unsafe-rust-foundations"><a class="header" href="#chapter-1-unsafe-rust-foundations">Chapter 1: Unsafe Rust foundations</a></h1>
 <p>Safe Rust comes with a guarantee: if the program compiles, it has no undefined
 behavior. The compiler enforces the rules for references, valid values, and
 mutation that make that guarantee possible. Those checks stop at the language
 boundary, though. Rust cannot borrow-check C, and C does not enforce Rust’s
 invariants. It falls to you to know what each language guarantees about memory,
 what it assumes, and what happens when those assumptions don’t hold.</p>
-<p>This chapter covers the building blocks:</p>
-<ul>
-<li>what <code>unsafe</code> means and what it does and doesn’t change</li>
-<li>how raw pointers differ from references and what each one guarantees</li>
-<li>how <code>NonNull</code> and <code>Option</code> let the type system track null pointers</li>
-<li>how size, alignment, and padding work, and what <code>repr</code> is for</li>
-</ul>
+<p>This chapter covers the building blocks: what <code>unsafe</code> means and what it does
+and doesn’t change, how raw pointers differ from references, how <code>NonNull</code> and
+<code>Option</code> let the type system track null pointers, and how size, alignment, and
+padding work.</p>
 <h2 id="exercises"><a class="header" href="#exercises">Exercises</a></h2>
-<p>The exercises for this chapter are located in <code>exercises/00_foundations</code>.</p>
+<p>The exercises for this chapter are located in <code>exercises/01_foundations</code>.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/00_foundations/00_README"><code>00_foundations/00_README</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/00_README"><code>01_foundations/00_README</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="unsafe-and-safety-contracts"><a class="header" href="#unsafe-and-safety-contracts"><code>unsafe</code> and safety contracts</a></h1>
 <p>Safe Rust can’t cause <a href="#undefined-behavior">undefined behavior</a>, but some things
@@ -338,32 +351,29 @@ reference to it exists</li>
 those conditions the operation’s <em>safety contract</em>. Rust splits the contract
 into two halves.</p>
 <p>An <code>unsafe fn</code> declaration says “calling me is only sound if you, the caller,
-uphold these conditions”. The conditions should go into a numbered <code># Safety</code>
-section of the doc comment, so that we can refer back to them at the relevant
-call sites:</p>
+uphold these conditions”. The conditions go into a <code># Safety</code> section of the doc
+comment:</p>
 <pre><code class="language-rust no_run">/// Reads the `u32` that `ptr` points to.
 ///
 /// # Safety
 ///
-/// 1. `ptr` must be non-null and aligned for `u32`.
-/// 2. `ptr` must point to an initialized `u32` that stays alive and remains
-///    unmodified for the duration of the call.
+/// `ptr` must be non-null, aligned for `u32`, and point to an initialized `u32`
+/// that stays alive and remains unmodified for the duration of the call.
 pub unsafe fn read_u32(ptr: *const u32) -&gt; u32 {
-    // SAFETY: ...
+    // SAFETY: the caller guarantees that `ptr` points to a valid `u32`.
     unsafe { *ptr }
 }</code></pre>
 <p>An <code>unsafe</code> block says “I checked the conditions here”. The justification goes
 into a <code>// SAFETY:</code> comment right above it:</p>
 <pre><code class="language-rust no_run"><span class="boring">/// # Safety
-</span><span class="boring">/// 1. `ptr` must be non-null and aligned for `u32`.
-</span><span class="boring">/// 2. `ptr` must point to an initialized `u32`.
+</span><span class="boring">/// `ptr` must be non-null, aligned, and point to an initialized `u32`.
 </span><span class="boring">unsafe fn read_u32(ptr: *const u32) -&gt; u32 { unsafe { *ptr } }
 </span>let x = 41_u32;
-// SAFETY: `&amp;x` is non-null and aligned (1.), and `x` is an initialized `u32`
-// that outlives the call (2.).
+// SAFETY: `&amp;x` is non-null and aligned, and `x` is an initialized `u32` that
+// outlives the call.
 let y = unsafe { read_u32(&amp;x) };</code></pre>
-<p>A <code>// SAFETY:</code> comment explains why the code upholds each condition, or names
-the numbered condition its caller already promised to uphold.</p>
+<p>A <code>// SAFETY:</code> comment explains why the code upholds each condition, or, inside
+an <code>unsafe fn</code>, points to the condition its caller already promised to uphold.</p>
 <h2 id="safe-abstractions-and-soundness"><a class="header" href="#safe-abstractions-and-soundness">Safe abstractions and soundness</a></h2>
 <p>It’s common for <code>unsafe</code> code to end up wrapped in a safe function. The safe
 function checks whatever the contract requires, then performs the <code>unsafe</code>
@@ -397,7 +407,7 @@ it has fewer than two, reading each byte with <code>get_unchecked</code>. Work o
 condition that makes both indexes valid before you rely on it, and say why in a
 <code>// SAFETY:</code> comment.</p>
 <h2 id="exercise-1"><a class="header" href="#exercise-1">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/00_foundations/01_unsafe"><code>00_foundations/01_unsafe</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/01_unsafe"><code>01_foundations/01_unsafe</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="references-vs-raw-pointers"><a class="header" href="#references-vs-raw-pointers">References vs raw pointers</a></h1>
 <p>C has one kind of pointer. Whether a <code>T *</code> may be null, who owns the memory
@@ -511,7 +521,7 @@ caller could keep the reference around long after the C library freed the
 <p>The exercise is one function: swap the two <code>i32</code>s that a pair of raw pointers
 point to.</p>
 <h2 id="exercise-2"><a class="header" href="#exercise-2">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/00_foundations/02_raw_pointers"><code>00_foundations/02_raw_pointers</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/02_raw_pointers"><code>01_foundations/02_raw_pointers</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="nonnullt-and-null-pointer-optimization"><a class="header" href="#nonnullt-and-null-pointer-optimization"><code>NonNull&lt;T&gt;</code> and null-pointer optimization</a></h1>
 <p>In FFI code you often know that a pointer isn’t null. <code>NonNull&lt;T&gt;</code> puts that
@@ -598,7 +608,7 @@ and can’t be used in FFI signatures.</p>
 read a field out of what it points to, and return <code>None</code> when there is nothing
 to read. Let the type carry the null check rather than writing one by hand.</p>
 <h2 id="exercise-3"><a class="header" href="#exercise-3">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/00_foundations/03_nonnull"><code>00_foundations/03_nonnull</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/03_nonnull"><code>01_foundations/03_nonnull</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1">
@@ -708,7 +718,7 @@ against what the compiler reports. Then take a <code>repr(C)</code> struct that 
 bytes of fields in 24 bytes of memory, and reorder its fields so it carries them
 in 16.</p>
 <h2 id="exercise-4"><a class="header" href="#exercise-4">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/00_foundations/04_layout"><code>00_foundations/04_layout</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_foundations/04_layout"><code>01_foundations/04_layout</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-1">
@@ -721,28 +731,26 @@ hardware needs for it. <a href="#fr-1-1-1">↩</a></p>
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="chapter-1-basics"><a class="header" href="#chapter-1-basics">Chapter 1: Basics</a></h1>
+<h1 id="chapter-2-basics"><a class="header" href="#chapter-2-basics">Chapter 2: Basics</a></h1>
 <p>In this chapter we’ll cover the FFI foundations: what FFI is, how we use it to
 interoperate between C and Rust, and the common pitfalls.</p>
+<p>We start with the mechanics of declaring and exporting functions, then work
+through the kinds of data that cross the boundary: primitive types, structs,
+enums and unions, slices, and opaque handles. Next we look at why hand-written
+bindings drift out of sync with the C they describe, and at the tools that
+generate them for you: <code>bindgen</code> for Rust bindings to C, and <code>cheadergen</code> for C
+headers from Rust. The chapter ends with the rules we follow to make an FFI
+boundary trustworthy: validating everything that comes in, and designing an API
+that is small and documented well enough to keep correct.</p>
 <h2 id="exercises-1"><a class="header" href="#exercises-1">Exercises</a></h2>
-<p>The exercises for this section are located in <code>exercises/01_intro</code></p>
+<p>The exercises for this chapter are located in <code>exercises/02_basics</code>.</p>
 <h2 id="exercise-5"><a class="header" href="#exercise-5">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/00_README"><code>01_intro/00_README</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/00_README"><code>02_basics/00_README</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="what-is-ffi-calling-c-from-rust"><a class="header" href="#what-is-ffi-calling-c-from-rust">What is FFI? Calling C from Rust</a></h1>
-<p>Programming language design has taken many different paths over the years. We
-have C-like languages that are compiled all the way down to machine code, but we
-also have interpreted languages, lazy languages, languages that compile to a
-portable bytecode, garbage-collected languages, and so much more.</p>
-<p>As software engineers, we do not want to duplicate work unnecessarily. So what
-happens when work exists in a language other than the one we’re using?</p>
-<p>When developing in Python, for example, we don’t want to port all the code we
-need just to use it. Instead, we rely on infrastructure that lets us call
-functions and use types from other programming languages.</p>
-<p>This infrastructure, which bridges different type systems (or lack of type
-systems), execution models, and code-organization concepts, is called a <em>Foreign
-Function Interface</em> (abbreviated <em>FFI</em> from here on out). Most modern languages
-have some way to interoperate with others through FFI. The exact syntax and
+<h1 id="what-is-ffi"><a class="header" href="#what-is-ffi">What is FFI?</a></h1>
+<p>A <em>Foreign Function Interface</em> (FFI) bridges different type systems (or lack of
+type systems), execution models, and code-organization concepts, so that code in
+one language can call functions and use types from another. The exact syntax and
 options vary by language, but they almost always have one thing in common: they
 represent functions as if they were C functions.</p>
 <p>This is called the “C ABI” (C Application Binary Interface) or “C calling
@@ -792,10 +800,20 @@ pass. This is why bindings are marked <code>unsafe</code>: you as the programmer
 ensure signatures are correct.</p>
 <p>This is the foundation of all Foreign Function Interfaces in Rust. In later
 exercises we will see how to make this much safer and more ergonomic.</p>
+<h2 id="calling-rust-from-c"><a class="header" href="#calling-rust-from-c">Calling Rust from C</a></h2>
+<p>A migration also needs the other direction: C code calling functions that are
+now implemented in Rust. That takes two annotations on an ordinary Rust
+function:</p>
+<pre><code class="language-rust no_run">#[unsafe(no_mangle)]
+pub extern "C" fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}</code></pre>
+<p><code>extern "C" fn</code> tells <code>rustc</code> to use the C calling convention for this function.
+<code>#[unsafe(no_mangle)]</code> keeps the symbol name exactly as written.</p>
 <h2 id="head-to-the-exercise-4"><a class="header" href="#head-to-the-exercise-4">Head to the exercise</a></h2>
 <p>You’ll write this block for a <code>bm_add</code> function implemented in C.</p>
 <h2 id="exercise-6"><a class="header" href="#exercise-6">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/01_what_is_ffi"><code>01_intro/01_what_is_ffi</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/01_what_is_ffi"><code>02_basics/01_what_is_ffi</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-2">
@@ -817,237 +835,6 @@ on this OS+architecture combination”. <a href="#fr-1-1-2">↩</a></p>
 calling functions. <a href="#fr-2-1">↩</a></p>
 </li>
 </ol>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="when-hand-written-bindings-drift"><a class="header" href="#when-hand-written-bindings-drift">When hand-written bindings drift</a></h1>
-<p>In the previous exercise you wrote an <code>extern "C"</code> block binding to C code. It
-worked great, but can you imagine doing that for <em>hundreds</em>, maybe <em>thousands</em>,
-of functions and types? There’s a subtler problem, too. Hand-written bindings
-will <em>inevitably</em> drift out of sync with the C header, especially at scale.</p>
-<p>Neither the C nor the Rust compiler can detect this, because each operates in
-its own small universe, called a <em>compilation unit</em>. A compilation unit is the
-single chunk of work that flows through the various stages of the compiler. In
-C/C++ this would typically be a <code>.c/.cpp</code> file and in Rust that is typically a
-single crate. The compiler parses, typechecks, and optimizes the compilation
-unit, then produces an <em>intermediate</em> object file. Once all the compilation
-units that make up your project are built, the intermediate object files are
-gathered and passed to the <em>linker</em>, which produces the final executable or
-library.</p>
-<pre><code class="language-text">┌─────────────────────┐          ┌─────────────────────┐
-│   Rust source       │          │   C source          │
-└──────────┬──────────┘          └──────────┬──────────┘
-           │ rustc                          │ cc
-           ▼                                ▼
-┌───────────────────────┐        ┌───────────────────────┐
-│ compile               │        │ compile               │
-│ (parse → typecheck →  │        │ (parse → typecheck →  │
-│  optimize  → codegen) │        │  optimize  → codegen) │
-└──────────┬────────────┘        └──────────┬────────────┘
-           │ object file                    │ object file
-           └───────────────┬────────────────┘
-                           ▼
-                ┌─────────────────────┐
-                │   link              │
-                │   (ld / lld)        │
-                └──────────┬──────────┘
-                           ▼
-                ┌─────────────────────┐
-                │   final binary      │
-                └─────────────────────┘
-</code></pre>
-<p>This model is great for compilation performance, because we can process many of
-these compilation units <em>in parallel</em>. There is a catch: they <em>must not</em> share
-information, since that would destroy the parallelism. Each compilation <em>must</em>
-be its own self-contained universe.</p>
-<p>And even if we had a mechanism to share information between compilation units,
-we would need to make it language-agnostic so that a C compilation unit and a
-Rust compilation unit can interoperate. How would that even work with wildly
-different type systems?<sup class="footnote-reference" id="fr-1-1-3"><a href="#footnote-1-3">1</a></sup></p>
-<p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
-block you wrote. You as the programmer promise to the compiler that a function
-with a given name and a given signature will exist at link time, and the
-compiler takes your word for it.</p>
-<h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible consequences</a></h2>
-<p>The consequences of drift between the two versions can be dire: if C expects
-<code>int</code> but Rust expects <code>float</code>, the integer bit patterns are reinterpreted as
-floats. The result is almost always nonsensical.</p>
-<p>It can be worse: passing too many or too few arguments can result in either
-overwriting important information on the stack or reading garbage from it.</p>
-<p>Here is an especially insidious case. The function, as we have established, is
-the following:</p>
-<pre><code class="language-c">int bm_add(int a, int b);
-</code></pre>
-<p>but now in the Rust code, we expect it to return 64-bit integers instead of
-32-bit integers:</p>
-<pre><code class="language-rust no_run"><span class="boring">use std::ffi::c_longlong;
-</span>unsafe extern "C" {
-    fn bm_add(a: c_longlong, b: c_longlong) -&gt; c_longlong;
-}</code></pre>
-<p>How will this example fail? If you try it yourself, you will notice that it
-doesn’t. Function arguments are passed in registers, and on a 64-bit machine
-those registers are 64 bits wide, so a 32-bit <code>int</code> occupies one of them with
-room to spare. What the upper half of the register holds is not something the
-declaration can rely on: some ABIs require a narrow integer to be sign-extended
-across the full register, others leave the high bits unspecified entirely.
-Nothing widens the argument on your behalf. Reading it back as a 64-bit integer
-just happens to give the right answer here.</p>
-<p>You can see this in Compiler Explorer here:
-<a href="https://godbolt.org/z/PzrM4a575">The correct version</a> passes <code>a</code> and <code>b</code> in the
-<code>a0</code> and <code>a1</code> registers (the <code>li a0, 1</code> and <code>li a1, 2</code> lines do the loading) and
-passes the return value in the <code>a0</code> register. Those registers are 64 bits wide,
-so you can see the
-<a href="https://godbolt.org/z/E97EeoEP6">incorrect <code>c_longlong</code>-expecting version</a>
-<strong>just works</strong>: the values are small and positive, and nothing has put anything
-else in the upper halves of <code>a0</code> and <code>a1</code>.</p>
-<p>Now, if your 64-bit numbers stay below the 32-bit max value, everything just
-happens to work. But it is <em>very</em> fragile. As you can see here,
-<a href="https://godbolt.org/z/bGfocb43f">when we compile to a 32-bit target instead</a>,
-everything breaks and we end up adding <code>0</code> to <code>a</code> instead.</p>
-<p>This example is particularly scary, because for 99% of inputs and deployment
-configurations the mistake is virtually consequence-free. The addition will
-continue to work as expected. But as soon as the input is unusual, the
-deployment target is different, <em>or you add code that will make the compiler
-change the generated code even a bit</em>, this will be a bug that takes you weeks
-to troubleshoot in the worst case.</p>
-<h2 id="head-to-the-exercise-5"><a class="header" href="#head-to-the-exercise-5">Head to the exercise</a></h2>
-<p>The exercise turns this around: the Rust binding stays fixed and correct-looking
-while the C implementation drifts underneath it. It is the same mismatch, and
-therefore the same bug, from either side. Drifting the C side just keeps the
-Rust crate compiling, so you can run it and watch what happens.</p>
-<p>Play with the different “drifted” C implementations of <code>bm_add</code> to see what
-happens on your machine. Feel free to also play around a bit with the Compiler
-Explorer playgrounds to see how different miscompilations manifest in the
-generated assembly.</p>
-<h2 id="exercise-7"><a class="header" href="#exercise-7">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/02_drift"><code>01_intro/02_drift</code></a></p>
-<hr>
-<ol class="footnote-definition">
-<li id="footnote-1-3">
-<p>Yes, the LLVM bitcode embedded by toolchains for LTO (Rust’s
-<code>-Clto=thin -Cembed-bitcode=yes</code> and Clang’s <code>-flto=thin</code>) <em>does</em> carry the
-information to catch problems like this at link-time and it <em>is</em>
-cross-language, but linkers do not generally validate it. (The <code>wasm-ld</code>
-linker does, but only for Wasm.) The reasons are many, the most important
-being that validating it would break existing compiler optimizations. You
-<em>could</em> write custom LLVM-bitcode parsing tooling to check this if you
-wanted. <a href="#fr-1-1-3">↩</a></p>
-</li>
-</ol>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="generating-rust-bindings-with-bindgen"><a class="header" href="#generating-rust-bindings-with-bindgen">Generating Rust bindings with <code>bindgen</code></a></h1>
-<p>In the previous exercise you saw how easy it is for manual bindings to go out of
-sync, and the scary silent corruption that causes. This section introduces a
-tool that avoids all of this: <strong><a href="https://github.com/rust-lang/rust-bindgen"><code>bindgen</code></a></strong>. It’s a library you call
-from your Rust build script to generate Rust bindings to C code from C header
-files. It runs libclang on a C header and emits matching Rust declarations:
-<code>extern</code> blocks, <code>#[repr(C)]</code> structs, integer constants. The header remains the
-single source of truth, with the Rust bindings being generated on every build.</p>
-<p>You call <code>bindgen</code> from your build script like so:</p>
-<pre><code class="language-rust no_run">let bindings = bindgen::Builder::default()
-    .header("c_src/bm_legacy.h")
-    // tell Cargo to re-run when headers change
-    .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
-    .generate()
-    .expect("bindgen failed");
-
-let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
-bindings.write_to_file(out_path.join("bindings.rs")).unwrap();</code></pre>
-<p>This writes the generated file into the crate’s <code>OUT_DIR</code> (usually
-<code>target/&lt;debug or release&gt;/build/&lt;crate name and hash&gt;/out</code>). Inspecting the
-generated file, you will see something like this:</p>
-<pre><code class="language-rust no_run">/* automatically generated by rust-bindgen 0.72.1 */
-
-unsafe extern "C" {
-    pub fn bm_add(a: ::std::os::raw::c_int, b: ::std::os::raw::c_int) -&gt; ::std::os::raw::c_int;
-}</code></pre>
-<p>You can then pull this generated file into your crate with the <code>include!</code> macro
-like so:</p>
-<pre><code class="language-rust no_run">mod sys {
-    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
-}</code></pre>
-<p>This is great: we’ve gained end-to-end type checking. A change in the C header
-will not silently corrupt our Rust code. But remember, these bindings are as
-<code>unsafe</code> as the C code itself. It’s your responsibility to use them correctly.</p>
-<p>You would typically wrap them in a safe, idiomatic API. This is the common
-<code>-sys</code> crate pattern: a <code>&lt;crate&gt;-sys</code> crate holds the raw bindings, while the
-<code>&lt;crate&gt;</code> crate on top exposes the safe abstractions.</p>
-<h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
-<p>Replace the hand-written <code>extern</code> block from the previous section with <code>bindgen</code>
-in <code>build.rs</code>. The tests stay identical.</p>
-<details><summary><b>Tip</b></summary>
-<p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires
-<a href="https://github.com/dtolnay/cargo-expand"><code>cargo-expand</code></a>.</p>
-</details>
-<h2 id="exercise-8"><a class="header" href="#exercise-8">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/03_bindgen"><code>01_intro/03_bindgen</code></a></p>
-<div style="break-before: page; page-break-before: always;"></div>
-<h1 id="exposing-rust-to-c-with-cheadergen"><a class="header" href="#exposing-rust-to-c-with-cheadergen">Exposing Rust to C with <code>cheadergen</code></a></h1>
-<p>So far we’ve always called C from Rust. Now we go the other way: our goal is to
-<em>migrate</em> C code to Rust, so eventually C will need to call into our new Rust
-code.</p>
-<p>To make a Rust function callable from C we’ll need to first annotate it
-correctly:</p>
-<pre><code class="language-rust no_run">use std::ffi::c_char;
-
-#[unsafe(no_mangle)]
-pub extern "C" fn bm_strlower(s: *mut c_char) {
-    // ...
-}</code></pre>
-<p>Much like in the FFI function declaration we saw in the first exercise, we
-instruct <code>rustc</code> to use a C-compatible calling convention through
-<code>extern "C" fn</code> (without it, Rust uses its own ABI, which of course C knows
-nothing about).</p>
-<p><code>#[unsafe(no_mangle)]</code> keeps the symbol name verbatim in the compiled object.
-Otherwise Rust would emit a so-called <em>mangled</em> symbol name, a pseudo-random
-identifier that in regular Rust code prevents two identically named types or
-functions from causing “duplicate symbol” linking errors.</p>
-<p>In this case we do want the symbol name to be the same plain identifier we gave
-it, so the C code linking to us can actually find the function.</p>
-<p>The second piece is the header file that allows the C compiler to understand the
-API. You could write it by hand, but you’d be maintaining two sources of truth.
-<strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
-headers from Rust code.</p>
-<p><code>cheadergen</code>, created and maintained by our colleague Luca Palmieri, reads your
-Rust code and generates a C header for the relevant FFI-visible symbols.</p>
-<p>Install the CLI from the
-<a href="https://github.com/LukeMathWalker/cheadergen/releases"><code>cheadergen</code> releases page</a>.</p>
-<p>Then you can run the following command in your crate root (for example, the
-current exercise crate):</p>
-<pre><code class="language-sh">cheadergen generate
-</code></pre>
-<p>and a header will appear:</p>
-<pre><code class="language-c">/* Generated by cheadergen — do not edit */
-
-void bm_strlower(char *s);
-</code></pre>
-<p><code>cheadergen</code> comes with two ways to configure its output. The first is a
-project-wide <code>cheadergen.toml</code> file. Here you can tweak the style of the
-generated headers, include custom preamble text, and more. See the full
-documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/config_reference/index.html">here</a>.</p>
-<p>The second configuration option is the <code>#[cheadergen::config(...)]</code> attribute.
-You can apply this attribute to any Rust type. It lets you configure per-type
-options such as renaming fields, skipping exporting, forcing exporting, and
-more. See the full documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/index.html">here</a>.</p>
-<h2 id="a-note-on-cbindgen"><a class="header" href="#a-note-on-cbindgen">A note on <code>cbindgen</code></a></h2>
-<p>If you’ve been researching Rust FFI tooling, you’ve undoubtedly come across
-<a href="https://github.com/mozilla/cbindgen"><code>cbindgen</code></a>, a similar tool maintained by Mozilla, and you may be
-wondering: “Why did you just introduce me to this custom tool instead?”</p>
-<p>Well, we wouldn’t have built a new tool if the existing one fit. <code>cbindgen</code>
-dates back to 2017, when the Rust ecosystem looked quite different. To read your
-Rust and emit headers, it had to parse the source itself with a custom
-<code>syn</code>-based parser. At the time, that was the only way, since the compiler
-didn’t expose enough information.</p>
-<p>But the technique has real limits. The custom parser doesn’t always agree with
-rustc, it often needs manual steering and fixups, and when it hits something it
-can’t handle it tends to silently skip generating a header rather than tell you
-why. None of this is a knock on <code>cbindgen</code>: it’s what the constraints of the era
-allowed. <code>cheadergen</code> exists because those constraints have since eased, letting
-us build something with better diagnostics and fewer surprises.</p>
-<h2 id="head-to-the-exercise-7"><a class="header" href="#head-to-the-exercise-7">Head to the exercise</a></h2>
-<p>You’ll port the <code>bm_strlower</code> function to Rust and call
-<code>cheadergen generate --lang c --output-dir c_test -p bm_cheadergen</code> to generate
-the header automatically.</p>
-<h2 id="exercise-9"><a class="header" href="#exercise-9">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/04_cheadergen"><code>01_intro/04_cheadergen</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="primitive-types-in-ffi"><a class="header" href="#primitive-types-in-ffi">Primitive types in FFI</a></h1>
 <p>So far, the exercises have passed data between C and Rust mostly as pointers and
@@ -1140,11 +927,11 @@ the bit pattern exactly, and casting back gives you the same byte again.</li>
 same size and the same alignment on every target, and every bit pattern is
 valid for both. That makes the cast purely a compile time check.</li>
 </ul>
-<h2 id="head-to-the-exercise-8"><a class="header" href="#head-to-the-exercise-8">Head to the exercise</a></h2>
+<h2 id="head-to-the-exercise-5"><a class="header" href="#head-to-the-exercise-5">Head to the exercise</a></h2>
 <p>The exercise gives you a C library over bytes with its bindings already written,
 and two small wrappers to finish.</p>
-<h2 id="exercise-10"><a class="header" href="#exercise-10">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_01_primitives"><code>01_intro/05_01_primitives</code></a></p>
+<h2 id="exercise-7"><a class="header" href="#exercise-7">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/02_primitives"><code>02_basics/02_primitives</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="structs-in-ffi"><a class="header" href="#structs-in-ffi">Structs in FFI</a></h1>
 <p><a href="#memory-layout-size-alignment-and-repr">Memory layout</a> showed that a Rust struct has no
@@ -1208,14 +995,14 @@ pub struct Fd(c_int);</code></pre>
 <p>A one-field <code>repr(C)</code> struct has the same size and alignment as its field too,
 but some ABIs pass a struct differently from the bare value inside it.
 <code>repr(transparent)</code> guarantees they’re passed the same way.</p>
-<h2 id="head-to-the-exercise-9"><a class="header" href="#head-to-the-exercise-9">Head to the exercise</a></h2>
+<h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
 <p>The exercise gives you a C header, and you write the matching Rust types from
 scratch. <code>Point</code> is a plain struct of two <code>double</code>s. <code>Shape</code> holds an array, a
 nested <code>Point</code>, and a pointer that may be null. <code>Fd</code> wraps an <code>int</code>. The tests
 compare the size, alignment, and field offsets of each type against what the C
 compiler reports for the same header.</p>
-<h2 id="exercise-11"><a class="header" href="#exercise-11">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_02_structs"><code>01_intro/05_02_structs</code></a></p>
+<h2 id="exercise-8"><a class="header" href="#exercise-8">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/03_structs"><code>02_basics/03_structs</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="enums-and-unions-in-ffi"><a class="header" href="#enums-and-unions-in-ffi">Enums and unions in FFI</a></h1>
 <p>A Rust enum is a sum type, with variants that can carry data. A C enum is just a
@@ -1310,12 +1097,12 @@ your code works with a <code>Value</code> whose tag and data can’t disagree.</
 <p>To send a Rust enum to C in this shape, convert the other way: set the tag, and
 write the variant’s data into the matching union field. Writing a union field is
 safe, so that direction needs no <code>unsafe</code> at all.</p>
-<h2 id="head-to-the-exercise-10"><a class="header" href="#head-to-the-exercise-10">Head to the exercise</a></h2>
+<h2 id="head-to-the-exercise-7"><a class="header" href="#head-to-the-exercise-7">Head to the exercise</a></h2>
 <p>The exercise mirrors a C tagged union for you, next to the Rust enum the rest of
 the code works with. Convert that enum into the C struct, setting the tag and
 the matching union field for each variant.</p>
-<h2 id="exercise-12"><a class="header" href="#exercise-12">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_03_enums_and_unions"><code>01_intro/05_03_enums_and_unions</code></a></p>
+<h2 id="exercise-9"><a class="header" href="#exercise-9">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/04_enums_and_unions"><code>02_basics/04_enums_and_unions</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="slices-in-ffi"><a class="header" href="#slices-in-ffi">Slices in FFI</a></h1>
 <p>C has no slice type. A function that works on an array takes a pointer to the
@@ -1396,14 +1183,14 @@ memory, so it has no ownership to give away. Handing ownership over is a
 different matter, which
 <a href="#allocation-allocators-and-mixing-them">Allocation, allocators, and mixing them</a>
 covers.</p>
-<h2 id="head-to-the-exercise-11"><a class="header" href="#head-to-the-exercise-11">Head to the exercise</a></h2>
+<h2 id="head-to-the-exercise-8"><a class="header" href="#head-to-the-exercise-8">Head to the exercise</a></h2>
 <p>The exercise asks you to implement two functions that take a pointer and a
 length the way C would pass them: one that reads the items, and one that
 modifies them in place. The tests call them with normal input, and with both
 ways of saying “no items”: a null pointer with a length of 0, and a valid
 pointer with a length of 0.</p>
-<h2 id="exercise-13"><a class="header" href="#exercise-13">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_04_slices"><code>01_intro/05_04_slices</code></a></p>
+<h2 id="exercise-10"><a class="header" href="#exercise-10">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/05_slices"><code>02_basics/05_slices</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="opaque-types"><a class="header" href="#opaque-types">Opaque types</a></h1>
 <p>Some types can’t cross the FFI boundary by value. A <code>Vec</code> is one of those, and
@@ -1570,13 +1357,235 @@ impl Drop for OwnedWidget {
         unsafe { widget_close(self.0.as_ptr()) };
     }
 }</code></pre>
-<h2 id="head-to-the-exercise-12"><a class="header" href="#head-to-the-exercise-12">Head to the exercise</a></h2>
+<h2 id="head-to-the-exercise-9"><a class="header" href="#head-to-the-exercise-9">Head to the exercise</a></h2>
 <p>The exercise has both directions, each with a twist the examples above don’t
 have. First, expose a Rust <code>Stats</code> type to C as a handle. Unlike the counter, it
 owns a <code>Vec</code> of its own, which has to be freed along with it. Then wrap a C
 <code>Buffer</code> in a Rust type that frees it exactly once.</p>
+<h2 id="exercise-11"><a class="header" href="#exercise-11">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/06_opaque_types"><code>02_basics/06_opaque_types</code></a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="when-hand-written-bindings-drift"><a class="header" href="#when-hand-written-bindings-drift">When hand-written bindings drift</a></h1>
+<p>In <a href="#what-is-ffi">What is FFI?</a> you wrote an <code>extern "C"</code> block binding to
+C code. It worked great, but can you imagine doing that for <em>hundreds</em>, maybe
+<em>thousands</em>, of functions and types? There’s a subtler problem, too.
+Hand-written bindings will <em>inevitably</em> drift out of sync with the C header,
+especially at scale.</p>
+<p>Neither the C nor the Rust compiler can detect this, because each operates in
+its own small universe, called a <em>compilation unit</em>. A compilation unit is the
+single chunk of work that flows through the various stages of the compiler. In
+C/C++ this would typically be a <code>.c/.cpp</code> file and in Rust that is typically a
+single crate. The compiler parses, typechecks, and optimizes the compilation
+unit, then produces an <em>intermediate</em> object file. Once all the compilation
+units that make up your project are built, the intermediate object files are
+gathered and passed to the <em>linker</em>, which produces the final executable or
+library.</p>
+<pre><code class="language-text">┌─────────────────────┐          ┌─────────────────────┐
+│   Rust source       │          │   C source          │
+└──────────┬──────────┘          └──────────┬──────────┘
+           │ rustc                          │ cc
+           ▼                                ▼
+┌───────────────────────┐        ┌───────────────────────┐
+│ compile               │        │ compile               │
+│ (parse → typecheck →  │        │ (parse → typecheck →  │
+│  optimize  → codegen) │        │  optimize  → codegen) │
+└──────────┬────────────┘        └──────────┬────────────┘
+           │ object file                    │ object file
+           └───────────────┬────────────────┘
+                           ▼
+                ┌─────────────────────┐
+                │   link              │
+                │   (ld / lld)        │
+                └──────────┬──────────┘
+                           ▼
+                ┌─────────────────────┐
+                │   final binary      │
+                └─────────────────────┘
+</code></pre>
+<p>This model is great for compilation performance, because we can process many of
+these compilation units <em>in parallel</em>. There is a catch: they <em>must not</em> share
+information, since that would destroy the parallelism. Each compilation <em>must</em>
+be its own self-contained universe.</p>
+<p>And even if we had a mechanism to share information between compilation units,
+we would need to make it language-agnostic so that a C compilation unit and a
+Rust compilation unit can interoperate. How would that even work with wildly
+different type systems?<sup class="footnote-reference" id="fr-1-1-3"><a href="#footnote-1-3">1</a></sup></p>
+<p>So compilers have resorted to <em>manual escape hatches</em> like the <code>extern "C"</code>
+block you wrote. You as the programmer promise to the compiler that a function
+with a given name and a given signature will exist at link time, and the
+compiler takes your word for it.</p>
+<h2 id="possible-consequences"><a class="header" href="#possible-consequences">Possible consequences</a></h2>
+<p>The consequences of drift between the two versions can be dire: if C expects
+<code>int</code> but Rust expects <code>float</code>, the integer bit patterns are reinterpreted as
+floats. The result is almost always nonsensical.</p>
+<p>It can be worse: passing too many or too few arguments can result in either
+overwriting important information on the stack or reading garbage from it.</p>
+<p>Here is an especially insidious case. The function, as we have established, is
+the following:</p>
+<pre><code class="language-c">int bm_add(int a, int b);
+</code></pre>
+<p>but now in the Rust code, we expect it to return 64-bit integers instead of
+32-bit integers:</p>
+<pre><code class="language-rust no_run"><span class="boring">use std::ffi::c_longlong;
+</span>unsafe extern "C" {
+    fn bm_add(a: c_longlong, b: c_longlong) -&gt; c_longlong;
+}</code></pre>
+<p>How will this example fail? If you try it yourself, you will notice that it
+doesn’t. Function arguments are passed in registers, and on a 64-bit machine
+those registers are 64 bits wide, so a 32-bit <code>int</code> occupies one of them with
+room to spare. What the upper half of the register holds is not something the
+declaration can rely on: some ABIs require a narrow integer to be sign-extended
+across the full register, others leave the high bits unspecified entirely.
+Nothing widens the argument on your behalf. Reading it back as a 64-bit integer
+just happens to give the right answer here.</p>
+<p>You can see this in Compiler Explorer here:
+<a href="https://godbolt.org/z/PzrM4a575">The correct version</a> passes <code>a</code> and <code>b</code> in the
+<code>a0</code> and <code>a1</code> registers (the <code>li a0, 1</code> and <code>li a1, 2</code> lines do the loading) and
+passes the return value in the <code>a0</code> register. Those registers are 64 bits wide,
+so you can see the
+<a href="https://godbolt.org/z/E97EeoEP6">incorrect <code>c_longlong</code>-expecting version</a>
+<strong>just works</strong>: the values are small and positive, and nothing has put anything
+else in the upper halves of <code>a0</code> and <code>a1</code>.</p>
+<p>Now, if your 64-bit numbers stay below the 32-bit max value, everything just
+happens to work. But it is <em>very</em> fragile. As you can see here,
+<a href="https://godbolt.org/z/bGfocb43f">when we compile to a 32-bit target instead</a>,
+everything breaks and we end up adding <code>0</code> to <code>a</code> instead.</p>
+<p>This example is particularly scary, because for 99% of inputs and deployment
+configurations the mistake is virtually consequence-free. The addition will
+continue to work as expected. But as soon as the input is unusual, the
+deployment target is different, <em>or you add code that will make the compiler
+change the generated code even a bit</em>, this will be a bug that takes you weeks
+to troubleshoot in the worst case.</p>
+<h2 id="head-to-the-exercise-10"><a class="header" href="#head-to-the-exercise-10">Head to the exercise</a></h2>
+<p>The exercise turns this around: the Rust binding stays fixed and correct-looking
+while the C implementation drifts underneath it. It is the same mismatch, and
+therefore the same bug, from either side. Drifting the C side just keeps the
+Rust crate compiling, so you can run it and watch what happens.</p>
+<p>Play with the different “drifted” C implementations of <code>bm_add</code> to see what
+happens on your machine. Feel free to also play around a bit with the Compiler
+Explorer playgrounds to see how different miscompilations manifest in the
+generated assembly.</p>
+<h2 id="exercise-12"><a class="header" href="#exercise-12">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/07_drift"><code>02_basics/07_drift</code></a></p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1-3">
+<p>Yes, the LLVM bitcode embedded by toolchains for LTO (Rust’s
+<code>-Clto=thin -Cembed-bitcode=yes</code> and Clang’s <code>-flto=thin</code>) <em>does</em> carry the
+information to catch problems like this at link-time and it <em>is</em>
+cross-language, but linkers do not generally validate it. (The <code>wasm-ld</code>
+linker does, but only for Wasm.) The reasons are many, the most important
+being that validating it would break existing compiler optimizations. You
+<em>could</em> write custom LLVM-bitcode parsing tooling to check this if you
+wanted. <a href="#fr-1-1-3">↩</a></p>
+</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="generating-rust-bindings-with-bindgen"><a class="header" href="#generating-rust-bindings-with-bindgen">Generating Rust bindings with <code>bindgen</code></a></h1>
+<p>In the previous exercise you saw how easy it is for manual bindings to go out of
+sync, and the scary silent corruption that causes. This section introduces a
+tool that avoids all of this: <strong><a href="https://github.com/rust-lang/rust-bindgen"><code>bindgen</code></a></strong>. It’s a library you call
+from your Rust build script to generate Rust bindings to C code from C header
+files. It runs libclang on a C header and emits matching Rust declarations:
+<code>extern</code> blocks, <code>#[repr(C)]</code> structs, integer constants. The header remains the
+single source of truth, with the Rust bindings being generated on every build.</p>
+<p>You call <code>bindgen</code> from your build script like so:</p>
+<pre><code class="language-rust no_run">let bindings = bindgen::Builder::default()
+    .header("c_src/bm_legacy.h")
+    // tell Cargo to re-run when headers change
+    .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
+    .generate()
+    .expect("bindgen failed");
+
+let out_path = PathBuf::from(env::var("OUT_DIR").unwrap());
+bindings.write_to_file(out_path.join("bindings.rs")).unwrap();</code></pre>
+<p>This writes the generated file into the crate’s <code>OUT_DIR</code> (usually
+<code>target/&lt;debug or release&gt;/build/&lt;crate name and hash&gt;/out</code>). Inspecting the
+generated file, you will see something like this:</p>
+<pre><code class="language-rust no_run">/* automatically generated by rust-bindgen 0.72.1 */
+
+unsafe extern "C" {
+    pub fn bm_add(a: ::std::os::raw::c_int, b: ::std::os::raw::c_int) -&gt; ::std::os::raw::c_int;
+}</code></pre>
+<p>You can then pull this generated file into your crate with the <code>include!</code> macro
+like so:</p>
+<pre><code class="language-rust no_run">mod sys {
+    include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
+}</code></pre>
+<p>This is great: we’ve gained end-to-end type checking. A change in the C header
+will not silently corrupt our Rust code. But remember, these bindings are as
+<code>unsafe</code> as the C code itself. It’s your responsibility to use them correctly.</p>
+<p>You would typically wrap them in a safe, idiomatic API. This is the common
+<code>-sys</code> crate pattern: a <code>&lt;crate&gt;-sys</code> crate holds the raw bindings, while the
+<code>&lt;crate&gt;</code> crate on top exposes the safe abstractions.</p>
+<h2 id="head-to-the-exercise-11"><a class="header" href="#head-to-the-exercise-11">Head to the exercise</a></h2>
+<p>Replace the hand-written <code>extern</code> block from the previous section with <code>bindgen</code>
+in <code>build.rs</code>. The tests stay identical.</p>
+<details><summary><b>Tip</b></summary>
+<p><code>cargo expand -p bm_bindgen</code> shows what <code>bindgen</code> produced. Requires
+<a href="https://github.com/dtolnay/cargo-expand"><code>cargo-expand</code></a>.</p>
+</details>
+<h2 id="exercise-13"><a class="header" href="#exercise-13">Exercise</a></h2>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/08_bindgen"><code>02_basics/08_bindgen</code></a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="exposing-rust-to-c-with-cheadergen"><a class="header" href="#exposing-rust-to-c-with-cheadergen">Exposing Rust to C with <code>cheadergen</code></a></h1>
+<p>With <code>bindgen</code> we generated the Rust declarations for calling C. Now we go the
+other way: our goal is to <em>migrate</em> C code to Rust, so C will need to call into
+our new Rust code.</p>
+<p><code>extern "C" fn</code> and <code>#[unsafe(no_mangle)]</code> take care of the calling convention
+and the symbol name:</p>
+<pre><code class="language-rust no_run">use std::ffi::c_char;
+
+#[unsafe(no_mangle)]
+pub extern "C" fn bm_strlower(s: *mut c_char) {
+    // ...
+}</code></pre>
+<p>What’s still missing is a header file that tells the C compiler about the API.
+You could write it by hand, but you’d be maintaining two sources of truth.
+<strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
+headers from Rust code.</p>
+<p><code>cheadergen</code>, created and maintained by our colleague Luca Palmieri, reads your
+Rust code and generates a C header for the relevant FFI-visible symbols.</p>
+<p>Install the CLI from the
+<a href="https://github.com/LukeMathWalker/cheadergen/releases"><code>cheadergen</code> releases page</a>.</p>
+<p>Then you can run the following command in your crate root (for example, the
+current exercise crate):</p>
+<pre><code class="language-sh">cheadergen generate
+</code></pre>
+<p>and a header will appear:</p>
+<pre><code class="language-c">/* Generated by cheadergen — do not edit */
+
+void bm_strlower(char *s);
+</code></pre>
+<p><code>cheadergen</code> comes with two ways to configure its output. The first is a
+project-wide <code>cheadergen.toml</code> file. Here you can tweak the style of the
+generated headers, include custom preamble text, and more. See the full
+documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/config_reference/index.html">here</a>.</p>
+<p>The second configuration option is the <code>#[cheadergen::config(...)]</code> attribute.
+You can apply this attribute to any Rust type. It lets you configure per-type
+options such as renaming fields, skipping exporting, forcing exporting, and
+more. See the full documentation <a href="https://docs.rs/cheadergen/latest/cheadergen/index.html">here</a>.</p>
+<h2 id="a-note-on-cbindgen"><a class="header" href="#a-note-on-cbindgen">A note on <code>cbindgen</code></a></h2>
+<p>If you’ve been researching Rust FFI tooling, you’ve undoubtedly come across
+<a href="https://github.com/mozilla/cbindgen"><code>cbindgen</code></a>, a similar tool maintained by Mozilla, and you may be
+wondering: “Why did you just introduce me to this custom tool instead?”</p>
+<p>Well, we wouldn’t have built a new tool if the existing one fit. <code>cbindgen</code>
+dates back to 2017, when the Rust ecosystem looked quite different. To read your
+Rust and emit headers, it had to parse the source itself with a custom
+<code>syn</code>-based parser. At the time, that was the only way, since the compiler
+didn’t expose enough information.</p>
+<p>But the technique has real limits. The custom parser doesn’t always agree with
+rustc, it often needs manual steering and fixups, and when it hits something it
+can’t handle it tends to silently skip generating a header rather than tell you
+why. None of this is a knock on <code>cbindgen</code>: it’s what the constraints of the era
+allowed. <code>cheadergen</code> exists because those constraints have since eased, letting
+us build something with better diagnostics and fewer surprises.</p>
+<h2 id="head-to-the-exercise-12"><a class="header" href="#head-to-the-exercise-12">Head to the exercise</a></h2>
+<p>You’ll port the <code>bm_strlower</code> function to Rust and call
+<code>cheadergen generate --lang c --output-dir c_test -p bm_cheadergen</code> to generate
+the header automatically.</p>
 <h2 id="exercise-14"><a class="header" href="#exercise-14">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/05_05_opaque_types"><code>01_intro/05_05_opaque_types</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/09_cheadergen"><code>02_basics/09_cheadergen</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="the-ffi-boundary-as-a-firewall-validate-and-narrow"><a class="header" href="#the-ffi-boundary-as-a-firewall-validate-and-narrow">The FFI boundary as a firewall: validate and narrow</a></h1>
 <p>By now you’ve written <code>extern "C"</code> functions in both directions, seen <code>bindgen</code>
@@ -1655,7 +1664,7 @@ Rust that has a number of issues.</p>
 <p>Hint: check the exercise’s tests for the expected behavior of
 <code>bm_normalize_url</code>.</p>
 <h2 id="exercise-15"><a class="header" href="#exercise-15">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/06_validate_and_narrow"><code>01_intro/06_validate_and_narrow</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/10_validate_and_narrow"><code>02_basics/10_validate_and_narrow</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-4">
@@ -1690,7 +1699,7 @@ emits those sections as C doc comments in the header files:</p>
 /// - `BmResult::ErrBufferTooSmall` if the result wouldn't fit in `out_len` bytes.
 ///
 /// [valid]: https://doc.rust-lang.org/std/ptr/index.html#safety
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub unsafe extern "C" fn bm_normalize_url(
     url: Option&lt;NonNull&lt;c_char&gt;&gt;,
     out: Option&lt;NonNull&lt;c_char&gt;&gt;,
@@ -1700,11 +1709,13 @@ pub unsafe extern "C" fn bm_normalize_url(
         //...
     };
 
-    // Safety: caller ensured `out` points to at least `out_len` bytes (2.)
+    // SAFETY: caller ensured `out` points to at least `out_len` bytes (2.)
     unsafe { slice::from_raw_parts_mut(out.as_ptr(), out_len) };
 }</code></pre>
-<p>Note how we number safety invariants and force every inline safety comment to
-either:</p>
+<p>Note how the safety invariants are numbered. A plain <code># Safety</code> section lists
+what the caller must uphold; numbering the entries lets every inline
+<code>// SAFETY:</code> comment point at the one it relies on. We require each of those
+comments to either:</p>
 <ul>
 <li>delegate its local invariant to the surrounding function’s safety comment, in
 which case it must reference a numbered invariant; or</li>
@@ -1726,10 +1737,10 @@ operations, such as <code>bm_thing_update_with(...)</code>, over one setter per 
 treat the boundary as a small set of verbs, not a mirror of your internal
 struct.</p>
 <h2 id="head-to-the-exercise-14"><a class="header" href="#head-to-the-exercise-14">Head to the exercise</a></h2>
-<p>You’ll update your solution to exercise 1.6 with the two rules from this
+<p>You’ll update your solution to exercise 2.10 with the two rules from this
 section.</p>
 <h2 id="exercise-16"><a class="header" href="#exercise-16">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/01_intro/07_high_quality_ffi_apis"><code>01_intro/07_high_quality_ffi_apis</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/11_high_quality_ffi_apis"><code>02_basics/11_high_quality_ffi_apis</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-5">
@@ -1746,7 +1757,7 @@ most interesting is the
 </li>
 </ol>
 <div style="break-before: page; page-break-before: always;"></div>
-<h1 id="chapter-2-intermediate"><a class="header" href="#chapter-2-intermediate">Chapter 2: Intermediate</a></h1>
+<h1 id="chapter-3-intermediate"><a class="header" href="#chapter-3-intermediate">Chapter 3: Intermediate</a></h1>
 <p>From now on we will be porting a “real” C application: the <code>bm</code> bookmark manager
 CLI. We will learn how to approach real-world codebases, structure our approach,
 and debug our code when it breaks.</p>
@@ -1755,16 +1766,15 @@ allocators (don’t) mix, debug across the language boundary with <code>lldb</co
 harden our <code>unsafe</code> code with Clippy lints, replace C-isms with Rust-isms, catch
 undefined behavior with Miri, and benchmark the port against the C baseline.</p>
 <h2 id="exercises-2"><a class="header" href="#exercises-2">Exercises</a></h2>
-<p>The exercises for this section are located in <code>exercises/02_intermediate</code></p>
+<p>The exercises for this chapter are located in <code>exercises/03_intermediate</code></p>
 <h2 id="exercise-17"><a class="header" href="#exercise-17">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/00_README"><code>02_intermediate/00_README</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/00_README"><code>03_intermediate/00_README</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="how-to-rewrite-a-module"><a class="header" href="#how-to-rewrite-a-module">How to rewrite a module</a></h1>
 <p>In the previous chapter you learned the FFI building blocks: <code>extern</code> blocks,
 generated bindings, FFI-safe types, and how to design a boundary that acts as a
 firewall. Now we’ll put them to work on a real codebase. Meet <code>bm</code>, a small
-bookmark manager CLI written in C. Over the rest of this course we will migrate
-it to Rust, one module at a time.</p>
+bookmark manager CLI written in C.</p>
 <p>Here is an overview of the C source code:</p>
 <pre><code class="language-text">exercises/_bm/src/
 ├── bookmark.c    the Bookmark type
@@ -1813,8 +1823,7 @@ while, and they are exactly what you want to know before choosing where to
 start.</p>
 <p>The exercise uses an even smaller boundary than these production modules: a
 one-function <code>bm_version</code> module. Its behavior is intentionally trivial so that
-the work is limited to replacing a C object file with a Rust static library.
-Later exercises add pointers, allocation, error handling, and API redesign.</p>
+the work is limited to replacing a C object file with a Rust static library.</p>
 <h2 id="preserve-the-existing-contract"><a class="header" href="#preserve-the-existing-contract">Preserve the existing contract</a></h2>
 <p>When possible, an incremental migration replaces the module’s <em>object file</em>
 without changing the interface used by the remaining C code. The existing C
@@ -1850,7 +1859,7 @@ after:   test_bm_version.o + libbm_version.a (Rust)
 </code></pre>
 <h2 id="structuring-the-rust-side"><a class="header" href="#structuring-the-rust-side">Structuring the Rust side</a></h2>
 <p>For a substantial module, keep the two layers from the firewall pattern in
-section 1.6: a thin <code>extern "C"</code> surface that converts C representations and a
+section 2.10: a thin <code>extern "C"</code> surface that converts C representations and a
 safe Rust core that implements the behavior. <code>bm_version</code> takes no arguments and
 returns a fixed-width integer, so in this case the exported function can remain
 the entire implementation.</p>
@@ -1878,13 +1887,13 @@ the C and Rust versions and compare their results. This is called differential
 testing. The exercise uses the simpler form of running the same assertions
 against both implementations.</p>
 <h2 id="head-to-the-exercise-15"><a class="header" href="#head-to-the-exercise-15">Head to the exercise</a></h2>
-<p>The exercise in <code>exercises/02_intermediate/01_rewrite_a_module</code> replaces
+<p>The exercise in <code>exercises/03_intermediate/01_rewrite_a_module</code> replaces
 <code>bm_version.c</code>. Configure the crate to produce a static library, then make the
 provided Rust function satisfy <code>bm_version.h</code> without changing the header or the
 C caller. There is no algorithm to port: the exercise focuses on the build
 artifact, ABI, symbol name, and link step.</p>
 <h2 id="exercise-18"><a class="header" href="#exercise-18">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/01_rewrite_a_module"><code>02_intermediate/01_rewrite_a_module</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/01_rewrite_a_module"><code>03_intermediate/01_rewrite_a_module</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="allocation-allocators-and-mixing-them"><a class="header" href="#allocation-allocators-and-mixing-them">Allocation, allocators, and mixing them</a></h1>
 <p>In the previous section you saw how to replace a whole C module with Rust while
@@ -1929,8 +1938,8 @@ with <code>into_raw</code> and <code>from_raw</code>:<sup class="footnote-refere
 let ptr = Box::into_raw(foo);
 // This will convert the raw pointer back into a Box and when dropped free the memory:
 let _foo = unsafe { Box::from_raw(ptr) };</code></pre>
-<p><a href="#opaque-types">Opaque types</a> shows the full
-<code>_new</code>/<code>_free</code> pair.</p>
+<p><a href="#opaque-types">Opaque types</a> shows the full <code>_new</code>/<code>_free</code>
+pair.</p>
 </li>
 <li>
 <p><strong>Transfer ownership of a C allocation across the boundary.</strong> Use this when
@@ -2004,12 +2013,12 @@ block leaked, but which call stack allocated it.</p>
 for AddressSanitizer via <code>-Zsanitizer=address</code>, or, for the Rust side of the
 boundary, for Miri, which we cover in a later section.</p>
 <h2 id="head-to-the-exercise-16"><a class="header" href="#head-to-the-exercise-16">Head to the exercise</a></h2>
-<p>In <code>exercises/02_intermediate/02_allocators</code>, you’ll write a global allocator
+<p>In <code>exercises/03_intermediate/02_allocators</code>, you’ll write a global allocator
 that wraps the system allocator and counts every allocation and deallocation.
 Then you’ll use it to track down a leak: a pair of functions hands strings to C,
 and one of them never gives the memory back.</p>
 <h2 id="exercise-19"><a class="header" href="#exercise-19">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/02_allocators"><code>02_intermediate/02_allocators</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/02_allocators"><code>03_intermediate/02_allocators</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-6">
@@ -2145,7 +2154,7 @@ that only shows up once you call across the boundary. Build it with
 <code>cargo build -p bm_lldb_gdb</code>, then debug <code>target/debug/bm_lldb_gdb</code>. No
 <code>println!</code> allowed.</p>
 <h2 id="exercise-20"><a class="header" href="#exercise-20">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/03_lldb_gdb"><code>02_intermediate/03_lldb_gdb</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/03_lldb_gdb"><code>03_intermediate/03_lldb_gdb</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="clippy-lints-for-unsafe-rust-and-static-verification"><a class="header" href="#clippy-lints-for-unsafe-rust-and-static-verification">Clippy lints for unsafe Rust and static verification</a></h1>
 <p>In the previous section we learned how to debug an application, but debugging
@@ -2164,7 +2173,7 @@ assumptions visible for review.</p>
 <p>You already have several useful lints enabled by default.</p>
 <p><code>improper_ctypes</code> and <code>improper_ctypes_definitions</code> are rustc lints,
 warn-by-default, and you’ve encountered them already: they’re what complained
-about the non-FFI-safe types back in Chapter 1. <code>improper_ctypes</code> covers the
+about the non-FFI-safe types back in Chapter 2. <code>improper_ctypes</code> covers the
 types you declare in an <code>extern</code> block; <code>improper_ctypes_definitions</code> covers the
 ones you define with <code>extern "C"</code>. Between them they catch most type-level
 mistakes long before a linker gets involved.</p>
@@ -2275,7 +2284,7 @@ let raw = unsafe { CStr::from_ptr(raw) };</code></pre>
 <p>That comment carries no information. The next reader still has to establish
 whether <code>raw</code> is non-null, initialized, and terminated. Write the reasoning
 down.</p>
-<p>It’s the same discipline as the <code># Safety</code> documentation from Chapter 1. The
+<p>It’s the same discipline as the <code># Safety</code> documentation from Chapter 2. The
 function’s <code># Safety</code> section describes what its caller must guarantee. The
 local <code>// SAFETY:</code> comment describes why one operation can rely on those
 guarantees at this exact point in the implementation.</p>
@@ -2299,7 +2308,7 @@ on. Some warnings are mechanical, others point to a real bug. The point isn’t 
 make <code>cargo clippy</code> quiet. It’s to understand and document every unsafe
 operation that remains.</p>
 <h2 id="exercise-21"><a class="header" href="#exercise-21">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/04_clippy_lints"><code>02_intermediate/04_clippy_lints</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/04_clippy_lints"><code>03_intermediate/04_clippy_lints</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-7">
@@ -2383,12 +2392,12 @@ pieces represent, then choose the Rust return type that represents it directly.
 The compatibility adapter splits that value back into the return value and
 out-parameter C expects.</p>
 <h2 id="head-to-the-exercise-19"><a class="header" href="#head-to-the-exercise-19">Head to the exercise</a></h2>
-<p>In <code>exercises/02_intermediate/05_01_out_parameters</code>, implement <code>page_location</code>
-so that it returns a bookmark’s page and slot as a <code>(page, slot)</code> tuple instead
-of writing them through out-parameters. Then complete the C adapter without
+<p>In <code>exercises/03_intermediate/05_out_parameters</code>, implement <code>page_location</code> so
+that it returns a bookmark’s page and slot as a <code>(page, slot)</code> tuple instead of
+writing them through out-parameters. Then complete the C adapter without
 changing its <code>void bm_page_location(...)</code> contract.</p>
 <h2 id="exercise-22"><a class="header" href="#exercise-22">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/05_01_out_parameters"><code>02_intermediate/05_01_out_parameters</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/05_out_parameters"><code>03_intermediate/05_out_parameters</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="error-codes"><a class="header" href="#error-codes">Error codes</a></h1>
 <p>C APIs commonly report the outcome of an operation with an enum, with one
@@ -2477,12 +2486,12 @@ be an empty database, while a read failure or corrupt file remains an error. The
 domain decides which outcomes are ordinary; the fact that C reported them as
 integers doesn’t.</p>
 <h2 id="head-to-the-exercise-20"><a class="header" href="#head-to-the-exercise-20">Head to the exercise</a></h2>
-<p>In <code>exercises/02_intermediate/05_02_error_codes</code>, implement <code>change_bookmark_id</code>
-so that it reports its failures as a <code>Result&lt;(), ChangeIdError&gt;</code> instead of C
+<p>In <code>exercises/03_intermediate/06_error_codes</code>, implement <code>change_bookmark_id</code> so
+that it reports its failures as a <code>Result&lt;(), ChangeIdError&gt;</code> instead of C
 status codes, leaving the index unchanged when it fails. Then complete the FFI
 adapter that maps that result back to the C status codes.</p>
 <h2 id="exercise-23"><a class="header" href="#exercise-23">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/05_02_error_codes"><code>02_intermediate/05_02_error_codes</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/06_error_codes"><code>03_intermediate/06_error_codes</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="strings"><a class="header" href="#strings">Strings</a></h1>
 <p>C and Rust use different representations for strings.</p>
@@ -2586,12 +2595,12 @@ valid.</p>
 text, and byte slices when the value isn’t text. Convert between them at the
 boundary instead of treating their pointers as interchangeable.</p>
 <h2 id="head-to-the-exercise-21"><a class="header" href="#head-to-the-exercise-21">Head to the exercise</a></h2>
-<p>In <code>exercises/02_intermediate/05_03_strings</code>, accept a traditional C string,
+<p>In <code>exercises/03_intermediate/07_strings</code>, accept a traditional C string,
 convert it through <code>CStr</code> to <code>&amp;str</code>, and return a borrowed tag name as a pointer
 with its byte length written to an out-parameter. The returned pointer points
 into the input, so it’s valid only while that input string is alive.</p>
 <h2 id="exercise-24"><a class="header" href="#exercise-24">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/05_03_strings"><code>02_intermediate/05_03_strings</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/07_strings"><code>03_intermediate/07_strings</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="bit-flags"><a class="header" href="#bit-flags">Bit flags</a></h1>
 <p>C represents a set of independent options by assigning each option a bit:</p>
@@ -2661,12 +2670,12 @@ implementation:</p>
 <p>The safe search function accepts only <code>FindFlags</code>, so the boundary is the one
 place that knows C supplied an untyped integer.</p>
 <h2 id="head-to-the-exercise-22"><a class="header" href="#head-to-the-exercise-22">Head to the exercise</a></h2>
-<p>In <code>exercises/02_intermediate/05_04_bit_flags</code>, update a set of bookmark output
+<p>In <code>exercises/03_intermediate/08_bit_flags</code>, update a set of bookmark output
 fields using separate enable and disable masks. Detect conflicting changes with
 typed flags, then strictly convert three raw C masks, apply the update, and
 return the resulting raw bits.</p>
 <h2 id="exercise-25"><a class="header" href="#exercise-25">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/05_04_bit_flags"><code>02_intermediate/05_04_bit_flags</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/08_bit_flags"><code>03_intermediate/08_bit_flags</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="loops-and-iterators"><a class="header" href="#loops-and-iterators">Loops and iterators</a></h1>
 <p>A C loop often does several jobs at once: it traverses memory, controls when
@@ -2752,20 +2761,20 @@ converted them into safe Rust slices, strings, or collections. Pointer
 validation and slice construction stay in the boundary adapter; the iterator
 chain operates only on safe Rust values.</p>
 <h2 id="head-to-the-exercise-23"><a class="header" href="#head-to-the-exercise-23">Head to the exercise</a></h2>
-<p>The starter code in <code>exercises/02_intermediate/05_05_loops_and_iterators</code> is
+<p>The starter code in <code>exercises/03_intermediate/09_loops_and_iterators</code> is
 behaviorally correct, so its tests already pass. <code>wr</code> fails because Clippy finds
 index-based loops whose indexes aren’t part of the calculation.</p>
 <p>Refactor the four functions without changing their results, ordering,
 short-circuiting, or borrowing behavior. They correspond to <code>any</code>, <code>position</code>,
 <code>filter().count()</code>, and a <code>filter</code>/<code>map</code>/<code>collect</code> pipeline with a nested <code>any</code>.</p>
 <h2 id="exercise-26"><a class="header" href="#exercise-26">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/05_05_loops_and_iterators"><code>02_intermediate/05_05_loops_and_iterators</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/09_loops_and_iterators"><code>03_intermediate/09_loops_and_iterators</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="dynamic-analysis-with-miri"><a class="header" href="#dynamic-analysis-with-miri">Dynamic analysis with Miri</a></h1>
-<p>In Chapter 1 we introduced the “firewall” rules that keep FFI interfaces sane,
-and in the previous section we looked at lint rules that help enforce them.
-Lints and compiler settings can’t observe behavior, though. They can only read
-your code as the compiler does, and infer from that.</p>
+<p>In Chapter 2 we introduced the “firewall” rules that keep FFI interfaces sane,
+and in <a href="#clippy-lints-for-unsafe-rust-and-static-verification">the Clippy section</a> we looked at lint rules that
+help enforce them. Lints and compiler settings can’t observe behavior, though.
+They can only read your code as the compiler does, and infer from that.</p>
 <p>We’ll now introduce another class of tooling to complement static analysis:
 dynamic analysis with Miri.</p>
 <p>Miri is an interpreter for rustc’s MIR (mid-level intermediate representation).
@@ -2862,11 +2871,11 @@ provenance. On Linux there is even more experimental support for native tracing
 that attempts to trace which bytes C touched and keep tracking for all others,
 but none of it is ready for production use yet.</p>
 <h2 id="head-to-the-exercise-24"><a class="header" href="#head-to-the-exercise-24">Head to the exercise</a></h2>
-<p>The exercise is in <code>exercises/02_intermediate/06_miri</code>. It contains a small Rust
+<p>The exercise is in <code>exercises/03_intermediate/10_miri</code>. It contains a small Rust
 wrapper around <code>tag_normalize</code> from <code>tag.c</code>, a module we haven’t ported yet. Its
 tests pass with a plain <code>cargo test</code> but fail under Miri.</p>
 <h2 id="exercise-27"><a class="header" href="#exercise-27">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/06_miri"><code>02_intermediate/06_miri</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/10_miri"><code>03_intermediate/10_miri</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-8">
@@ -3084,7 +3093,7 @@ representative application paths. Keep Divan for controlled microbenchmarks, and
 disable Hotpath while collecting the final Divan numbers because instrumentation
 changes the code being measured.</p>
 <h2 id="head-to-the-exercise-25"><a class="header" href="#head-to-the-exercise-25">Head to the exercise</a></h2>
-<p>The exercise is in <code>exercises/02_intermediate/07_benchmarking</code>. It ships with
+<p>The exercise is in <code>exercises/03_intermediate/11_benchmarking</code>. It ships with
 the C benchmark. Replace the <code>bm_normalize_url_rust</code> stub and add the matching
 Rust benchmark, then run both and compare their median latencies.</p>
 <p>The parity test compares return codes on every input, but compares the output
@@ -3094,7 +3103,7 @@ rejects. Your port validates first, so it doesn’t. That is a difference
 differential testing is supposed to surface, and one worth keeping: the test
 pins it down rather than asking you to reproduce it.</p>
 <h2 id="exercise-28"><a class="header" href="#exercise-28">Exercise</a></h2>
-<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_intermediate/07_benchmarking"><code>02_intermediate/07_benchmarking</code></a></p>
+<p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/03_intermediate/11_benchmarking"><code>03_intermediate/11_benchmarking</code></a></p>
 <hr>
 <ol class="footnote-definition">
 <li id="footnote-1-9">
