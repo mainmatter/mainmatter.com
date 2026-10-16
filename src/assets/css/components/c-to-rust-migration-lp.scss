@@ -151,10 +151,7 @@
   align-items: center;
   justify-content: center;
   padding: 3rem;
-  background-image: url("/assets/images/rust/eurorust-2026-bg.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f7f3eb;
 
   picture {
     width: auto;
@@ -205,5 +202,35 @@
 
   .c-to-rust-migration-feature__content {
     background-image: none;
+  }
+
+  .c-to-rust-migration-eurorust__image {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 50%;
+    padding: 0;
+
+    picture {
+      position: absolute;
+      inset: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .c-to-rust-migration-eurorust {
+    position: relative;
+  }
+
+  .c-to-rust-migration-eurorust__content {
+    grid-column: 2;
+    align-self: stretch;
   }
 }
