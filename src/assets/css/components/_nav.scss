@@ -5,7 +5,6 @@
   top: 0;
   z-index: 999;
   width: 100%;
-  anchor-scope: --nav-overflow;
   transition:
     background-color 0.4s ease,
     box-shadow 0.4s ease;
@@ -101,22 +100,14 @@
   cursor: pointer;
 }
 
-[popovertarget="nav-overflow"] {
-  anchor-name: --nav-overflow;
-}
-
 #nav-overflow {
-  --nav-overflow-offset: 1rem;
   --nav-overflow-width: 18rem;
 
-  inset: 6rem auto auto calc(50% + 6rem);
   width: min(var(--nav-overflow-width), calc(100vw - 2rem));
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
   font-size: 1.25rem;
-  transition:
-    margin 0.3s ease,
-    width 0.3s ease;
+  transition: width 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
 
@@ -175,14 +166,14 @@
     #nav-overflow {
       clip-path: inset(-12px -12px calc(100% + 12px) -12px);
       transition:
-        margin 0.3s ease,
         width 0.3s ease,
-        clip-path 0.16s ease;
+        clip-path 0.16s ease,
+        top 0.4s ease;
     }
 
     #nav-overflow:popover-open {
       clip-path: inset(-12px);
-      transition-duration: 0.24s;
+      transition-duration: 0.24s, 0.24s, 0.4s;
     }
 
     @starting-style {
@@ -212,15 +203,6 @@
       transform: translateY(-0.25rem);
       transition-duration: 0.16s;
     }
-  }
-}
-
-@supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
-  #nav-overflow {
-    position-anchor: --nav-overflow;
-    inset: unset;
-    position-area: block-end span-inline-end;
-    margin: var(--nav-overflow-offset) 0 0;
   }
 }
 
@@ -358,6 +340,11 @@
   }
 
   #nav-overflow {
+    position: fixed;
+    position-anchor: none;
+    inset: 5.2rem auto auto min(calc(50% + 6rem), calc(100% - var(--nav-overflow-width) - 1rem));
+    margin: 0;
+
     .nav-item {
       font-size: 1rem;
       line-height: 2rem;
@@ -391,6 +378,10 @@
     position: fixed;
     background-color: var(--color-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    #nav-overflow {
+      top: 3.55rem;
+    }
 
     .nav__wrapper {
       margin-top: 0.125rem;
@@ -473,6 +464,10 @@
 }
 
 @media (min-width: $breakpoint-xl) {
+  .nav:not(.nav__scrolled) #nav-overflow {
+    top: 5.5rem;
+  }
+
   .nav__item,
   .nav__cta {
     font-size: 1.25rem;
