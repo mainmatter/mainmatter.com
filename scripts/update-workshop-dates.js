@@ -11,7 +11,7 @@ const TODAY = new Date();
 (async () => {
   for (const workshop of workshops) {
     const raw = readFileSync(workshop, "utf8");
-    const { content, data } = matter(raw);
+    const { data } = matter(raw);
     const { ticket_tailor_event_series_id: ticketTailorEventSeriesId } = data;
     if (ticketTailorEventSeriesId) {
       const events = await getUpcomingEventOccurences(ticketTailorEventSeriesId);
@@ -24,11 +24,51 @@ const TODAY = new Date();
           price: e.price,
         };
       });
-      const output = matter.stringify(content, data);
-      writeFileSync(workshop, output, "utf8");
+      writeFileSync(workshop, replaceUpcomingDates(raw, data.upcomingDates), "utf8");
     }
   }
 })();
+
+// Rewrites just the `upcomingDates` block, leaving the rest of the front matter
+// byte for byte as it was. Re-serializing the whole thing (as `matter.stringify`
+// does) reflows every other key and leaves the file failing `prettier --check`.
+function replaceUpcomingDates(raw, dates) {
+  const lines = raw.split("\n");
+  if (lines[0] !== "---") {
+    throw new Error("Expected the file to open with front matter");
+  }
+  // Only ever touch the front matter, never the body below it.
+  const frontMatterEnd = lines.indexOf("---", 1);
+  if (frontMatterEnd === -1) {
+    throw new Error("Unterminated front matter");
+  }
+
+  let start = lines.findIndex((line, i) => i < frontMatterEnd && line.startsWith("upcomingDates:"));
+  // A workshop that has never had dates yet gets the key appended.
+  let end = start === -1 ? (start = frontMatterEnd) : start + 1;
+  // The block runs until the next top-level key or the end of the front matter.
+  while (end < frontMatterEnd && /^(\s|$)/.test(lines[end])) {
+    end++;
+  }
+
+  return [...lines.slice(0, start), ...formatUpcomingDates(dates), ...lines.slice(end)].join("\n");
+}
+
+function formatUpcomingDates(dates) {
+  if (dates.length === 0) {
+    return ["upcomingDates: []"];
+  }
+
+  return [
+    "upcomingDates:",
+    ...dates.flatMap(({ date, endDate, url, price }) => [
+      `  - date: "${date}"`,
+      `    endDate: "${endDate}"`,
+      `    url: "${url}"`,
+      `    price: ${price}`,
+    ]),
+  ];
+}
 
 async function getUpcomingEventOccurences(eventSeriesId) {
   let url = `https://api.tickettailor.com/v1/event_series/${eventSeriesId}`;
