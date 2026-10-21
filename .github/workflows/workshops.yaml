@@ -30,6 +30,9 @@ jobs:
       - name: format
         run: pnpm lint:md:fix
 
+      - name: check formatting
+        run: pnpm lint:md # fail loudly rather than pushing content that breaks CI on master
+
       - name: check diff
         run: git diff --exit-code -- ":(exclude)src/workshops/*.md" # ensure nothing but the workshop files changed
 
@@ -38,5 +41,7 @@ jobs:
           git config --global user.email "marco.otte-witte@mainmatter.com"
           git config --global user.name "Marco Otte-Witte"
           git add src/workshops
+          # most days there are no date changes at all
+          git diff --cached --quiet && echo "No workshop date changes" && exit 0
           git commit -m "update upcoming workshop dates"
           git push
