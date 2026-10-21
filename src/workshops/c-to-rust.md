@@ -53,11 +53,5 @@ quotes:
     source: Onsite attendee
 leads:
   - handle: algo_luca
-upcomingDates:
-  - date: "2026-11-10"
-    endDate: "2026-11-17"
-    url: >-
-      https://www.tickettailor.com/checkout/view-event/id/8648597/chk/e7616855eb9e53e9e57cd05f61e9face/
-
-    price: 120000
+upcomingDates: []
 ---
