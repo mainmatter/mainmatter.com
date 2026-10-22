@@ -264,6 +264,12 @@
   from = "https://exercises.mainmatter.com/*"
   to = "https://rust-exercises.com"
 
+# redirect the former agentic engineering offering
+[[redirects]]
+  from = "/services/agentic-engineering/"
+  to = "/services/frontend-engineering/"
+  status = 301
+
 # serve 404 for all paths that don't exist
 [[redirects]]
   from = "/*"

@@ -102,6 +102,11 @@
   margin-top: 2rem;
 }
 
+.color-hero__link .cta-link__text-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
 @media (min-width: $breakpoint-m) {
   .color-hero__container {
     display: flex;

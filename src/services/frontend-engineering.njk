@@ -1,0 +1,95 @@
+---
+layout: base
+title: Frontend engineering consulting | Our services
+description: "Mainmatter's experts join your frontend team to remove bottlenecks, improve delivery pipelines, and adopt AI sustainably, whatever technology you use."
+eleventyNavigation:
+  key: frontend engineering
+  order: 2
+  pinned: true
+  title: Frontend engineering
+eleventyImport:
+  collections: ["caseStudies"]
+permalink: /services/frontend-engineering/
+type: service
+meta:
+  name: "Frontend engineering consulting"
+  serviceType: Consulting
+  description: "Mainmatter's experts join your frontend team to remove bottlenecks, improve delivery pipelines, and adopt AI sustainably, whatever technology you use."
+  areaServed: Worldwide
+  provider:
+    name: "Mainmatter"
+og:
+  image: /assets/images/services/agentic-engineering-og-image.webp
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+
+{%
+  set content = {
+    "title": "Accelerate your frontend development",
+    "eyebrow": "Frontend engineering",
+    "text": "Our experts join your team to improve the way you build and ship software. We work with you to remove bottlenecks and establish fast, safe, and repeatable delivery. Whatever frontend technology you use, we help you build a software factory: the processes, tooling, and automation that turn ideas into running systems. Together, we lay the foundation for lasting productivity gains as your team adopts AI.",
+    "image": "/assets/images/hero/agentic-engineering.jpg",
+    "alt": "Desk setup for engineering work",
+    "loading": "eager",
+    "linkUrl": "#contact",
+    "linkText": "Let’s talk"
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="container container--lg my-5">
+  <h2 class="mb-2">Strong engineering practices. Lasting productivity gains.</h2>
+  <p class="medium">
+    AI can accelerate code production, but those gains only reach your users if testing, review,
+    and release processes can keep up. Slow deployments and unreliable tests hold teams back
+    today. Producing more code puts those processes under even greater pressure.
+  </p>
+  <p class="medium">
+    Mainmatter has guided engineering teams for years, improving the practices and infrastructure
+    that support successful product development. We work with your team to strengthen that
+    foundation: from application architecture and automated testing to continuous delivery and
+    observability. That gives your engineers and agents the feedback they need to ship reliable,
+    maintainable software.
+  </p>
+</section>
+
+{%
+  set steps = [
+    {
+      "title": "Assess the status quo",
+      "text": "We review your codebase, architecture, tooling, infrastructure, and development practices, and speak with your team to understand the challenges they face. Together we define what success looks like and track metrics such as lead time for changes and change failure rate."
+    },
+    {
+      "title": "Clear the path",
+      "text": "We work alongside your engineers to overcome the bottlenecks holding development back. We improve build times, stabilize and extend automated tests, and automate releases. Each change strengthens your delivery pipeline while your team continues to work on the product."
+    },
+    {
+      "title": "Roll out tools and practices",
+      "text": "With the foundation in place, we introduce agentic engineering practices incrementally. We establish the context and guardrails agents need, backed by automated checks and human review, so your team can adopt AI efficiently, responsibly, and sustainably."
+    },
+    {
+      "title": "Mentor your team as we go",
+      "text": "At Mainmatter, we promise sustainable change. Through mentoring, pair-programming, and reviews, we help your engineers take ownership of the code, tooling, and processes we build together. Your team is more knowledgeable and independently capable after our collaboration."
+    }
+  ]
+%}
+{{ strategyList('frontend-engineering', 'We’ll work with you to:', steps, 'my-5') }}
+
+{{ featuredCaseStudies(['qonto', 'auditboard'], 'Success stories') }}
+
+{%
+  set trainingContent = {
+    "title": "AI and agentic engineering training",
+    "text": "We teach teams and individuals how to adopt and succeed with AI. Our hands-on workshops cover everything from agentic engineering to MCP servers.",
+    "linkUrl": "/training/ai/",
+    "linkText": "Explore training"
+  }
+%}
+{{ ctaBanner('purple', 'default', trainingContent) }}
+
+{{ contactFormLP('Frontend engineering') }}

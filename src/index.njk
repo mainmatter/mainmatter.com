@@ -16,22 +16,17 @@ eleventyImport:
 {%
   set 'tech_1' = {
   "logo": "rust",
-  "link": "rust-consulting",
-  "linkText": "Rust"
+  "link": "/rust-consulting/",
+  "linkText": "Rust consulting",
+  "subtitle": "C-to-Rust migrations, backends, training and workshops"
   }
 %}
 {%
   set 'tech_2' = {
-  "logo": "ember",
-  "link": "ember-consulting",
-  "linkText": "Ember"
-  }
-%}
-{%
-  set 'tech_3' = {
-  "logo": "svelte",
-  "link": "svelte-consulting",
-  "linkText": "Svelte"
+  "logo": "strategy",
+  "link": "/services/frontend-engineering/",
+  "linkText": "Frontend engineering",
+  "subtitle": "Software factories for lasting productivity gains"
   }
 %}
 {%
@@ -42,7 +37,7 @@ eleventyImport:
     "image": "/assets/images/hero/toys-hero.webp",
     "alt": "Toys arranged in a neat grid",
     "loading": "eager",
-    "technologies": [tech_1, tech_2, tech_3]
+    "technologies": [tech_1, tech_2]
     }
 %}
 {{ colorHero('purple', content) }}

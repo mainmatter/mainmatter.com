@@ -367,11 +367,15 @@
     column-gap: 1.5rem;
   }
 
-  .nav__list--pinned + .nav__list .nav__item:first-child {
+  .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
+  .nav__list--pinned + .nav__list > .nav__item:first-child {
     border-left: 2px solid var(--color-aqua);
-    margin-left: 1.5rem;
     padding-left: 1.5rem;
     transition: border-color 0.4s ease;
+  }
+
+  .nav__list--pinned + .nav__list > .nav__item:first-child {
+    margin-left: 1.5rem;
   }
 
   .nav__scrolled {
@@ -429,7 +433,8 @@
       }
     }
 
-    .nav__list--pinned + .nav__list .nav__item:first-child {
+    .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
+    .nav__list--pinned + .nav__list > .nav__item:first-child {
       border-left: 2px solid var(--color-purple);
     }
 
@@ -452,7 +457,8 @@
   .nav__list--pinned,
   .nav__list--pinned .nav__item,
   .nav__list--pinned .nav__item svg path,
-  .nav__list--pinned + .nav__list .nav__item:first-child {
+  .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
+  .nav__list--pinned + .nav__list > .nav__item:first-child {
     transition-duration: 0.01ms;
   }
 }
