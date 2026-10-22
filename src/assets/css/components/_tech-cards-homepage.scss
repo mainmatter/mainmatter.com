@@ -1,5 +1,9 @@
 @use "../base/breakpoints" as *;
 
+.tech-cards .cards__grid {
+  grid-template-columns: 1fr;
+}
+
 .tech-cards-homepage__grid-element:nth-child(5n + 1),
 .tech-cards-homepage__grid-element:nth-child(2n),
 .tech-cards-homepage__grid-element:nth-child(2n + 1) {
@@ -11,7 +15,11 @@
 }
 
 .tech-cards-homepage__grid-element {
-  min-height: 20rem;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+  min-height: auto;
 
   .tech-cards-homepage__logo.ai {
     color: rgba(255, 255, 255, 0.6);
@@ -20,46 +28,24 @@
   svg g {
     fill: rgba(255, 255, 255, 0.6);
   }
-
-  @media (min-width: $breakpoint-s) {
-    min-height: auto;
-  }
 }
 
-.tech-cards-homepage__logo {
-  &.rust {
-    max-width: 11rem;
+.tech-cards-homepage__grid-element .tech-cards-homepage__logo {
+  width: 100%;
+  max-width: 100%;
 
-    @media (min-width: $breakpoint-s) {
-      max-width: 70%;
-    }
-  }
-
-  &.svelte {
-    max-width: 9rem;
-
-    @media (min-width: $breakpoint-s) {
-      max-width: 60%;
-    }
-  }
-
-  &.ember {
-    max-width: 11rem;
-
-    @media (min-width: $breakpoint-s) {
-      max-width: 70%;
-    }
-  }
-
-  &.ai {
-    max-width: 11rem;
-
-    @media (min-width: $breakpoint-s) {
-      max-width: 70%;
-    }
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
 .tech-card__content {
-  margin-top: 3rem;
+  margin-top: 0;
+}
+
+.tech-cards-homepage__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
