@@ -180,7 +180,8 @@
 .c-to-rust-migration-eurorust__content {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-purple);
+  background-color: #0555a4;
+  --color-link-primary: #0555a4;
   align-items: flex-start;
   align-self: center;
   width: 100%;
