@@ -72,12 +72,13 @@
   }
 
   .tech-cards-homepage__grid-element {
-    background-color: var(--color-purple);
+    background-color: rgba(26, 0, 62, 0.8);
     display: grid;
-    grid-template-columns: 4rem minmax(0, 1fr);
+    grid-template-columns: 5rem minmax(0, 1fr);
     align-items: center;
     gap: 2rem;
     padding-left: 2rem;
+    padding-block: 2.5rem;
     min-height: auto;
 
     svg g {
@@ -86,6 +87,7 @@
   }
 
   .tech-cards-homepage__grid-element .tech-cards-homepage__logo {
+    opacity: 0.7;
     width: 100%;
     max-width: 100%;
 
@@ -101,6 +103,10 @@
     grid-template-columns: minmax(0, 1fr) auto;
     column-gap: 1rem;
     margin-top: 0;
+
+    .caption {
+      font-size: 1.4rem;
+    }
   }
 
   .tech-cards-homepage__link-arrow {
