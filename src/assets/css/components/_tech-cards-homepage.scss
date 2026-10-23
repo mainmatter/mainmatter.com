@@ -66,30 +66,19 @@
 
 .homepage-hero {
   .tech-cards .cards__grid {
-    grid-template-columns: 1fr;
-
     @media (min-width: $breakpoint-s) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 
-  .tech-cards-homepage__grid-element:nth-child(5n + 1),
-  .tech-cards-homepage__grid-element:nth-child(2n),
-  .tech-cards-homepage__grid-element:nth-child(2n + 1) {
-    background-color: var(--color-purple);
-  }
-
   .tech-cards-homepage__grid-element {
+    background-color: var(--color-purple);
     display: grid;
     grid-template-columns: 4rem minmax(0, 1fr);
     align-items: center;
     gap: 2rem;
     padding-left: 2rem;
     min-height: auto;
-
-    .tech-cards-homepage__logo.ai {
-      color: var(--color-white);
-    }
 
     svg g {
       fill: var(--color-white);

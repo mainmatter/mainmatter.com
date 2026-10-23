@@ -78,15 +78,6 @@
   white-space: nowrap;
 }
 
-.nav__list--pinned .nav__item {
-  color: var(--color-white);
-}
-
-.nav__list--pinned .nav__link-text svg path {
-  fill: var(--color-aqua);
-  transition: fill 0.4s ease;
-}
-
 .nav__item svg {
   display: inline-block;
   vertical-align: baseline;
@@ -395,14 +386,6 @@
       color: var(--color-purple);
     }
 
-    .nav__list--pinned .nav__item {
-      color: var(--color-black);
-    }
-
-    .nav__list--pinned .nav__link-text svg path {
-      fill: var(--color-purple);
-    }
-
     .nav__logo svg {
       color: var(--color-purple);
       height: 1.5rem;
@@ -446,10 +429,7 @@
   .nav__item a,
   .nav__item button,
   .nav__link-text,
-  .nav__cta,
-  .nav__list--pinned,
-  .nav__list--pinned .nav__item,
-  .nav__list--pinned .nav__link-text svg path {
+  .nav__cta {
     transition-duration: 0.01ms;
   }
 }
