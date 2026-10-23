@@ -16,33 +16,29 @@ eleventyImport:
 {%
   set 'tech_1' = {
   "logo": "rust",
-  "link": "rust-consulting",
-  "linkText": "Rust"
+  "link": "/rust-consulting/",
+  "linkText": "Rust consulting",
+  "subtitle": "C-to-Rust migrations, backends, training and workshops"
   }
 %}
 {%
   set 'tech_2' = {
-  "logo": "ember",
-  "link": "ember-consulting",
-  "linkText": "Ember"
-  }
-%}
-{%
-  set 'tech_3' = {
-  "logo": "svelte",
-  "link": "svelte-consulting",
-  "linkText": "Svelte"
+  "logo": "frontend",
+  "link": "/services/ai-accelerated-frontend-engineering/",
+  "linkText": "Ship frontends at the speed of AI",
+  "subtitle": "Consulting for AI-accelerated frontend teams"
   }
 %}
 {%
   set 'content' = {
+    "class": "homepage-hero",
     "title": "Together we go further!",
     "text": "We know the tools and practices required for successful&nbsp;development. <br/>
   We partner with you to solve your toughest tech challenges as&nbsp;teammates.",
-    "image": "/assets/images/hero/toys-hero.webp",
-    "alt": "Toys arranged in a neat grid",
+    "image": "/assets/images/hero/homepage.webp",
+    "alt": "Abstract black and white light trails",
     "loading": "eager",
-    "technologies": [tech_1, tech_2, tech_3]
+    "technologies": [tech_1, tech_2]
     }
 %}
 {{ colorHero('purple', content) }}
