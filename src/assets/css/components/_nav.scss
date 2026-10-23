@@ -53,6 +53,7 @@
 }
 
 .nav__cta {
+  font-weight: 700;
   transition:
     color 0.5s ease,
     line-height 0.4s ease,
@@ -66,7 +67,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0;
-  font-weight: bold;
+  font-weight: 500;
   color: inherit;
   transition: color 0.3s ease;
 }
@@ -81,7 +82,7 @@
   color: var(--color-white);
 }
 
-.nav__list--pinned .nav__item svg path {
+.nav__list--pinned .nav__link-text svg path {
   fill: var(--color-aqua);
   transition: fill 0.4s ease;
 }
@@ -128,7 +129,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   list-style: none;
   transition: color 0.3s ease;
@@ -228,6 +229,10 @@
   }
 }
 
+.nav__item .nav__link-text--active {
+  font-weight: 700;
+}
+
 .nav__expandable {
   --icon-caret-margin: 0;
   --icon-caret-color: var(--color-white);
@@ -282,12 +287,6 @@
 
   .nav__item {
     color: var(--color-black);
-  }
-
-  .nav__list--pinned + .nav__list .nav__item:first-child {
-    border-top: 2px solid var(--color-aqua);
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
   }
 }
 
@@ -357,25 +356,24 @@
 
   .nav__wrapper {
     grid-template:
-      "logo  pinned  more  contact" min-content
-      / max-content max-content auto max-content;
+      "logo  links  contact" min-content
+      / minmax(max-content, 1fr) max-content minmax(max-content, 1fr);
+    column-gap: 1.5rem;
+  }
+
+  .nav__logo {
+    justify-self: start;
+    padding-right: 0;
+  }
+
+  .nav__cta {
+    justify-self: end;
   }
 
   .nav__list:not(.nav__list--overflow) {
     display: flex;
     align-items: center;
-    column-gap: 1.5rem;
-  }
-
-  .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
-  .nav__list--pinned + .nav__list > .nav__item:first-child {
-    border-left: 2px solid var(--color-aqua);
-    padding-left: 1.5rem;
-    transition: border-color 0.4s ease;
-  }
-
-  .nav__list--pinned + .nav__list > .nav__item:first-child {
-    margin-left: 1.5rem;
+    column-gap: 2rem;
   }
 
   .nav__scrolled {
@@ -401,7 +399,7 @@
       color: var(--color-black);
     }
 
-    .nav__list--pinned .nav__item svg path {
+    .nav__list--pinned .nav__link-text svg path {
       fill: var(--color-purple);
     }
 
@@ -433,11 +431,6 @@
       }
     }
 
-    .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
-    .nav__list--pinned + .nav__list > .nav__item:first-child {
-      border-left: 2px solid var(--color-purple);
-    }
-
     .nav__item :is(a):is(:focus, :hover) {
       color: var(--color-purple);
       text-decoration-color: var(--color-purple);
@@ -456,9 +449,7 @@
   .nav__cta,
   .nav__list--pinned,
   .nav__list--pinned .nav__item,
-  .nav__list--pinned .nav__item svg path,
-  .nav__list:not(.nav__list--overflow) > .nav__item + .nav__item,
-  .nav__list--pinned + .nav__list > .nav__item:first-child {
+  .nav__list--pinned .nav__link-text svg path {
     transition-duration: 0.01ms;
   }
 }
