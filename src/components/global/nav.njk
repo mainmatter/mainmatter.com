@@ -1,4 +1,3 @@
-{% from "social-list.njk" import socialList %}
 {% from "btn-primary.njk" import btnPrimary %}
 {% set navPages = collections.all | eleventyNavigation %}
 {% set otherTechnologyUrls = ['/ember-consulting/', '/svelte-consulting/'] %}
@@ -11,12 +10,10 @@
 
 <nav class="nav" id="nav">
   <div class="nav__wrapper container container--xl">
-    {%- macro logo() -%}
-      {%- include 'svg/logo.njk' -%}
+    <a href="/" class="nav__logo">
+      {% include 'svg/logo.njk' %}
       <span class="screenreader">Mainmatter</span>
-    {%- endmacro -%}
-
-    <a href="/" class="nav__logo">{{ logo() }}</a>
+    </a>
 
     <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
       {% include 'svg/menu.njk' %}
@@ -41,7 +38,7 @@
             class="nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
             {% if entry.url == page.url %}aria-current="page"{% endif %}
           >
-            {% if entry.icon and entry.url != '/rust-consulting/' %}{% include entry.icon %}{% endif %}
+            {% if entry.icon %}{% include entry.icon %}{% endif %}
             <span>{{ entry.title }}</span>
           </a>
         </li>

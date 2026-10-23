@@ -1,12 +1,6 @@
-{% macro techCardsHomepage(id, title, cards) %}
+{% macro techCardsHomepage(cards) %}
   <div class="tech-cards my-4">
     <div class="tech-cards__container">
-      {% if title %}
-        <h2 class="tech-cards__title">{{ title }}</h2>
-      {% endif %}
-      {% if intro %}
-        <p class="tech-cards__intro mt-25 mb-5">{{ intro | safe }}</p>
-      {% endif %}
       <div class="cards__grid">
         {% for card in cards %}
           <div class="tech-cards-homepage__grid-element card__grid-element">

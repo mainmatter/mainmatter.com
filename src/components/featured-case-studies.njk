@@ -2,8 +2,8 @@
 List of case studies as cards
 
 Configuration Options:
-list: An array where each item is the slug for the case study.
-layout: Optional "split" layout for two cases, with the featured case on the right.
+caseStudies: Case study slugs in display order. The first case is featured by default.
+layout: Optional "split" layout, with the last case featured on the right.
 #}
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from 'case-card.njk' import caseCard %}
@@ -14,18 +14,13 @@ layout: Optional "split" layout for two cases, with the featured case on the rig
         <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
       {%- endif -%}
       <ul class="featured-case-studies__list">
-        {% if layout == 'split' %}
-          {{ caseCard(caseStudies[1]) }}
-          {{ featuredCaseStudy(caseStudies[0], 'purple') }}
-        {% else %}
-          {%- for caseStudyHandle in caseStudies -%}
-            {% if loop.index === 1 %}
-              {{ featuredCaseStudy(caseStudyHandle, 'purple') }}
-            {% else %}
-              {{ caseCard(caseStudyHandle) }}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+        {%- for caseStudyHandle in caseStudies -%}
+          {% if (layout == 'split' and loop.last) or (layout != 'split' and loop.first) %}
+            {{ featuredCaseStudy(caseStudyHandle, 'purple') }}
+          {% else %}
+            {{ caseCard(caseStudyHandle) }}
+          {% endif %}
+        {% endfor %}
       </ul>
     </div>
   </section>
