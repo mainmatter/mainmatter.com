@@ -16,11 +16,7 @@
       <span class="screenreader">Mainmatter</span>
     {%- endmacro -%}
 
-    {% if page.url == '/' %}
-      <h1 class="nav__logo">{{ logo() }}</h1>
-    {% else %}
-      <a href="/" class="nav__logo">{{ logo() }}</a>
-    {% endif %}
+    <a href="/" class="nav__logo">{{ logo() }}</a>
 
     <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
       {% include 'svg/menu.njk' %}
@@ -45,7 +41,7 @@
             class="nav__link-text {% if entry.url == page.url or (page.url and parentChildCompare in page.url) %}nav__link-text--active{% endif %}"
             {% if entry.url == page.url %}aria-current="page"{% endif %}
           >
-            {% if entry.icon %}{% include entry.icon %}{% endif %}
+            {% if entry.icon and entry.url != '/rust-consulting/' %}{% include entry.icon %}{% endif %}
             <span>{{ entry.title }}</span>
           </a>
         </li>
@@ -81,18 +77,8 @@
       {%- endmacro %}
 
       <ul class="nav__list nav__list--pinned">
-        <!-- Pinned entries with icon -->
         {%- for entry in navPages -%}
-          {%- if entry.pinned and entry.icon -%}
-            {{ navListItem(entry) }}
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-
-      <ul class="nav__list">
-        <!-- Pinned entries without icon -->
-        {%- for entry in navPages -%}
-          {%- if entry.pinned and not entry.icon -%}
+          {%- if entry.pinned -%}
             {{ navListItem(entry) }}
           {%- endif -%}
         {%- endfor -%}

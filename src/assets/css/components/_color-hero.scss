@@ -98,7 +98,24 @@
   margin-bottom: 1.5rem;
 }
 
+.homepage-hero .color-hero__text {
+  font-size: 1.8rem;
+}
+
+.homepage-hero .color-hero__container {
+  padding-top: 9rem;
+}
+
+.homepage-hero .color-hero__main {
+  width: 100%;
+}
+
 .color-hero__subheading {
+  margin-top: 2rem;
+}
+
+.color-hero__link {
+  display: inline-flex;
   margin-top: 2rem;
 }
 
@@ -121,6 +138,10 @@
     &__LP {
       min-height: max-content;
     }
+  }
+
+  .homepage-hero .color-hero__container {
+    padding-top: max(9rem, 18vh);
   }
 }
 
