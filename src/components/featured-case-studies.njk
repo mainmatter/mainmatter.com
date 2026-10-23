@@ -8,7 +8,9 @@ layout: Optional "split" layout, with the last case featured on the right.
 {% from 'featured-case-study.njk' import featuredCaseStudy %}
 {% from 'case-card.njk' import caseCard %}
 {%- macro featuredCaseStudies(caseStudies, heading, layout) -%}
-  <section class="featured-case-studies{% if layout == 'split' %} featured-case-studies--split{% endif %}">
+  <section
+    class="featured-case-studies{% if layout == 'split' %}featured-case-studies--split{% endif %}"
+  >
     <div class="container container--xl">
       {%- if heading -%}
         <h2 class="featured-case-studies__heading h5">{{ heading }}</h2>
