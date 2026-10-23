@@ -1,20 +1,19 @@
 ---
 layout: base
-title: Frontend engineering consulting | Our services
-description: "Mainmatter's experts join your frontend team to remove bottlenecks, improve delivery pipelines, and adopt AI sustainably, whatever technology you use."
+title: Consulting for AI-accelerated frontend teams | Our services
+description: "Mainmatter builds the engineering infrastructure frontend teams need to ship at the speed of AI, consistently and with confidence."
 eleventyNavigation:
-  key: frontend engineering
+  key: ai-accelerated-frontend-engineering
   order: 2
   pinned: true
-  title: Frontend engineering
+  title: "Ship at AI speed"
 eleventyImport:
   collections: ["caseStudies"]
-permalink: /services/frontend-engineering/
 type: service
 meta:
-  name: "Frontend engineering consulting"
+  name: "Consulting for AI-accelerated frontend teams"
   serviceType: Consulting
-  description: "Mainmatter's experts join your frontend team to remove bottlenecks, improve delivery pipelines, and adopt AI sustainably, whatever technology you use."
+  description: "Mainmatter builds the engineering infrastructure frontend teams need to ship at the speed of AI, consistently and with confidence."
   areaServed: Worldwide
   provider:
     name: "Mainmatter"
@@ -32,14 +31,18 @@ og:
 
 {%
   set content = {
-    "title": "Accelerate your frontend development",
-    "eyebrow": "Frontend engineering",
-    "text": "Our experts join your team to improve the way you build and ship software. We work with you to remove bottlenecks and establish fast, safe, and repeatable delivery. Whatever frontend technology you use, we help you build a software factory: the processes, tooling, and automation that turn ideas into running systems. Together, we lay the foundation for lasting productivity gains as your team adopts AI.",
+    "title": "Ship frontends at AI speed",
+    "eyebrow": "AI-accelerated frontend delivery consulting",
+    "text": "With AI, frontend teams can generate more code faster than ever. That moves the bottleneck downstream to review, testing, and release. Code that never ships has no value, and shipping broken code even has negative value. Increasing velocity sustainably and outpacing the competition takes engineering infrastructure and pipelines that let teams ship consistently, with confidence, at the pace AI makes possible. Mainmatter has helped frontend teams build such pipelines and scale their output for years.",
     "image": "/assets/images/hero/agentic-engineering.jpg",
     "alt": "Desk setup for engineering work",
     "loading": "eager",
-    "linkUrl": "#contact",
-    "linkText": "Let’s talk"
+    "toc": {
+      "Our team": "#team",
+      "Success stories": "#successes",
+      "Let’s talk": "#contact"
+    },
+    "hideFirstTocItemOnDesktop": false
   }
 %}
 {{ colorHero('purple', content) }}
@@ -47,16 +50,20 @@ og:
 <section class="container container--lg my-5">
   <h2 class="mb-2">Strong engineering practices. Lasting productivity gains.</h2>
   <p class="medium">
-    AI can accelerate code production, but those gains only reach your users if testing, review, and
-    release processes can keep up. Slow deployments and unreliable tests hold teams back today.
-    Producing more code puts those processes under even greater pressure.
+    Most frontend teams aren’t seeing the velocity gains AI makes possible. Teams using AI merge far
+    more pull requests, but industry data shows bugs per pull request rising substantially, leading
+    to degraded quality and rework that eats up the velocity gains. Many teams were already
+    struggling to keep up with the code their engineers wrote by hand before AI, with review queues
+    growing and slow builds and flaky tests getting in the way. Until they fix that, these teams
+    can’t benefit from AI and keep up with their competition.
   </p>
   <p class="medium">
-    Mainmatter has guided engineering teams for years, improving the practices and infrastructure
-    that support successful product development. We work with your team to strengthen that
-    foundation: from application architecture and automated testing to continuous delivery and
-    observability. That gives your engineers and agents the feedback they need to ship reliable,
-    maintainable software.
+    Mainmatter has helped frontend teams improve their setups and ship faster for years. The same
+    techniques and infrastructure that allowed Qonto to scale up its frontend team quickly without
+    sacrificing quality are what teams need to turn AI-generated code into shipped features: fast,
+    extensive, and reliable testing, stable delivery automation, and comprehensive observability. We
+    bring that experience to modernize our clients’ software development lifecycle (SDLC) and build
+    the frontend software factories of the future.
   </p>
 </section>
 
@@ -82,7 +89,42 @@ og:
 %}
 {{ strategyList('frontend-engineering', 'We’ll work with you to:', steps, 'my-5') }}
 
-{{ featuredCaseStudies(['auditboard', 'qonto'], 'Success stories', 'split') }}
+<section class="py-7 background-aqua">
+  <div class="container container--xl background-white" id="team">
+    <div class="split-content split-content--full-height-image no-link m-0">
+      <div class="split-content__wrapper">
+        <div class="split-content__content p-2 p-3 m-0">
+          <h2 class="h1 mb-2">Our frontend experts</h2>
+          <p class="medium">
+            Our frontend team brings together experts with many years of experience building complex
+            applications, training engineers, and scaling frontend organizations. Several of us are
+            core members of major frontend projects and regular conference speakers. As long-time
+            open-source contributors, we helped shape patterns that are now standard in the field.
+          </p>
+        </div>
+        <div class="split-content__feature split-content__portrait-grid">
+          {%
+            set frontendTeam = [
+              { "name": "Nick Schot", "image": "nick", "widths": [375, 500, 800] },
+              { "name": "Chris Manson", "image": "chris", "widths": [375, 500, 800] },
+              { "name": "Florian Pichler", "image": "florian", "widths": [375, 500, 800] },
+              { "name": "Paolo Ricciuti", "image": "paolo", "widths": [250, 460] }
+            ]
+          %}
+          {% for person in frontendTeam %}
+            <figure class="split-content__portrait">
+              {% image "/assets/images/photos/" + person.image + ".webp", person.name, "(min-width:48em) 21.5rem, 45vw", "lazy", "split-content__image", person.widths %}
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="successes">
+  {{ featuredCaseStudies(['auditboard', 'qonto'], 'Success stories', 'split') }}
+</div>
 
 {%
   set trainingContent = {
