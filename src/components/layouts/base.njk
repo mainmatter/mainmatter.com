@@ -124,6 +124,11 @@ meta:
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    {#- Tints the browser UI (Safari's toolbar, Chrome's address bar on Android)
+        to match the color at the top of the page. Pages whose first section
+        isn't purple set `themeColor` in their front matter. The hex values in
+        brandColors.json mirror the `--color-*` properties in _variables.scss. -#}
+    <meta name="theme-color" content="{{ brandColors[themeColor or 'purple'] }}" />
     {%- set pageTitle = config.name -%}
     {%- if title -%}
       {%- set pageTitle = title + ' | ' + config.name -%}
