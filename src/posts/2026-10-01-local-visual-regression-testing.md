@@ -4,7 +4,7 @@ authorHandle: paoloricciuti
 tags: [mcp, ai]
 customCta: "global/svelte-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "Can local visual regression testing help your agent move faster and save you money? Let's explore how to set it up properly, along with its pros and cons."
+description: "Can local visual regression testing help your agent move faster and save you money? Paolo Ricciuti weighs off pros and cons and shows how to set it up."
 autoOg: true
 tagline: <p>Can local visual regression testing help your agent move faster and save you money? Let's explore how to set it up properly, along with its pros and cons.</p>
 ---
