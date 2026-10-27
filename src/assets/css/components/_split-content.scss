@@ -57,6 +57,20 @@
     height: 100%;
     object-fit: cover;
   }
+
+  .split-content__portrait-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-content__portrait {
+    position: relative;
+    min-height: 12rem;
+
+    img {
+      object-position: center top;
+    }
+  }
 }
 
 @media (min-width: $breakpoint-s) {
