@@ -4,9 +4,9 @@ authorHandle: paoloricciuti
 tags: [mcp, ai]
 customCta: "global/svelte-cta.njk"
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "Give your agents a window into your application and yourself peace of mind"
+description: "Can local visual regression testing help your agent move faster and save you money? Let's explore how to set it up properly, along with its pros and cons."
 autoOg: true
-tagline: <p>Give your agents a window into your application and yourself peace of mind</p>
+tagline: <p>Can local visual regression testing help your agent move faster and save you money? Let's explore how to set it up properly, along with its pros and cons.</p>
 ---
 
 Picture this: you open your ticket, it's quite simple, "Make the Login button bold". That's an easy one. You open the codebase, track the login button. It has a `variant="login"` prop. You CMD+click in the component, look for the `.login` class and add a `font-weight: bold`. Done. `git add .`, `git commit -m 'fix: bold login button'`, PR opened, reviewed and merged.
