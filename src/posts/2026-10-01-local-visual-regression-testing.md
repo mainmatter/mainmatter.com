@@ -22,7 +22,7 @@ Now that we build with our agents the problem is even bigger. A few of them have
 As we said, tools like Percy and Chromatic are good when it comes to a human signing off on the work after it's finished. However, there are a few problems with these tools:
 
 - The feedback loop is slow: you have to finish your work, commit, open a PR, wait for the diff to happen, visit the page (which might not even be optimized for agents), and only then can you see what changed. Giving the agent access to those changes is also much more involved than letting it read local images, slowing the feedback loop even further. Percy has an MCP server and Chromatic offers a beta API for accessing results, but you still need to set up that integration for your agent.
-- With the productivity agents add, taking that many screenshots can become costly, and you don't want to slow down just because of cost.
+- With the productivity agents add, taking that many screenshots can become costly: in the Actual Budget example below, doubling the number of PRs leads to roughly 2.5–3x as many screenshots, increasing estimated costs from ~$490 to ~$1600 for Chromatic (without TurboSnap) or from ~$3300 to ~$8300 for Percy. You don't want to slow down just because of cost.
 
 ---
 
