@@ -25,7 +25,11 @@
     <div class="featured-case-study__content-wrapper">
       {% if not caseStudy.data.anonymous %}
         {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
-        <img class="featured-case-study__logo" src="{{ imagePath }}" alt="{{ caseStudy.data.company }}" />
+        <img
+          class="featured-case-study__logo"
+          src="{{ imagePath }}"
+          alt="{{ caseStudy.data.company }}"
+        />
       {% endif %}
       <div class="featured-case-study__content">
         <div class="featured-case-study__description">
