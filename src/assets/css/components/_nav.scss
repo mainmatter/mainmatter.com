@@ -5,7 +5,6 @@
   top: 0;
   z-index: 999;
   width: 100%;
-  anchor-scope: --nav-overflow;
   transition:
     background-color 0.4s ease,
     box-shadow 0.4s ease;
@@ -54,6 +53,7 @@
 }
 
 .nav__cta {
+  font-weight: 700;
   transition:
     color 0.5s ease,
     line-height 0.4s ease,
@@ -67,7 +67,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0;
-  font-weight: bold;
+  font-weight: 500;
   color: inherit;
   transition: color 0.3s ease;
 }
@@ -76,15 +76,6 @@
   position: relative;
   display: block;
   white-space: nowrap;
-}
-
-.nav__list--pinned .nav__item {
-  color: var(--color-white);
-}
-
-.nav__list--pinned .nav__item svg path {
-  fill: var(--color-aqua);
-  transition: fill 0.4s ease;
 }
 
 .nav__item svg {
@@ -101,22 +92,14 @@
   cursor: pointer;
 }
 
-[popovertarget="nav-overflow"] {
-  anchor-name: --nav-overflow;
-}
-
 #nav-overflow {
-  --nav-overflow-offset: 1rem;
   --nav-overflow-width: 18rem;
 
-  inset: 6rem auto auto calc(50% + 6rem);
   width: min(var(--nav-overflow-width), calc(100vw - 2rem));
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
   font-size: 1.25rem;
-  transition:
-    margin 0.3s ease,
-    width 0.3s ease;
+  transition: width 0.3s ease;
   user-select: none;
   -webkit-user-select: none;
 
@@ -137,7 +120,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   list-style: none;
   transition: color 0.3s ease;
@@ -175,14 +158,14 @@
     #nav-overflow {
       clip-path: inset(-12px -12px calc(100% + 12px) -12px);
       transition:
-        margin 0.3s ease,
         width 0.3s ease,
-        clip-path 0.16s ease;
+        clip-path 0.16s ease,
+        top 0.4s ease;
     }
 
     #nav-overflow:popover-open {
       clip-path: inset(-12px);
-      transition-duration: 0.24s;
+      transition-duration: 0.24s, 0.24s, 0.4s;
     }
 
     @starting-style {
@@ -215,15 +198,6 @@
   }
 }
 
-@supports (anchor-name: --n) and (position-anchor: --n) and (position-area: none) {
-  #nav-overflow {
-    position-anchor: --nav-overflow;
-    inset: unset;
-    position-area: block-end span-inline-end;
-    margin: var(--nav-overflow-offset) 0 0;
-  }
-}
-
 .nav__wrapper {
   display: grid;
   align-items: stretch;
@@ -244,6 +218,10 @@
   &--active {
     text-decoration-color: var(--color-accent);
   }
+}
+
+.nav__item .nav__link-text--active {
+  font-weight: 700;
 }
 
 .nav__expandable {
@@ -301,12 +279,6 @@
   .nav__item {
     color: var(--color-black);
   }
-
-  .nav__list--pinned + .nav__list .nav__item:first-child {
-    border-top: 2px solid var(--color-aqua);
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-  }
 }
 
 @media (max-width: calc($breakpoint-m - 1px)) {
@@ -358,6 +330,11 @@
   }
 
   #nav-overflow {
+    position: fixed;
+    position-anchor: none;
+    inset: 5.2rem auto auto min(calc(50% + 6rem), calc(100% - var(--nav-overflow-width) - 1rem));
+    margin: 0;
+
     .nav-item {
       font-size: 1rem;
       line-height: 2rem;
@@ -370,27 +347,34 @@
 
   .nav__wrapper {
     grid-template:
-      "logo  pinned  more  contact" min-content
-      / max-content max-content auto max-content;
+      "logo  links  contact" min-content
+      / minmax(max-content, 1fr) max-content minmax(max-content, 1fr);
+    column-gap: 1.5rem;
+  }
+
+  .nav__logo {
+    justify-self: start;
+    padding-right: 0;
+  }
+
+  .nav__cta {
+    justify-self: end;
   }
 
   .nav__list:not(.nav__list--overflow) {
     display: flex;
     align-items: center;
-    column-gap: 1.5rem;
-  }
-
-  .nav__list--pinned + .nav__list .nav__item:first-child {
-    border-left: 2px solid var(--color-aqua);
-    margin-left: 1.5rem;
-    padding-left: 1.5rem;
-    transition: border-color 0.4s ease;
+    column-gap: 2rem;
   }
 
   .nav__scrolled {
     position: fixed;
     background-color: var(--color-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    #nav-overflow {
+      top: 3.55rem;
+    }
 
     .nav__wrapper {
       margin-top: 0.125rem;
@@ -400,14 +384,6 @@
     & :has(#nav-overflow:popover-open) .nav__expandable {
       text-decoration-color: var(--color-purple);
       color: var(--color-purple);
-    }
-
-    .nav__list--pinned .nav__item {
-      color: var(--color-black);
-    }
-
-    .nav__list--pinned .nav__item svg path {
-      fill: var(--color-purple);
     }
 
     .nav__logo svg {
@@ -438,10 +414,6 @@
       }
     }
 
-    .nav__list--pinned + .nav__list .nav__item:first-child {
-      border-left: 2px solid var(--color-purple);
-    }
-
     .nav__item :is(a):is(:focus, :hover) {
       color: var(--color-purple);
       text-decoration-color: var(--color-purple);
@@ -457,11 +429,7 @@
   .nav__item a,
   .nav__item button,
   .nav__link-text,
-  .nav__cta,
-  .nav__list--pinned,
-  .nav__list--pinned .nav__item,
-  .nav__list--pinned .nav__item svg path,
-  .nav__list--pinned + .nav__list .nav__item:first-child {
+  .nav__cta {
     transition-duration: 0.01ms;
   }
 }
@@ -473,6 +441,10 @@
 }
 
 @media (min-width: $breakpoint-xl) {
+  .nav:not(.nav__scrolled) #nav-overflow {
+    top: 5.5rem;
+  }
+
   .nav__item,
   .nav__cta {
     font-size: 1.25rem;

@@ -1,6 +1,6 @@
-{% from "social-list.njk" import socialList %}
 {% from "btn-primary.njk" import btnPrimary %}
 {% set navPages = collections.all | eleventyNavigation %}
+{% set otherTechnologyUrls = ['/ember-consulting/', '/svelte-consulting/'] %}
 
 {% if page.url == '/playbook/' %}
   {% set ctaColor = 'purple' %}
@@ -10,16 +10,10 @@
 
 <nav class="nav" id="nav">
   <div class="nav__wrapper container container--xl">
-    {%- macro logo() -%}
-      {%- include 'svg/logo.njk' -%}
+    <a href="/" class="nav__logo">
+      {% include 'svg/logo.njk' %}
       <span class="screenreader">Mainmatter</span>
-    {%- endmacro -%}
-
-    {% if page.url == '/' %}
-      <h1 class="nav__logo">{{ logo() }}</h1>
-    {% else %}
-      <a href="/" class="nav__logo">{{ logo() }}</a>
-    {% endif %}
+    </a>
 
     <button type="button" popovertarget="nav-menu" popovertargetaction="show" class="nav-button">
       {% include 'svg/menu.njk' %}
@@ -80,18 +74,8 @@
       {%- endmacro %}
 
       <ul class="nav__list nav__list--pinned">
-        <!-- Pinned entries with icon -->
         {%- for entry in navPages -%}
-          {%- if entry.pinned and entry.icon -%}
-            {{ navListItem(entry) }}
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
-
-      <ul class="nav__list">
-        <!-- Pinned entries without icon -->
-        {%- for entry in navPages -%}
-          {%- if entry.pinned and not entry.icon -%}
+          {%- if entry.pinned -%}
             {{ navListItem(entry) }}
           {%- endif -%}
         {%- endfor -%}
@@ -109,15 +93,31 @@
 
         <ul class="nav__list nav__list--overflow">
           {%- for entry in navPages -%}
-            {%- if not entry.pinned and entry.order <= 7 -%}
+            {%- if not entry.pinned and entry.url not in otherTechnologyUrls and entry.order <= 7 -%}
               {{ navListItem(entry) }}
             {%- endif -%}
           {%- endfor -%}
 
+          <li class="nav__item nav__item--nested">
+            <details class="nav__nested">
+              <summary class="nav__nested-summary">
+                <span>Other technologies</span>
+                {% include 'svg/caret.njk' %}
+              </summary>
+              <ul class="nav__nested-list">
+                {%- for entry in navPages -%}
+                  {%- if entry.url in otherTechnologyUrls -%}
+                    {{ navListItem(entry) }}
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            </details>
+          </li>
+
           {{ learningMaterialsNavItem() }}
 
           {%- for entry in navPages -%}
-            {%- if not entry.pinned and entry.order > 7 -%}
+            {%- if not entry.pinned and entry.url not in otherTechnologyUrls and entry.order > 7 -%}
               {{ navListItem(entry) }}
             {%- endif -%}
           {%- endfor -%}

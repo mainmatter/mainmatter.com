@@ -12,7 +12,7 @@
     </a>
     <div class="card__logo-wrapper">
       {% set imagePath %}/assets/images/logos/{{ clientHandle }}.svg{% endset %}
-      <img src="{{ imagePath }}" alt="{{ company }}" />
+      <img src="{{ imagePath }}" alt="{{ caseStudy.data.company }}" />
     </div>
     <div class="card__content">
       {% if caseStudy.data.problem %}
