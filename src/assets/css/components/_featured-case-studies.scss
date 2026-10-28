@@ -19,6 +19,10 @@
   gap: 1.5rem;
 }
 
+.featured-case-studies--split .featured-case-studies__list > .case-cards__grid-element {
+  --background-color: var(--color-aqua);
+}
+
 @media (min-width: $breakpoint-m) {
   .featured-case-studies {
     margin-block-start: 5rem;
@@ -30,5 +34,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
     gap: 1.5rem;
+  }
+
+  .featured-case-studies--split .featured-case-studies__list {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-rows: auto;
+
+    > .featured-case-study {
+      grid-column: auto;
+      align-self: stretch;
+    }
   }
 }

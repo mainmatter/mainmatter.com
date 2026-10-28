@@ -68,17 +68,7 @@
             {% else %}
               <div class="contact-form__field">
                 <select class="contact-form__select" name="service" id="service">
-                  <option value="" selected disabled>How can we help you?</option>
-                  <option value="Rust">Rust</option>
-                  <option value="Ember">Ember</option>
-                  <option value="Svelte">Svelte</option>
-                  <option value="Training">Training</option>
-                  <option value="Strategic advice">Strategic advice</option>
-                  <option value="Agentic engineering">Agentic engineering</option>
-                  <option value="Travel Company Transformation">
-                    Travel company transformation
-                  </option>
-                  <option value="Other">Other</option>
+                  {% include "contact-service-options.njk" %}
                 </select>
                 <label class="contact-form__label h4" for="service"> How can we help you? </label>
               </div>

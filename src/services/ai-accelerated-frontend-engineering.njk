@@ -1,0 +1,198 @@
+---
+layout: base
+title: Consulting for AI-accelerated frontend teams | Our services
+description: "Mainmatter builds the engineering infrastructure frontend teams need to ship at the speed of AI, consistently and with confidence."
+eleventyNavigation:
+  key: ai-accelerated-frontend-engineering
+  order: 2
+  pinned: true
+  title: "Ship at AI speed"
+eleventyImport:
+  collections: ["caseStudies"]
+type: service
+meta:
+  name: "Consulting for AI-accelerated frontend teams"
+  serviceType: Consulting
+  description: "Mainmatter builds the engineering infrastructure frontend teams need to ship at the speed of AI, consistently and with confidence."
+  areaServed: Worldwide
+  provider:
+    name: "Mainmatter"
+og:
+  image: /assets/images/services/frontend-engineering-og-image.webp
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "featured-case-studies.njk" import featuredCaseStudies %}
+{% from "cta-banner.njk" import ctaBanner %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+{% from "image-aspect-ratio.njk" import imageAspectRatio %}
+{% from "btn-secondary.njk" import btnSecondary %}
+
+{%
+  set content = {
+    "title": "Ship frontends at AI speed",
+    "eyebrow": "AI-accelerated frontend delivery consulting",
+    "text": "With AI, frontend teams can generate more code faster than ever. That moves the bottleneck downstream to review, testing, and release. Code that never ships has no value, and shipping broken code even has negative value. Increasing velocity sustainably and outpacing the competition takes engineering infrastructure and pipelines that let teams ship consistently, with confidence, at the pace AI makes possible. Mainmatter has helped frontend teams build such pipelines and scale their output for years.",
+    "image": "/assets/images/hero/agentic-engineering.jpg",
+    "alt": "Desk setup for engineering work",
+    "loading": "eager",
+    "toc": {
+      "Our team": "#team",
+      "Success stories": "#successes",
+      "Let’s talk": "#contact"
+    },
+    "hideFirstTocItemOnDesktop": false
+  }
+%}
+{{ colorHero('purple', content) }}
+
+<section class="container container--lg my-5">
+  <h2 class="mb-2">Strong engineering practices. Lasting productivity gains.</h2>
+  <p class="medium">
+    Most frontend teams aren’t seeing the velocity gains AI makes possible. Teams using AI merge far
+    more pull requests, but industry data shows bugs per pull request rising substantially, leading
+    to degraded quality and rework that eats up the velocity gains. Many teams were already
+    struggling to keep up with the code their engineers wrote by hand before AI, with review queues
+    growing and slow builds and flaky tests getting in the way. Until they fix that, these teams
+    can’t benefit from AI and keep up with their competition.
+  </p>
+  <p class="medium">
+    Mainmatter has helped frontend teams improve their setups and ship faster for years. The same
+    techniques and infrastructure that allowed Qonto to scale up its frontend team quickly without
+    sacrificing quality are what teams need to turn AI-generated code into shipped features: fast,
+    extensive, and reliable testing, stable delivery automation, and comprehensive observability. We
+    bring that experience to modernize our clients’ software development lifecycle (SDLC) and build
+    the frontend software factories of the future.
+  </p>
+</section>
+
+{%
+  set steps = [
+    {
+      "title": "Assess the status quo",
+      "text": "We review your codebase, architecture, tooling, infrastructure, and development practices, and speak with your team to understand the challenges they face. Together we define what success looks like and track metrics such as lead time for changes and change failure rate."
+    },
+    {
+      "title": "Clear the path",
+      "text": "We work alongside your engineers to overcome the bottlenecks holding development back. We improve build times, stabilize and extend automated tests, and automate releases. Each change strengthens your delivery pipeline while your team continues to work on the product."
+    },
+    {
+      "title": "Roll out tools and practices",
+      "text": "With the foundation in place, we introduce agentic engineering practices incrementally. We establish the context and guardrails agents need, backed by automated checks and human review, so your team can adopt AI efficiently, responsibly, and sustainably."
+    },
+    {
+      "title": "Mentor your team as we go",
+      "text": "At Mainmatter, we promise sustainable change. Through mentoring, pair-programming, and reviews, we help your engineers take ownership of the code, tooling, and processes we build together. Your team is more knowledgeable and independently capable after our collaboration."
+    }
+  ]
+%}
+{{ strategyList('frontend-engineering', 'We’ll work with you to:', steps, 'my-5') }}
+
+<section class="py-7 background-aqua">
+  <div class="container container--xl background-white" id="team">
+    <div class="split-content split-content--full-height-image no-link m-0">
+      <div class="split-content__wrapper">
+        <div class="split-content__content p-2 p-3 m-0">
+          <h2 class="h1 mb-2">Our frontend experts</h2>
+          <p class="medium">
+            Our frontend team brings together experts with many years of experience building complex
+            applications, training engineers, and scaling frontend organizations. Several of us are
+            core members of major frontend projects and regular conference speakers. As long-time
+            open-source contributors, we helped shape patterns that are now standard in the field.
+          </p>
+        </div>
+        <div class="split-content__feature split-content__portrait-grid">
+          {%
+            set frontendTeam = [
+              { "name": "Nick Schot", "image": "nick", "widths": [375, 500, 800] },
+              { "name": "Chris Manson", "image": "chris", "widths": [375, 500, 800] },
+              { "name": "Florian Pichler", "image": "florian", "widths": [375, 500, 800] },
+              { "name": "Paolo Ricciuti", "image": "paolo", "widths": [250, 460] }
+            ]
+          %}
+          {% for person in frontendTeam %}
+            <figure class="split-content__portrait">
+              {% image "/assets/images/photos/" + person.image + ".webp", person.name, "(min-width:48em) 21.5rem, 45vw", "lazy", "split-content__image", person.widths %}
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="successes">{{ featuredCaseStudies(['optro', 'qonto'], 'Success stories', 'split') }}</div>
+
+{%
+  set trainingContent = {
+    "title": "AI and agentic engineering training",
+    "text": "We teach teams like yours how to adopt AI and keep up with a fast-moving field.",
+    "linkUrl": "/training/ai/",
+    "linkText": "Explore training"
+  }
+%}
+{{ ctaBanner('purple', 'default', trainingContent) }}
+
+{{ contactFormLP('Frontend engineering') }}
+
+{%
+  set recommendations = [
+    {
+      "title": "Agentic engineering with Svelte",
+      "image": "/assets/images/svelte/agentic-engineering-learn-more.webp",
+      "alt": "Paolo Ricciuti presenting on stage",
+      "label": "Watch on YouTube",
+      "url": "https://youtube.com/playlist?list=PLdAi-nB9AYut1ixrraX3E96rNNVj3iq4F"
+    },
+    {
+      "title": "Blog post: agentic engineering with Svelte",
+      "image": "/assets/images/blog/ai-blog-post.webp",
+      "alt": "A lightbulb next to an AI logo",
+      "label": "Read blog post",
+      "url": "/blog/2026/07/28/agentic-engineering-with-svelte/"
+    },
+    {
+      "title": "Blog post: beyond the AI hype: realizing real engineering value",
+      "image": "/assets/images/blog/beyond-the-ai-hype-learn-more-image.webp",
+      "alt": "Wooden robot toys",
+      "label": "Read blog post",
+      "url": "/blog/2025/12/05/beyond-the-ai-hype-realizing-real-engineering-value/"
+    }
+  ]
+%}
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="open-source">
+  <div>
+    <h2 class="opensource-list__title h1">You might like...</h2>
+    <ul class="opensource-list__list opensource-list__list-redesigned">
+      {% for recommendation in recommendations %}
+        <li class="opensource-list__project">
+          <div>
+            <div class="opensource-list__project-image">
+              <img src="{{ recommendation.image }}" alt="{{ recommendation.alt }}" />
+            </div>
+            <div class="opensource-list__project-text">
+              <h4 class="mb-015 medium">{{ recommendation.title }}</h4>
+            </div>
+          </div>
+          <div class="opensource-list__project-link">
+            {{ btnSecondary(recommendation, 'link-purple') }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section>
+  {%
+    set imageData = {
+      "imgPath": "/assets/images/photos/agentic-engineering-footer.jpg",
+      "alt": "Agentic engineering workspace",
+      "sizes": "100vw",
+      "loading": "lazy",
+      "sizesArray": [760, 1440, 1920]
+    }
+  %}
+  {{ imageAspectRatio(imageData, "32/8", "35/19") }}
+</section>
