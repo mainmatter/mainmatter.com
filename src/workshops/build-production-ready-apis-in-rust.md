@@ -72,8 +72,11 @@ topics:
       Most platforms require you to package your application as a Docker image for deployment. We'll cover how to write a Dockerfile to package our API, with a focus on effective caching (via <code>cargo-chef</code>) and techniques to minimise the size of the final image.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 
 quotes:
   - text: "Throughly Enjoyed the excercises format. Looking forward to more workshops for middle to advanced rust developers […]"

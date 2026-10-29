@@ -90,8 +90,11 @@ topics:
       You will run the whole server on a simulated network with <code>turmoil</code>: injected latency, dropped connections, and partitions, all deterministic and all inside a unit test, using the same abstractions that made the store pluggable.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 ---
 
 <!--break-->

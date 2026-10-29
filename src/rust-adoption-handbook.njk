@@ -34,9 +34,8 @@ og:
   <div class="container container--lg">
     <div class="mb-4">
       <p class="body">
-        We’re Rust experts - our team is led by Luca Palmieri, author of
-        <a href="http://zero2prod.com">"Zero to Production in Rust"</a>, and we have been part of
-        the Rust ecosystem for years – helping teams succeed with Rust, working on
+        {% include 'content/rust-team-bio.njk' %} We have been part of the Rust ecosystem for years
+        – helping teams succeed with Rust, working on
         <a href="https://crates.io">crates.io</a>, and hosting the
         <a href="https://eurorust.eu/">EuroRust conference</a>.
       </p>
@@ -196,9 +195,9 @@ og:
 </section>
 
 <section class="my-10 container container--lg">
-  <div class="split-content no-link">
+  <div class="split-content split-content--full-height-image no-link">
     <div class="split-content__wrapper">
-      <div class="split-content__content">
+      <div class="split-content__content p-2 p-3 m-0">
         <h5>Book a free call</h5>
         <h3 class="split-content__subheading h2">Is Rust the right choice for us?</h3>
         <p>
@@ -209,15 +208,13 @@ og:
         </p>
         {%
           set link = {
-          "label": 'Book a 1:1 call with us',
-          "url": 'https://calendly.com/luca-palmieri/talk-to-a-rust-expert'
+          "label": 'Talk to our Rust experts',
+          "url": '/contact/?service=Rust'
           }
         %}
         {{ btnSecondary( link, 'mt-2 plausible-event-name=Rust+1on1+Call' ) }}
       </div>
-      <div class="split-content__feature">
-        {% include 'content/secondary-feature-rust-consulting.njk' %}
-      </div>
+      {% include 'content/rust-team-portraits.njk' %}
     </div>
   </div>
 </section>

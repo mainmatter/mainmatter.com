@@ -215,7 +215,11 @@ layout: "base"
       </section>
     {% endif %}
 
-    {% if leads %}
+    {% if rustTeam %}
+      <section class="container container--xl my-10" id="mentor">
+        {% include 'content/rust-team.njk' %}
+      </section>
+    {% elif leads %}
       <section class="workshop-authors workshop-detail__mentor container container--lg" id="mentor">
         <div class="workshop__content post__content--workshop">
           <h2 class="workshop-topics__heading">

@@ -32,8 +32,11 @@ topics:
       Structured logs are important, but they don’t tell the full story. We will look at how to capture metric data using the <code>metrics</code> library, as a tool for designing alarms as well troubleshooting faulty behaviour.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 
 quotes:
   - text: "Throughly Enjoyed the excercises format. Looking forward to more workshops for middle to advanced rust developers […]"

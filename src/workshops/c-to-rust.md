@@ -51,7 +51,10 @@ quotes:
       Very good, the balance of practical work mixed with bite size new concepts works nicely
 
     source: Onsite attendee
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 upcomingDates: []
 ---
