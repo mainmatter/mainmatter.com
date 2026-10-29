@@ -29,26 +29,22 @@ og:
 
 <section class="my-10 container container--lg">
   <div class="split-content split-content--full-height-image no-link">
-    <div class="split-content__wrapper">
-      <div class="split-content__content p-2 p-3 m-0">
-        <h5>Build on Rust with confidence</h5>
-        <h3 class="split-content__subheading h2">Rust expertise on a monthly subscription</h3>
-        <p>
-          Our Rust experts review all of your Rust PRs and are only a Slack message away to answer
-          any question your team runs into. We enable teams to ship faster, with higher quality,
-          resolve blockers, level up juniors, and avoid dead-ends.
-        </p>
-        <p>{% include 'content/rust-team-bio.njk' %}</p>
-        {%
-          set link = {
-          "label": 'Sign up today for 2.000€ per seat/month, cancel anytime',
-          "url": '#signup-subscription'
-          }
-        %}
-        {{ btnSecondary( link, 'mt-2' ) }}
-      </div>
-      {% include 'content/rust-team-portraits.njk' %}
-    </div>
+    <h5>Build on Rust with confidence</h5>
+    <h3 class="split-content__subheading h2">Rust expertise on a monthly subscription</h3>
+    <p>
+      Our Rust experts review all of your Rust PRs and are only a Slack message away to answer any
+      question your team runs into. We enable teams to ship faster, with higher quality, resolve
+      blockers, level up juniors, and avoid dead-ends.
+    </p>
+    <p>{% include 'content/rust-team-bio.njk' %}</p>
+    <div class="mt-2">{% include 'content/rust-team-portraits.njk' %}</div>
+    {%
+      set link = {
+      "label": 'Sign up today for 2.000€ per seat/month, cancel anytime',
+      "url": '#signup-subscription'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
   </div>
 </section>
 
