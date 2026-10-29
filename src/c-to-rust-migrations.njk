@@ -2,7 +2,6 @@
 layout: base
 title: "C-to-Rust migrations | Rust consulting"
 description: "We migrate your C codebase and tooling to idiomatic, safe Rust, with verification and hands-on mentoring so your team can carry it forward."
-permalink: /c-to-rust-consulting/
 type: service
 meta:
   name: "C-to-Rust migrations"
@@ -12,7 +11,7 @@ meta:
   provider:
     name: "Mainmatter"
 og:
-  image: /assets/images/rust/og-image.webp
+  image: /assets/images/services/c-to-rust-migrations-og-image.webp
 ---
 
 {% from "color-hero.njk" import colorHero %}
@@ -210,9 +209,9 @@ og:
   %}
   <div class="workshop-detail__faq">
     {% for item in questions %}
-      <details>
+      <details data-accordion>
         <summary>{{ item.question }}</summary>
-        <p>{{ item.answer }}</p>
+        <div data-accordion-content><p>{{ item.answer }}</p></div>
       </details>
     {% endfor %}
   </div>

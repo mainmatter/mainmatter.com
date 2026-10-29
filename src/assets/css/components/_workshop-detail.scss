@@ -267,6 +267,17 @@
   display: grid;
   gap: 1rem;
 
+  @media (prefers-reduced-motion: no-preference) {
+    [data-accordion-content] {
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+    }
+
+    summary::after {
+      transition: transform 0.2s ease;
+    }
+  }
+
   p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -299,7 +310,7 @@
     }
   }
 
-  details[open] summary::after {
+  details[open]:not([data-collapsed]) summary::after {
     transform: rotate(225deg);
   }
 }
