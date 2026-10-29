@@ -1,0 +1,264 @@
+---
+layout: base
+title: "C-to-Rust migrations | Rust consulting"
+description: "We migrate your C codebase and tooling to idiomatic, safe Rust, with verification and hands-on mentoring so your team can carry it forward."
+type: service
+meta:
+  name: "C-to-Rust migrations"
+  serviceType: Consulting
+  description: "Mainmatter migrates C codebases and tooling to idiomatic, safe Rust, with verification systems and hands-on team mentoring."
+  areaServed: Worldwide
+  provider:
+    name: "Mainmatter"
+og:
+  image: /assets/images/services/c-to-rust-migrations-og-image.webp
+---
+
+{% from "color-hero.njk" import colorHero %}
+{% from "service-cards.njk" import serviceCards %}
+{% from "strategy-list.njk" import strategyList %}
+{% from "btn-secondary.njk" import btnSecondary %}
+{% from "quote.njk" import quote %}
+{% from "logo-list.njk" import logoList %}
+{% from "contact-form-LP.njk" import contactFormLP %}
+
+{%
+  set content = {
+    "title": "Migrate your C codebase to Rust, without raising doubts",
+    "text": "Migrating to Rust can improve memory safety and maintainability, but preserving behavior while changing languages takes care. We migrate your C codebase, and the tooling around it, to idiomatic, safe Rust. You get a better codebase than you started with, not the same code in a different language. Your engineers learn Rust alongside us, so they can carry it forward after we leave. Some of the world’s leading tech companies have trusted us with their most critical systems.",
+    "containerType": "lp",
+    "toc": {
+      "Our approach": "#approach",
+      "Our team": "#team",
+      "Success stories": "#successes",
+      "Let’s talk": "#contact"
+    }
+  }
+%}
+{{ colorHero('purple', content) }}
+
+{%
+  set pillars = [
+    {
+      "title": "The codebase",
+      "text": "We port your C to Rust that a Rust engineer would recognize as Rust. That means redesigning ownership, error handling, and API surfaces to fit Rust's memory model, not wrapping the original structure in <code>unsafe</code> and calling it done." | safe
+    },
+    {
+      "title": "The verification system",
+      "text": "Before we change anything, we build the harness that tells us whether we broke it: differential testing against the C implementation, fuzzing, sanitizers, and shadow deployments where the system allows it. You keep that harness long after the migration ends."
+    },
+    {
+      "title": "Your team",
+      "text": "We pair, review, and run workshops throughout the engagement. By the time we're done, your engineers are the ones reviewing the Rust."
+    }
+  ]
+%}
+{{ serviceCards('approach', 'We migrate holistically', pillars) }}
+
+<section class="container container--lg my-10">
+  <h2 class="h1 mb-3">Migration, not transliteration</h2>
+  <p class="medium">
+    Automated C-to-Rust conversion tends to fall into the trap of just producing Rust that compiles
+    but not Rust that's safer: it preserves the aliasing, lifetimes, and manual memory management of
+    the original inside <code>unsafe</code> blocks, leaving you with the same bugs in a language you
+    now also have to learn. We treat the migration as a redesign instead. A pointer and a length
+    become a slice; a global with a documented locking convention becomes a type that makes the
+    convention unrepresentable if you get it wrong; an error code half the callers ignored becomes a
+    <code>Result</code> that warns callers when left unused.
+  </p>
+  <p class="medium mt-2">
+    The result is a codebase that's better than what you started with, not a translation of it. That
+    takes longer than running a converter. It's also the only version of this work that pays back.
+  </p>
+</section>
+
+{%
+  set steps = [
+    {"title": "Choose the migration strategy that fits the system: bottom-up from the leaf modules, or one focused rewrite."},
+    {"title": "Build the verification system the migration rests on, covering differential testing, fuzzing, sanitizers, and shadow deployment."},
+    {"title": "Execute the migration using coding agents where possible to move faster without giving up quality."},
+    {"title": "Mentor your team throughout, so they can finish the migration and evolve the codebase after we leave."}
+  ]
+%}
+{{ strategyList('migration', 'We’ll work with you to', steps) }}
+
+<section class="py-7 background-aqua">
+  <div class="container container--xl background-white" id="team">
+    <div class="split-content split-content--full-height-image no-link m-0">
+      <div class="split-content__wrapper">
+        <div class="split-content__content p-2 p-3 m-0">
+          <h2 class="h1 mb-2">We are Rust experts</h2>
+          <p class="medium">
+            Mainmatter has been active in the Rust ecosystem for years, creating the
+            <a href="https://rust-exercises.com/" class="link-black">100 Exercises to Learn Rust</a>
+            course, organizing <a href="https://www.eurorust.eu/" class="link-black">EuroRust</a>,
+            contributing to <a href="https://crates.io/" class="link-black">crates.io</a>, and
+            maintaining several other
+            <a href="/rust-consulting/#open-source" class="link-black">open-source&nbsp;projects</a
+            >. We are also a founding member of the
+            <a href="https://rustfoundation.org/rust-commercial-network/" class="link-black"
+              >Rust Commercial Network</a
+            >, where we work with ecosystem members to solve shared problems and advance Rust
+            adoption.
+          </p>
+          <p class="medium">
+            Our team includes Jonas Kruckenberg, author of
+            <a href="/c-to-rust-migration-book/" class="link-black"
+              >“The C to Rust Migration Book,”</a
+            >
+            Henk Oordt, Senior engineering consultant, and Marco Otte-Witte, founder of Mainmatter
+            and host of EuroRust.
+          </p>
+        </div>
+        <div
+          class="split-content__feature split-content__portrait-grid split-content__portrait-grid--three"
+        >
+          {%
+            set rustTeam = [
+              { "name": "Marco Otte-Witte", "image": "/assets/images/photos/marco_vertical.webp", "widths": [250, 450] },
+              { "name": "Jonas Kruckenberg", "image": "/assets/images/photos/jonas_vertical.webp", "widths": [250, 450] },
+              { "name": "Henk Oordt", "image": "/assets/images/photos/henk_vertical.webp", "widths": [250, 450] }
+            ]
+          %}
+          {% for person in rustTeam %}
+            <figure class="split-content__portrait">
+              {% image person.image, person.name, "(min-width:48em) 14.33rem, 30vw", "lazy", "split-content__image", person.widths %}
+            </figure>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mt-7 mb-5" id="successes">
+  <div class="container container--lg mb-6">
+    <h2 class="h1">Success stories</h2>
+    <p class="mt-2">Our work spans C-to-Rust migrations and Rust systems development.</p>
+    {%
+      set 'content' = {
+      "text": "Working with Mainmatter's experts has been a great experience. They helped us develop a state-of-the-art data pipeline, mentored our internal team and introduced several improvements around our Rust code and infrastructure along the way.”",
+      "source": "Andreas Hartel",
+      "position": "Senior Engineer at Aleph Alpha",
+      "styling": "redesigned"
+      }
+    %}
+    {{ quote(content) }}
+  </div>
+  <div class="container container--lg mb-6">
+    {%
+      set link = {
+      "label": 'Rewriting a critical data platform to Rust, one C module at a time',
+      "url": '/cases/anondb/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Server, AWS Lambda, Edge: Rust to rule them all at KISTERS',
+      "url": '/cases/kisters/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+
+    {%
+      set link = {
+      "label": 'Preprocessing trillions of tokens for LLM training at Aleph Alpha',
+      "url": '/cases/aleph-alpha/'
+      }
+    %}
+    {{ btnSecondary( link, 'mt-2' ) }}
+  </div>
+  {%
+    set logoCompanies = [
+    'Aleph Alpha',
+    'Google',
+    'KISTERS',
+    'BMW Car IT',
+    'Faculty',
+    'Otto',
+    'Redis',
+    'unpkg'
+    ]
+  %}
+  {{ logoList(logoCompanies) }}
+</section>
+
+<section class="container container--lg my-5" id="faq">
+  <h2 class="h1 mb-3">FAQ</h2>
+  {%
+    set questions = [
+      {
+        "question": "Can we keep shipping features during the migration?",
+        "answer": "Yes, and on most codebases you have to. Incremental migration means C and Rust coexist behind a stable FFI boundary for as long as you need."
+      },
+      {
+        "question": "What if our team doesn't know Rust?",
+        "answer": "That's the normal starting point. Mentoring is part of the engagement, not an add-on."
+      },
+      {
+        "question": "Do you use AI to do the migration?",
+        "answer": "We use coding agents for mechanical work, behind the verification system. The design decisions are ours, and every change is reviewed."
+      },
+      {
+        "question": "How long does it take?",
+        "answer": "Depends on the codebase. The first step of any engagement is an assessment that gives you a scoped answer instead of a guess."
+      }
+    ]
+  %}
+  <div class="workshop-detail__faq">
+    {% for item in questions %}
+      <details data-accordion>
+        <summary>{{ item.question }}</summary>
+        <div data-accordion-content><p>{{ item.answer }}</p></div>
+      </details>
+    {% endfor %}
+  </div>
+</section>
+
+{{ contactFormLP('Rust') }}
+
+<section class="container container--lg opensource-list py-7 image-max-width-32" id="learn-more">
+  <h1 class="opensource-list__title">You might like...</h1>
+  {%
+    set resources = [
+      {
+        "title": "The C to Rust Migration Book",
+        "image": "/assets/images/rust/c-to-rust-migration-book/c-to-rust-books.webp",
+        "alt": "C to Rust migration book covers",
+        "label": "Read the book",
+        "url": "/c-to-rust-migration-book/"
+      },
+      {
+        "title": "Rust training and workshops",
+        "image": "/assets/images/hero/rust-workshops.jpg",
+        "alt": "",
+        "label": "Explore Rust training",
+        "url": "/training/rust/"
+      },
+      {
+        "title": "How do you rewrite C/C++ projects to Rust?",
+        "image": "/assets/images/rust/luca-livestream.jpg",
+        "alt": "Luca Palmieri YouTube thumbnail",
+        "label": "Watch on YouTube",
+        "url": "https://www.youtube.com/watch?v=_LtgHxuysUo&t=4s"
+      }
+    ]
+  %}
+  <ul class="opensource-list__list opensource-list__list-redesigned">
+    {% for resource in resources %}
+      <li class="opensource-list__project">
+        <div>
+          <div class="opensource-list__project-image">
+            <img src="{{ resource.image }}" alt="{{ resource.alt }}" loading="lazy" />
+          </div>
+          <div class="opensource-list__project-text">
+            <h4 class="mb-015 medium">{{ resource.title }}</h4>
+          </div>
+        </div>
+        <div class="opensource-list__project-link">{{ btnSecondary(resource, 'link-purple') }}</div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
