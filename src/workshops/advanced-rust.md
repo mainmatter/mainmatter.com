@@ -60,8 +60,11 @@ topics:
       We will cover what <code>PhantomData</code> does to size, auto traits, drop checking, and variance. You will give a handle that owns its data the borrowing behaviour of a reference, then use a branded lifetime and a higher-ranked bound so that keys built against one store cannot be used with another.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 ---
 
 <!--break-->

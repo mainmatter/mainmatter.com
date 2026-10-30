@@ -1,0 +1,16 @@
+<div
+  class="split-content__feature split-content__portrait-grid split-content__portrait-grid--three"
+>
+  {%
+    set rustTeam = [
+      {"name": "Marco Otte-Witte", "image": "marco"},
+      {"name": "Jonas Kruckenberg", "image": "jonas"},
+      {"name": "Henk Oordt", "image": "henk"}
+    ]
+  %}
+  {% for person in rustTeam %}
+    <figure class="split-content__portrait">
+      {% image "/assets/images/photos/" + person.image + "_vertical.webp", person.name, "(min-width:48em) 14.33rem, 30vw", "lazy", "split-content__image", [250, 450] %}
+    </figure>
+  {% endfor %}
+</div>
