@@ -1,8 +1,8 @@
 {% from "btn-primary.njk" import btnPrimary %}
 
-{% macro serviceCards(id, title, cards) %}
+{% macro serviceCards(id, title, cards, containerSize = 'lg') %}
   <section class="service-cards" id="{{ id }}">
-    <div class="service-cards__container container container--lg">
+    <div class="service-cards__container container container--{{ containerSize }}">
       {% if title %}
         <h1 class="service-cards__title">{{ title }}</h1>
       {% endif %}
