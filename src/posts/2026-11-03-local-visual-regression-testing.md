@@ -70,7 +70,7 @@ However, the first run will also screenshot the page and store the screenshot in
 
 Just for good measure, I asked Claude to generate a good-looking page to show you, and here's the actual screenshot that the first run took.
 
-![a screenshot of the page took by playwright tests](/assets/images/posts/2026-11-04-local-visual-regression-testing/screenshot.png)
+![a screenshot of the page took by playwright tests](/assets/images/posts/2026-11-03-local-visual-regression-testing/screenshot.png)
 
 Now, if we re-run the tests immediately, we are going to see a good and satisfying green, because we didn't touch the page at all.
 
@@ -144,11 +144,11 @@ Diff:     test-results/src-routes-page.svelte.e2e.ts-homepage/homepage-1-diff.pn
 
 We (and our agent) have all the files saved as PNGs in the `test-results` folder. The most useful one for debugging what's going on is the diff view.
 
-![a diff of the expected page vs the current took by playwright tests](/assets/images/posts/2026-11-04-local-visual-regression-testing/diff.png)
+![a diff of the expected page vs the current took by playwright tests](/assets/images/posts/2026-11-03-local-visual-regression-testing/diff.png)
 
 As you can see, it's mostly a white image, with a few red pixels that highlight exactly what Claude changed on the page. We can verify that by also opening the actual `homepage-1-actual.png` file.
 
-![a diff of the the actual page took by playwright tests](/assets/images/posts/2026-11-04-local-visual-regression-testing/actual.png)
+![a diff of the the actual page took by playwright tests](/assets/images/posts/2026-11-03-local-visual-regression-testing/actual.png)
 
 But wait, do you notice something? There's a change we didn't ask for. Claude inadvertently removed the glitch effect around the "Pixel Perfect" header when we only asked for a change in the accent color.
 
@@ -158,7 +158,7 @@ We can now ask Claude to revert that change and run the tests again.
 
 As expected, the tests fail again (since the accent color did change), but if we take a look at the diff, it's now a much more reasonable one.
 
-![a diff of the expected page vs the current took by playwright tests](/assets/images/posts/2026-11-04-local-visual-regression-testing/diff-after.png)
+![a diff of the expected page vs the current took by playwright tests](/assets/images/posts/2026-11-03-local-visual-regression-testing/diff-after.png)
 
 Now that we've verified the changes are the ones we expected, we can run `npx playwright test --update-snapshots` to update the old snapshots and have a new ground truth for our homepage.
 
@@ -273,7 +273,7 @@ We can add these commands as scripts, to give both us and our agents a single, o
 
 Funnily enough, while I was writing this blog post I was testing the code on the side. After running the script I took a look at the `homepage-1-linux.png` file that was created within the container, and to my surprise it proved my point about consistency:
 
-![the screenshot took by playwright within the linux container showing the same page but a different font](/assets/images/posts/2026-11-04-local-visual-regression-testing/screenshot-linux.png)
+![the screenshot took by playwright within the linux container showing the same page but a different font](/assets/images/posts/2026-11-03-local-visual-regression-testing/screenshot-linux.png)
 
 Why is this? Because when Claude generated the page, it used the following CSS:
 
