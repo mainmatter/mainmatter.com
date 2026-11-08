@@ -32,7 +32,7 @@ Once we understand the status quo, we clear the pace to allow for accelerating t
 
 ### Rolling out tools and practices
 
-Once a solid delivery pipeline is in place, we roll out agentic engineering tools and practices step by step. For teams that have not yet had much exposure to AI tools, that might mean getting people to use Claude or Codex locally. For most though, it will mean going from a local setup to cloud agents and eventually software factories. As we roll out agentic engineering, we keep extending and improving the supporting infrastructure and tooling by creating and refining documentation for agents, skills, as well as automating more of the SDLC e.g. by using AI for reviews and building classifiers that eventually allow merging at least some of the generated code without any human review.
+Once a solid delivery pipeline is in place, we roll out agentic engineering tools and practices step by step. For teams that have not yet had much exposure to AI tools, that might mean getting people to use Claude or Codex locally. For most though, it will mean going from a local setup to cloud agents and eventually software factories. As we roll out agentic engineering, we keep extending and improving the supporting infrastructure and tooling by creating and refining guardrails for agents, skills, as well as automating more of the SDLC e.g. by using AI for reviews and building classifiers that eventually allow merging at least some of the generated code without any human review.
 
 ### Mentoring
 
