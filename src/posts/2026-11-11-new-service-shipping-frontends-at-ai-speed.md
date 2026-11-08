@@ -1,14 +1,12 @@
 ---
-title: "Shipping frontends at AI speed"
+title: "New Service: Shipping frontends at AI speed"
 authorHandle: marcoow
 tags: [ai, rust]
 bio: "Marco Otte-Witte"
-description: ""
-tagline: ""
+description: "Marco Otte-Witte announces Mainmatter's new service that's focused on guiding clients through adopting agentic engineering, increasing velocity sustainably and outpacing the competition."
+tagline: "<p>For many years, the Mainmatter team have been frontend engineering experts, helping teams get the most out of frameworks like <a href=\"/ember-consulting/\">Ember</a> and <a href=\"/svelte-consulting/\">Svelte</a> (besides our focus on <a href=\"/rust-consulting/\">Rust</a>). When we started working in the frontend space ca. 10 years ago, Single Page Apps (SPAs) as a concept as well as the frameworks behind them were completely new with many open questions to answer and new patterns to explore and establish – a classic field for an engineering consultancy to focus on. 10 years later that's no longer the case: there are well understood and established patterns, frameworks are converging on the same or similar concepts and which framework to choose for a project has become less relevant of a question. The leading edge of frontend engineering where new questions are to be answered, new concepts and patterns are to explore and where clients are left confused and in need for consulting from a company like Mainmatter has moved on. These days, the frontier of frontend engineering where new questions are to be answered and teams are in need of support is figuring out how to adopt sustainable agentic engineering and shipping at AI speed. That's why we're announcing a new offering focusing on guiding clients through doing just that.</p>"
 autoOg: true
 ---
-
-For many years, Mainmatter has been focused on frontend engineering and helping teams get the most out of frameworks like Ember and later Svelte as well. When we started working in that space ca. 10 years ago, the whole concept of SPAs and the frameworks behind those was new and widely unexplored with many open questions to answer. 10 years later that's no longer the case: there are established patterns, frameworks are converging and you can argue become less relevant altogether. While we still consider ourselves standout experts in Ember and Svelte and work with many clients on projects on those technologies (e.g. large-scale codebase modernizations), as an engineering consultancy with the ambition to be at the leading edge of tech, we asked ourselves: what are the big challenges that frontend teams face in 2026? We believe that's adopting effective, sustainable agentic engineering and shipping at AI speed.
 
 ## The challenges
 
