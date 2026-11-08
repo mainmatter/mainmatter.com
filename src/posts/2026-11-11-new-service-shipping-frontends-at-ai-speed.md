@@ -1,7 +1,7 @@
 ---
 title: "New Service: Shipping frontends at AI speed"
 authorHandle: marcoow
-tags: [ai, rust]
+tags: [ai, frontend]
 bio: "Marco Otte-Witte"
 description: "Marco Otte-Witte announces Mainmatter's new service that's focused on guiding clients through adopting agentic engineering, increasing velocity sustainably and outpacing the competition."
 tagline: '<p>For many years, the Mainmatter team have been frontend engineering experts, helping teams get the most out of frameworks like <a href="/ember-consulting/">Ember</a> and <a href="/svelte-consulting/">Svelte</a> (besides our focus on <a href="/rust-consulting/">Rust</a>). When we started working in the frontend space ca. 10 years ago, Single Page Apps (SPAs) as a concept as well as the frameworks behind them were completely new with many open questions to answer and new patterns to explore and establish – a classic field for an engineering consultancy to focus on. 10 years later that''s no longer the case: there are well understood and established patterns, frameworks are converging on the same or similar concepts and which framework to choose for a project has become less relevant of a question. The leading edge of frontend engineering where new questions are to be answered, new concepts and patterns are to explore and where clients are left confused and in need for consulting from a company like Mainmatter has moved on. These days, the frontier of frontend engineering where new questions are to be answered and teams are in need of support is figuring out how to adopt sustainable agentic engineering and shipping at AI speed. That''s why we''re announcing a [new service](/services/ai-accelerated-frontend-engineering/) focusing on guiding clients through doing just that.</p>'
