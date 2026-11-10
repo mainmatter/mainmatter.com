@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-1ec433a6.js";
+            window.path_to_searchindex_js = "searchindex-fdfedd7e.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f32475f9.js"></script>
@@ -248,12 +248,29 @@ recommend one of the following:</p>
 <ul>
 <li><a href="https://www.jetbrains.com/rust/">RustRover</a>;</li>
 <li><a href="https://code.visualstudio.com">Visual Studio Code</a> with the
-<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer"><code>rust-analyzer</code></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer"><code>rust-analyzer</code></a>
 extension.</li>
 </ul>
 </li>
 <li>
 <p>A C compiler. The one provided by your operating system will be good enough.</p>
+</li>
+<li>
+<p><strong>libclang</strong>, which <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>
+uses to parse C headers. Many systems already have it; if yours doesn’t,
+follow
+<a href="https://rust-lang.github.io/rust-bindgen/requirements.html"><code>bindgen</code>’s requirements page</a>.</p>
+</li>
+<li>
+<p><a href="https://cheadergen.com/getting-started/install.html"><strong><code>cheadergen</code></strong></a>, which
+generates C headers from Rust code. Install the CLI crate, <code>cheadergen_cli</code>
+(<code>cargo install cheadergen</code> fails: that crate is the library), along with the
+nightly toolchain <code>cheadergen</code> runs <code>rustdoc</code> with:</p>
+<pre><code class="language-bash">cargo install --locked cheadergen_cli --version 0.3.3
+rustup toolchain install nightly-2026-06-04 -c rust-docs-json
+</code></pre>
+<p>That nightly is separate from the one in <code>rust-toolchain.toml</code>: <code>cheadergen</code>
+pins its own.</p>
 </li>
 <li>
 <p>Two extra compilation targets. One exercise type-checks your bindings against
@@ -672,9 +689,9 @@ field, and its size is rounded up to a multiple of that alignment, so that the
 next value in an array starts aligned too.</p>
 <p>Here is a C struct and its layout:</p>
 <pre><code class="language-c">struct sample {
-    bool flag;
-    uint32_t value;
-    uint8_t tag;
+  bool flag;
+  uint32_t value;
+  uint8_t tag;
 };
 </code></pre>
 <pre><code class="language-text">offset  0      1              4             8      9          12
@@ -967,8 +984,8 @@ stored inline in the struct, exactly as in C.</li>
 <p>A C function can take or return a struct by value, or work through a pointer to
 one:</p>
 <pre><code class="language-c">struct Point {
-    double x;
-    double y;
+  double x;
+  double y;
 };
 
 struct Point midpoint(struct Point a, struct Point b);
@@ -1071,11 +1088,11 @@ run.</p>
 <p>C often pairs an integer tag with a union, and relies on convention to keep the
 two in sync:</p>
 <pre><code class="language-c">struct Value {
-    int kind; /* VALUE_INT or VALUE_FLOAT */
-    union {
-        int64_t i;
-        double f;
-    } data;
+  int kind; /* VALUE_INT or VALUE_FLOAT */
+  union {
+    int64_t i;
+    double f;
+  } data;
 };
 </code></pre>
 <p>Mirror that layout as it is, with a <code>repr(C)</code> struct and a <code>repr(C)</code> union, and
@@ -1549,12 +1566,13 @@ pub extern "C" fn bm_strlower(s: *mut c_char) {
 }</code></pre>
 <p>What’s still missing is a header file that tells the C compiler about the API.
 You could write it by hand, but you’d be maintaining two sources of truth.
-<strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
+<strong><a href="https://github.com/LukeMathWalker/officina/tree/main/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
 headers from Rust code.</p>
 <p><code>cheadergen</code>, created and maintained by our colleague Luca Palmieri, reads your
 Rust code and generates a C header for the relevant FFI-visible symbols.</p>
-<p>Install the CLI from the
-<a href="https://github.com/LukeMathWalker/cheadergen/releases"><code>cheadergen</code> releases page</a>.</p>
+<p>If you haven’t installed it yet, follow the
+<a href="https://cheadergen.com/getting-started/install.html"><code>cheadergen</code> install guide</a>,
+or the steps in the course requirements.</p>
 <p>Then you can run the following command in your crate root (for example, the
 current exercise crate):</p>
 <pre><code class="language-sh">cheadergen generate
@@ -2098,14 +2116,14 @@ open. It covers both directions in one place.</p>
 Set a breakpoint on it, run the program, and look at the stack when execution
 stops (output abbreviated):</p>
 <pre><code class="language-text">(lldb) b bm_shout
-Breakpoint 1: where = bm`bm_shout at shout.c:6
+Breakpoint 1: where = bm_lldb_gdb`bm_shout at shout.c:7
 (lldb) run
 Process 51234 stopped
 * thread #1, stop reason = breakpoint 1.1
-  * frame #0: bm`bm_shout at shout.c:6
-    frame #1: bm`bm_lldb_gdb::shout at lib.rs:17
-    frame #2: bm`bm_lldb_gdb::demo at lib.rs:30
-    frame #3: bm`main at main.rs:2
+  * frame #0: bm_lldb_gdb`bm_shout at shout.c:7
+    frame #1: bm_lldb_gdb`bm_lldb_gdb::shout at lib.rs:17
+    frame #2: bm_lldb_gdb`bm_lldb_gdb::demo at lib.rs:30
+    frame #3: bm_lldb_gdb`bm_lldb_gdb::main at main.rs:2
 </code></pre>
 <p>C frames and Rust frames are interleaved, and the numbering tells you which way
 to walk: frame #0 is where execution stopped, and every higher number is one of
@@ -2336,8 +2354,7 @@ iterator operation.</p>
 <p>Some C functions return values by writing them through pointer arguments. These
 arguments are called out-parameters. For example, this function splits a
 duration into minutes and seconds:</p>
-<pre><code class="language-c">void split_duration(uint32_t total_seconds,
-                    uint32_t *out_minutes,
+<pre><code class="language-c">void split_duration(uint32_t total_seconds, uint32_t *out_minutes,
                     uint32_t *out_seconds);
 </code></pre>
 <p><code>total_seconds</code> is an input. The function writes its two results through
@@ -2410,10 +2427,10 @@ changing its <code>void bm_page_location(...)</code> contract.</p>
 <p>C APIs commonly report the outcome of an operation with an enum, with one
 variant for success and one for each kind of failure:</p>
 <pre><code class="language-c">typedef enum {
-    BM_OK = 0,
-    BM_ERR_NOT_FOUND = 1,
-    BM_ERR_IO = 2,
-    BM_ERR_INVALID_INPUT = 3,
+  BM_OK = 0,
+  BM_ERR_NOT_FOUND = 1,
+  BM_ERR_IO = 2,
+  BM_ERR_INVALID_INPUT = 3,
 } BmStatus;
 
 BmStatus remove_bookmark(struct Store *store, const char *url);
@@ -2611,8 +2628,8 @@ into the input, so it’s valid only while that input string is alive.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="bit-flags"><a class="header" href="#bit-flags">Bit flags</a></h1>
 <p>C represents a set of independent options by assigning each option a bit:</p>
-<pre><code class="language-c">#define FIND_URLS             (1u &lt;&lt; 0)
-#define FIND_TAGS             (1u &lt;&lt; 1)
+<pre><code class="language-c">#define FIND_URLS (1u &lt;&lt; 0)
+#define FIND_TAGS (1u &lt;&lt; 1)
 #define FIND_CASE_INSENSITIVE (1u &lt;&lt; 2)
 
 size_t find_bookmarks(const struct Bookmark *bookmarks, size_t len,
@@ -2690,8 +2707,8 @@ iteration stops, and computes a result. A literal Rust port can preserve all of
 that machinery even after the data has become a safe Rust collection.</p>
 <p>Consider this loop from <code>bm</code>:</p>
 <pre><code class="language-c">for (size_t i = 0; i &lt; b-&gt;n_tags; i++) {
-    if (strstr(b-&gt;tags[i], query))
-        return 1;
+  if (strstr(b-&gt;tags[i], query))
+    return 1;
 }
 return 0;
 </code></pre>
@@ -2736,8 +2753,8 @@ should all stay the same.</p>
 reaches the NUL terminator:</p>
 <pre><code class="language-c">size_t n = 0;
 for (const char *p = s; *p; p++) {
-    if (*p == ',')
-        n++;
+  if (*p == ',')
+    n++;
 }
 </code></pre>
 <p>A literal port keeps the raw pointer, which means every read and every step is

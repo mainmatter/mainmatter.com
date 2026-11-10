@@ -35,7 +35,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-1ec433a6.js";
+            window.path_to_searchindex_js = "searchindex-fdfedd7e.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f32475f9.js"></script>
@@ -247,12 +247,29 @@ recommend one of the following:</p>
 <ul>
 <li><a href="https://www.jetbrains.com/rust/">RustRover</a>;</li>
 <li><a href="https://code.visualstudio.com">Visual Studio Code</a> with the
-<a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer"><code>rust-analyzer</code></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer"><code>rust-analyzer</code></a>
 extension.</li>
 </ul>
 </li>
 <li>
 <p>A C compiler. The one provided by your operating system will be good enough.</p>
+</li>
+<li>
+<p><strong>libclang</strong>, which <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>
+uses to parse C headers. Many systems already have it; if yours doesn’t,
+follow
+<a href="https://rust-lang.github.io/rust-bindgen/requirements.html"><code>bindgen</code>’s requirements page</a>.</p>
+</li>
+<li>
+<p><a href="https://cheadergen.com/getting-started/install.html"><strong><code>cheadergen</code></strong></a>, which
+generates C headers from Rust code. Install the CLI crate, <code>cheadergen_cli</code>
+(<code>cargo install cheadergen</code> fails: that crate is the library), along with the
+nightly toolchain <code>cheadergen</code> runs <code>rustdoc</code> with:</p>
+<pre><code class="language-bash">cargo install --locked cheadergen_cli --version 0.3.3
+rustup toolchain install nightly-2026-06-04 -c rust-docs-json
+</code></pre>
+<p>That nightly is separate from the one in <code>rust-toolchain.toml</code>: <code>cheadergen</code>
+pins its own.</p>
 </li>
 <li>
 <p>Two extra compilation targets. One exercise type-checks your bindings against

@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1ec433a6.js";
+            window.path_to_searchindex_js = "../searchindex-fdfedd7e.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -181,10 +181,10 @@
 <p>C APIs commonly report the outcome of an operation with an enum, with one
 variant for success and one for each kind of failure:</p>
 <pre><code class="language-c">typedef enum {
-    BM_OK = 0,
-    BM_ERR_NOT_FOUND = 1,
-    BM_ERR_IO = 2,
-    BM_ERR_INVALID_INPUT = 3,
+  BM_OK = 0,
+  BM_ERR_NOT_FOUND = 1,
+  BM_ERR_IO = 2,
+  BM_ERR_INVALID_INPUT = 3,
 } BmStatus;
 
 BmStatus remove_bookmark(struct Store *store, const char *url);

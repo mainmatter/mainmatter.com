@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1ec433a6.js";
+            window.path_to_searchindex_js = "../searchindex-fdfedd7e.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -191,12 +191,13 @@ pub extern "C" fn bm_strlower(s: *mut c_char) {
 }</code></pre>
 <p>What’s still missing is a header file that tells the C compiler about the API.
 You could write it by hand, but you’d be maintaining two sources of truth.
-<strong><a href="https://github.com/LukeMathWalker/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
+<strong><a href="https://github.com/LukeMathWalker/officina/tree/main/cheadergen"><code>cheadergen</code></a></strong> (the inverse of <a href="https://rust-lang.github.io/rust-bindgen/"><code>bindgen</code></a>) generates C
 headers from Rust code.</p>
 <p><code>cheadergen</code>, created and maintained by our colleague Luca Palmieri, reads your
 Rust code and generates a C header for the relevant FFI-visible symbols.</p>
-<p>Install the CLI from the
-<a href="https://github.com/LukeMathWalker/cheadergen/releases"><code>cheadergen</code> releases page</a>.</p>
+<p>If you haven’t installed it yet, follow the
+<a href="https://cheadergen.com/getting-started/install.html"><code>cheadergen</code> install guide</a>,
+or the steps in the course requirements.</p>
 <p>Then you can run the following command in your crate root (for example, the
 current exercise crate):</p>
 <pre><code class="language-sh">cheadergen generate

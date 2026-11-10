@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-1ec433a6.js";
+            window.path_to_searchindex_js = "../searchindex-fdfedd7e.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -189,8 +189,7 @@ iterator operation.</p>
 <p>Some C functions return values by writing them through pointer arguments. These
 arguments are called out-parameters. For example, this function splits a
 duration into minutes and seconds:</p>
-<pre><code class="language-c">void split_duration(uint32_t total_seconds,
-                    uint32_t *out_minutes,
+<pre><code class="language-c">void split_duration(uint32_t total_seconds, uint32_t *out_minutes,
                     uint32_t *out_seconds);
 </code></pre>
 <p><code>total_seconds</code> is an input. The function writes its two results through
