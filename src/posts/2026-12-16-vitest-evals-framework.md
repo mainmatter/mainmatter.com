@@ -14,11 +14,11 @@ But while most of this could've been solved before by throwing more engineers at
 
 It may sound silly, but the fact that an agent produces a transcript while working on our codebase has unexpected positive consequences: we now have a log of all the commands an agent executed and all the reasoning it had to do to solve a problem. This gives us a new kind of power: we can read those transcripts to figure out where the agent got stuck and adapt our agent setup and/or our codebase so that, the next time, it will be easier for it to complete the task. Well, let's be honest: an agent can read the transcripts!
 
-Before going further, let's agree on two terms. By _harness_ I mean the CLI that runs the agent loop (Claude Code, OpenCode, Codex). By _agent setup_ I mean everything we hand to it: `AGENTS.md`, skills, tools, MCP servers, and subagent definitions.
-
 This can already be used effectively, and there are skills out there (like [retro](https://www.skills.sh/mattpocock/skills/retro) from Matt Pocock) that make use of this newfound power to find opportunities to improve your codebase.
 
 That said, all of this is missing that sweet determinism that we love to love.
+
+Before going further, let's agree on two terms. By _harness_ I mean the CLI that runs the agent loop (Claude Code, OpenCode, Codex). By _agent setup_ I mean everything we hand to it: `AGENTS.md`, skills, tools, MCP servers, and subagent definitions.
 
 ## The idea
 
