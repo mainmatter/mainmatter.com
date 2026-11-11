@@ -1,5 +1,5 @@
 ---
-title: "Sprinkle determinism into your harness optimization"
+title: "Sprinkle determinism into your agent setup"
 authorHandle: paoloricciuti
 tags: [ai]
 bio: "Paolo Ricciuti, Senior Software Engineer"
@@ -12,7 +12,9 @@ AI has changed the way software engineers work. Agents can help us navigate our 
 
 But while most of this could've been solved before by throwing more engineers at the problem, AI also gave us something that we had no way of getting before: transcripts.
 
-It may sound silly, but the fact that an agent produces a transcript while working on our codebase has unexpected positive consequences: we now have a log of all the commands an agent executed and all the reasoning it had to do to solve a problem. This gives us a new kind of power: we can read those transcripts to figure out where the agent got stuck and adapt our harness and/or our codebase so that, the next time, it will be easier for it to complete the task. Well, let's be honest: an agent can read the transcripts!
+It may sound silly, but the fact that an agent produces a transcript while working on our codebase has unexpected positive consequences: we now have a log of all the commands an agent executed and all the reasoning it had to do to solve a problem. This gives us a new kind of power: we can read those transcripts to figure out where the agent got stuck and adapt our agent setup and/or our codebase so that, the next time, it will be easier for it to complete the task. Well, let's be honest: an agent can read the transcripts!
+
+Before going further, let's agree on two terms. By _harness_ I mean the CLI that runs the agent loop (Claude Code, OpenCode, Codex). By _agent setup_ I mean everything we hand to it: `AGENTS.md`, skills, tools, MCP servers, and subagent definitions.
 
 This can already be used effectively, and there are skills out there (like [retro](https://www.skills.sh/mattpocock/skills/retro) from Matt Pocock) that make use of this newfound power to find opportunities to improve your codebase.
 
@@ -98,7 +100,7 @@ describeEval(
 
 This will use both the `toContain` assertion and the `FactualityJudge`.
 
-So far so good, but this is, once again, to test how a specific model would respond given a specific prompt. How does this apply to our harness optimization idea?
+So far so good, but this is, once again, to test how a specific model would respond given a specific prompt. How does this apply to our idea of optimizing our agent setup?
 
 Well, while `vitest-evals` has a few built-in harnesses that use the `ai` SDK or the OpenAI SDK, it also exposes a method to create a custom harness:
 
@@ -135,22 +137,22 @@ Before jumping into the implementation, let's talk about a couple of design deci
 
 ### Running through our CLIs
 
-We want each individual contributor to be able to "optimize" their own harness. Unless we mandate a single harness, people will likely have their own preferred way of working on a codebase. Since this is not just about the model, we can't just run everything on a cloud agent: many studies and benchmarks found that the harness is a huge factor in how a model behaves. To be as close as possible to the actual experience of working on the repo, we want individual contributors to run these evals locally with their own CLIs.
+We want each individual contributor to be able to optimize the agent setup for their own harness. Unless we mandate a single harness, people will likely have their own preferred way of working on a codebase. Since this is not just about the model, we can't just run everything on a cloud agent: many studies and benchmarks found that the harness is a huge factor in how a model behaves. To be as close as possible to the actual experience of working on the repo, we want individual contributors to run these evals locally with their own CLIs.
 
 Luckily this is not a problem, as most of the harnesses either have an SDK or the ability to execute a prompt via the CLI (`claude -p` or `opencode run`), and we can access the transcripts of the whole run in specific folders.
 
 ### Easy to run multiple harnesses
 
-Once again, every individual contributor might use a different harness: someone might not even have OpenCode installed. What should we do in that case? My personal idea? We should have two different modes: `all`, in case we want to run this optimization in CI, and `current` (specified with the name of the harness). In this second mode, every failure in the other harnesses will warn instead of failing. This means that with a simple environment variable we can make sure our harnesses all stay optimized in CI, while every individual contributor can specify their own preferred harness locally and optimize for that (while also optionally optimizing for the other harnesses if they install their CLIs).
+Once again, every individual contributor might use a different harness: someone might not even have OpenCode installed. What should we do in that case? My personal idea? We should have two different modes: `all`, in case we want to run this optimization in CI, and `current` (specified with the name of the harness). In this second mode, every failure in the other harnesses will warn instead of failing. This means that with a simple environment variable we can make sure our agent setup stays optimized for every harness in CI, while every individual contributor can specify their own preferred harness locally and optimize for that (while also optionally optimizing for the other harnesses if they install their CLIs).
 
 ### Easy matchers for the important metrics
 
-Since we know that we want to use these evals specifically to optimize our harnesses, we can keep track of some useful metrics in our `run` function and expose some Vitest matchers specifically for them (so that developers can use its familiar API). What kind of metrics are we talking about?
+Since we know that we want to use these evals specifically to optimize our agent setup, we can keep track of some useful metrics in our `run` function and expose some Vitest matchers specifically for them (so that developers can use its familiar API). What kind of metrics are we talking about?
 
-- Tokens: while it's not always possible to optimize for tokens (you can't just ask for a task to take fewer than 100 tokens and expect it to finish), having the right number could make sure that our harness is optimized to use methods that save tokens (if that's one of your goals).
-- Skills: having a way to assert that a certain skill has or has not been read was what inspired all this, so we definitely want it in.
+- Tokens: while it's not always possible to optimize for tokens (you can't just ask for a task to take fewer than 100 tokens and expect it to finish), having the right number could make sure that our agent setup steers the agent toward methods that save tokens (if that's one of your goals).
+- Skills: having a way to assert that a certain skill has or has not been used was what inspired all this, so we definitely want it in.
 - Tool calls: this is somewhat similar to skills in that it's something that the user can customize in almost every harness. Since tool calls are also how models navigate your codebase, being able to assert that a tool call has or has not been made is also essential.
-- Subagents: that's another easy-to-modify element of your harness. Spawning a subagent can also greatly influence how the harness navigates your codebase, so you should be able to assert that too. As a side note, the token count should also be split between total and main-agent-only (in case you are more concerned about context rot than spend).
+- Subagents: that's another easy-to-modify part of your agent setup. Spawning a subagent can also greatly influence how the agent navigates your codebase, so you should be able to assert that too. As a side note, the token count should also be split between total and main-agent-only (in case you are more concerned about context rot than spend).
 
 ### Artifacts
 
@@ -158,7 +160,7 @@ Since we know that we want to use these evals specifically to optimize our harne
 
 ### Isolation
 
-Having an agent actively modifying the repo while running the evals is obviously a no-go, so we need some form of isolation. The simplest way is to create a worktree, but we also want a stricter form of isolation: luckily there are a lot of solutions out there that provide the ability to programmatically create sandboxes.
+Having an agent actively modifying the repo while running the evals is obviously a no-go, so we need some form of isolation. The simplest way is to create a worktree, but we also want a stricter form of isolation: luckily there are a lot of solutions out there that provide the ability to programmatically create sandboxes (like Vercel Sandbox, Daytona, Boat.dev etc).
 
 ### Provide unification
 
@@ -230,7 +232,7 @@ Let's explore this small config and go over the various options:
 
 - We first import and add the plugins for all the harnesses: Claude Code, OpenCode, and Codex. Implementing a new harness is not trivial, but it's completely doable, and an agent would likely take good care of it in case you need it.
 - We also specify the execution/isolation mode: this is a required field and there's no default. Since it's very important to understand where your evals run, we want you to declare it explicitly.
-- `mode` and `current` are what allow local/CI optimization checks: in this case, we are explicitly setting `mode` to `current` and `current` to `opencode`, which means that if the Claude Code or Codex CLI is unavailable, or they fail for some reason, the whole run would still "pass" and "warn" about the other harnesses. Once again, the goal is for each individual contributor to be able to run this without being forced to install a CLI, and then have a CI run that verifies that the new changes didn't affect the other harnesses.
+- `mode` and `current` are what allow local/CI optimization checks: in this case, we are explicitly setting `mode` to `current` and `current` to `opencode`, which means that if the Claude Code or Codex CLI is unavailable, or they fail for some reason, the whole run would still "pass" and "warn" about the other harnesses. Once again, the goal is for each individual contributor to be able to run this without being forced to install a CLI, and then have a CI run that verifies that the new changes didn't break the agent setup for the other harnesses.
 - `setup` is purposefully left vague: in a JS-only project we could simply run `npm i`, but you might have a mixed project with a Rust backend and a JS frontend, and we want to give you the ability to run whatever setup script is required.
 - Running the evals for too long is never recommended, so with `timeouts` you can limit how long the run can execute.
 - `artifacts` is a simple way to customize where your artifacts are stored.
@@ -299,7 +301,7 @@ In this example, we can see how our library can help write evals that generally 
 1. we `skip` in case our harness doesn't support skill loading
 2. we make sure the turn actually completed
 3. we make sure that `house-style` is both requested and loaded
-4. we make sure the harness didn't spawn any subagent
+4. we make sure the agent didn't spawn any subagent
 
 Let's put this to the test:
 
