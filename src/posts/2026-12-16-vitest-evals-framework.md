@@ -26,9 +26,9 @@ While we were talking with one of our clients, they lamented the fact that, sinc
 
 But both the skills and the codebase might change shape over time. A new model might interpret things differently, or a new rule in `AGENTS.md` might steer the agent in the wrong direction.
 
-All of this sounded very similar to another common problem we constantly run into while building software: a function might change and break the application, our backend could introduce a new set of possible inputs for a function that breaks it, or maybe we invoke that function in a different component where the global state is different. All of these situations could "break" a function that worked perfectly fine before.
+All of this sounded very similar to another common problem we constantly run into while building software: a function might change and break the application, our backend could introduce a new set of possible inputs for a function that breaks it, or maybe we invoke that function in a different component where the global state is different. All of these situations could "break" a function that worked perfectly fine before. That's a regression.
 
-How did we solve this problem? Easy, with testing.
+How did we solve this problem? Easy, with regression testing.
 
 But how does this relate to our problem with our agent? Well, since we now have the transcripts of how an agent navigates our codebase, which tools it invokes, and which files it touches, we can write some "tests" for it!
 
