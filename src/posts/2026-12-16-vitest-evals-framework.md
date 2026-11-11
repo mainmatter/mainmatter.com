@@ -18,6 +18,8 @@ This can already be used effectively, and there are skills out there (like [retr
 
 That said, all of this is missing that sweet determinism that we love to love.
 
+Furthermore, while right now everyone is trying to optimize their AI usage, nobody has really put time into figuring out how to "measure" that optimization.
+
 Before going further, let's agree on two terms. By _harness_ I mean the CLI that runs the agent loop (Claude Code, OpenCode, Codex). By _agent setup_ I mean everything we hand to it: `AGENTS.md`, skills, tools, MCP servers, and subagent definitions.
 
 ## The idea
