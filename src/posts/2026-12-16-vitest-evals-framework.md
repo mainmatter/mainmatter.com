@@ -63,12 +63,13 @@ describeEval("capital questions", { harness: simple }, it => {
 });
 ```
 
-In this case, we are using a simple `toContain` assertion to check whether `gpt-4o-mini` answered the question correctly but, depending on the complexity of the task, we could create a judge that also uses an LLM to verify the answer:
+In this case, we are using a simple `toContain` assertion to check whether `gpt-4o-mini` answered the question correctly. That works for a one-word answer, but it breaks down quickly for open-ended questions. Take "Why does Earth have seasons?": there are a million ways to phrase the right answer, and a very common wrong answer ("because Earth is closer to the Sun in summer") would happily pass a `toContain("Sun")` check. For cases like this, we can use a judge that asks another LLM to compare the answer with an expected one:
 
 ```ts
 import { openai } from "@ai-sdk/openai";
 import { aiSdkJudgeHarness } from "@vitest-evals/harness-ai-sdk";
 import { describeEval, FactualityJudge } from "vitest-evals";
+import { expect } from "vitest";
 import { simple } from "./simple-harness";
 
 const judgeHarness = aiSdkJudgeHarness({
@@ -76,29 +77,20 @@ const judgeHarness = aiSdkJudgeHarness({
   temperature: 0,
 });
 
-const factualityJudge = FactualityJudge({
-  expected: "Paris is the capital of France.",
-  judgeHarness,
-});
+describeEval("geography questions", { harness: simple, judgeHarness }, it => {
+  it("explains why Earth has seasons", async ({ run }) => {
+    const result = await run("Why does Earth have seasons?");
 
-describeEval(
-  "capital questions",
-  {
-    harness: simple,
-    judges: [factualityJudge],
-    judgeThreshold: 0.6,
-  },
-  it => {
-    it("knows the capital of France", async ({ run }) => {
-      const result = await run("What is the capital of France?");
-
-      expect(result.output).toContain("Paris");
+    await expect(result).toSatisfyJudge(FactualityJudge(), {
+      expected:
+        "Earth's axis is tilted, so each hemisphere gets more direct sunlight during part of the year.",
+      threshold: 0.6,
     });
-  }
-);
+  });
+});
 ```
 
-This will use both the `toContain` assertion and the `FactualityJudge`.
+The `FactualityJudge` doesn't care about wording: it only checks whether the facts in the answer agree with the expected one. An answer that matches gets full marks, one that adds correct details (like "it's not about the distance from the Sun") gets partial credit, and one that blames the distance from the Sun gets a zero. Since we lowered the `threshold` to `0.6`, both of the first two pass.
 
 So far so good, but this is, once again, to test how a specific model would respond given a specific prompt. How does this apply to our idea of optimizing our agent setup?
 
