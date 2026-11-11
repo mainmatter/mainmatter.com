@@ -61,8 +61,11 @@ quotes:
   - text: "Amazing support from Luca! Detailed explanation of different topics whenever requested."
     source: Onsite attendee
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 ---
 
 <!--break-->

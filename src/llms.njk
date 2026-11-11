@@ -43,7 +43,8 @@ reinforcement for Svelte and SvelteKit projects.
 
 ### Rust
 
-- Team led by Luca Palmieri, author of "Zero to Production in Rust"
+{% set rustTeamBio %}{% include 'content/rust-team-bio.njk' %}{% endset %}
+- {{ rustTeamBio | striptags | trim }}
 - Creators of "100 Exercises to Learn Rust" ([rust-exercises.com](http://rust-exercises.com/))
 - Organizers of EuroRust, Europe's Rust conference ([eurorust.eu](http://eurorust.eu/))
 - Members of the Rust Foundation

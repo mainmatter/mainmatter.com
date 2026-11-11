@@ -48,8 +48,11 @@ topics:
       The final module details adding static methods to Rust-backed Python classes, along with managing inheritance and visibility in Python environments.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 
 quotes:
   - text: "[…] Really enjoyed the training. The approach of self-paced, bit of background reading and including solutions, works for me."

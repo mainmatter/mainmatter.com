@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-650ce897.js";
+            window.path_to_searchindex_js = "../searchindex-41178cbe.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -237,11 +237,11 @@ run.</p>
 <p>C often pairs an integer tag with a union, and relies on convention to keep the
 two in sync:</p>
 <pre><code class="language-c">struct Value {
-    int kind; /* VALUE_INT or VALUE_FLOAT */
-    union {
-        int64_t i;
-        double f;
-    } data;
+  int kind; /* VALUE_INT or VALUE_FLOAT */
+  union {
+    int64_t i;
+    double f;
+  } data;
 };
 </code></pre>
 <p>Mirror that layout as it is, with a <code>repr(C)</code> struct and a <code>repr(C)</code> union, and

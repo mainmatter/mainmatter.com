@@ -15,7 +15,6 @@ eleventyImport:
 {% from "logo-list.njk" import logoList %}
 {% from "contact-form-LP.njk" import contactFormLP %}
 {% from "tech-cards.njk" import techCards %}
-{% from "workshop-instructors.njk" import workshopInstructors %}
 {% from "service-cta.njk" import serviceCta %}
 {% from "image-aspect-ratio.njk" import imageAspectRatio %}
 
@@ -137,22 +136,9 @@ eleventyImport:
   %}
   {{ logoList(logoCompanies, 'We have trained developers at', 'h2', 'h3') }}
 
-  {%
-    set instructors = [
-    {
-    "name": "Luca Palmieri",
-    "bio": "Luca Palmieri is a Principal Engineering Consultant at Mainmatter and builds technology products for a living. His current focus is on backend development, software architecture and the Rust programming language. He is the author of <a href=\"https://zero2prod.com\">\"Zero to Production in Rust\"</a> and <a href=\"https://rust-exercises.com/\">\"100 Exercises To Learn Rust\"</a>.",
-    "image": "/assets/images/authors/algo_luca.jpg"
-    },
-    {
-    "name": "Jonas Kruckenberg",
-    "bio": "Jonas Kruckenberg is a systems engineer and technologist focused on next-generation computing infrastructure, including k23 - an experimental operating system. As a TC39 Invited Expert, he helps shape the future of web standards by bringing non-browser WebAssembly perspectives to language standardization. He is the author of the <a href=\"/c-to-rust-migration-book/\">\"C to Rust Migration Book\"</a>.",
-    "image": "/assets/images/authors/JonasKruckenberg.jpg"
-    }
-    ]
-  %}
-
-  {{ workshopInstructors(instructors) }}
+  <section class="container container--xl my-10" id="team">
+    {% include 'content/rust-team.njk' %}
+  </section>
 
   <section class="container container--lg my-10">
     <h3 class="mb-2">Our methodology</h3>

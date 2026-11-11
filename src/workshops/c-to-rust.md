@@ -59,7 +59,10 @@ quotes:
 
 
     source: Onsite attendee
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 upcomingDates: []
 ---

@@ -60,8 +60,11 @@ topics:
       We will cover the basics of asynchronous programming in Rust, including:  the <code>Future</code> trait, <code>async</code> functions, the <code>.await</code> operator, spawning tasks, an overview of <code>tokio</code> (the most popular async runtime in Rust), as well as common pitfalls.
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 quotes:
   - text: >-
       Amazing support from Luca! Detailed explanation of different topics whenever requested.
@@ -79,8 +82,8 @@ quotes:
 
     source: Onsite attendee
 upcomingDates:
-  - date: "2026-11-24"
-    endDate: "2026-12-04"
+  - date: "2026-12-07"
+    endDate: "2026-12-17"
     url: >-
       https://www.tickettailor.com/checkout/view-event/id/8648536/chk/487c899c40804b271575e58ac8b1129a/
 

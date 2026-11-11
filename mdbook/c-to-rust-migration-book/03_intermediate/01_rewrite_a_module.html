@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-650ce897.js";
+            window.path_to_searchindex_js = "../searchindex-41178cbe.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -182,6 +182,36 @@
 generated bindings, FFI-safe types, and how to design a boundary that acts as a
 firewall. Now we’ll put them to work on a real codebase. Meet <code>bm</code>, a small
 bookmark manager CLI written in C.</p>
+<h2 id="take-bm-for-a-spin"><a class="header" href="#take-bm-for-a-spin">Take <code>bm</code> for a spin</a></h2>
+<p>Before porting any of it, build <code>bm</code> and use it for a minute. It’s easier to
+reason about a module once you’ve seen what the program does with it:</p>
+<pre><code class="language-sh">cd exercises/_bm
+make
+./bm
+</code></pre>
+<p>Without arguments, <code>bm</code> prints its usage. Add a couple of bookmarks, then look
+them up again:</p>
+<pre><code class="language-sh">./bm add https://www.rust-lang.org/ --tag rust --tag lang
+./bm add https://en.cppreference.com/w/c --tag c --tag reference
+./bm find rust
+./bm list
+</code></pre>
+<p><code>find</code> prints matching bookmarks, one per line, and <code>list</code> prints how many
+bookmarks carry each tag. Your bookmarks live in <code>bookmarks.bm</code> in the current
+directory. The <code>BM_DB</code> environment variable points <code>bm</code> at a different database.
+<code>fixtures/sample.bm</code> has about 50 entries to explore:</p>
+<pre><code class="language-sh">BM_DB=fixtures/sample.bm ./bm find blog
+BM_DB=fixtures/sample.bm ./bm list
+</code></pre>
+<p><code>fixtures/corrupt.bm</code> shows the error path instead. Its fourth line is the first
+URL again with a different case, so loading stops at a duplicate and <code>bm</code>
+refuses to open the database:</p>
+<pre><code class="language-sh">BM_DB=fixtures/corrupt.bm ./bm list
+</code></pre>
+<p>Stick to <code>find</code> and <code>list</code> on the fixtures: <code>add</code>, <code>del</code>, and <code>tag</code> rewrite the
+database they’re pointed at. <code>make clean</code> removes the binary and your own
+<code>bookmarks.bm</code>.</p>
+<h2 id="the-source-code"><a class="header" href="#the-source-code">The source code</a></h2>
 <p>Here is an overview of the C source code:</p>
 <pre><code class="language-text">exercises/_bm/src/
 ├── bookmark.c    the Bookmark type

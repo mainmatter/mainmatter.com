@@ -66,8 +66,11 @@ topics:
       We will combine everything we have learned so far into an easy-to-use setup that allows you to run black-box tests against a real database and a real HTTP server, without having to orchestrate multiple commands—just <code>cargo test</code> and you are good to go!
 
 
+rustTeam: true
 leads:
-  - handle: algo_luca
+  - handle: JonasKruckenberg
+  - handle: hdoordt
+  - handle: marcoow
 
 quotes:
   - text: "Extremely well set up!"
