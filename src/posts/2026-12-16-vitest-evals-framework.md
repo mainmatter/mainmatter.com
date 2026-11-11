@@ -143,7 +143,7 @@ Once again, every individual contributor might use a different harness: someone 
 
 Since we know that we want to use these evals specifically to optimize our agent setup, we can keep track of some useful metrics in our `run` function and expose some Vitest matchers specifically for them (so that developers can use its familiar API). What kind of metrics are we talking about?
 
-- Tokens: while it's not always possible to optimize for tokens (you can't just ask for a task to take fewer than 100 tokens and expect it to finish), having the right number could make sure that our agent setup steers the agent toward methods that save tokens (if that's one of your goals).
+- Tokens: while it's not always possible to optimize for tokens (you can't just ask for a task to take fewer than 100 tokens and expect it to finish), having the right upper limit as an expectation in your evals could make sure that our agent setup steers the agent toward methods that save tokens (if that's one of your goals).
 - Skills: having a way to assert that a certain skill has or has not been used was what inspired all this, so we definitely want it in.
 - Tool calls: this is somewhat similar to skills in that it's something that the user can customize in almost every harness. Since tool calls are also how models navigate your codebase, being able to assert that a tool call has or has not been made is also essential.
 - Subagents: that's another easy-to-modify part of your agent setup. Spawning a subagent can also greatly influence how the agent navigates your codebase, so you should be able to assert that too. As a side note, the token count should also be split between total and main-agent-only (in case you are more concerned about context rot than spend).
