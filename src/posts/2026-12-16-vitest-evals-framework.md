@@ -30,7 +30,7 @@ All of this sounded very similar to another common problem we constantly run int
 
 How did we solve this problem? Easy, with regression testing.
 
-But how does this relate to our problem with our agent? Well, since we now have the transcripts of how an agent navigates our codebase, which tools it invokes, and which files it touches, we can write some "tests" for it!
+But how does this relate to our problem with our agent? Well, since we now have the transcripts of how an agent navigates our codebase, which tools it invokes, and which files it touches, we can write some "tests" for it! Why? To prevent regressions in how an agent navigate our codebase (which is ever changing, just like the function in the example above)
 
 ## Evals
 
