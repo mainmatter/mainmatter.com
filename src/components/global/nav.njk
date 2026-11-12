@@ -46,12 +46,12 @@
 
       {% macro learningMaterialsNavItem() -%}
         <li class="nav__item nav__item--nested">
-          <details class="nav__nested">
+          <details class="nav__nested" data-accordion>
             <summary class="nav__nested-summary">
               <span>Learning material</span>
               {% include 'svg/caret.njk' %}
             </summary>
-            <ul class="nav__nested-list">
+            <ul class="nav__nested-list" data-accordion-content>
               <li>
                 <a
                   href="/c-to-rust-migration-book/"
@@ -99,12 +99,12 @@
           {%- endfor -%}
 
           <li class="nav__item nav__item--nested">
-            <details class="nav__nested">
+            <details class="nav__nested" data-accordion>
               <summary class="nav__nested-summary">
                 <span>Other technologies</span>
                 {% include 'svg/caret.njk' %}
               </summary>
-              <ul class="nav__nested-list">
+              <ul class="nav__nested-list" data-accordion-content>
                 {%- for entry in navPages -%}
                   {%- if entry.url in otherTechnologyUrls -%}
                     {{ navListItem(entry) }}
