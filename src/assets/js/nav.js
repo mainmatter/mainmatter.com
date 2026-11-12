@@ -15,12 +15,31 @@ const handleScroll = () => {
   }
 };
 
-const navOverflow = document.getElementById("nav-overflow");
-navOverflow?.addEventListener("toggle", ({ newState }) => {
-  if (newState !== "closed") return;
+const dropdowns = nav.querySelectorAll(".nav-popover");
 
-  navOverflow.querySelectorAll(".nav__nested[open]").forEach(nestedMenu => {
-    resetDetails(nestedMenu);
+const positionDropdown = dropdown => {
+  const trigger = nav.querySelector(`[popovertarget="${dropdown.id}"]`);
+  const left = Math.max(
+    16,
+    Math.min(trigger.getBoundingClientRect().left, window.innerWidth - dropdown.offsetWidth - 16)
+  );
+  dropdown.style.setProperty("--nav-popover-left", `${left}px`);
+};
+
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener("toggle", ({ newState }) => {
+    if (newState === "open") {
+      positionDropdown(dropdown);
+      return;
+    }
+
+    dropdown.querySelectorAll(".nav__nested[open]").forEach(resetDetails);
+  });
+});
+
+window.addEventListener("resize", () => {
+  dropdowns.forEach(dropdown => {
+    if (dropdown.matches(":popover-open")) positionDropdown(dropdown);
   });
 });
 

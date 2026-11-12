@@ -36,6 +36,22 @@
   font-size: 1.9375rem;
 }
 
+@media (min-width: $breakpoint-s) {
+  .service-cards#approach {
+    & .service-cards__grid {
+      grid-auto-rows: auto;
+    }
+
+    & .service-card__grid-element,
+    & .card__content {
+      display: grid;
+      grid-row: span 2;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+    }
+  }
+}
+
 .service-cards__logo {
   position: relative;
   max-width: 80%;
