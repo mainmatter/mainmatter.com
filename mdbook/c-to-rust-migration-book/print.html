@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-41178cbe.js";
+            window.path_to_searchindex_js = "searchindex-3f8b0257.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f32475f9.js"></script>
@@ -237,10 +237,11 @@ solution.</p>
 <ul>
 <li>
 <p><a href="https://www.rust-lang.org/tools/install"><strong>Rust</strong></a>, installed through
-<code>rustup</code>. The repository pins a nightly toolchain in <code>rust-toolchain.toml</code>,
-because some of the tools the course uses, such as Miri, only run on nightly.
-<code>rustup</code> picks it up whenever you run <code>cargo</code> inside the repository. If it
-isn’t installed yet, run <code>rustup toolchain install</code> from the repository root.</p>
+<code>rustup</code>. The repository pins a single nightly in <code>rust-toolchain.toml</code>: some
+tools the course uses, such as Miri, only run on nightly, and the date matches
+the one <code>cheadergen</code> requires. <code>rustup</code> picks it up whenever you run <code>cargo</code>
+inside the repository. If it isn’t installed yet, run
+<code>rustup toolchain install</code> from the repository root.</p>
 </li>
 <li>
 <p><em>(Optional but recommended)</em> An IDE with Rust autocompletion support. We
@@ -264,13 +265,9 @@ follow
 <li>
 <p><a href="https://cheadergen.com/getting-started/install.html"><strong><code>cheadergen</code></strong></a>, which
 generates C headers from Rust code. Install the CLI crate, <code>cheadergen_cli</code>
-(<code>cargo install cheadergen</code> fails: that crate is the library), along with the
-nightly toolchain <code>cheadergen</code> runs <code>rustdoc</code> with:</p>
+(<code>cargo install cheadergen</code> fails: that crate is the library):</p>
 <pre><code class="language-bash">cargo install --locked cheadergen_cli --version 0.3.3
-rustup toolchain install nightly-2026-06-04 -c rust-docs-json
 </code></pre>
-<p>That nightly is separate from the one in <code>rust-toolchain.toml</code>: <code>cheadergen</code>
-pins its own.</p>
 </li>
 <li>
 <p>Two extra compilation targets. One exercise type-checks your bindings against
@@ -495,6 +492,11 @@ change.</p>
 let p = &amp;x as *const i32 as *mut i32;
 // error: assigning to `&amp;T` is undefined behavior, consider using an `UnsafeCell`
 unsafe { *p = 20 };</code></pre>
+<p>That error doesn’t come from the type system or the borrow checker. It comes
+from a lint, <code>invalid_reference_casting</code>, which is set to deny by default. The
+lint looks for one pattern within a function: a <code>&amp;T</code> cast to a <code>*mut T</code> and then
+written through. It’s a heuristic for a common mistake, and it doesn’t prove
+anything about your code.</p>
 <p>It doesn’t catch the less obvious ones. This example compiles, runs, and prints
 <code>20</code>, but it is undefined behavior all the same:</p>
 <pre><code class="language-rust no_run">let mut x = 10_i32;
@@ -505,7 +507,9 @@ let r = &amp;x;
 unsafe { *p = 20 };
 println!("{r}");</code></pre>
 <p>The borrow checker only tracks references, so it has no idea <code>p</code> and <code>r</code> point
-to the same value. Miri does catch it and reports undefined behavior;
+to the same value. This time <code>p</code> comes from <code>&amp;mut x</code>, so the cast itself is
+fine. The problem is writing through <code>p</code> while <code>r</code> is alive, and that’s a
+pattern the lint can’t see. Miri does catch it and reports undefined behavior;
 <a href="#dynamic-analysis-with-miri">Dynamic analysis with Miri</a> puts it to work on a
 real port.</p>
 <p>Keep in mind that C’s <code>const</code> is a convention. A C function that takes a
@@ -1021,10 +1025,11 @@ but some ABIs pass a struct differently from the bare value inside it.
 <code>repr(transparent)</code> guarantees they’re passed the same way.</p>
 <h2 id="head-to-the-exercise-6"><a class="header" href="#head-to-the-exercise-6">Head to the exercise</a></h2>
 <p>The exercise gives you a C header, and you write the matching Rust types from
-scratch. <code>Point</code> is a plain struct of two <code>double</code>s. <code>Shape</code> holds an array, a
-nested <code>Point</code>, and a pointer that may be null. <code>Fd</code> wraps an <code>int</code>. The tests
-compare the size, alignment, and field offsets of each type against what the C
-compiler reports for the same header.</p>
+scratch. <code>Point</code> is a plain struct of two <code>double</code>s. <code>Shape</code> holds a one-byte
+<code>kind</code>, a fixed-size <code>name</code> array, a nested <code>Point</code>, a <code>parent</code> pointer that may
+be null, and a <code>uint32_t</code> <code>id</code>. <code>Fd</code> wraps an <code>int</code>. The tests compare the size,
+alignment, and field offsets of each type against what the C compiler reports
+for the same header.</p>
 <h2 id="exercise-8"><a class="header" href="#exercise-8">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/03_structs"><code>02_basics/03_structs</code></a></p>
 <div style="break-before: page; page-break-before: always;"></div>

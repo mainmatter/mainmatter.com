@@ -35,7 +35,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-41178cbe.js";
+            window.path_to_searchindex_js = "searchindex-3f8b0257.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-f32475f9.js"></script>
@@ -236,10 +236,11 @@ solution.</p>
 <ul>
 <li>
 <p><a href="https://www.rust-lang.org/tools/install"><strong>Rust</strong></a>, installed through
-<code>rustup</code>. The repository pins a nightly toolchain in <code>rust-toolchain.toml</code>,
-because some of the tools the course uses, such as Miri, only run on nightly.
-<code>rustup</code> picks it up whenever you run <code>cargo</code> inside the repository. If it
-isn’t installed yet, run <code>rustup toolchain install</code> from the repository root.</p>
+<code>rustup</code>. The repository pins a single nightly in <code>rust-toolchain.toml</code>: some
+tools the course uses, such as Miri, only run on nightly, and the date matches
+the one <code>cheadergen</code> requires. <code>rustup</code> picks it up whenever you run <code>cargo</code>
+inside the repository. If it isn’t installed yet, run
+<code>rustup toolchain install</code> from the repository root.</p>
 </li>
 <li>
 <p><em>(Optional but recommended)</em> An IDE with Rust autocompletion support. We
@@ -263,13 +264,9 @@ follow
 <li>
 <p><a href="https://cheadergen.com/getting-started/install.html"><strong><code>cheadergen</code></strong></a>, which
 generates C headers from Rust code. Install the CLI crate, <code>cheadergen_cli</code>
-(<code>cargo install cheadergen</code> fails: that crate is the library), along with the
-nightly toolchain <code>cheadergen</code> runs <code>rustdoc</code> with:</p>
+(<code>cargo install cheadergen</code> fails: that crate is the library):</p>
 <pre><code class="language-bash">cargo install --locked cheadergen_cli --version 0.3.3
-rustup toolchain install nightly-2026-06-04 -c rust-docs-json
 </code></pre>
-<p>That nightly is separate from the one in <code>rust-toolchain.toml</code>: <code>cheadergen</code>
-pins its own.</p>
 </li>
 <li>
 <p>Two extra compilation targets. One exercise type-checks your bindings against

@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-41178cbe.js";
+            window.path_to_searchindex_js = "../searchindex-3f8b0257.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -241,10 +241,11 @@ but some ABIs pass a struct differently from the bare value inside it.
 <code>repr(transparent)</code> guarantees they’re passed the same way.</p>
 <h2 id="head-to-the-exercise"><a class="header" href="#head-to-the-exercise">Head to the exercise</a></h2>
 <p>The exercise gives you a C header, and you write the matching Rust types from
-scratch. <code>Point</code> is a plain struct of two <code>double</code>s. <code>Shape</code> holds an array, a
-nested <code>Point</code>, and a pointer that may be null. <code>Fd</code> wraps an <code>int</code>. The tests
-compare the size, alignment, and field offsets of each type against what the C
-compiler reports for the same header.</p>
+scratch. <code>Point</code> is a plain struct of two <code>double</code>s. <code>Shape</code> holds a one-byte
+<code>kind</code>, a fixed-size <code>name</code> array, a nested <code>Point</code>, a <code>parent</code> pointer that may
+be null, and a <code>uint32_t</code> <code>id</code>. <code>Fd</code> wraps an <code>int</code>. The tests compare the size,
+alignment, and field offsets of each type against what the C compiler reports
+for the same header.</p>
 <h2 id="exercise"><a class="header" href="#exercise">Exercise</a></h2>
 <p>The exercise for this section is located in <a href="https://github.com/mainmatter/migrating-c-to-rust/tree/main/exercises/02_basics/03_structs"><code>02_basics/03_structs</code></a></p>
 

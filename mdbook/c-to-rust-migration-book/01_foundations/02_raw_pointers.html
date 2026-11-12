@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../searchindex-41178cbe.js";
+            window.path_to_searchindex_js = "../searchindex-3f8b0257.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-f32475f9.js"></script>
@@ -239,6 +239,11 @@ change.</p>
 let p = &amp;x as *const i32 as *mut i32;
 // error: assigning to `&amp;T` is undefined behavior, consider using an `UnsafeCell`
 unsafe { *p = 20 };</code></pre>
+<p>That error doesn’t come from the type system or the borrow checker. It comes
+from a lint, <code>invalid_reference_casting</code>, which is set to deny by default. The
+lint looks for one pattern within a function: a <code>&amp;T</code> cast to a <code>*mut T</code> and then
+written through. It’s a heuristic for a common mistake, and it doesn’t prove
+anything about your code.</p>
 <p>It doesn’t catch the less obvious ones. This example compiles, runs, and prints
 <code>20</code>, but it is undefined behavior all the same:</p>
 <pre><code class="language-rust no_run">let mut x = 10_i32;
@@ -249,7 +254,9 @@ let r = &amp;x;
 unsafe { *p = 20 };
 println!("{r}");</code></pre>
 <p>The borrow checker only tracks references, so it has no idea <code>p</code> and <code>r</code> point
-to the same value. Miri does catch it and reports undefined behavior;
+to the same value. This time <code>p</code> comes from <code>&amp;mut x</code>, so the cast itself is
+fine. The problem is writing through <code>p</code> while <code>r</code> is alive, and that’s a
+pattern the lint can’t see. Miri does catch it and reports undefined behavior;
 <a href="../03_intermediate/10_miri.html">Dynamic analysis with Miri</a> puts it to work on a
 real port.</p>
 <p>Keep in mind that C’s <code>const</code> is a convention. A C function that takes a
