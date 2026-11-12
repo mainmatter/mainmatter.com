@@ -71,8 +71,8 @@ quotes:
 
     source: Onsite attendee
 upcomingDates:
-  - date: "2026-11-24"
-    endDate: "2026-12-04"
+  - date: "2026-12-07"
+    endDate: "2026-12-17"
     url: >-
       https://www.tickettailor.com/checkout/view-event/id/8648536/chk/487c899c40804b271575e58ac8b1129a/
 
