@@ -1,9 +1,11 @@
 {%- macro serviceCta(tags, customCta) -%}
   <div class="service-cta service-cta--blog">
-    {% if customCta %}
-      {% include customCta %}
-    {% elif "rust" in tags %}
+    {% if "rust" in tags %}
       {% include "global/rust-cta.njk" %}
+    {% elif "ai" in tags or "AI" in tags or "agentic_engineering" in tags or "mcp" in tags or "MCP" in tags or "frontend" in tags %}
+      {% include "global/ai-cta.njk" %}
+    {% elif customCta %}
+      {% include customCta %}
     {% elif "svelte" in tags %}
       {% include "global/svelte-cta.njk" %}
     {% elif "ember" in tags %}
