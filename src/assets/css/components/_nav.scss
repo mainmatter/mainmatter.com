@@ -92,10 +92,10 @@
   cursor: pointer;
 }
 
-#nav-overflow {
-  --nav-overflow-width: 18rem;
+.nav-popover {
+  --nav-popover-width: 18rem;
 
-  width: min(var(--nav-overflow-width), calc(100vw - 2rem));
+  width: min(var(--nav-popover-width), calc(100vw - 2rem));
   padding: 2rem;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.25);
   font-size: 1.25rem;
@@ -155,7 +155,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   @media (min-width: $breakpoint-m) {
-    #nav-overflow {
+    .nav-popover {
       clip-path: inset(-12px -12px calc(100% + 12px) -12px);
       transition:
         width 0.3s ease,
@@ -163,13 +163,13 @@
         top 0.4s ease;
     }
 
-    #nav-overflow:popover-open {
+    .nav-popover:popover-open {
       clip-path: inset(-12px);
       transition-duration: 0.24s, 0.24s, 0.4s;
     }
 
     @starting-style {
-      #nav-overflow:popover-open {
+      .nav-popover:popover-open {
         clip-path: inset(-12px -12px calc(100% + 12px) -12px);
       }
     }
@@ -239,7 +239,7 @@
   }
 }
 
-:has(#nav-overflow:popover-open) .nav__expandable {
+.nav__item:has(> .nav-popover:popover-open) > .nav__expandable {
   --icon-caret-duration: 0.24s;
   --icon-caret-transform: rotate(-180deg) translate3d(0, -0.25rem, 0);
   --icon-caret-color: var(--color-aqua);
@@ -266,11 +266,11 @@
   }
 
   > :nth-child(n + 2),
-  #nav-overflow > * {
+  .nav-popover > * {
     grid-column: content;
   }
 
-  #nav-overflow h2 {
+  .nav-popover h2 {
     font-size: 1.5rem;
     line-height: 2.5rem;
     color: var(--color-black);
@@ -282,15 +282,15 @@
 }
 
 @media (max-width: calc($breakpoint-m - 1px)) {
-  button[popovertarget="nav-overflow"] {
+  .nav__item > .nav__expandable {
     display: none;
   }
 
-  #nav-overflow {
+  .nav-popover {
     display: contents;
   }
 
-  #nav-overflow ul {
+  .nav-popover ul {
     padding-left: 2rem;
     margin-bottom: 2rem;
   }
@@ -329,16 +329,11 @@
     display: contents;
   }
 
-  #nav-overflow {
+  .nav-popover {
     position: fixed;
     position-anchor: none;
-    inset: 5.2rem auto auto min(calc(50% + 6rem), calc(100% - var(--nav-overflow-width) - 1rem));
+    inset: 5.2rem auto auto var(--nav-popover-left, 1rem);
     margin: 0;
-
-    .nav-item {
-      font-size: 1rem;
-      line-height: 2rem;
-    }
 
     h2 {
       display: none;
@@ -372,7 +367,7 @@
     background-color: var(--color-white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-    #nav-overflow {
+    .nav-popover {
       top: 3.55rem;
     }
 
@@ -381,7 +376,7 @@
       margin-bottom: 0.125rem;
     }
 
-    & :has(#nav-overflow:popover-open) .nav__expandable {
+    & .nav__item:has(> .nav-popover:popover-open) > .nav__expandable {
       text-decoration-color: var(--color-purple);
       color: var(--color-purple);
     }
@@ -435,13 +430,13 @@
 }
 
 @media (min-width: $breakpoint-m) and (max-width: calc($breakpoint-xl - 1px)) {
-  #nav-overflow {
-    --nav-overflow-width: 16rem;
+  .nav-popover {
+    --nav-popover-width: 16rem;
   }
 }
 
 @media (min-width: $breakpoint-xl) {
-  .nav:not(.nav__scrolled) #nav-overflow {
+  .nav:not(.nav__scrolled) .nav-popover {
     top: 5.5rem;
   }
 
@@ -451,7 +446,7 @@
     line-height: 2rem;
   }
 
-  #nav-overflow .nav__item {
+  .nav-popover .nav__item {
     font-size: 1rem;
     line-height: 2.5rem;
   }
