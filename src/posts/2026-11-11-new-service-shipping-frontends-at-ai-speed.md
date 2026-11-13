@@ -1,0 +1,43 @@
+---
+title: "New Service: Shipping frontends at AI speed"
+authorHandle: marcoow
+tags: [ai, frontend]
+bio: "Marco Otte-Witte"
+description: "Marco Otte-Witte announces Mainmatter's new service that's focused on guiding clients through adopting agentic engineering, increasing velocity sustainably and outpacing the competition."
+tagline: '<p>For many years, the Mainmatter team have been frontend engineering experts, helping teams get the most out of frameworks like <a href="/ember-consulting/">Ember</a> and <a href="/svelte-consulting/">Svelte</a> (besides our focus on <a href="/rust-consulting/">Rust</a>). When we started working in the frontend space ca. 10 years ago, Single Page Apps (SPAs) as a concept as well as the frameworks behind them were completely new with many open questions to answer and new patterns to explore and establish – a classic field for an engineering consultancy to focus on. 10 years later that''s no longer the case: there are well understood and established patterns, frameworks are converging on the same or similar concepts and which framework to choose for a project has become less relevant of a question. The leading edge of frontend engineering where the open questions are to be answered, new concepts and patterns to be explored and where clients are left confused and in need for consulting from a company like Mainmatter, has moved elsewhere: to figuring out how to adopt sustainable agentic engineering and shipping at AI speed. That''s why we''re announcing a [new service](/services/ai-accelerated-frontend-engineering/) focusing on guiding clients through doing just that.</p>'
+autoOg: true
+---
+
+## The challenge that teams are facing
+
+While AI and agents have proven their ability to generate high quality code fast and only few engineers still write code by hand anymore, for teams to accelerate their velocity sustainably at high quality at the rate that was promised by the AI labs (and is expected by their management), remains a challenge. Code reviews quickly become the new bottleneck for many teams while [bugs per merged PR go up across the industry](https://www.faros.ai/research/ai-acceleration-whiplash), causing rework that ends up slowing teams down again. While it's hard to get exact numbers, what most teams see is pressure increasing, more code being generated but velocity staying mostly flat or just increasing marginally at best.
+
+The reason for that is simple and rooted in the same problems many teams were facing before the end of 2025 when models became substantially more powerful and agentic engineering turned from a fun experiment to a new way of working. Generating a lot of code fast and (comparatively) cheap is not the same as evolving and maintaining a complex system over time at a high pace without throwing quality and maintainability (whatever that means in these times when AI writes most of the code) over time while serving real users. I like to use a Formula 1 analogy to make that point clear: everyone can drive a Formula 1 car at full throttle on a straight road (obviously I have never tried that and have no idea whether it's actually true but let's assume it is for now). Yet, it's a very different challenge to complete a full lap on a race track or ca. 60 laps in a full race, compete in twenty-two races in a season, ideally outpace the competition and end the season as champion. The latter requires a well functioning machine consisting of a team, processes, tools, infrastructure, logistics, etc.
+
+Just like succeeding in Formula 1, succeeding as a frontend engineering organization over time and actually delivering business value at a high pace over time at high quality, requires a well-functioning machine. Teams need to adopt modern software delivery lifecycle (SDLC) with the practices, tools, and infrastructure that allow them to ship fast – and continue shipping fast in the future. They need comprehensive and automated quality assurance, continuous deployment automation, systems for things like feature flags, A/B testing, blue-green deployments and telemetry so they can understand how their production system behaves. Without a solid delivery pipeline built on top of all these components, code generate easily outstrips their ability to deliver real value into the hands of their users – they end up with pile-ups at some point in their pipeline which causes backpressure, which eventually causes new problems elsewhere and a vicious cycle emerges.
+
+The reality is that many teams do not even have delivery pipelines that are fit for handling the throughput when code is hand-written, not to speak of when agents push out more code at a much accelerated pace. These limitations are essentially blockign those teams from adopting agenting engineering and truly increasing their velocity. Mainmatter has been working with teams for many years in our frontend projects to build up frontend engineering infrastructure and organizations that allow for growing output with team size, e.g. during our work with [Qonto](/cases/qonto/). Much of the challenges that fast growing teams face are the same when adopting agentic engineering: more changes to the codebase need to be vetted, merged, and eventually released to production to materialize as business value – all of that while keeping long-term maintainability in mind to not slow down and eventually stall teams over time. Although nobody quite knows what the future of software engineering and thus the ideal delivery pipeline will look like, our experience working with numerous teams through those challenges for many years make us the perfect partner for teams that are working through these challenges as they are adopting agentic engineering now.
+
+## The service
+
+Our [new service](/services/ai-accelerated-frontend-engineering/) takes clients through adopting agentic engineering in a way that not just helps them create more code but to accelerate their ability to deliver real business value. We work with teams through a clear, three stage process.
+
+### Assessing the status quo
+
+We start by assessing the status quo, asking questions like what their already identified and well-understood bottlenecks and impediments are and where we can already foresee existing systems to crumble under the increased pressure of accelerated code generation. We also look at the health of their production systems and analyze data like error rates and performance metrics. That analysis also reveals gaps in telemetry data where teams do not have an easy way to know the state of their production systems.
+
+### Clearing the path
+
+Once we understand the status quo, we clear the pace to allow for accelerating the pace of code generation. That includes closing gaps in test suites and quality assurance in general as well as tightening the feedback loop by fixing flaky tests and acceleration build and CI times. If there are any manual elements in the testing and deployment processes, we set up automation instead as anything manual will surely become an impediment for agentic engineering. Finally we close any telemetry gaps so that the status and health of all production systems is fully transparent at all times. All of these improvements have a positive impact on the team's ability to deliver – with or without AI.
+
+### Rolling out tools and practices
+
+Once a solid delivery pipeline is in place, we roll out agentic engineering tools and practices step by step. For teams that have not yet had much exposure to AI tools, that might mean getting people to use Claude or Codex locally. For most though, it will mean going from a local setup to cloud agents and eventually software factories. As we roll out agentic engineering, we keep extending and improving the supporting infrastructure and tooling by creating and refining guardrails for agents, skills, as well as automating more of the SDLC e.g. by using AI for reviews and building classifiers that eventually allow merging at least some of the generated code without any human review.
+
+### Mentoring
+
+As we've always done, we work closely with our clients' teams throughout the process, mentoring them along the way. Our promise has always been sustainable change that leaves teams better than we found them, able to continue based on the foundation we set up together on their own once we leave.
+
+## Ship frontends at AI speed
+
+If you're looking to ship frontends at AI speed but have been struggling to turn accelerated code generation into accelerated, sustainable value generation, [contact us](/contact/). We'll work with you and your team through the process of sustainably adopting agentic engineering to ship at AI speed today and continue to do so going forwards.
