@@ -28,7 +28,12 @@ jobs:
           TICKET_TAILOR_API_KEY: ${{ secrets.TICKET_TAILOR_API_KEY }}
 
       - name: format
-        run: pnpm lint:md:fix
+        run: | # for some reason this needs to run twice to work…
+          pnpm lint:md:fix
+          pnpm lint:md:fix
+
+      - name: lint
+        run: pnpm lint:md
 
       - name: check diff
         run: git diff --exit-code -- ":(exclude)src/workshops/*.md" # ensure nothing but the workshop files changed
