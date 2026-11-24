@@ -575,7 +575,7 @@ You can find the whole project [at this repo](https://github.com/mainmatter/svel
 
 You can ship anything to production if you're bold enough!
 
-Jokes aside, absolutely not: this is a POC using an unreleased (and untested, and unreviewed) version of Svelte. There's still quite a bit of work to do before we can call this a wrap.
+Jokes aside, absolutely not: this is a POC using an unreleased (and untested, and unreviewed) version of Svelte. There's still quite a bit of work to do before we can call this a wrap. (Update: the custom renderer API is now released, [see the update at the end](#update).)
 
 As I hinted before, I got some feedback from Grischa Erbe, specifically about how to mix and match the custom renderer with the original DOM renderer. This doesn't necessarily apply to Lynx, but for the custom renderer API to be considered complete, we need to make some decisions.
 
@@ -594,3 +594,7 @@ Mainmatter is currently sponsoring my work on Svelte to bring you the custom ren
 Well... this was a long one. I hope I didn't bore you (I guess if you're still here, maybe I managed to keep you interested enough), and I hope you leave this blog post with the same excitement I have for what this feature will unlock for the future.
 
 Thanks for reading!
+
+<h2 id="update">Update (November 2026)</h2>
+
+The custom renderer API has officially [been merged into Svelte](https://github.com/sveltejs/svelte/pull/18042) and shipped in `svelte@5.59.0`! 🎉 The final API differs in a few places from the POC described in this post, so head over to the [official documentation](https://svelte.dev/docs/svelte/custom-renderers) to learn how to build your own renderer.
