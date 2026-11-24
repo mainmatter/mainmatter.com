@@ -1,11 +1,11 @@
 ---
-title: "Sprinkle determinism into your agent setup"
+title: "Regression testing your AI agent setup with evals"
 authorHandle: paoloricciuti
 tags: [ai]
 bio: "Paolo Ricciuti, Senior Software Engineer"
-description: "How to make sure your agent can properly work in your codebase."
+description: "Use Vitest-based evals to catch regressions in your skills, tools, and AGENTS.md across Claude Code, OpenCode, and Codex."
 autoOg: true
-tagline: <p>How to make sure your agent can properly work in your codebase.</p>
+tagline: <p>Use Vitest-based evals to catch regressions in your skills, tools, and AGENTS.md across Claude Code, OpenCode, and Codex.</p>
 ---
 
 AI has changed the way software engineers work. Agents can help us navigate our codebase, make changes to it much faster than before, and automate simple changes to thin out our backlog with very little engineering effort.
@@ -16,7 +16,7 @@ It may sound silly, but the fact that an agent produces a transcript while worki
 
 This can already be used effectively, and there are skills out there (like [retro](https://www.skills.sh/mattpocock/skills/retro) from Matt Pocock) that make use of this newfound power to find opportunities to improve your codebase.
 
-That said, all of this is missing that sweet determinism that we love to love.
+That said, all of this is missing that sweet determinism that we love to love. So let's sprinkle some into our agent setup.
 
 Furthermore, while right now everyone is trying to optimize their AI usage, nobody has really put time into figuring out how to "measure" that optimization.
 
