@@ -126,6 +126,11 @@ jobs:
       #   run: |
       #     git add site
       #     git diff-index --quiet HEAD || git commit -m "Updated material for proc macro" && git push
+      # The book is downloaded to a temporary directory outside the repository
+      # first. The published directory is only replaced in the next step, after
+      # a complete download, so files removed or renamed in the book are also
+      # removed from the site. A failed download fails this step and stops the
+      # job before anything is replaced or committed.
       - name: Download "Migrate C to Rust" HTML
         uses: dawidd6/action-download-artifact@v6
         with:
@@ -136,11 +141,26 @@ jobs:
           branch: main
           event: push
           name: book
-          path: mdbook/c-to-rust-migration-book
+          path: ${{ runner.temp }}/c-to-rust-migration-book
           if_no_artifact_found: ignore
+      # If no artifact was found (for example because it expired), the download
+      # step succeeds without files. In that case keep the published book as is.
+      - name: Replace "Migrate C to Rust" HTML with the downloaded book
+        env:
+          BOOK_DOWNLOAD: ${{ runner.temp }}/c-to-rust-migration-book
+          BOOK_TARGET: mdbook/c-to-rust-migration-book
+        run: |
+          set -euo pipefail
+          if [ ! -s "$BOOK_DOWNLOAD/index.html" ]; then
+            echo "::warning::No book artifact was downloaded (index.html missing), $BOOK_TARGET is left unchanged."
+            exit 0
+          fi
+          rm -rf "$BOOK_TARGET"
+          mkdir -p "$BOOK_TARGET"
+          cp -R "$BOOK_DOWNLOAD/." "$BOOK_TARGET/"
       - name: Commit and push if changed
         run: |
-          git add mdbook
+          git add --all mdbook
           git diff-index --quiet HEAD || git commit -m "Updated material for 'Migrate C to Rust'" && git push
       - name: Download "Migrate C to Rust" PDF
         uses: dawidd6/action-download-artifact@v6
@@ -156,5 +176,5 @@ jobs:
           if_no_artifact_found: ignore
       - name: Commit and push if changed
         run: |
-          git add static
+          git add --all static
           git diff-index --quiet HEAD || git commit -m "Updated book for 'Migrate C to Rust'" && git push
