@@ -83,6 +83,16 @@
   max-width: 48rem;
 }
 
+.cta-banner__main--wide {
+  width: 100%;
+  max-width: none;
+
+  > .cta-banner__title,
+  > .cta-banner__text {
+    max-width: 48rem;
+  }
+}
+
 .cta-banner__text,
 .cta-banner__link {
   margin-top: 2.5rem;

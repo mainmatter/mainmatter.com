@@ -22,30 +22,17 @@ og:
 {%
   set 'content' = {
   "title": "The Rust Adoption Handbook",
-  "text": "Adopting Rust can be challenging. Our handbook is a practical guide to why, where, and how to successfully adopt Rust for cloud-native systems.",
+  "text": "Rust can make cloud-native systems faster, safer, and easier to maintain. The Rust Adoption Handbook includes winning strategies for adopting Rust based on our experience working with teams during their Rust journeys for years.",
   "image": "/assets/images/photos/rust-adoption-handbook-hero.jpg",
   "alt": "Hand protruding into the picture from the right, touching a crab-shaped Pop-it toy in rainbow colors lying on the table",
-  "loading": "eager"
+  "loading": "eager",
+  "toc": {
+    "Download the handbook": "#rust-adoption-handbook-form"
+  },
+  "hideFirstTocItemOnDesktop": false
   }
 %}
 {{ colorHero('purple', content) }}
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-4">
-      <p class="body">
-        We are Rust experts - {% include 'content/rust-team-bio.njk' %} We have been part of the
-        Rust ecosystem for years – helping teams succeed with Rust, working on
-        <a href="https://crates.io">crates.io</a>, and hosting the
-        <a href="https://eurorust.eu/">EuroRust conference</a>.
-      </p>
-      <p class="body">
-        The Rust Adoption Handbook includes winning strategies for adopting Rust based on our
-        experience working with teams during their Rust journeys for years.
-      </p>
-    </div>
-  </div>
-</section>
 
 {%
   set list =  [{
@@ -60,17 +47,17 @@ og:
 {{ strategyList('launch-your-idea', 'The handbook covers:', list) }}
 
 <section
-  class="cta-banner cta-banner--aqua container container--xl my-10"
-  data-background-color="aqua"
+  class="cta-banner cta-banner--purple container container--xl my-10"
+  data-background-color="purple"
 >
   <div class="cta-banner__wrapper">
-    <div class="cta-banner__main">
+    <div class="cta-banner__main cta-banner__main--wide">
       <h2 class="cta-banner__title">The Rust Adoption Handbook</h2>
       <div class="cta-banner__text">
         Download the handbook for a practical guide to why, where, and how to successfully adopt
         Rust for cloud-native systems.
       </div>
-      <div class="form-with-image">
+      <div class="form-with-image form-with-image--wide-image">
         <form
           id="rust-adoption-handbook-form"
           data-contact-form
@@ -81,7 +68,7 @@ og:
           data-goal="Rust+Adoption+Handbook"
         >
           <fieldset data-form-content tabindex="-1" disabled>
-            <div data-form-content class="contact-form__field cta__input mb-2 mt-2">
+            <div data-form-content class="contact-form__field mb-2 mt-2">
               <input
                 class="contact-form__input"
                 id="name"
@@ -96,7 +83,7 @@ og:
               </label>
               <span class="contact-form__label-required" aria-hidden="true">Required</span>
             </div>
-            <div class="contact-form__field cta__input mb-2 mt-2">
+            <div class="contact-form__field mb-2 mt-2">
               <input
                 class="contact-form__input"
                 id="company"
@@ -106,7 +93,7 @@ og:
               />
               <label class="contact-form__label h4" for="name">Company name </label>
             </div>
-            <div class="contact-form__field cta__input mb-2 mt-2">
+            <div class="contact-form__field mb-2 mt-2">
               <input
                 class="contact-form__input"
                 id="email"
@@ -121,7 +108,7 @@ og:
               </label>
               <span class="contact-form__label-required" aria-hidden="true">Required</span>
             </div>
-            <div class="contact-form__field cta__input mb-2 mt-2">
+            <div class="contact-form__field mb-2 mt-2">
               <label class="contact-form__label h4 contact-form__label-checkbox">
                 <input
                   class="contact-form__input contact-form__input-checkbox"
@@ -168,7 +155,7 @@ og:
         </form>
         <div class="form-with-image__image">
           <div class="image-wrapper">
-            {% image '/assets/images/photos/rust-adoption-handbook-cover.jpg', "Title page of Mainmatter's Rust Adoption Handbook", '(min-width: 48em) 40rem, 90vw', 'lazy', '', [400, 800, 1200] %}
+            {% image '/assets/images/rust/rust-adoption-handbook-mockup.webp', "Mockup of Mainmatter's Rust Adoption Handbook", '(min-width: 62em) 40rem, 80vw', 'lazy', '', [400, 800, 1200] %}
           </div>
         </div>
       </div>
@@ -189,6 +176,12 @@ og:
         We also train teams on Rust, from getting them started from scratch to advanced topics. Find
         more information on our Rust trainings in our extensive
         <a href="/training/rust/">Rust workshops catalog</a>.
+      </p>
+      <p class="body">
+        We are Rust experts - {% include 'content/rust-team-bio.njk' %} We have been part of the
+        Rust ecosystem for years – helping teams succeed with Rust, working on
+        <a href="https://crates.io">crates.io</a>, and hosting the
+        <a href="https://eurorust.eu/">EuroRust conference</a>.
       </p>
     </div>
   </div>
@@ -215,7 +208,6 @@ og:
   </div>
 </section>
 
-{% include "global/rust-subscription-cta.njk" %}
 {%
   set logoCompanies = [
   'Aleph Alpha',
@@ -242,7 +234,7 @@ og:
   </div>
 </section>
 
-{% set clients = ['aleph-alpha', 'kisters', 'bmw-car-it', 'anondb'] %}
+{% set clients = ['anondb', 'kisters', 'bmw-car-it', 'aleph-alpha'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
 {%
   set 'content' = {
