@@ -17,6 +17,14 @@
   width: 100%;
 }
 
+.form-with-image--wide-image {
+  width: 100%;
+
+  fieldset {
+    min-inline-size: 0;
+  }
+}
+
 @media (min-width: $breakpoint-m) {
   .form-with-image {
     display: flex;
@@ -27,5 +35,10 @@
 
   .form-with-image__image {
     margin: 2rem 0 0 0;
+  }
+
+  .form-with-image--wide-image {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 5fr);
   }
 }
