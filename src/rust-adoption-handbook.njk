@@ -22,24 +22,17 @@ og:
 {%
   set 'content' = {
   "title": "The Rust Adoption Handbook",
-  "text": "Adopting Rust can be challenging. Our handbook is a practical guide to why, where, and how to successfully adopt Rust for cloud-native systems.",
+  "text": "Rust can make cloud-native systems faster, safer, and easier to maintain. The Rust Adoption Handbook includes winning strategies for adopting Rust based on our experience working with teams during their Rust journeys for years.",
   "image": "/assets/images/photos/rust-adoption-handbook-hero.jpg",
   "alt": "Hand protruding into the picture from the right, touching a crab-shaped Pop-it toy in rainbow colors lying on the table",
-  "loading": "eager"
+  "loading": "eager",
+  "toc": {
+    "Download the handbook": "#rust-adoption-handbook-form"
+  },
+  "hideFirstTocItemOnDesktop": false
   }
 %}
 {{ colorHero('purple', content) }}
-
-<section class="my-10">
-  <div class="container container--lg">
-    <div class="mb-4">
-      <p class="body">
-        The Rust Adoption Handbook includes winning strategies for adopting Rust based on our
-        experience working with teams during their Rust journeys for years.
-      </p>
-    </div>
-  </div>
-</section>
 
 {%
   set list =  [{
@@ -241,7 +234,7 @@ og:
   </div>
 </section>
 
-{% set clients = ['aleph-alpha', 'kisters', 'bmw-car-it', 'anondb'] %}
+{% set clients = ['anondb', 'kisters', 'bmw-car-it', 'aleph-alpha'] %}
 {{ featuredCaseStudies(clients, 'Browse our work') }}
 {%
   set 'content' = {
