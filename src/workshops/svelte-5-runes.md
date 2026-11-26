@@ -62,8 +62,6 @@ topics:
       At least parts of the migration from Svelte 4 to 5 can be automated. We'll look into how that works, what to be aware of, and how to resolve situations where automatic migration fails.
 
 
-leads:
-  - handle: paoloricciuti
 upcomingDates:
   - date: "2026-11-23"
     endDate: "2026-11-24"

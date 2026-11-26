@@ -84,8 +84,6 @@ topics:
       We'll end the workshop exploring every manager's dream: giving the agent full autonomy to own the complete development cycle from making a code change through merging the PR and deploying it. We'll set up the necessary tools and infrastructure and uncover where the limits are.
 
 
-leads:
-  - handle: paoloricciuti
 upcomingDates:
   - date: "2026-12-09"
     endDate: "2026-12-15"

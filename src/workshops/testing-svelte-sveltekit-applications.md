@@ -44,8 +44,6 @@ topics:
       Tests require a well-known state that the test runs against so we can make assertions on the result. That can be challenging, in particular for end-to-end tests where the state might need to exist outside of the SvelteKit application. We'll look at typical challenges as well as techniques 
 
 
-leads:
-  - handle: paoloricciuti
 upcomingDates: []
 ---
 

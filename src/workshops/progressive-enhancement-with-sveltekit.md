@@ -45,10 +45,6 @@ topics:
   - title: "Example: dialog with inline JavaScript"
     text: >
       Finally, we'll build a dialog with a tiny snipped of inline JavaScript that works without the entirety of the Svelte application having started.
-
-
-leads:
-  - handle: paoloricciuti
 ---
 
 <!--break-->

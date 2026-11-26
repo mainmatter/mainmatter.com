@@ -59,8 +59,6 @@ quotes:
 
 
     source: Onsite attendee
-leads:
-  - handle: paoloricciuti
 upcomingDates:
   - date: "2026-11-25"
     endDate: "2026-12-02"

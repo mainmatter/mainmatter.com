@@ -77,8 +77,6 @@ topics:
       MCP servers are stateful by nature so running them on serverless infrastructure requires more care... We'll learn the ins and outs of how to deploy an MCP server.
 
 
-leads:
-  - handle: paoloricciuti
 upcomingDates: []
 ---
 

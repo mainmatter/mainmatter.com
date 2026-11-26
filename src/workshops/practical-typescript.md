@@ -60,10 +60,6 @@ topics:
   - title: Configuration and best practices
     text: >
       Review TypeScript configuration options, declaration files, JSDoc integration, and best practices for organizing and maintaining TypeScript projects at scale.
-
-
-leads:
-  - handle: paoloricciuti
 ---
 
 <!--break-->

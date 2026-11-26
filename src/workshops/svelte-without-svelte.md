@@ -40,10 +40,6 @@ topics:
   - title: Svelte in React, React into Svelte
     text: >
       Now that we have a lot of knowledge, let's put it to the test by building an integration between Svelte and React 😬
-
-
-leads:
-  - handle: paoloricciuti
 ---
 
 <!--break-->

@@ -35,10 +35,6 @@ topics:
   - title: Application concerns
     text: >
       We end by looking into application concerns around authentication like deciding whether a user is currently logged in, and rendering the according UI, seamlessly moving the authentication state between the browser and the server side of a SvelteKit application, or persisting the authentication state beyond refreshs.
-
-
-leads:
-  - handle: paoloricciuti
 ---
 
 <!--break-->
